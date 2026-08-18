@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ミニロト分析ビュー v4</title>
+<style>
+:root{
+  --bg:#050608; --panel:#17191d; --panel2:#21242a; --line:#2b3038; --text:#f3f6fb; --muted:#aeb7c7;
+  --green:#32a86b; --amber:#e5a32a; --blue:#4a7fe5; --red:#d55a69; --white:#d8dee7; --accent:#7aa2ff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Hiragino Sans","Yu Gothic",Meiryo,sans-serif}
+body{line-height:1.42}
+.wrapper{max-width:780px;margin:0 auto;padding:14px 12px 32px}
+.header{margin-bottom:10px}
+.title{font-size:26px;font-weight:800;letter-spacing:.02em}
+.sub{font-size:11px;color:var(--muted);margin-top:2px}
+.tab-radio{position:absolute;left:-9999px}
+.tabs{display:flex;gap:8px;overflow:auto;padding:2px 0 6px;margin-bottom:12px;-webkit-overflow-scrolling:touch}
+.tab{display:block;border:1px solid var(--line);background:#111418;color:#c7cfdd;border-radius:999px;padding:8px 12px;font-size:13px;white-space:nowrap;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.page{display:none}
+#tab-top:checked ~ .tabs label[for="tab-top"],
+#tab-exact:checked ~ .tabs label[for="tab-exact"],
+#tab-bands:checked ~ .tabs label[for="tab-bands"],
+#tab-purchase:checked ~ .tabs label[for="tab-purchase"],
+#tab-models:checked ~ .tabs label[for="tab-models"]{background:#1e2531;color:#fff;border-color:#3a465d}
+#tab-top:checked ~ .pages #top,
+#tab-exact:checked ~ .pages #exact,
+#tab-bands:checked ~ .pages #bands,
+#tab-purchase:checked ~ .pages #purchase,
+#tab-models:checked ~ .pages #models{display:block}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{background:linear-gradient(180deg,#23252b,#1a1c21);border:1px solid rgba(255,255,255,.05);border-radius:18px;padding:12px 14px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.card.wide{grid-column:1/-1}
+.label{font-size:11px;color:#dce2eb;opacity:.92;margin-bottom:3px}.value{font-size:19px;font-weight:800}.value.big{font-size:24px}.value.small{font-size:16px}
+.legend-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;background:linear-gradient(180deg,#23252b,#1a1c21);border:1px solid rgba(255,255,255,.05);border-radius:18px;padding:12px 14px;margin:10px 0}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:12px;color:#e8ecf4}.dot{width:11px;height:11px;border-radius:50%}
+.section-title{font-size:13px;font-weight:800;margin:14px 2px 6px;color:#f1f5fb}.helper{font-size:11px;color:var(--muted);margin:0 2px 8px}
+.draw-strip{display:flex;gap:8px;overflow:auto;padding-bottom:4px;margin-bottom:8px}
+.draw-chip{border:1px solid var(--line);background:#12151a;color:#d6dce8;border-radius:14px;padding:8px 12px;min-width:70px;text-align:center;cursor:pointer}.draw-chip.active{background:#1f2630;border-color:#546987;color:#fff}.draw-chip .n{font-size:15px;font-weight:800}.draw-chip .t{font-size:10px;color:#9ea9bb;margin-top:2px}
+svg{width:100%;height:auto;display:block}.axis-text{fill:#9ea9bb;font-size:10px}.grid-line{stroke:#242a34;stroke-width:1}
+.chart-block{padding:2px 0 0}.chart-title{font-size:12px;font-weight:800;color:#eef3fb;margin:0 0 6px}
+.kpi-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.kpi{background:linear-gradient(180deg,#23252b,#1a1c21);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:10px 12px}.kpi .n{font-size:18px;font-weight:800}.kpi .t{font-size:11px;color:var(--muted)}
+select{appearance:none;background:#11151b;color:#fff;border:1px solid #263040;padding:8px 11px;border-radius:12px;font-size:12px}
+.control-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0 8px}
+.tablewrap{overflow:auto;border-radius:15px;border:1px solid rgba(255,255,255,.06)} table{width:100%;border-collapse:collapse;min-width:540px;background:#121418} th,td{padding:10px 10px;border-bottom:1px solid #20242c;font-size:12px;text-align:right;color:#e8edf5} th{background:#171b22;color:#aeb7c7} th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+.badge{display:inline-block;padding:2px 7px;border-radius:999px;font-size:10px;font-weight:700}.A{background:rgba(50,168,107,.18);color:#7ce0a7}.B{background:rgba(229,163,42,.18);color:#ffd17b}.C{background:rgba(74,127,229,.18);color:#95b8ff}.D{background:rgba(213,90,105,.18);color:#ffa6b1}
+.note{background:#11151b;border:1px solid #222a36;border-radius:14px;padding:11px 13px;color:#d0d6df;font-size:12px;margin-top:10px}
+.empty{padding:16px;text-align:center;color:#b8c0cf;font-size:12px;background:#11151b;border:1px dashed #2f3847;border-radius:16px}
+@media (max-width:560px){.kpi-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.value.big{font-size:22px}.title{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <div class="title">ミニロト</div>
+    <div class="sub">分析確認ビュー v4</div>
+  </div>
+
+  <input class="tab-radio" type="radio" name="tabs" id="tab-top" checked>
+  <input class="tab-radio" type="radio" name="tabs" id="tab-exact">
+  <input class="tab-radio" type="radio" name="tabs" id="tab-bands">
+  <input class="tab-radio" type="radio" name="tabs" id="tab-purchase">
+  <input class="tab-radio" type="radio" name="tabs" id="tab-models">
+
+  <div class="tabs">
+    <label class="tab" for="tab-top">直近20回</label>
+    <label class="tab" for="tab-exact">Exact-Core</label>
+    <label class="tab" for="tab-bands">帯構成</label>
+    <label class="tab" for="tab-purchase">購入・結果</label>
+    <label class="tab" for="tab-models">開発</label>
+  </div>
+
+  <div class="pages">
+  <section id="top" class="page">
+    <div class="grid">
+      <div class="card"><div class="label">A層</div><div class="value big">9回</div></div>
+      <div class="card"><div class="label">B層</div><div class="value big">5回</div></div>
+      <div class="card"><div class="label">C層</div><div class="value big">4回</div></div>
+      <div class="card"><div class="label">D層</div><div class="value big">2回</div></div>
+    </div>
+
+    <div class="legend-row">
+      <div class="legend-item"><span class="dot" style="background:var(--green)"></span>A ≥5%</div>
+      <div class="legend-item"><span class="dot" style="background:var(--amber)"></span>B 2–5%</div>
+      <div class="legend-item"><span class="dot" style="background:var(--blue)"></span>C 0.5–2%</div>
+      <div class="legend-item"><span class="dot" style="background:var(--red)"></span>D &lt;0.5%</div>
+    </div>
+
+    <div class="section-title">選択回</div>
+    <div class="draw-strip" id="drawStrip"></div>
+    <div class="grid" id="detailCards"></div>
+    <div class="section-title">Committee順位スポット</div>
+    <div class="helper">登録済みの回のみ表示。現時点では第1395回を登録。</div>
+    <div class="card wide"><div id="rankSpot"></div></div>
+    <div class="section-title">帯構成の長期実績頻度</div>
+    <div class="helper">棒の高さは各回の帯構成の長期頻度</div>
+    <div class="chart-block"><div id="freqChart"></div></div>
+    <div class="section-title">合計値の推移</div>
+    <div class="helper">直近20回の合計値</div>
+    <div class="chart-block"><div id="sumChart"></div></div>
+  </section>
+
+  <section id="exact" class="page">
+    <div class="kpi-strip">
+      <div class="kpi"><div class="n">387</div><div class="t">3個一致</div></div>
+      <div class="kpi"><div class="n">22</div><div class="t">4個一致</div></div>
+      <div class="kpi"><div class="n">3</div><div class="t">5個一致</div></div>
+      <div class="kpi"><div class="n">2帯</div><div class="t">5一致発生帯</div></div>
+    </div>
+    <div class="control-row"><select id="exactMode"><option value="exact">ちょうど一致</option><option value="plus">○個以上一致</option><option value="cum">累積</option></select></div>
+    <div id="exactChart"></div>
+    <div class="note">第1〜1000回は5個一致0回。1001〜1100で1回、1301〜1399で2回。</div>
+  </section>
+
+  <section id="bands" class="page">
+    <div class="grid"><div class="card"><div class="label">A層</div><div class="value">51.18%</div><div class="sub">716 / 1399回</div></div><div class="card"><div class="label">B層</div><div class="value">30.02%</div><div class="sub">420 / 1399回</div></div><div class="card wide"><div class="label">A+B</div><div class="value">81.20%</div><div class="sub">1136 / 1399回</div></div></div>
+    <div class="section-title">A層：頻度5%以上</div>
+    <div class="tablewrap"><table><thead><tr><th>帯構成</th><th>回数</th><th>頻度</th><th>理論</th></tr></thead><tbody><tr><td>1-2-2-0</td><td>139</td><td>9.94%</td><td>10.73%</td></tr><tr><td>2-2-1-0</td><td>129</td><td>9.22%</td><td>9.53%</td></tr><tr><td>2-1-2-0</td><td>121</td><td>8.65%</td><td>9.53%</td></tr><tr><td>1-1-3-0</td><td>95</td><td>6.79%</td><td>6.36%</td></tr><tr><td>1-3-1-0</td><td>88</td><td>6.29%</td><td>6.36%</td></tr><tr><td>1-2-1-1</td><td>73</td><td>5.22%</td><td>4.77%</td></tr></tbody></table></div>
+    <div class="section-title">B層：頻度2%以上5%未満</div>
+    <div class="tablewrap"><table><thead><tr><th>帯構成</th><th>回数</th><th>頻度</th><th>理論</th></tr></thead><tbody><tr><td>2-1-1-1</td><td>66</td><td>4.72%</td><td>4.24%</td></tr><tr><td>3-1-1-0</td><td>57</td><td>4.07%</td><td>4.94%</td></tr><tr><td>0-2-3-0</td><td>53</td><td>3.79%</td><td>3.18%</td></tr><tr><td>0-2-2-1</td><td>50</td><td>3.57%</td><td>2.38%</td></tr><tr><td>2-0-3-0</td><td>47</td><td>3.36%</td><td>2.54%</td></tr><tr><td>0-3-2-0</td><td>45</td><td>3.22%</td><td>3.18%</td></tr></tbody></table></div>
+  </section>
+
+  <section id="purchase" class="page"><div class="grid"><div class="card"><div class="label">登録回数</div><div class="value">0</div></div><div class="card"><div class="label">登録口数</div><div class="value">0</div></div></div><div class="section-title">購入・結果</div><div class="empty">まだ購入データは未登録です。<br>次の段階で「回号・購入口・結果・一致数」をこのタブに蓄積できます。</div></section>
+  <section id="models" class="page"><div class="grid"><div class="card wide"><div class="label">Committee</div><div class="value small">A1 Stat + 0.15 × 4core</div><div class="sub">第1395回は127位、最終10口6口目で完全一致</div></div><div class="card"><div class="label">本命</div><div class="value small">2→3→4 分散</div></div><div class="card"><div class="label">研究系</div><div class="value small">Exact-Core v1</div></div><div class="card wide"><div class="label">改善</div><div class="value small">3個以上 31→40回</div><div class="sub">第1200〜1399回で cap4 から改善</div></div><div class="card wide"><div class="label">不採用</div><div class="value small">5個目接続度 / 4core 200回窓 / Core-confidence ML</div></div></div></section>
+  </div>
+</div>
+<script>
+const draws=[{draw:1380,nums:'01 10 12 19 21',shape:'1-3-1-0',freq:6.29,layer:'A',sum:63,rank:null},{draw:1381,nums:'02 03 04 20 28',shape:'3-0-2-0',freq:1.29,layer:'C',sum:57,rank:null},{draw:1382,nums:'12 20 24 30 31',shape:'0-1-2-2',freq:0.21,layer:'D',sum:117,rank:null},{draw:1383,nums:'09 18 19 29 31',shape:'1-2-1-1',freq:5.22,layer:'A',sum:106,rank:null},{draw:1384,nums:'07 12 13 17 29',shape:'1-3-1-0',freq:6.29,layer:'A',sum:78,rank:null},{draw:1385,nums:'01 10 21 28 31',shape:'1-1-2-1',freq:5.08,layer:'A',sum:91,rank:null},{draw:1386,nums:'12 21 25 27 31',shape:'0-1-3-1',freq:1.07,layer:'C',sum:116,rank:null},{draw:1387,nums:'01 10 17 20 31',shape:'1-2-1-1',freq:5.22,layer:'A',sum:79,rank:null},{draw:1388,nums:'01 12 16 22 23',shape:'1-2-2-0',freq:9.94,layer:'A',sum:74,rank:null},{draw:1389,nums:'05 10 12 29 30',shape:'1-2-1-1',freq:5.22,layer:'A',sum:86,rank:null},{draw:1390,nums:'03 06 23 25 27',shape:'2-0-3-0',freq:3.36,layer:'B',sum:84,rank:null},{draw:1391,nums:'04 17 24 28 29',shape:'1-1-3-0',freq:6.79,layer:'A',sum:102,rank:null},{draw:1392,nums:'11 17 20 23 29',shape:'0-2-3-0',freq:3.79,layer:'B',sum:100,rank:null},{draw:1393,nums:'03 09 11 14 28',shape:'2-2-1-0',freq:9.22,layer:'A',sum:65,rank:null},{draw:1394,nums:'02 08 10 22 31',shape:'2-1-1-1',freq:4.72,layer:'B',sum:73,rank:null},{draw:1395,nums:'20 25 26 27 31',shape:'0-0-4-1',freq:0.36,layer:'D',sum:129,rank:127},{draw:1396,nums:'04 08 09 16 30',shape:'3-1-0-1',freq:0.71,layer:'C',sum:67,rank:null},{draw:1397,nums:'03 06 14 20 31',shape:'2-1-1-1',freq:4.72,layer:'B',sum:74,rank:null},{draw:1398,nums:'15 16 26 27 31',shape:'0-2-2-1',freq:3.57,layer:'B',sum:115,rank:null},{draw:1399,nums:'05 22 26 29 30',shape:'1-0-3-1',freq:0.86,layer:'C',sum:112,rank:null}];
+const exact=[['1–100',28,1,0],['101–200',25,0,0],['201–300',30,1,0],['301–400',30,1,0],['401–500',31,2,0],['501–600',31,5,0],['601–700',22,1,0],['701–800',25,0,0],['801–900',25,3,0],['901–1000',25,3,0],['1001–1100',30,0,1],['1101–1200',30,2,0],['1201–1300',23,1,0],['1301–1399',32,2,2]];
+const colors={A:'#32a86b',B:'#e5a32a',C:'#4a7fe5',D:'#d55a69'};let currentDraw=1395;
+function svgWrap(inner,w=720,h=230){return `<svg viewBox="0 0 ${w} ${h}">${inner}</svg>`}
+function renderDrawStrip(){const wrap=document.getElementById('drawStrip');wrap.innerHTML=draws.map(d=>`<button class="draw-chip ${d.draw===currentDraw?'active':''}" data-draw="${d.draw}"><div class="n">${d.draw}</div><div class="t">${d.layer}層</div></button>`).join('');wrap.querySelectorAll('.draw-chip').forEach(b=>b.addEventListener('click',()=>{currentDraw=Number(b.dataset.draw);renderTop();}));}
+function renderTopCards(){const d=draws.find(x=>x.draw===currentDraw);document.getElementById('detailCards').innerHTML=`<div class="card"><div class="label">選択回</div><div class="value big">${d.draw}</div></div><div class="card"><div class="label">本数字</div><div class="value small">${d.nums}</div></div><div class="card"><div class="label">帯構成 / 層</div><div class="value">${d.shape} / ${d.layer}</div></div><div class="card"><div class="label">長期頻度</div><div class="value big">${d.freq.toFixed(2)}%</div></div><div class="card"><div class="label">合計値</div><div class="value big">${d.sum}</div></div><div class="card"><div class="label">Committee順位</div><div class="value big">${d.rank?d.rank+'位':'未登録'}</div></div>`;}
+function renderRankSpot(){const d=draws.find(x=>x.draw===currentDraw);if(!d.rank){document.getElementById('rankSpot').innerHTML='<div class="empty">この回のCommittee順位はまだ未登録です。</div>';return;}const levels=[100,300,1000,3000,10000,30000,100000,169911];const W=720,H=140,L=24,R=16,pw=W-L-R;const pos=(rank)=>{const min=Math.log10(100),max=Math.log10(169911);return L+pw*((Math.log10(rank)-min)/(max-min));};const x=pos(d.rank);let s=`<line x1="${L}" y1="68" x2="${W-R}" y2="68" stroke="#353b45" stroke-width="2"></line>`;levels.forEach(v=>{const lx=pos(v);s+=`<line x1="${lx}" y1="58" x2="${lx}" y2="78" stroke="#4a515d"></line><text class="axis-text" x="${lx}" y="106" text-anchor="middle">${v.toLocaleString()}</text>`});s+=`<circle cx="${x}" cy="68" r="7" fill="#d55a69" stroke="#ffd4da" stroke-width="2"></circle><text x="${x}" y="18" text-anchor="middle" fill="#f5f7fb" font-size="14" font-weight="800">${d.rank}位</text>`;document.getElementById('rankSpot').innerHTML=svgWrap(s,W,H);}
+function renderBarChart(){const W=720,H=220,L=26,R=8,T=10,B=34,pw=W-L-R,ph=H-T-B,maxY=10;let s='';[0,2,5,10].forEach(v=>{const py=T+ph-(v/maxY)*ph;s+=`<line class="grid-line" x1="${L}" y1="${py}" x2="${W-R}" y2="${py}"></line><text class="axis-text" x="2" y="${py+4}">${v}%</text>`});draws.forEach((d,i)=>{const gap=pw/draws.length,bw=Math.max(10,gap*.42),x=L+i*gap+(gap-bw)/2,h=ph*(d.freq/maxY),y=T+ph-h;s+=`<rect x="${x}" y="${y}" width="${bw}" height="${h}" rx="2" fill="${colors[d.layer]}" opacity="${d.draw===currentDraw?1:.72}"></rect><text class="axis-text" x="${x+bw/2}" y="${H-10}" text-anchor="middle">${String(d.draw).slice(-2)}</text>`;});document.getElementById('freqChart').innerHTML=svgWrap(s,W,H);}
+function renderSumChart(){const W=720,H=220,L=26,R=8,T=10,B=34,pw=W-L-R,ph=H-T-B,maxY=140;let s='';[50,80,110,140].forEach(v=>{const py=T+ph-(v/maxY)*ph;s+=`<line class="grid-line" x1="${L}" y1="${py}" x2="${W-R}" y2="${py}"></line><text class="axis-text" x="2" y="${py+4}">${v}</text>`});const pts=draws.map((d,i)=>({x:L+i*(pw/(draws.length-1)),y:T+ph-(d.sum/maxY)*ph,d}));s+=`<polyline points="${pts.map(p=>`${p.x},${p.y}`).join(' ')}" fill="none" stroke="#d7dde6" stroke-width="2"></polyline>`;pts.forEach(p=>{s+=`<circle cx="${p.x}" cy="${p.y}" r="${p.d.draw===currentDraw?4.8:3.2}" fill="${p.d.draw===currentDraw?'#fff':'#c9d0dc'}"></circle><text class="axis-text" x="${p.x}" y="${H-10}" text-anchor="middle">${String(p.d.draw).slice(-2)}</text>`;});document.getElementById('sumChart').innerHTML=svgWrap(s,W,H);}
+function renderExactChart(){const mode=document.getElementById('exactMode').value;let c3=0,c4=0,c5=0;const data=exact.map(r=>{let m3,m4,m5;if(mode==='exact'){[m3,m4,m5]=[r[1],r[2],r[3]]}else if(mode==='plus'){[m3,m4,m5]=[r[1]+r[2]+r[3],r[2]+r[3],r[3]]}else{c3+=r[1];c4+=r[2];c5+=r[3];[m3,m4,m5]=[c3,c4,c5]}return{block:r[0],m3,m4,m5};});const maxY=Math.ceil(Math.max(...data.flatMap(d=>[d.m3,d.m4,d.m5]))/5)*5;const W=720,H=240,L=28,R=8,T=10,B=46,pw=W-L-R,ph=H-T-B;let s='';const drawLine=(key,color)=>{const pts=data.map((d,i)=>({x:L+i*(pw/(data.length-1)),y:T+ph-(d[key]/maxY)*ph}));s+=`<polyline points="${pts.map(p=>`${p.x},${p.y}`).join(' ')}" fill="none" stroke="${color}" stroke-width="2.2"></polyline>`;};drawLine('m3','#4a7fe5');drawLine('m4','#32a86b');drawLine('m5','#d55a69');document.getElementById('exactChart').innerHTML=svgWrap(s,W,H);}
+function renderTop(){renderDrawStrip();renderTopCards();renderRankSpot();renderBarChart();renderSumChart();}
+document.getElementById('exactMode').addEventListener('change',renderExactChart);renderTop();renderExactChart();
+</script>
+</body>
+</html>
