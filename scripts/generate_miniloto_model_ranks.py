@@ -1,4 +1,4 @@
-# Generates verified Stat / 4core / Committee winner ranks for draws 1200-1399.
+# Generates verified Stat / 4core / Committee winner ranks for draws 501-1399.
 import itertools, json, re
 from pathlib import Path
 import numpy as np
@@ -83,17 +83,18 @@ for a in draws:
 def layer(freq): return 'A' if freq>=5 else 'B' if freq>=2 else 'C' if freq>=.5 else 'D'
 
 out=[]
-for rr in range(1200,1400):
+for rr in range(501,1400):
     t=rr-1; s1=a1_score(t); s2=a2_score(t); cm=z(s1)+0.15*z(s2); wi=combo_index[tuple(map(int,draws[t]))]
     sh=band_shape(draws[t]); freq=100*shape_counts[sh]/T
     out.append({'draw':rr,'nums':[int(x) for x in draws[t]],'statScore':round(float(s1[wi]),6),'coreScore':round(float(s2[wi]),6),'committeeScore':round(float(cm[wi]),6),'statRank':rank_of(s1,t),'coreRank':rank_of(s2,t),'committeeRank':rank_of(cm,t),'shape':sh,'freq':round(freq,4),'layer':layer(freq)})
-    if rr%20==0: print('done',rr,flush=True)
+    if rr%50==0: print('done',rr,flush=True)
 
-r1395=next(x for x in out if x['draw']==1395)
+canon=[x for x in out if 1200<=x['draw']<=1399]
+r1395=next(x for x in canon if x['draw']==1395)
 assert r1395['statRank']==106, r1395
 assert r1395['committeeRank']==127, r1395
-checks={k:sum(x['committeeRank']<=k for x in out) for k in [500,1000,3000,5000,10000]}
+checks={k:sum(x['committeeRank']<=k for x in canon) for k in [500,1000,3000,5000,10000]}
 assert checks=={500:2,1000:3,3000:8,5000:12,10000:20},checks
 text='window.MINI_MODEL_RANKS='+json.dumps(out,ensure_ascii=False,separators=(',',':'))+';\n'
-(ROOT/'data'/'miniloto-model-ranks-1200-1399.js').write_text(text,encoding='utf-8')
-print('wrote',len(out),'rows',checks,r1395)
+(ROOT/'data'/'miniloto-model-ranks-501-1399.js').write_text(text,encoding='utf-8')
+print('wrote',len(out),'rows; canonical checks',checks,r1395)
