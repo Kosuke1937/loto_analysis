@@ -17,7 +17,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python generate_miniloto_data.py
+      - name: Generate JSON from embedded history
+        run: python generate_miniloto_data.py
       - name: Commit generated data
         run: |
           git config user.name "github-actions[bot]"
