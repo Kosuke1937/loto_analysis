@@ -1,3 +1,4 @@
+# Generates verified Stat / 4core / Committee winner ranks for draws 1200-1399.
 import ast, glob, itertools, json, re
 from pathlib import Path
 import numpy as np
