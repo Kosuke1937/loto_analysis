@@ -16,3 +16,4 @@ for r in raw:
     })
 Path('miniloto-data.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',',':')), encoding='utf-8')
 print('wrote', len(out), 'records')
+# touch 2026-08-19 to trigger workflow
