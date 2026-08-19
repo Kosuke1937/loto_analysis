@@ -1,5 +1,5 @@
 # Generates verified Stat / 4core / Committee winner ranks for draws 1200-1399.
-import ast, glob, itertools, json, re
+import itertools, json, re
 from pathlib import Path
 import numpy as np
 
@@ -10,7 +10,7 @@ for p in sorted((ROOT/'data').glob('miniloto-chunk-*.js')):
     m=re.search(r'\.push\((\[.*\])\);?\s*$',txt,re.S)
     if not m:
         raise RuntimeError(f'cannot parse {p}')
-    rows.extend(ast.literal_eval(m.group(1)))
+    rows.extend(json.loads(m.group(1)))
 rows=sorted(rows,key=lambda r:int(r[0]))
 draws=np.array([[int(x) for x in r[2:7]] for r in rows],dtype=np.int16)
 bonuses=np.array([int(r[7]) for r in rows],dtype=np.int16)
