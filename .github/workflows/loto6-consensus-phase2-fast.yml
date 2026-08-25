@@ -1,0 +1,27 @@
+name: Loto6 Consensus Phase2 Fast
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research/loto6_consensus_phase2_fast.py'
+      - '.github/workflows/loto6-consensus-phase2-fast.yml'
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install numpy
+      - name: Run fixed Phase2 fast validation
+        run: python research/loto6_consensus_phase2_fast.py
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: loto6-consensus-phase2-fast-result
+          path: research/results/loto6_consensus_phase2_fast_summary.json
