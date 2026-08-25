@@ -12,11 +12,17 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: miniloto-model-ranks
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -24,17 +30,25 @@ jobs:
       - run: python scripts/generate_miniloto_model_ranks.py
       - name: Commit generated rank data
         run: |
+          set -e
           FILE=data/miniloto-model-ranks-501-1399.js
           if [ ! -f "$FILE" ]; then
             echo "Missing $FILE"
             exit 1
           fi
+
           git config user.name 'github-actions[bot]'
           git config user.email '4189824+github-actions[bot]@users.noreply.github.com'
           git add "$FILE"
+
           if git diff --cached --quiet; then
             echo 'No generated changes.'
             exit 0
           fi
+
           git commit -m 'Generate expanded Mini Loto model rank data'
-          git push
+
+          # main may have advanced while this job was generating the file.
+          # Rebase the generated commit onto the latest remote main, then push.
+          git pull --rebase origin main
+          git push origin HEAD:main
