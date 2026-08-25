@@ -27,12 +27,24 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check numpy
       - run: python scripts/audit_miniloto_final10_union.py
+      - name: Build compact summary
+        run: |
+          python - <<'PY'
+          import json
+          src='data/miniloto-final10-union-audit.json'
+          dst='data/miniloto-final10-union-audit-summary.json'
+          d=json.load(open(src,encoding='utf-8'))
+          out={'definition':d['definition']}
+          for k in ('canonical_cap4','state234'):
+              x=d[k]
+              out[k]={'range':x['range'],'n':x['n'],'counts':x['counts'],'cap_counts':x['cap_counts'],'blocks':x.get('blocks',{})}
+          json.dump(out,open(dst,'w',encoding='utf-8'),ensure_ascii=False,indent=2)
+          PY
       - name: Commit audit result
         run: |
-          FILE=data/miniloto-final10-union-audit.json
           git config user.name 'github-actions[bot]'
           git config user.email '4189824+github-actions[bot]@users.noreply.github.com'
-          git add "$FILE"
+          git add data/miniloto-final10-union-audit.json data/miniloto-final10-union-audit-summary.json
           if git diff --cached --quiet; then
             echo 'No audit changes.'
             exit 0
@@ -40,4 +52,4 @@ jobs:
           git commit -m 'Update Mini Loto Final10 union audit'
           git pull --rebase origin main
           git push origin HEAD:main
-# trigger: 2026-08-25 full audit
+# trigger: compact summary
