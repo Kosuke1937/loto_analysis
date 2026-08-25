@@ -15,7 +15,6 @@ def top_indices(score,k):
 def random_exact5(pool):
     return math.comb(pool,5)/math.comb(31,5)
 def random_4plus(pool):
-    # P(X>=4), X hypergeom drawing pool digits from 31 against 5 winning digits
     den=math.comb(31,pool)
     p=0.0
     for x in (4,5):
@@ -23,7 +22,7 @@ def random_4plus(pool):
             p += math.comb(5,x)*math.comb(26,pool-x)/den
     return p
 
-def num_scores(top,score,method,N):
+def num_scores(top,method,N):
     ids=top[:N]
     if method=='support':
         s=inc[ids].sum(0).astype(float)
@@ -31,11 +30,11 @@ def num_scores(top,score,method,N):
         w=1.0/np.log2(np.arange(2,N+2,dtype=float))
         s=(inc[ids]*w[:,None]).sum(0)
     elif method=='multiscale':
-        s=np.zeros(31,float)
+        s=np.zeros(32,float)
         for n,wgt in [(100,1.0),(500,0.8),(1500,0.5),(5000,0.25)]:
             x=inc[top[:n]].sum(0).astype(float)
-            x=(x-x.mean())/(x.std()+1e-9)
-            s += wgt*x
+            x=(x[1:32]-x[1:32].mean())/(x[1:32].std()+1e-9)
+            s[1:32] += wgt*x
     else: raise ValueError(method)
     return s
 
@@ -43,8 +42,9 @@ def pool_eval(period,method,N,size):
     r5=r4=0; total=0
     for rr in period:
         t=rr-1; win=set(map(int,draws[t])); sc=committee(t); top=top_indices(sc,5000)
-        ns=num_scores(top,sc,method,N)
-        pick=set((np.argsort(-ns)[:size]+1).tolist())
+        ns=num_scores(top,method,N)
+        ranked=np.argsort(-ns[1:32])+1
+        pick=set(ranked[:size].tolist())
         h=len(win&pick); r5+=int(h==5); r4+=int(h>=4); total+=1
     return {'n':total,'winner5':r5,'winner5_rate':round(r5/total,4),'winner4plus':r4,'winner4plus_rate':round(r4/total,4),
             'random5_rate':round(random_exact5(size),4),'random4plus_rate':round(random_4plus(size),4),
@@ -65,10 +65,8 @@ def overlap_diag(period,K):
             'draws_max3plus':int(maxc[3:].sum()),'draws_max4plus':int(maxc[4:].sum()),'draws_max5':int(maxc[5])}
 
 def random_overlap_dist():
-    den=math.comb(31,5); out=[]
-    for x in range(6):
-        out.append(math.comb(5,x)*math.comb(26,5-x)/den)
-    return out
+    den=math.comb(31,5)
+    return [math.comb(5,x)*math.comb(26,5-x)/den for x in range(6)]
 
 methods=['support','rankweighted','multiscale']; Ns=[100,500,1500,5000]; sizes=[12,14,16,18,20]
 out={'protocol':{'development':[1000,1199],'fixed_test':[1200,1399],'excluded':[1400,1401]},
@@ -81,11 +79,9 @@ for method in methods:
             key=f'{method}_N{N}_P{size}'
             out['compression']['development'][key]=pool_eval(DEV,method,N,size)
             out['compression']['fixed_test'][key]=pool_eval(TEST,method,N,size)
-for K in [10,100,500,1000,5000]:
+for K in [10,50,100,500,1000,5000]:
     out['overlap']['development'][str(K)]=overlap_diag(DEV,K)
     out['overlap']['fixed_test'][str(K)]=overlap_diag(TEST,K)
-
-# rank the most interesting fixed-test compression settings by 5/5 enrichment, then absolute 5/5, then 4+
 ranked=sorted(out['compression']['fixed_test'].items(),key=lambda kv:(-kv[1]['enrichment5'],-kv[1]['winner5_rate'],-kv[1]['winner4plus_rate']))
 out['best_fixed_test_by_enrichment']=[{'setting':k,**v} for k,v in ranked[:10]]
 path=ROOT/'data'/'miniloto-committee-compression-diagnostic.json'
