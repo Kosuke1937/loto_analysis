@@ -40,3 +40,4 @@ jobs:
           git commit -m 'Update Mini Loto Final10 union audit'
           git pull --rebase origin main
           git push origin HEAD:main
+# trigger: 2026-08-25 full audit
