@@ -1,0 +1,325 @@
+{
+  "protocol": {
+    "development": [
+      1000,
+      1199
+    ],
+    "fixed_test": [
+      1200,
+      1399
+    ],
+    "excluded": [
+      1400,
+      1401
+    ],
+    "note": "A/B Specialist and Cluster exact implementations were not available in repository search; this run uses exact reproducible Committee baseline only."
+  },
+  "agent1": {
+    "development_all": {
+      "state234": {
+        "n": 200,
+        "union5": 69,
+        "union4plus": 158,
+        "avg_union": 24.79
+      },
+      "cov025": {
+        "n": 200,
+        "union5": 72,
+        "union4plus": 154,
+        "avg_union": 25.375
+      },
+      "cov050": {
+        "n": 200,
+        "union5": 106,
+        "union4plus": 181,
+        "avg_union": 27.435
+      },
+      "cov075": {
+        "n": 200,
+        "union5": 139,
+        "union4plus": 191,
+        "avg_union": 28.905
+      },
+      "cov100": {
+        "n": 200,
+        "union5": 166,
+        "union4plus": 197,
+        "avg_union": 29.78
+      }
+    },
+    "selected": "cov100",
+    "fixed_test": {
+      "n": 200,
+      "union5": 165,
+      "union4plus": 198,
+      "avg_union": 29.435
+    }
+  },
+  "agent2": {
+    "development_all": {
+      "mainfreq_16": {
+        "eligible_union5": 166,
+        "retain5": 7,
+        "retain5_rate": 0.0422,
+        "eligible_union4plus": 197,
+        "retain4plus": 39,
+        "retain4plus_rate": 0.198,
+        "size": 16,
+        "method": "mainfreq"
+      },
+      "mainfreq_18": {
+        "eligible_union5": 166,
+        "retain5": 10,
+        "retain5_rate": 0.0602,
+        "eligible_union4plus": 197,
+        "retain4plus": 50,
+        "retain4plus_rate": 0.2538,
+        "size": 18,
+        "method": "mainfreq"
+      },
+      "mainfreq_20": {
+        "eligible_union5": 166,
+        "retain5": 15,
+        "retain5_rate": 0.0904,
+        "eligible_union4plus": 197,
+        "retain4plus": 73,
+        "retain4plus_rate": 0.3706,
+        "size": 20,
+        "method": "mainfreq"
+      },
+      "mainfreq_22": {
+        "eligible_union5": 166,
+        "retain5": 29,
+        "retain5_rate": 0.1747,
+        "eligible_union4plus": 197,
+        "retain4plus": 102,
+        "retain4plus_rate": 0.5178,
+        "size": 22,
+        "method": "mainfreq"
+      },
+      "topsupport_16": {
+        "eligible_union5": 166,
+        "retain5": 6,
+        "retain5_rate": 0.0361,
+        "eligible_union4plus": 197,
+        "retain4plus": 37,
+        "retain4plus_rate": 0.1878,
+        "size": 16,
+        "method": "topsupport"
+      },
+      "topsupport_18": {
+        "eligible_union5": 166,
+        "retain5": 9,
+        "retain5_rate": 0.0542,
+        "eligible_union4plus": 197,
+        "retain4plus": 55,
+        "retain4plus_rate": 0.2792,
+        "size": 18,
+        "method": "topsupport"
+      },
+      "topsupport_20": {
+        "eligible_union5": 166,
+        "retain5": 14,
+        "retain5_rate": 0.0843,
+        "eligible_union4plus": 197,
+        "retain4plus": 84,
+        "retain4plus_rate": 0.4264,
+        "size": 20,
+        "method": "topsupport"
+      },
+      "topsupport_22": {
+        "eligible_union5": 166,
+        "retain5": 32,
+        "retain5_rate": 0.1928,
+        "eligible_union4plus": 197,
+        "retain4plus": 118,
+        "retain4plus_rate": 0.599,
+        "size": 22,
+        "method": "topsupport"
+      },
+      "parent_16": {
+        "eligible_union5": 166,
+        "retain5": 5,
+        "retain5_rate": 0.0301,
+        "eligible_union4plus": 197,
+        "retain4plus": 30,
+        "retain4plus_rate": 0.1523,
+        "size": 16,
+        "method": "parent"
+      },
+      "parent_18": {
+        "eligible_union5": 166,
+        "retain5": 8,
+        "retain5_rate": 0.0482,
+        "eligible_union4plus": 197,
+        "retain4plus": 49,
+        "retain4plus_rate": 0.2487,
+        "size": 18,
+        "method": "parent"
+      },
+      "parent_20": {
+        "eligible_union5": 166,
+        "retain5": 16,
+        "retain5_rate": 0.0964,
+        "eligible_union4plus": 197,
+        "retain4plus": 75,
+        "retain4plus_rate": 0.3807,
+        "size": 20,
+        "method": "parent"
+      },
+      "parent_22": {
+        "eligible_union5": 166,
+        "retain5": 29,
+        "retain5_rate": 0.1747,
+        "eligible_union4plus": 197,
+        "retain4plus": 108,
+        "retain4plus_rate": 0.5482,
+        "size": 22,
+        "method": "parent"
+      },
+      "hybrid_16": {
+        "eligible_union5": 166,
+        "retain5": 7,
+        "retain5_rate": 0.0422,
+        "eligible_union4plus": 197,
+        "retain4plus": 33,
+        "retain4plus_rate": 0.1675,
+        "size": 16,
+        "method": "hybrid"
+      },
+      "hybrid_18": {
+        "eligible_union5": 166,
+        "retain5": 8,
+        "retain5_rate": 0.0482,
+        "eligible_union4plus": 197,
+        "retain4plus": 53,
+        "retain4plus_rate": 0.269,
+        "size": 18,
+        "method": "hybrid"
+      },
+      "hybrid_20": {
+        "eligible_union5": 166,
+        "retain5": 15,
+        "retain5_rate": 0.0904,
+        "eligible_union4plus": 197,
+        "retain4plus": 74,
+        "retain4plus_rate": 0.3756,
+        "size": 20,
+        "method": "hybrid"
+      },
+      "hybrid_22": {
+        "eligible_union5": 166,
+        "retain5": 31,
+        "retain5_rate": 0.1867,
+        "eligible_union4plus": 197,
+        "retain4plus": 118,
+        "retain4plus_rate": 0.599,
+        "size": 22,
+        "method": "hybrid"
+      },
+      "satellite_16": {
+        "eligible_union5": 166,
+        "retain5": 7,
+        "retain5_rate": 0.0422,
+        "eligible_union4plus": 197,
+        "retain4plus": 31,
+        "retain4plus_rate": 0.1574,
+        "size": 16,
+        "method": "satellite"
+      },
+      "satellite_18": {
+        "eligible_union5": 166,
+        "retain5": 9,
+        "retain5_rate": 0.0542,
+        "eligible_union4plus": 197,
+        "retain4plus": 55,
+        "retain4plus_rate": 0.2792,
+        "size": 18,
+        "method": "satellite"
+      },
+      "satellite_20": {
+        "eligible_union5": 166,
+        "retain5": 12,
+        "retain5_rate": 0.0723,
+        "eligible_union4plus": 197,
+        "retain4plus": 84,
+        "retain4plus_rate": 0.4264,
+        "size": 20,
+        "method": "satellite"
+      },
+      "satellite_22": {
+        "eligible_union5": 166,
+        "retain5": 32,
+        "retain5_rate": 0.1928,
+        "eligible_union4plus": 197,
+        "retain4plus": 124,
+        "retain4plus_rate": 0.6294,
+        "size": 22,
+        "method": "satellite"
+      }
+    },
+    "selected": "satellite_22",
+    "fixed_test": {
+      "eligible_union5": 165,
+      "retain5": 36,
+      "retain5_rate": 0.2182,
+      "eligible_union4plus": 198,
+      "retain4plus": 115,
+      "retain4plus_rate": 0.5808
+    }
+  },
+  "agent3": {
+    "development_all": {
+      "committee": {
+        "n": 200,
+        "pool_contains_winner": 32,
+        "assembly_top10_exact5": 0,
+        "assembly_top10_4plus": 2,
+        "median_winner_rank_conditional": 15291.0
+      },
+      "support": {
+        "n": 200,
+        "pool_contains_winner": 32,
+        "assembly_top10_exact5": 0,
+        "assembly_top10_4plus": 3,
+        "median_winner_rank_conditional": 16800.5
+      },
+      "pair": {
+        "n": 200,
+        "pool_contains_winner": 32,
+        "assembly_top10_exact5": 0,
+        "assembly_top10_4plus": 2,
+        "median_winner_rank_conditional": 13549.0
+      },
+      "triple": {
+        "n": 200,
+        "pool_contains_winner": 32,
+        "assembly_top10_exact5": 0,
+        "assembly_top10_4plus": 3,
+        "median_winner_rank_conditional": 12909.0
+      },
+      "balanced": {
+        "n": 200,
+        "pool_contains_winner": 32,
+        "assembly_top10_exact5": 0,
+        "assembly_top10_4plus": 3,
+        "median_winner_rank_conditional": 12867.5
+      },
+      "assembly": {
+        "n": 200,
+        "pool_contains_winner": 32,
+        "assembly_top10_exact5": 0,
+        "assembly_top10_4plus": 2,
+        "median_winner_rank_conditional": 12877.0
+      }
+    },
+    "selected": "balanced",
+    "fixed_test": {
+      "n": 200,
+      "pool_contains_winner": 36,
+      "assembly_top10_exact5": 0,
+      "assembly_top10_4plus": 0,
+      "median_winner_rank_conditional": 14622.5
+    }
+  }
+}
