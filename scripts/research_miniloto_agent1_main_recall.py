@@ -91,3 +91,4 @@ sel=max(dev,key=lambda x:(dev[x]['union5'],dev[x]['union4plus'],dev[x]['ticket4p
 out={'protocol':{'dev':[1000,1199],'test':[1200,1399],'excluded':[1400,1401]},'development':dev,'selected':sel,'fixed_test':evaluate(TEST,sel),'canonical_test':evaluate(TEST,'canonical')}
 (ROOT/'data'/'miniloto-agent1-main-recall.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(out,ensure_ascii=False,indent=2))
+# trigger 2026-08-25T22:26+09:00
