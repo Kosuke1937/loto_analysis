@@ -1,0 +1,118 @@
+{
+  "protocol": {
+    "dev": [
+      1000,
+      1199
+    ],
+    "test": [
+      1200,
+      1399
+    ],
+    "excluded": [
+      1400,
+      1401
+    ]
+  },
+  "development": {
+    "canonical": {
+      "n": 200,
+      "union5": 69,
+      "union4plus": 158,
+      "avg_union": 24.79,
+      "ticket3plus": 55,
+      "ticket4plus": 1,
+      "ticket5": 0
+    },
+    "cov10": {
+      "n": 200,
+      "union5": 56,
+      "union4plus": 131,
+      "avg_union": 24.02,
+      "ticket3plus": 45,
+      "ticket4plus": 2,
+      "ticket5": 0
+    },
+    "cov20": {
+      "n": 200,
+      "union5": 62,
+      "union4plus": 146,
+      "avg_union": 24.865,
+      "ticket3plus": 42,
+      "ticket4plus": 2,
+      "ticket5": 0
+    },
+    "cov30": {
+      "n": 200,
+      "union5": 78,
+      "union4plus": 158,
+      "avg_union": 25.815,
+      "ticket3plus": 44,
+      "ticket4plus": 1,
+      "ticket5": 0
+    },
+    "cov40": {
+      "n": 200,
+      "union5": 98,
+      "union4plus": 173,
+      "avg_union": 26.78,
+      "ticket3plus": 48,
+      "ticket4plus": 1,
+      "ticket5": 0
+    },
+    "cov50": {
+      "n": 200,
+      "union5": 106,
+      "union4plus": 181,
+      "avg_union": 27.435,
+      "ticket3plus": 46,
+      "ticket4plus": 1,
+      "ticket5": 0
+    },
+    "cov60": {
+      "n": 200,
+      "union5": 123,
+      "union4plus": 188,
+      "avg_union": 28.22,
+      "ticket3plus": 46,
+      "ticket4plus": 1,
+      "ticket5": 0
+    },
+    "cov80": {
+      "n": 200,
+      "union5": 146,
+      "union4plus": 190,
+      "avg_union": 29.19,
+      "ticket3plus": 48,
+      "ticket4plus": 2,
+      "ticket5": 0
+    },
+    "cov100": {
+      "n": 200,
+      "union5": 166,
+      "union4plus": 197,
+      "avg_union": 29.78,
+      "ticket3plus": 49,
+      "ticket4plus": 2,
+      "ticket5": 0
+    }
+  },
+  "selected": "cov100",
+  "fixed_test": {
+    "n": 200,
+    "union5": 165,
+    "union4plus": 198,
+    "avg_union": 29.435,
+    "ticket3plus": 35,
+    "ticket4plus": 2,
+    "ticket5": 0
+  },
+  "canonical_test": {
+    "n": 200,
+    "union5": 73,
+    "union4plus": 162,
+    "avg_union": 25.285,
+    "ticket3plus": 40,
+    "ticket4plus": 4,
+    "ticket5": 1
+  }
+}
