@@ -77,10 +77,14 @@ def metric(ids,t):
  for ii in ids:u.update(map(int,combos[ii]))
  w=set(map(int,draws[t]));return len(u&w),len(u),max(len(set(map(int,combos[ii]))&w) for ii in ids)
 
+CACHE={}
+for rr in list(DEV)+list(TEST):
+ t=rr-1;s=committee(t);CACHE[rr]=(t,s,topidx(s))
+
 def evaluate(period,method):
  rows=[]
  for rr in period:
-  t=rr-1;s=committee(t);top=topidx(s)
+  t,s,top=CACHE[rr]
   ids=canonical(s,top) if method=='canonical' else cov(s,top,float(method[3:])/100)
   h,us,b=metric(ids,t);rows.append((h,us,b))
  return {'n':len(rows),'union5':sum(h==5 for h,_,_ in rows),'union4plus':sum(h>=4 for h,_,_ in rows),'avg_union':round(float(np.mean([u for _,u,_ in rows])),3),'ticket3plus':sum(b>=3 for _,_,b in rows),'ticket4plus':sum(b>=4 for _,_,b in rows),'ticket5':sum(b==5 for _,_,b in rows)}
@@ -91,4 +95,4 @@ sel=max(dev,key=lambda x:(dev[x]['union5'],dev[x]['union4plus'],dev[x]['ticket4p
 out={'protocol':{'dev':[1000,1199],'test':[1200,1399],'excluded':[1400,1401]},'development':dev,'selected':sel,'fixed_test':evaluate(TEST,sel),'canonical_test':evaluate(TEST,'canonical')}
 (ROOT/'data'/'miniloto-agent1-main-recall.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(out,ensure_ascii=False,indent=2))
-# trigger 2026-08-25T22:26+09:00
+# trigger 2026-08-25T22:27+09:00
