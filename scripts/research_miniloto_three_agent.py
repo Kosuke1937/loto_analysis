@@ -118,7 +118,6 @@ def compress_pool(rr,ids,size,method):
     elif method=='hybrid': sc=z31(mf)+0.5*z31(ts)+0.5*z31(pq)
     elif method=='satellite':
         sc=z31(mf)+0.4*z31(ts)+0.8*z31(pq)
-        # protect singleton digits from strong parents
         sc += ((mf==1)&(z31(pq)>0.5))*0.75
     else: raise ValueError(method)
     ranked=sorted(u,key=lambda n:(-sc[n],n))
@@ -217,3 +216,4 @@ path=ROOT/'data'/'miniloto-three-agent-research.json'
 path.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(out,ensure_ascii=False,indent=2))
 print('WROTE',path)
+# trigger: 2026-08-25T22:24+09:00
