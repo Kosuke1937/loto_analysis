@@ -30,6 +30,7 @@ jobs:
       - name: Commit score traces
         run: |
           FILE=data/miniloto-score-traces-1200-1399.json
+          git restore data/miniloto-committee-v2-research.json || true
           git config user.name 'github-actions[bot]'
           git config user.email '4189824+github-actions[bot]@users.noreply.github.com'
           git add "$FILE"
