@@ -1,0 +1,35 @@
+name: Backtest Mini Loto A-Dynamic Top10
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/backtest_miniloto_a_dynamic_top10.py'
+      - '.github/workflows/backtest-miniloto-a-dynamic-top10.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check numpy
+      - run: python scripts/backtest_miniloto_a_dynamic_top10.py
+      - name: Commit result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189824+github-actions[bot]@users.noreply.github.com'
+          git checkout -- data/miniloto-committee-v2-research.json 2>/dev/null || true
+          git add data/miniloto-a-dynamic-top10-backtest-1200-1399.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Update A-Dynamic Top10 backtest'
+          git pull --rebase origin main
+          git push origin HEAD:main
