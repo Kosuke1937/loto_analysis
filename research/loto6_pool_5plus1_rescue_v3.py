@@ -18,6 +18,7 @@ pool.
 """
 from __future__ import annotations
 import importlib.util,json,math
+from collections import Counter
 from pathlib import Path
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
@@ -32,6 +33,14 @@ A_THR=.025
 
 def ranking_from_support(s):
     nums=list(range(1,44)); nums.sort(key=lambda x:(s[x],-x),reverse=True); return nums
+
+def band_tuple(a):
+    a=np.asarray(a)
+    return (int(np.sum(a<=9)),int(np.sum((a>=10)&(a<=19))),int(np.sum((a>=20)&(a<=29))),int(np.sum((a>=30)&(a<=39))),int(np.sum(a>=40)))
+
+def rolling_shape_freq(draws,t,w=500):
+    lo=max(0,t-w); c=Counter(band_tuple(draws[i]) for i in range(lo,t)); n=max(1,t-lo)
+    return {k:v/n for k,v in c.items()}
 
 def fam_size(k,r): return math.comb(k,6)+math.comb(k,5)*r
 
@@ -58,14 +67,14 @@ def main():
         pc=ppref[t]-ppref[max(0,t-300)];c5,c4=p.cores(C,pc);z=lambda x:(x-x.mean())/(x.std()+1e-9);comm=z(ss[500])+.20*z(c5)+.15*z(c4)
         agents={'stat200':p.topidx(ss[200],1500),'stat500':p.topidx(ss[500],1500),'stat800':p.topidx(ss[800],1500),'committee':p.topidx(comm,1500)}
         sup=v2.num_support(agents,C); rank=ranking_from_support(sup); win=draws[t]
-        sf=v2.rolling_shape_freq(draws,t,500); shape=v2.band_tuple(win); A=sf.get(shape,0)>=A_THR; sum120=int(np.sum(win))>=120
-        recent={v2.band_tuple(draws[u]) for u in range(max(0,t-20),t)}; novel=shape not in recent; joint=A and sum120 and novel
+        sf=rolling_shape_freq(draws,t,500); shape=band_tuple(win); A=sf.get(shape,0)>=A_THR; sum120=int(np.sum(win))>=120
+        recent={band_tuple(draws[u]) for u in range(max(0,t-20),t)}; novel=shape not in recent; joint=A and sum120 and novel
         part='dev' if draw<=DEV_END else 'hold'; jpart='joint_dev' if draw<=DEV_END else 'joint_hold'
         for k in KS:
             for r in RS:
                 e=eval_one(win,rank,k,r);rec[(k,r)][part].append(e)
                 if joint:rec[(k,r)][jpart].append(e)
-    out={'method':'primary reduced pool + next-rank satellite 5+1 rescue','range':f'{START}-{END}','Ks':KS,'Rs':RS,'results':{},'joint_results':{},'family_sizes':{}}
+    out={'method':'primary reduced pool + next-rank satellite 5+1 rescue','range':f'{START}-{END}','Ks':KS,'Rs':RS,'A_threshold':A_THR,'joint_condition':'A>=2.5% AND sum>=120 AND band-shape absent in prior20','results':{},'joint_results':{},'family_sizes':{}}
     for k in KS:
         for r in RS:
             key=f'K{k}_R{r}'; out['results'][key]={'dev':summarize(rec[(k,r)]['dev']),'hold':summarize(rec[(k,r)]['hold'])};out['joint_results'][key]={'dev':summarize(rec[(k,r)]['joint_dev']),'hold':summarize(rec[(k,r)]['joint_hold'])};out['family_sizes'][key]={'restricted_5plus1':fam_size(k,r),'unrestricted_KplusR':full_size(k,r),'fraction_of_all_6096454':fam_size(k,r)/6096454}
