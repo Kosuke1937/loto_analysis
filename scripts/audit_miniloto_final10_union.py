@@ -6,7 +6,6 @@ ROOT=Path(__file__).resolve().parents[1]
 m=runpy.run_path(str(ROOT/'scripts'/'generate_miniloto_model_ranks.py'))
 combos=m['combos']; inc=m['inc']; draws=m['draws']; N=m['N']
 committee_score=m['committee_score'] if 'committee_score' in m else None
-# generate_miniloto_model_ranks.py exposes a1_score/a2_score/z instead of committee_score
 if committee_score is None:
     def committee_score(t):
         s1=m['a1_score'](t); s2=m['a2_score'](t)
@@ -40,8 +39,7 @@ def greedy(indices,K=10,triple_cap=1,pair_cap=2,num_cap=4,fallback=True):
 
 def anti_support(score,top5000,mode):
     if mode=='cap4':
-        base=greedy(top5000[:1500],10,1,2,4,True)
-        used_cap=4
+        base=greedy(top5000[:1500],10,1,2,4,True); used_cap=4
     elif mode=='state234':
         base=[]; used_cap=None
         for cap in (2,3,4):
@@ -70,8 +68,49 @@ def anti_support(score,top5000,mode):
         if bestkey is None or key>bestkey: bestkey=key; best=keep
     return best,used_cap
 
+def detailed_recent(rr,ids,cap):
+    t=rr-1
+    tickets=[tuple(map(int,combos[i])) for i in ids]
+    win=tuple(map(int,draws[t])); wset=set(win)
+    union=set().union(*map(set,tickets))
+    hist=collections.Counter(n for ticket in tickets for n in ticket)
+    ticket_pairs=set(); ticket_triples=set()
+    for ticket in tickets:
+        ticket_pairs.update(itertools.combinations(ticket,2))
+        ticket_triples.update(itertools.combinations(ticket,3))
+    win_pairs=list(itertools.combinations(win,2)); win_triples=list(itertools.combinations(win,3))
+    pair_hits=[p for p in win_pairs if p in ticket_pairs]
+    triple_hits=[q for q in win_triples if q in ticket_triples]
+    all_counts=[hist.get(n,0) for n in range(1,32)]
+    winner_hist=[]
+    for n in win:
+        c=hist.get(n,0)
+        rank=1+sum(v>c for v in all_counts)
+        winner_hist.append({'number':n,'count':c,'rank_by_ticket_frequency':rank})
+    return {
+        'draw':rr,
+        'winner':list(win),
+        'winner_sum':sum(win),
+        'tickets':[list(x) for x in tickets],
+        'union_numbers':sorted(union),
+        'union_size':len(union),
+        'number_recall':len(wset&union),
+        'pair_recall_count':len(pair_hits),
+        'pair_recall_total':len(win_pairs),
+        'pair_recall_rate':len(pair_hits)/len(win_pairs),
+        'triple_recall_count':len(triple_hits),
+        'triple_recall_total':len(win_triples),
+        'triple_recall_rate':len(triple_hits)/len(win_triples),
+        'pair_hits':[list(x) for x in pair_hits],
+        'triple_hits':[list(x) for x in triple_hits],
+        'histogram':[hist.get(n,0) for n in range(1,32)],
+        'winner_histogram_positions':winner_hist,
+        'best_ticket':max(len(wset&set(ticket)) for ticket in tickets),
+        'cap':cap,
+    }
+
 def audit(mode,start=501,end=1399):
-    rows=[]; counts={str(k):0 for k in range(6)}; cap_counts=collections.Counter()
+    rows=[]; counts={str(k):0 for k in range(6)}; cap_counts=collections.Counter(); recent=[]
     for rr in range(start,end+1):
         t=rr-1; _,_,cs=committee_score(t); top=top_indices(cs,5000)
         ids,cap=anti_support(cs,top,mode); cap_counts[str(cap)]+=1
@@ -80,11 +119,19 @@ def audit(mode,start=501,end=1399):
         win=set(map(int,draws[t])); hit=len(win&union); counts[str(hit)]+=1
         best=max(len(win&set(map(int,combos[i]))) for i in ids)
         rows.append({'draw':rr,'union_hit':hit,'best_ticket':best,'union_size':len(union),'cap':cap})
+        if mode=='state234' and rr>=1380:
+            recent.append(detailed_recent(rr,ids,cap))
         if rr%50==0: print(mode,'done',rr,flush=True)
     return {'mode':mode,'range':[start,end],'n':len(rows),'counts':counts,'union5_draws':[r['draw'] for r in rows if r['union_hit']==5],
-            'union4_draws':[r['draw'] for r in rows if r['union_hit']==4], 'cap_counts':dict(cap_counts),'rows':rows}
+            'union4_draws':[r['draw'] for r in rows if r['union_hit']==4], 'cap_counts':dict(cap_counts),'rows':rows,
+            'recent20_diagnostics':recent if mode=='state234' else []}
 
 out={'definition':'Winner Number Recall of union of final 10 tickets; pre-draw only model; no draw 1400/1401 used',
+     'recall_definitions':{
+        'number_recall':'Of the 5 winning main numbers, how many appear at least once anywhere in the 10-ticket union.',
+        'pair_recall':'Of the 10 true winning pairs C(5,2), how many appear together in at least one of the 10 tickets.',
+        'triple_recall':'Of the 10 true winning triples C(5,3), how many appear together in at least one of the 10 tickets.'
+     },
      'canonical_cap4':audit('cap4'), 'state234':audit('state234')}
 for key in ('canonical_cap4','state234'):
     rows=out[key]['rows']
