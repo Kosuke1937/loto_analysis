@@ -1,0 +1,22 @@
+name: Loto6 Structural StatA Recall v5
+on:
+  push:
+    paths:
+      - 'research/loto6_structural_statA_recall_v5.py'
+      - '.github/workflows/loto6-structural-statA-recall-v5.yml'
+  workflow_dispatch:
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - run: python research/loto6_structural_statA_recall_v5.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-structural-statA-recall-v5-result
+          path: research/results/loto6_structural_statA_recall_v5_summary.json
