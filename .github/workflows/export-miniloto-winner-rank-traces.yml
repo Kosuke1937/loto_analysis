@@ -1,0 +1,39 @@
+name: Export Mini Loto winner rank traces
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/export_miniloto_winner_rank_traces.py'
+      - '.github/workflows/export-miniloto-winner-rank-traces.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check numpy
+      - run: python scripts/export_miniloto_winner_rank_traces.py
+      - name: Commit rank traces
+        run: |
+          git restore data/miniloto-committee-v2-research.json || true
+          FILE=data/miniloto-winner-rank-traces-1200-1399.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189824+github-actions[bot]@users.noreply.github.com'
+          git add "$FILE"
+          if git diff --cached --quiet; then
+            echo 'No rank trace changes.'
+            exit 0
+          fi
+          git commit -m 'Update Mini Loto winner rank traces'
+          git pull --rebase origin main
+          git push origin HEAD:main
