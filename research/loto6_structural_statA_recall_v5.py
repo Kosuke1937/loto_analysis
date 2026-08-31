@@ -14,23 +14,23 @@ K,R,M=32,10,3
 A_THR=.025
 THRESH=(100000,50000,20000,10000,5000,1000,500,100)
 
-# Exact all 43C6 universe. Static features use the same definitions as A1/Stat.
 def all_combos():
     arr=np.fromiter((x for c in itertools.combinations(range(1,44),6) for x in c),dtype=np.uint8,count=6096454*6)
     return arr.reshape(-1,6)
 
 def band_code_from_counts(b):
+    b=np.asarray(b,dtype=np.int32)
     return (b[:,0]*2401+b[:,1]*343+b[:,2]*49+b[:,3]*7+b[:,4]).astype(np.int32)
 
 def exact_static(C,q):
     s=C.sum(1).astype(np.int16); sb=np.clip((s-21)//5,0,50).astype(np.int16)
     odd=(C%2).sum(1).astype(np.int8); con=(np.diff(C,axis=1)==1).sum(1).astype(np.int8)
-    b=np.stack([(C<=9).sum(1),((C>=10)&(C<=19)).sum(1),((C>=20)&(C<=29)).sum(1),((C>=30)&(C<=39)).sum(1),(C>=40).sum(1)],axis=1).astype(np.int8)
+    b=np.stack([(C<=9).sum(1),((C>=10)&(C<=19)).sum(1),((C>=20)&(C<=29)).sum(1),((C>=30)&(C<=39)).sum(1),(C>=40).sum(1)],axis=1).astype(np.int32)
     band=band_code_from_counts(b); gap=np.digitize(np.std(np.diff(C,axis=1),axis=1),q).astype(np.int8)
     return {'rawsum':s,'sum':sb,'odd':odd,'band':band,'consec':con,'gap':gap},b
 
 def shape_code(a):
-    a=np.asarray(a); b=np.array([[np.sum(a<=9),np.sum((a>=10)&(a<=19)),np.sum((a>=20)&(a<=29)),np.sum((a>=30)&(a<=39)),np.sum(a>=40)]],dtype=np.int8)
+    a=np.asarray(a); b=np.array([[np.sum(a<=9),np.sum((a>=10)&(a<=19)),np.sum((a>=20)&(a<=29)),np.sum((a>=30)&(a<=39)),np.sum(a>=40)]],dtype=np.int32)
     return int(band_code_from_counts(b)[0])
 
 def shape_freq_codes(draws,t,w=500):
@@ -62,7 +62,6 @@ def main():
     rec=[]
     for draw in range(START,END+1):
         t=di[draw]
-        # Pre-draw number support ranking (same four agents as reduced-pool work).
         ss={}
         for h in (200,500,800):
             W_h=p.weights(t,h,actual,sizes,priors);ss[h]=p.stat_score(t,h,W_h,st_s,inc_s,draws,bonus,npref)
@@ -73,12 +72,10 @@ def main():
         for x in universe:inU[x]=1
         for x in S:inS[x]=1
         ucnt=inU[C].sum(1); scnt=inS[C].sum(1)
-        # Candidate-wise structural scenario: A>=2.5%, sum>=120, exact shape absent previous20.
         sf=shape_freq_codes(draws,t,500);recent={shape_code(draws[u]) for u in range(max(0,t-20),t)}
         allowed_codes=np.array([code for code,f in sf.items() if f>=A_THR and code not in recent],dtype=np.int32)
         mask=(ucnt==6)&(scnt<=M)&(st['rawsum']>=120)&np.isin(st['band'],allowed_codes)
         idx=np.flatnonzero(mask);Ct=C[idx]
-        # Canonical Stat_A here is A1/Stat500: rolling500, alpha75, clip +/-1.5.
         W=p.weights(t,500,actual,sizes,priors)
         prev=set(map(int,draws[t-1]));prev2=set(map(int,draws[t-2])) if t>=2 else set();pbonus=int(bonus[t-1]);c300=npref[t]-npref[max(0,t-300)];hot=set((np.lexsort((np.arange(1,44),-c300[1:]))+1)[:15])
         prev_l=np.zeros(44,np.uint8);prev2_l=np.zeros(44,np.uint8);hot_l=np.zeros(44,np.uint8)
