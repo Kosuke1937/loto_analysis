@@ -1,0 +1,29 @@
+name: Slim Mini Loto A-Dynamic Promotion
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/slim_miniloto_a_dynamic_promotion.py'
+      - '.github/workflows/slim-miniloto-a-dynamic-promotion.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  slim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/slim_miniloto_a_dynamic_promotion.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189824+github-actions[bot]@users.noreply.github.com'
+          git add data/miniloto-a-dynamic-promotion-slim.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Update slim A-Dynamic promotion summary'
+          git pull --rebase origin main
+          git push origin HEAD:main
