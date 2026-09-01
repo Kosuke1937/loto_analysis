@@ -3,6 +3,7 @@ import re
 
 ROOT=Path(__file__).resolve().parents[1]
 
+# Draw 1402 update trigger.
 # 1) canonical chunk used by history/trends pages
 p=ROOT/'data'/'miniloto-chunk-8.js'
 s=p.read_text(encoding='utf-8')
