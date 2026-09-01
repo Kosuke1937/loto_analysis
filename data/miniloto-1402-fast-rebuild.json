@@ -1,0 +1,389 @@
+{
+  "target_draw": 1402,
+  "history_last_draw": 1401,
+  "constraint": "sum<=110",
+  "initial_cap": 2,
+  "initial10": [
+    {
+      "no": 1,
+      "numbers": [
+        1,
+        2,
+        6,
+        30,
+        31
+      ],
+      "sum": 70,
+      "committee_rank": 92,
+      "stat_rank": 80,
+      "committee_score": 4.905768394470215,
+      "stat_score": 2.019545078277588,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 2,
+      "numbers": [
+        9,
+        11,
+        15,
+        30,
+        31
+      ],
+      "sum": 96,
+      "committee_rank": 91,
+      "stat_rank": 94,
+      "committee_score": 4.910445690155029,
+      "stat_score": 1.9750370979309082,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 3,
+      "numbers": [
+        1,
+        2,
+        3,
+        5,
+        11
+      ],
+      "sum": 22,
+      "committee_rank": 163,
+      "stat_rank": 182,
+      "committee_score": 4.505084037780762,
+      "stat_score": 1.7872042655944824,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 4,
+      "numbers": [
+        3,
+        25,
+        26,
+        27,
+        29
+      ],
+      "sum": 110,
+      "committee_rank": 697,
+      "stat_rank": 830,
+      "committee_score": 3.601618528366089,
+      "stat_score": 1.3334410190582275,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 5,
+      "numbers": [
+        5,
+        20,
+        21,
+        23,
+        29
+      ],
+      "sum": 98,
+      "committee_rank": 1004,
+      "stat_rank": 835,
+      "committee_score": 3.2586236000061035,
+      "stat_score": 1.331404685974121,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 6,
+      "numbers": [
+        4,
+        20,
+        21,
+        25,
+        26
+      ],
+      "sum": 96,
+      "committee_rank": 1268,
+      "stat_rank": 1363,
+      "committee_score": 3.0190820693969727,
+      "stat_score": 1.14208984375,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 7,
+      "numbers": [
+        7,
+        13,
+        16,
+        17,
+        19
+      ],
+      "sum": 72,
+      "committee_rank": 2073,
+      "stat_rank": 1745,
+      "committee_score": 2.5714826583862305,
+      "stat_score": 1.0474183559417725,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 8,
+      "numbers": [
+        7,
+        9,
+        23,
+        27,
+        28
+      ],
+      "sum": 94,
+      "committee_rank": 2781,
+      "stat_rank": 2332,
+      "committee_score": 2.3246278762817383,
+      "stat_score": 0.9387047290802002,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 9,
+      "numbers": [
+        6,
+        12,
+        17,
+        18,
+        19
+      ],
+      "sum": 72,
+      "committee_rank": 3294,
+      "stat_rank": 2763,
+      "committee_score": 2.1987733840942383,
+      "stat_score": 0.8832790851593018,
+      "max_overlap_initial": 5
+    },
+    {
+      "no": 10,
+      "numbers": [
+        4,
+        13,
+        15,
+        16,
+        18
+      ],
+      "sum": 66,
+      "committee_rank": 4029,
+      "stat_rank": 5127,
+      "committee_score": 2.061436891555786,
+      "stat_score": 0.7110340595245361,
+      "max_overlap_initial": 5
+    }
+  ],
+  "initial_union": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    11,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "initial_union_size": 26,
+  "rebuilt10": [
+    {
+      "no": 1,
+      "numbers": [
+        3,
+        6,
+        7,
+        15,
+        21
+      ],
+      "sum": 52,
+      "committee_rank": 11043,
+      "stat_rank": 8288,
+      "committee_score": 1.4913808107376099,
+      "stat_score": 0.5996875762939453,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 2,
+      "numbers": [
+        4,
+        5,
+        19,
+        27,
+        31
+      ],
+      "sum": 86,
+      "committee_rank": 13098,
+      "stat_rank": 15477,
+      "committee_score": 1.3967759609222412,
+      "stat_score": 0.4555748701095581,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 3,
+      "numbers": [
+        2,
+        15,
+        19,
+        23,
+        25
+      ],
+      "sum": 84,
+      "committee_rank": 36431,
+      "stat_rank": 28988,
+      "committee_score": 0.7558375597000122,
+      "stat_score": 0.29438501596450806,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 4,
+      "numbers": [
+        1,
+        15,
+        17,
+        20,
+        27
+      ],
+      "sum": 80,
+      "committee_rank": 41499,
+      "stat_rank": 42790,
+      "committee_score": 0.659550130367279,
+      "stat_score": 0.17747202515602112,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 5,
+      "numbers": [
+        3,
+        4,
+        17,
+        23,
+        30
+      ],
+      "sum": 77,
+      "committee_rank": 44103,
+      "stat_rank": 47192,
+      "committee_score": 0.6100426912307739,
+      "stat_score": 0.14635562896728516,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 6,
+      "numbers": [
+        12,
+        13,
+        26,
+        28,
+        31
+      ],
+      "sum": 110,
+      "committee_rank": 2686,
+      "stat_rank": 2317,
+      "committee_score": 2.350263833999634,
+      "stat_score": 0.9406810998916626,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 7,
+      "numbers": [
+        2,
+        4,
+        7,
+        12,
+        29
+      ],
+      "sum": 54,
+      "committee_rank": 25609,
+      "stat_rank": 23950,
+      "committee_score": 0.9964488744735718,
+      "stat_score": 0.3444676995277405,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 8,
+      "numbers": [
+        5,
+        7,
+        18,
+        26,
+        30
+      ],
+      "sum": 86,
+      "committee_rank": 111132,
+      "stat_rank": 112924,
+      "committee_score": -0.37959328293800354,
+      "stat_score": -0.2522209584712982,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 9,
+      "numbers": [
+        6,
+        11,
+        16,
+        23,
+        26
+      ],
+      "sum": 82,
+      "committee_rank": 117259,
+      "stat_rank": 120619,
+      "committee_score": -0.4731052815914154,
+      "stat_score": -0.3027167320251465,
+      "max_overlap_initial": 1
+    },
+    {
+      "no": 10,
+      "numbers": [
+        5,
+        6,
+        9,
+        13,
+        25
+      ],
+      "sum": 58,
+      "committee_rank": 142706,
+      "stat_rank": 137010,
+      "committee_score": -0.9533085823059082,
+      "stat_score": -0.4303738474845886,
+      "max_overlap_initial": 1
+    }
+  ],
+  "rebuilt_union": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    11,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "rebuilt_union_size": 26,
+  "method": "Initial = Committee primary + 0.20 Stat z blend with state cap diversification; Rebuild = same-number-union cross-cluster, new pair/triple novelty, low overlap to initial, plus weak Committee/Stat support; all sums <=110."
+}
