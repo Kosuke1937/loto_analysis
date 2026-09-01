@@ -34,12 +34,14 @@ t=H
 stat,core,committee=committee_score(t)
 stat_rank=ranks(stat); committee_rank=ranks(committee)
 sums=combos.sum(1)
-elig=np.where(sums<=110)[0]
-score_init=z(committee)+0.20*z(stat)
+# User constraints: practical center band, hard ceiling 105.
+elig=np.where((sums>=85)&(sums<=105))[0]
+# Keep Committee primary but make Stat materially stronger than previous 0.20.
+score_init=z(committee)+0.40*z(stat)
 ord_elig=elig[np.argsort(-score_init[elig],kind='stable')]
 base=[]; usedcap=None
 for cap in (2,3,4):
-    x=greedy(ord_elig[:8000],10,1,2,cap)
+    x=greedy(ord_elig[:10000],10,1,2,cap)
     if len(x)>=10: base=x[:10]; usedcap=cap; break
 if len(base)<10:
     base=list(map(int,ord_elig[:10])); usedcap=4
@@ -52,7 +54,7 @@ for j,q in enumerate(base_t):
 idxmap={tuple(map(int,q)):i for i,q in enumerate(combos)}
 rows=[]
 for q in itertools.combinations(union,5):
-    if sum(q)>110 or q in base_t: continue
+    if not (85<=sum(q)<=105) or q in base_t: continue
     idx=idxmap[q]
     prs=list(itertools.combinations(q,2)); trs=list(itertools.combinations(q,3))
     newp=sum(p not in base_pairs for p in prs); newt=sum(tr not in base_triples for tr in trs)
@@ -61,7 +63,8 @@ for q in itertools.combinations(union,5):
     rows.append((idx,q,newp,newt,parent_union,max_overlap))
 idxs=np.array([r[0] for r in rows],int)
 feat_newp=z([r[2] for r in rows]); feat_newt=z([r[3] for r in rows]); feat_parent=z([r[4] for r in rows]); feat_overlap=z([-r[5] for r in rows]); feat_comm=z(committee[idxs]); feat_stat=z(stat[idxs])
-reb_score=0.25*feat_newp+0.30*feat_newt+0.15*feat_parent+0.15*feat_overlap+0.05*feat_comm+0.10*feat_stat
+# Stronger Stat while preserving cross-cluster novelty.
+reb_score=0.18*feat_newp+0.22*feat_newt+0.12*feat_parent+0.13*feat_overlap+0.10*feat_comm+0.25*feat_stat
 order=np.argsort(-reb_score,kind='stable')
 rebuild=[]; pc=collections.Counter(); tc=collections.Counter(); nc=collections.Counter()
 for oi in order:
@@ -80,7 +83,7 @@ if len(rebuild)<10:
     used=set(rebuild)
     for oi in order:
         idx=int(idxs[oi]); q=tuple(map(int,combos[idx]))
-        if idx in used or max(len(set(q)&set(b)) for b in base_t)>3: continue
+        if idx in used or max(len(set(q)&set(b)) for b in base_t)>2: continue
         prs=list(itertools.combinations(q,2))
         if any(pc[p]>=2 for p in prs): continue
         if any(nc[n]>=4 for n in q): continue
@@ -89,11 +92,14 @@ if len(rebuild)<10:
         for n in q: nc[n]+=1
         if len(rebuild)>=10: break
 
+def band_shape(q):
+    return [sum(1<=n<=9 for n in q),sum(10<=n<=19 for n in q),sum(20<=n<=29 for n in q),sum(30<=n<=31 for n in q)]
+
 def info(ids,is_rebuild=False):
     out=[]
     for k,idx in enumerate(ids,1):
-        q=list(map(int,combos[idx])); out.append({'no':k,'numbers':q,'sum':int(sum(q)),'committee_rank':int(committee_rank[idx]),'stat_rank':int(stat_rank[idx]),'committee_score':float(committee[idx]),'stat_score':float(stat[idx]),'max_overlap_initial':int(max(len(set(q)&set(b)) for b in base_t)) if is_rebuild else 5})
+        q=list(map(int,combos[idx])); out.append({'no':k,'numbers':q,'sum':int(sum(q)),'band_shape':'-'.join(map(str,band_shape(q))),'committee_rank':int(committee_rank[idx]),'stat_rank':int(stat_rank[idx]),'committee_score':float(committee[idx]),'stat_score':float(stat[idx]),'max_overlap_initial':int(max(len(set(q)&set(b)) for b in base_t)) if is_rebuild else 5})
     return out
-res={'target_draw':H+1,'history_last_draw':H,'constraint':'sum<=110','initial_cap':usedcap,'initial10':info(base),'initial_union':union,'initial_union_size':len(union),'rebuilt10':info(rebuild,True),'rebuilt_union':sorted(set().union(*[set(map(int,combos[i])) for i in rebuild])),'rebuilt_union_size':len(set().union(*[set(map(int,combos[i])) for i in rebuild])),'method':'Initial = Committee primary + 0.20 Stat z blend with state cap diversification; Rebuild = same-number-union cross-cluster, new pair/triple novelty, low overlap to initial, plus weak Committee/Stat support; all sums <=110.'}
+res={'target_draw':H+1,'history_last_draw':H,'constraint':'85<=sum<=105','initial_cap':usedcap,'initial10':info(base),'initial_union':union,'initial_union_size':len(union),'rebuilt10':info(rebuild,True),'rebuilt_union':sorted(set().union(*[set(map(int,combos[i])) for i in rebuild])),'rebuilt_union_size':len(set().union(*[set(map(int,combos[i])) for i in rebuild])),'method':'Initial = Committee + 0.40 Stat z blend under sum 85-105. Rebuild = same-union cross-cluster with new pair/triple novelty, max overlap <=2, plus stronger Stat (0.25) and weak Committee; all sums 85-105.'}
 p=ROOT/'data'/'miniloto-1402-fast-rebuild.json'; p.write_text(json.dumps(res,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(res,ensure_ascii=False,indent=2))
