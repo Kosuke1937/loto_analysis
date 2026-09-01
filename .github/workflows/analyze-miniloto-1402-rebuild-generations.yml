@@ -24,3 +24,4 @@ jobs:
           git add data/miniloto-1402-rebuild-generations.json
           git diff --cached --quiet || git commit -m 'Analyze Mini Loto 1402 rebuild generations'
           git push
+# trigger: 2026-09-01
