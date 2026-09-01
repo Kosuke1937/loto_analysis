@@ -1,0 +1,513 @@
+{
+  "protocol": {
+    "A_layer_only": true,
+    "top100": "A-Stat Top100",
+    "development": [
+      800,
+      999
+    ],
+    "validation": [
+      1000,
+      1199
+    ],
+    "diagnostic": [
+      1200,
+      1399
+    ],
+    "excluded": [
+      1400,
+      1401
+    ]
+  },
+  "random_reference": {
+    "num_top5": 0.8064516129032258,
+    "num_top10": 1.6129032258064515,
+    "num_top15": 2.4193548387096775,
+    "pair_top10": 0.21505376344086022,
+    "pair_top30": 0.6451612903225806,
+    "pair_top50": 1.075268817204301,
+    "tri_top10": 0.02224694104560623,
+    "tri_top30": 0.06674082313681869,
+    "tri_top50": 0.11123470522803114
+  },
+  "selected_on_development": "m12_triple",
+  "blocks": {
+    "development_800_999": {
+      "A_draws": 101,
+      "support": {
+        "winner_num_top5_avg": 0.7128712871287128,
+        "winner_num_top10_avg": 1.4851485148514851,
+        "winner_num_top15_avg": 2.376237623762376,
+        "winner_num_mean_rank": 16.42970297029703,
+        "winner_pair_top10_avg": 0.16831683168316833,
+        "winner_pair_top30_avg": 0.5544554455445545,
+        "winner_pair_top50_avg": 0.9603960396039604,
+        "winner_pair_mean_rank": 236.25643564356437,
+        "winner_tri_top10_avg": 0.0,
+        "winner_tri_top30_avg": 0.039603960396039604,
+        "winner_tri_top50_avg": 0.06930693069306931,
+        "winner_tri_mean_rank": 2164.458415841584
+      },
+      "assembly": {
+        "m8_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 3,
+          "avg_best": 1.118811881188119
+        },
+        "m8_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 3,
+          "avg_best": 1.118811881188119
+        },
+        "m8_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 3,
+          "avg_best": 1.118811881188119
+        },
+        "m8_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 3,
+          "avg_best": 1.118811881188119
+        },
+        "m8_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 3,
+          "avg_best": 1.118811881188119
+        },
+        "m10_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 4,
+          "avg_best": 1.2376237623762376
+        },
+        "m10_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 4,
+          "avg_best": 1.2871287128712872
+        },
+        "m10_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 5,
+          "avg_best": 1.306930693069307
+        },
+        "m10_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 4,
+          "avg_best": 1.2673267326732673
+        },
+        "m10_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 5,
+          "avg_best": 1.306930693069307
+        },
+        "m12_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 3,
+          "avg_best": 1.2772277227722773
+        },
+        "m12_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 6,
+          "avg_best": 1.3564356435643565
+        },
+        "m12_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 8,
+          "avg_best": 1.396039603960396
+        },
+        "m12_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 6,
+          "avg_best": 1.3465346534653466
+        },
+        "m12_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 7,
+          "avg_best": 1.386138613861386
+        },
+        "m15_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 4,
+          "avg_best": 1.316831683168317
+        },
+        "m15_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 6,
+          "avg_best": 1.4356435643564356
+        },
+        "m15_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 8,
+          "avg_best": 1.4554455445544554
+        },
+        "m15_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 6,
+          "avg_best": 1.4059405940594059
+        },
+        "m15_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 7,
+          "avg_best": 1.4554455445544554
+        }
+      }
+    },
+    "validation_1000_1199": {
+      "A_draws": 108,
+      "support": {
+        "winner_num_top5_avg": 0.75,
+        "winner_num_top10_avg": 1.4444444444444444,
+        "winner_num_top15_avg": 2.388888888888889,
+        "winner_num_mean_rank": 16.168518518518518,
+        "winner_pair_top10_avg": 0.12962962962962962,
+        "winner_pair_top30_avg": 0.5555555555555556,
+        "winner_pair_top50_avg": 0.8981481481481481,
+        "winner_pair_mean_rank": 228.37129629629624,
+        "winner_tri_top10_avg": 0.009259259259259259,
+        "winner_tri_top30_avg": 0.06481481481481481,
+        "winner_tri_top50_avg": 0.12037037037037036,
+        "winner_tri_mean_rank": 2138.702777777778
+      },
+      "assembly": {
+        "m8_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 7,
+          "avg_best": 1.0833333333333333
+        },
+        "m8_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 6,
+          "avg_best": 1.0833333333333333
+        },
+        "m8_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 5,
+          "avg_best": 1.0648148148148149
+        },
+        "m8_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 6,
+          "avg_best": 1.0833333333333333
+        },
+        "m8_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 6,
+          "avg_best": 1.0740740740740742
+        },
+        "m10_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 8,
+          "avg_best": 1.3055555555555556
+        },
+        "m10_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 8,
+          "avg_best": 1.3240740740740742
+        },
+        "m10_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 2,
+          "best3plus": 8,
+          "avg_best": 1.3240740740740742
+        },
+        "m10_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 8,
+          "avg_best": 1.3240740740740742
+        },
+        "m10_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 2,
+          "best3plus": 7,
+          "avg_best": 1.3333333333333333
+        },
+        "m12_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 9,
+          "avg_best": 1.3425925925925926
+        },
+        "m12_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 7,
+          "avg_best": 1.3888888888888888
+        },
+        "m12_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 8,
+          "avg_best": 1.4166666666666667
+        },
+        "m12_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 8,
+          "avg_best": 1.3981481481481481
+        },
+        "m12_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 7,
+          "avg_best": 1.3888888888888888
+        },
+        "m15_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 9,
+          "avg_best": 1.4074074074074074
+        },
+        "m15_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 6,
+          "avg_best": 1.4259259259259258
+        },
+        "m15_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 9,
+          "avg_best": 1.4537037037037037
+        },
+        "m15_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 7,
+          "avg_best": 1.4444444444444444
+        },
+        "m15_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 8,
+          "avg_best": 1.4444444444444444
+        }
+      }
+    },
+    "diagnostic_1200_1399": {
+      "A_draws": 101,
+      "support": {
+        "winner_num_top5_avg": 0.801980198019802,
+        "winner_num_top10_avg": 1.603960396039604,
+        "winner_num_top15_avg": 2.3267326732673266,
+        "winner_num_mean_rank": 16.41782178217822,
+        "winner_pair_top10_avg": 0.2079207920792079,
+        "winner_pair_top30_avg": 0.5643564356435643,
+        "winner_pair_top50_avg": 0.9702970297029703,
+        "winner_pair_mean_rank": 233.33366336633665,
+        "winner_tri_top10_avg": 0.019801980198019802,
+        "winner_tri_top30_avg": 0.0297029702970297,
+        "winner_tri_top50_avg": 0.07920792079207921,
+        "winner_tri_mean_rank": 2145.3326732673263
+      },
+      "assembly": {
+        "m8_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 2,
+          "avg_best": 0.9603960396039604
+        },
+        "m8_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 2,
+          "avg_best": 0.9504950495049505
+        },
+        "m8_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 2,
+          "avg_best": 0.9504950495049505
+        },
+        "m8_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 2,
+          "avg_best": 0.9504950495049505
+        },
+        "m8_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 2,
+          "avg_best": 0.9504950495049505
+        },
+        "m10_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 4,
+          "avg_best": 1.3267326732673268
+        },
+        "m10_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 4,
+          "avg_best": 1.2871287128712872
+        },
+        "m10_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 5,
+          "avg_best": 1.2673267326732673
+        },
+        "m10_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 4,
+          "avg_best": 1.2772277227722773
+        },
+        "m10_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 5,
+          "avg_best": 1.2871287128712872
+        },
+        "m12_num": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 7,
+          "avg_best": 1.4059405940594059
+        },
+        "m12_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 8,
+          "avg_best": 1.386138613861386
+        },
+        "m12_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 7,
+          "avg_best": 1.3762376237623761
+        },
+        "m12_num_pair": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 8,
+          "avg_best": 1.3663366336633664
+        },
+        "m12_num_pair_triple": {
+          "pool_has_winner": 0,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 7,
+          "avg_best": 1.3762376237623761
+        },
+        "m15_num": {
+          "pool_has_winner": 1,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 6,
+          "avg_best": 1.4455445544554455
+        },
+        "m15_pair": {
+          "pool_has_winner": 1,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 7,
+          "avg_best": 1.4158415841584158
+        },
+        "m15_triple": {
+          "pool_has_winner": 1,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 8,
+          "avg_best": 1.396039603960396
+        },
+        "m15_num_pair": {
+          "pool_has_winner": 1,
+          "exact5": 0,
+          "best4plus": 1,
+          "best3plus": 7,
+          "avg_best": 1.386138613861386
+        },
+        "m15_num_pair_triple": {
+          "pool_has_winner": 1,
+          "exact5": 0,
+          "best4plus": 0,
+          "best3plus": 7,
+          "avg_best": 1.396039603960396
+        }
+      }
+    }
+  }
+}
