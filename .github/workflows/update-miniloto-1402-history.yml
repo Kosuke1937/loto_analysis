@@ -1,0 +1,25 @@
+name: Update Mini Loto 1402 history
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/update_miniloto_1402_history.py'
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/update_miniloto_1402_history.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if ! git diff --quiet; then
+            git add data/miniloto-chunk-8.js miniloto-history-v4.html miniloto-trends.html miniloto.html
+            git commit -m 'Update Mini Loto history and trends through draw 1402'
+            git push
+          fi
