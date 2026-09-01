@@ -1,0 +1,305 @@
+{
+  "draw": 1402,
+  "method": "exactly 3 numbers shared with at least one initial ticket; replace 2 numbers from initial union; sum<=105; score=0.45 zStat + 0.30 zCommittee + 0.25 parent-quality; portfolio pair/number diversification",
+  "history_used_through": 1401,
+  "initial10": [
+    [
+      9,
+      11,
+      15,
+      30,
+      31
+    ],
+    [
+      1,
+      18,
+      19,
+      30,
+      31
+    ],
+    [
+      1,
+      21,
+      23,
+      25,
+      28
+    ],
+    [
+      5,
+      20,
+      21,
+      23,
+      29
+    ],
+    [
+      3,
+      20,
+      23,
+      25,
+      27
+    ],
+    [
+      7,
+      9,
+      26,
+      27,
+      29
+    ],
+    [
+      4,
+      20,
+      21,
+      25,
+      26
+    ],
+    [
+      6,
+      8,
+      27,
+      28,
+      29
+    ],
+    [
+      3,
+      17,
+      19,
+      28,
+      31
+    ],
+    [
+      7,
+      14,
+      19,
+      26,
+      30
+    ]
+  ],
+  "initial_union": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20,
+    21,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "candidate_count": 12131,
+  "winner": [
+    1,
+    4,
+    20,
+    25,
+    29
+  ],
+  "winner_eligible": true,
+  "winner_raw_rank": 7823,
+  "winner_selected_position": null,
+  "rebuilt10": [
+    {
+      "no": 1,
+      "numbers": [
+        1,
+        5,
+        6,
+        30,
+        31
+      ],
+      "sum": 73,
+      "stat_rank": 97,
+      "committee_rank": 88,
+      "parent_tickets": [
+        2
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 1
+    },
+    {
+      "no": 2,
+      "numbers": [
+        3,
+        15,
+        19,
+        30,
+        31
+      ],
+      "sum": 98,
+      "stat_rank": 119,
+      "committee_rank": 139,
+      "parent_tickets": [
+        1,
+        2,
+        9
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 0
+    },
+    {
+      "no": 3,
+      "numbers": [
+        1,
+        21,
+        23,
+        26,
+        27
+      ],
+      "sum": 98,
+      "stat_rank": 911,
+      "committee_rank": 1051,
+      "parent_tickets": [
+        3
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 1
+    },
+    {
+      "no": 4,
+      "numbers": [
+        7,
+        20,
+        21,
+        23,
+        25
+      ],
+      "sum": 96,
+      "stat_rank": 1024,
+      "committee_rank": 1086,
+      "parent_tickets": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 2
+    },
+    {
+      "no": 5,
+      "numbers": [
+        5,
+        9,
+        11,
+        14,
+        31
+      ],
+      "sum": 70,
+      "stat_rank": 2084,
+      "committee_rank": 1813,
+      "parent_tickets": [
+        1
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 0
+    },
+    {
+      "no": 6,
+      "numbers": [
+        1,
+        18,
+        21,
+        25,
+        31
+      ],
+      "sum": 96,
+      "stat_rank": 2148,
+      "committee_rank": 1712,
+      "parent_tickets": [
+        2,
+        3
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 2
+    },
+    {
+      "no": 7,
+      "numbers": [
+        7,
+        9,
+        23,
+        28,
+        29
+      ],
+      "sum": 96,
+      "stat_rank": 1121,
+      "committee_rank": 1231,
+      "parent_tickets": [
+        6
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 1
+    },
+    {
+      "no": 8,
+      "numbers": [
+        1,
+        20,
+        25,
+        26,
+        27
+      ],
+      "sum": 99,
+      "stat_rank": 1221,
+      "committee_rank": 1155,
+      "parent_tickets": [
+        5,
+        7
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 3
+    },
+    {
+      "no": 9,
+      "numbers": [
+        5,
+        9,
+        27,
+        28,
+        29
+      ],
+      "sum": 98,
+      "stat_rank": 1438,
+      "committee_rank": 1381,
+      "parent_tickets": [
+        6,
+        8
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 1
+    },
+    {
+      "no": 10,
+      "numbers": [
+        7,
+        8,
+        25,
+        27,
+        29
+      ],
+      "sum": 96,
+      "stat_rank": 1734,
+      "committee_rank": 1527,
+      "parent_tickets": [
+        6,
+        8
+      ],
+      "max_overlap_initial": 3,
+      "winner_match": 2
+    }
+  ]
+}
