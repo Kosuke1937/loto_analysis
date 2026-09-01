@@ -1,0 +1,27 @@
+{
+  "draw": 1402,
+  "winner": [
+    1,
+    4,
+    20,
+    25,
+    29
+  ],
+  "winner_sum": 79,
+  "score": "z(Committee)+0.40*z(Stat)",
+  "original_85_105": [
+    null,
+    54241
+  ],
+  "revised_sum_le_105": [
+    153477,
+    154923
+  ],
+  "unrestricted_all_169911": [
+    168107,
+    169911
+  ],
+  "winner_stat_rank_all": 168324,
+  "winner_committee_rank_all": 167919,
+  "note": "Ranks use only history through draw 1401 to construct scores. Winner is used only afterward to locate its position."
+}
