@@ -68,7 +68,6 @@ def build_candidates(t,stat,comm,base,sum_cap=None):
  idxs=np.array([r[0] for r in rows],int)
  vals={k:z([r[j] for r in rows]) for k,j in [('mo',1),('parents',2),('oldp',3),('oldt',4),('newp',5),('newt',6),('hist',7)]}
  vals['stat']=z(stat[idxs]);vals['comm']=z(comm[idxs])
- # Fixed structural scores; no winner information is used.
  vals['core']=0.30*vals['oldt']+0.15*vals['oldp']+0.20*vals['comm']+0.20*vals['stat']+0.15*vals['hist']
  vals['pair']=0.20*vals['oldp']+0.20*vals['parents']+0.20*vals['newp']+0.15*vals['comm']+0.15*vals['stat']+0.10*vals['hist']
  vals['novel']=0.25*vals['newp']+0.25*vals['newt']+0.20*vals['parents']+0.15*vals['comm']+0.15*vals['stat']
@@ -77,13 +76,8 @@ def select_lane(rows,vals,base,counts=(4,3,3),union_reward=.35):
  idxs=np.array([r[0] for r in rows],int);meta={r[0]:r for r in rows};chosen=[];used=set();covered=set();pc=collections.Counter();nc=collections.Counter()
  lanes=[('core',counts[0],lambda r:r[1]>=3),('pair',counts[1],lambda r:r[1]>=2),('novel',counts[2],lambda r:True)]
  for lname,K,pred in lanes:
-  score=vals[lname].copy();order=np.argsort(-score,kind='stable')
-  got=0
-  for oi in order:
-   idx=int(idxs[oi]);r=meta[idx];q=tuple(map(int,combos[idx]))
-   if idx in used or not pred(r):continue
-   uncovered=sum(n not in covered for n in q);adj=float(score[oi])+union_reward*uncovered
-   # choose from a small forward window by adjusted coverage to avoid pure rank lock-in
+  score=vals[lname].copy();order=np.argsort(-score,kind='stable');got=0
+  while got<K:
    cand=[]
    for oj in order[:min(400,len(order))]:
     j=int(idxs[oj]);rr=meta[j];qq=tuple(map(int,combos[j]))
@@ -95,8 +89,6 @@ def select_lane(rows,vals,base,counts=(4,3,3),union_reward=.35):
    for p in itertools.combinations(q,2):pc[p]+=1
    for n in q:nc[n]+=1
    got+=1
-   if got>=K:break
- # fallback by Committee if lane constraints underfill
  if len(chosen)<10:
   order=np.argsort(-vals['comm'],kind='stable')
   for oi in order:
@@ -110,7 +102,6 @@ def metrics(ids,win):
  for q in ts:pairs.update(itertools.combinations(sorted(q),2));triples.update(itertools.combinations(sorted(q),3))
  wp=set(itertools.combinations(sorted(ws),2));wt=set(itertools.combinations(sorted(ws),3))
  return {'best':max(len(ws&q) for q in ts),'num':len(ws&u),'pair':len(wp&pairs),'triple':len(wt&triples)}
-# Candidate configurations selected ONLY on development 1000-1199.
 CONFIGS=[]
 for cap in (None,105):
  for counts in ((4,3,3),(5,3,2),(3,3,4)):
@@ -123,14 +114,12 @@ def summary(rows):
   out[side]={'3plus':sum(r[side]['best']>=3 for r in rows),'4plus':sum(r[side]['best']>=4 for r in rows),'5':sum(r[side]['best']>=5 for r in rows),'num5':sum(r[side]['num']==5 for r in rows),'mean_num':float(np.mean([r[side]['num'] for r in rows])),'mean_pair':float(np.mean([r[side]['pair'] for r in rows])),'mean_triple':float(np.mean([r[side]['triple'] for r in rows]))}
  out['paired']={'gain3':sum(r['new']['best']>=3 and r['base']['best']<3 for r in rows),'loss3':sum(r['new']['best']<3 and r['base']['best']>=3 for r in rows),'gain4':sum(r['new']['best']>=4 and r['base']['best']<4 for r in rows),'loss4':sum(r['new']['best']<4 and r['base']['best']>=4 for r in rows),'gain5':sum(r['new']['best']>=5 and r['base']['best']<5 for r in rows),'loss5':sum(r['new']['best']<5 and r['base']['best']>=5 for r in rows)}
  return out
-# development
 scores=[]
 for ci,cfg in enumerate(CONFIGS):
  rows=[eval_draw(rr,cfg) for rr in range(1000,1200)];s=summary(rows);key=(s['new']['5'],s['new']['4plus'],s['new']['3plus'],s['new']['num5'],s['new']['mean_pair'],s['new']['mean_triple'],-s['paired']['loss3']);scores.append((key,cfg,s));print('DEV',ci,cfg,s,flush=True)
 best=max(scores,key=lambda x:x[0]);cfg=best[1]
 print('SELECTED',cfg,best[2],flush=True)
 test=[eval_draw(rr,cfg) for rr in range(1200,1400)];ts=summary(test)
-# Untouched prospective diagnostics only, not selection/tuning.
 pros=[]
 for rr in (1400,1401,1402):
  if rr<=len(draws):pros.append(eval_draw(rr,cfg))
