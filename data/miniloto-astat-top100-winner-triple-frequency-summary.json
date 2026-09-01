@@ -1,0 +1,64 @@
+{
+  "definition": "A-Stat Top100 only. For each actual winning 5-number set, count frequency of each of its 10 possible 3-number subsets among the Top100 tickets.",
+  "development_800_999": {
+    "n_A_draws": 101,
+    "max_same_winner_triple_frequency_mean": 1.2475247524752475,
+    "max_same_winner_triple_frequency_median": 0.0,
+    "draws_maxfreq_ge_2": 28,
+    "draws_maxfreq_ge_3": 18,
+    "draws_maxfreq_ge_5": 8,
+    "avg_distinct_winner_triples_present": 0.8811881188118812,
+    "avg_total_winner_triple_occurrences": 1.8613861386138615,
+    "max_frequency_histogram": {
+      "0": 52,
+      "1": 21,
+      "2": 10,
+      "3": 6,
+      "4": 4,
+      "5": 2,
+      "6": 3,
+      "7": 1,
+      "8": 2
+    }
+  },
+  "validation_1000_1199": {
+    "n_A_draws": 108,
+    "max_same_winner_triple_frequency_mean": 1.1481481481481481,
+    "max_same_winner_triple_frequency_median": 1.0,
+    "draws_maxfreq_ge_2": 29,
+    "draws_maxfreq_ge_3": 13,
+    "draws_maxfreq_ge_5": 5,
+    "avg_distinct_winner_triples_present": 1.3055555555555556,
+    "avg_total_winner_triple_occurrences": 2.240740740740741,
+    "max_frequency_histogram": {
+      "0": 47,
+      "1": 32,
+      "2": 16,
+      "3": 6,
+      "4": 2,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 2
+    }
+  },
+  "diagnostic_1200_1399": {
+    "n_A_draws": 101,
+    "max_same_winner_triple_frequency_mean": 1.198019801980198,
+    "max_same_winner_triple_frequency_median": 1.0,
+    "draws_maxfreq_ge_2": 29,
+    "draws_maxfreq_ge_3": 18,
+    "draws_maxfreq_ge_5": 4,
+    "avg_distinct_winner_triples_present": 1.108910891089109,
+    "avg_total_winner_triple_occurrences": 2.01980198019802,
+    "max_frequency_histogram": {
+      "0": 40,
+      "1": 32,
+      "2": 11,
+      "3": 10,
+      "4": 4,
+      "5": 3,
+      "6": 1
+    }
+  }
+}
