@@ -1,1 +1,1 @@
-window.MINI_CHUNKS=window.MINI_CHUNKS||[];window.MINI_CHUNKS.push([[1401,"2026/08/25",15,17,23,26,31,22,17]]);
+window.MINI_CHUNKS=window.MINI_CHUNKS||[];window.MINI_CHUNKS.push([[1401,"2026/08/25",15,17,23,26,31,22,17],[1402,"2026/09/01",1,4,20,25,29,22,7]]);
