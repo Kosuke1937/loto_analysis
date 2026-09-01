@@ -1,0 +1,217 @@
+{
+  "draw": 1402,
+  "winner": [
+    1,
+    4,
+    20,
+    25,
+    29
+  ],
+  "initial10": [
+    [
+      9,
+      11,
+      15,
+      30,
+      31
+    ],
+    [
+      1,
+      18,
+      19,
+      30,
+      31
+    ],
+    [
+      1,
+      21,
+      23,
+      25,
+      28
+    ],
+    [
+      5,
+      20,
+      21,
+      23,
+      29
+    ],
+    [
+      3,
+      20,
+      23,
+      25,
+      27
+    ],
+    [
+      7,
+      9,
+      26,
+      27,
+      29
+    ],
+    [
+      4,
+      20,
+      21,
+      25,
+      26
+    ],
+    [
+      6,
+      8,
+      27,
+      28,
+      29
+    ],
+    [
+      3,
+      17,
+      19,
+      28,
+      31
+    ],
+    [
+      7,
+      14,
+      19,
+      26,
+      30
+    ]
+  ],
+  "interpretation": "negative novelty_scale rewards retention of pairs/triples already present in the initial10; this is post-hoc oracle sensitivity, not forward-valid tuning.",
+  "oracle_best": null,
+  "top10_by_raw_rank": [
+    {
+      "name": "CORE_ov3_stat0.15_nov-3.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 3,
+      "stat_weight": 0.15,
+      "novelty_scale": -3.0,
+      "candidate_count": 36610,
+      "winner_eligible": true,
+      "winner_raw_rank": 4669,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov3_stat0.25_nov-3.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 3,
+      "stat_weight": 0.25,
+      "novelty_scale": -3.0,
+      "candidate_count": 36610,
+      "winner_eligible": true,
+      "winner_raw_rank": 5031,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov3_stat0.15_nov-2.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 3,
+      "stat_weight": 0.15,
+      "novelty_scale": -2.0,
+      "candidate_count": 36610,
+      "winner_eligible": true,
+      "winner_raw_rank": 5197,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov3_stat0.35_nov-3.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 3,
+      "stat_weight": 0.35,
+      "novelty_scale": -3.0,
+      "candidate_count": 36610,
+      "winner_eligible": true,
+      "winner_raw_rank": 5322,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov5_stat0.15_nov-3.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 5,
+      "stat_weight": 0.15,
+      "novelty_scale": -3.0,
+      "candidate_count": 37371,
+      "winner_eligible": true,
+      "winner_raw_rank": 5502,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov3_stat0.25_nov-2.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 3,
+      "stat_weight": 0.25,
+      "novelty_scale": -2.0,
+      "candidate_count": 36610,
+      "winner_eligible": true,
+      "winner_raw_rank": 5653,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov3_stat0.45_nov-3.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 3,
+      "stat_weight": 0.45,
+      "novelty_scale": -3.0,
+      "candidate_count": 36610,
+      "winner_eligible": true,
+      "winner_raw_rank": 5653,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov3_stat0.15_nov-1.5",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 3,
+      "stat_weight": 0.15,
+      "novelty_scale": -1.5,
+      "candidate_count": 36610,
+      "winner_eligible": true,
+      "winner_raw_rank": 5736,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov5_stat0.25_nov-3.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 5,
+      "stat_weight": 0.25,
+      "novelty_scale": -3.0,
+      "candidate_count": 37371,
+      "winner_eligible": true,
+      "winner_raw_rank": 5859,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    },
+    {
+      "name": "CORE_ov3_stat0.60_nov-3.0",
+      "min_sum": 0,
+      "max_sum": 105,
+      "max_overlap": 3,
+      "stat_weight": 0.6,
+      "novelty_scale": -3.0,
+      "candidate_count": 36610,
+      "winner_eligible": true,
+      "winner_raw_rank": 6086,
+      "winner_generation": null,
+      "winner_position_in_generation": null
+    }
+  ],
+  "variants_within_200_generations": []
+}
