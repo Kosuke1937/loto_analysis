@@ -1,0 +1,22 @@
+name: Loto6 Rebuild 2134 Audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research/loto6_rebuild_2134_audit.py'
+      - '.github/workflows/loto6-rebuild-2134-audit.yml'
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - run: python research/loto6_rebuild_2134_audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-rebuild-2134-audit
+          path: research/results/loto6_rebuild_2134_audit.json
