@@ -16,43 +16,58 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Compact tables
+      - name: Compact trend tables
         run: |
           python - <<'PY'
           from pathlib import Path
-          marker = '/* compact-table-ui-v1 */'
-          css = '''/* compact-table-ui-v1 */
+          marker = '/* compact-table-ui-v2 */'
+          css = '''/* compact-table-ui-v2 */
           table{table-layout:auto}
-          th,td{padding:5px 7px!important;line-height:1.2!important;height:auto!important;min-height:0!important}
+          th,td{padding:4px 6px!important;line-height:1.12!important;height:auto!important;min-height:0!important}
           th{font-weight:700}
           .tablewrap,.tableWrap{max-width:100%;-webkit-overflow-scrolling:touch}
           @media(max-width:560px){
-          .tablewrap,.tableWrap{border-radius:10px!important}
-          table{min-width:0!important;width:100%!important}
-          th,td{padding:4px 5px!important;font-size:10px!important;line-height:1.15!important}
-          th{font-size:9.5px!important}
-          #number table{table-layout:fixed!important}
-          #number th,#number td{text-align:center!important}
-          #number th:nth-child(1),#number td:nth-child(1){width:16%!important}
-          #number th:nth-child(2),#number td:nth-child(2){width:22%!important}
-          #number th:nth-child(3),#number td:nth-child(3){width:28%!important}
-          #number th:nth-child(4),#number td:nth-child(4){width:34%!important}
-          .record table{min-width:520px!important}
+            .tablewrap,.tableWrap{border-radius:10px!important}
+            th,td{padding:2px 4px!important;font-size:9.5px!important;line-height:1.08!important}
+            th{font-size:9px!important}
+            #band .tablewrap,#number .tablewrap{overflow-x:hidden!important}
+            #band table,#number table{table-layout:fixed!important;min-width:0!important;width:100%!important}
+            #band th,#band td,#number th,#number td{text-align:center!important;overflow:hidden;text-overflow:ellipsis}
+            #band th:nth-child(1),#band td:nth-child(1){width:30%!important}
+            #band th:nth-child(2),#band td:nth-child(2){width:18%!important}
+            #band th:nth-child(3),#band td:nth-child(3){width:20%!important}
+            #band th:nth-child(4),#band td:nth-child(4){width:20%!important}
+            #band th:nth-child(5),#band td:nth-child(5){width:12%!important}
+            #number th:nth-child(1),#number td:nth-child(1){width:16%!important}
+            #number th:nth-child(2),#number td:nth-child(2){width:22%!important}
+            #number th:nth-child(3),#number td:nth-child(3){width:28%!important}
+            #number th:nth-child(4),#number td:nth-child(4){width:34%!important}
+            .record table{min-width:500px!important}
           }'''
-          changed = []
+
+          changed=[]
           for p in Path('.').rglob('*.html'):
-              s = p.read_text(encoding='utf-8')
-              if '<table' not in s or marker in s:
+              s=p.read_text(encoding='utf-8')
+              if '<table' not in s:
                   continue
-              if '</style>' in s:
-                  s = s.replace('</style>', css + '</style>', 1)
-              elif '</head>' in s:
-                  s = s.replace('</head>', '<style>' + css + '</style></head>', 1)
-              else:
-                  continue
-              p.write_text(s, encoding='utf-8')
+              # Replace the old injected block when present.
+              old='/* compact-table-ui-v1 */'
+              if old in s:
+                  start=s.index(old)
+                  end=s.find('</style>',start)
+                  if end!=-1:
+                      s=s[:start]+css+s[end:]
+              elif marker not in s:
+                  if '</style>' in s:
+                      s=s.replace('</style>',css+'</style>',1)
+                  elif '</head>' in s:
+                      s=s.replace('</head>','<style>'+css+'</style></head>',1)
+              # Shorter mobile-friendly headings on trend tables.
+              s=s.replace('<th>期間内回数</th><th>期間内比率</th><th>長期頻度</th>','<th>回数</th><th>比率</th><th>長期</th>')
+              s=s.replace('<th>出現回数</th><th>1回あたり比率</th>','<th>回数</th><th>比率</th>')
+              p.write_text(s,encoding='utf-8')
               changed.append(str(p))
-          print('updated:', changed)
+          print('updated:',changed)
           PY
       - name: Commit changes
         run: |
@@ -62,5 +77,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'Compact table UI across app pages'
+          git commit -m 'Tighten band and number trend tables'
           git push
