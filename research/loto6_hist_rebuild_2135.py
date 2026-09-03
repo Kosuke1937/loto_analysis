@@ -47,17 +47,19 @@ def direct_core(C,pairc):
  return c5,c4
 
 def sum_bin(s):
- if s<=115:return 'L<=115'
+ if 85<=s<=115:return 'L85-115'
  if s<=135:return 'M116-135'
  if s<=155:return 'C136-155'
  if s<=175:return 'H156-175'
  return 'X>=176'
 
 def choose_diverse(order,combs,meta,n=10):
- quota={'L<=115':2,'M116-135':2,'C136-155':3,'H156-175':2,'X>=176':1}
+ quota={'L85-115':2,'M116-135':2,'C136-155':3,'H156-175':2,'X>=176':1}
  usedbin=Counter();shape_count=Counter();num_count=Counter();pair_count=Counter();triple_count=Counter();sel=[]
  for i in order:
-  row=tuple(combs[int(i)]);sh=meta[int(i)]['shape'];sb=sum_bin(sum(row))
+  row=tuple(combs[int(i)]);s=sum(row)
+  if s<85:continue
+  sh=meta[int(i)]['shape'];sb=sum_bin(s)
   if usedbin[sb]>=quota[sb] or shape_count[sh]>=2:continue
   pairs=list(itertools.combinations(row,2));triples=list(itertools.combinations(row,3))
   if any(pair_count[x]>=2 for x in pairs) or any(triple_count[x]>=1 for x in triples) or any(num_count[x]>=4 for x in row):continue
@@ -69,6 +71,8 @@ def choose_diverse(order,combs,meta,n=10):
  if len(sel)<n:
   for i in order:
    if int(i) in sel:continue
+   row=tuple(combs[int(i)])
+   if sum(row)<85:continue
    sh=meta[int(i)]['shape']
    if shape_count[sh]>=2:continue
    sel.append(int(i));shape_count[sh]+=1
@@ -114,6 +118,6 @@ def main():
  tickets=[]
  for i in sel:
   m=meta[i];tickets.append({'nums':list(combs[i]),'sum':sum(combs[i]),'sum_bin':sum_bin(sum(combs[i])),'shape':list(m['shape']),'shape_long_freq':shall[m['shape']]/t,'shape_21_50_count':sh21_50[m['shape']],'shape_50_count':sh50[m['shape']],'mode':m['mode'],'core_count':m['ncore'],'satellite_count':m['nsat'],'prev_overlap':len(set(combs[i])&prev),'stat_score':float(stat[i]),'core5':float(dc5[i]),'core4':float(dc4[i]),'committee_score':float(score[i]),'rebuild_rank':int(np.where(order==i)[0][0])+1})
- out={'target_draw':2135,'history_last':2134,'method':'Stat200/500/800 + Committee Top500 support -> recent20 Core22 + Satellite6 -> temporal band rebuild -> sum/shape diversified Committee rerank','formula':'Z(Stat500)+0.20Z(5core)+0.15Z(4core), z ref=fixed 60k pre-draw sample','previous_bonus_excluded':PREV_BONUS_EXCLUDE,'core22':core22,'satellite6':satellite,'pool28':pool,'histogram':hist,'rebuild_candidate_count':len(combs),'tickets':tickets}
+ out={'target_draw':2135,'history_last':2134,'method':'Stat200/500/800 + Committee Top500 support -> recent20 Core22 + Satellite6 -> temporal band rebuild -> bounded sum/shape diversified Committee rerank','formula':'Z(Stat500)+0.20Z(5core)+0.15Z(4core), z ref=fixed 60k pre-draw sample','previous_bonus_excluded':PREV_BONUS_EXCLUDE,'core22':core22,'satellite6':satellite,'pool28':pool,'histogram':hist,'rebuild_candidate_count':len(combs),'tickets':tickets}
  (OUT/'loto6_hist_rebuild_2135.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(out,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
