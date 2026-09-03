@@ -1,0 +1,4195 @@
+{
+  "definition": "Fixed stress audit chosen after the 1000-1399 exploratory audit: pair_raw300 Top50 and triple_raw100 Top300. No winner information is used in scoring. 600-999 was not used in choosing these signals and is the main historical stress check.",
+  "signals": {
+    "pair": "past 300 draw raw pair count, Top50 of 465",
+    "triple": "past 100 draw raw triple count, Top300 of 4495"
+  },
+  "blocks": [
+    {
+      "range": [
+        600,
+        799
+      ],
+      "pair_raw300_top50": {
+        "n": 200,
+        "mean_hits": 1.14,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.0602,
+        "total_hits": 228,
+        "expected_total": 215.0537634408602,
+        "z_vs_random_approx": 0.9436821380937468,
+        "draws_ge1": 133,
+        "draws_ge2": 69,
+        "draws_ge3": 21,
+        "max_hits": 5
+      },
+      "triple_raw100_top300": {
+        "n": 200,
+        "mean_hits": 0.66,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 0.9889000000000001,
+        "total_hits": 132,
+        "expected_total": 133.48164627363735,
+        "z_vs_random_approx": -0.1328825433193569,
+        "draws_ge1": 84,
+        "draws_ge2": 28,
+        "draws_ge3": 14,
+        "max_hits": 5
+      },
+      "rows": [
+        {
+          "draw": 600,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 601,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 602,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 603,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 604,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 605,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 606,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 607,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 608,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 609,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 610,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 611,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 612,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 613,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 614,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 615,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 616,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 617,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 618,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 619,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 620,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 621,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 622,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 623,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 624,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 625,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 626,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 627,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 628,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 629,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 630,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 631,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 632,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 633,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 634,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 635,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 636,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 637,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 638,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 639,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 640,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 641,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 642,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 643,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 644,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 645,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 646,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 647,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 648,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 649,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 650,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 651,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 652,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 653,
+          "pair_hits": 5,
+          "triple_hits": 0
+        },
+        {
+          "draw": 654,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 655,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 656,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 657,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 658,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 659,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 660,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 661,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 662,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 663,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 664,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 665,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 666,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 667,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 668,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 669,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 670,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 671,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 672,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 673,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 674,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 675,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 676,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 677,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 678,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 679,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 680,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 681,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 682,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 683,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 684,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 685,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 686,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 687,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 688,
+          "pair_hits": 0,
+          "triple_hits": 4
+        },
+        {
+          "draw": 689,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 690,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 691,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 692,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 693,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 694,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 695,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 696,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 697,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 698,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 699,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 700,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 701,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 702,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 703,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 704,
+          "pair_hits": 1,
+          "triple_hits": 5
+        },
+        {
+          "draw": 705,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 706,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 707,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 708,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 709,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 710,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 711,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 712,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 713,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 714,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 715,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 716,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 717,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 718,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 719,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 720,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 721,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 722,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 723,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 724,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 725,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 726,
+          "pair_hits": 0,
+          "triple_hits": 4
+        },
+        {
+          "draw": 727,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 728,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 729,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 730,
+          "pair_hits": 3,
+          "triple_hits": 4
+        },
+        {
+          "draw": 731,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 732,
+          "pair_hits": 0,
+          "triple_hits": 3
+        },
+        {
+          "draw": 733,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 734,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 735,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 736,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 737,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 738,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 739,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 740,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 741,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 742,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 743,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 744,
+          "pair_hits": 3,
+          "triple_hits": 3
+        },
+        {
+          "draw": 745,
+          "pair_hits": 4,
+          "triple_hits": 1
+        },
+        {
+          "draw": 746,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 747,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 748,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 749,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 750,
+          "pair_hits": 3,
+          "triple_hits": 3
+        },
+        {
+          "draw": 751,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 752,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 753,
+          "pair_hits": 4,
+          "triple_hits": 1
+        },
+        {
+          "draw": 754,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 755,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 756,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 757,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 758,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 759,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 760,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 761,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 762,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 763,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 764,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 765,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 766,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 767,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 768,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 769,
+          "pair_hits": 2,
+          "triple_hits": 4
+        },
+        {
+          "draw": 770,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 771,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 772,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 773,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 774,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 775,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 776,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 777,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 778,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 779,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 780,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 781,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 782,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 783,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 784,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 785,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 786,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 787,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 788,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 789,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 790,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 791,
+          "pair_hits": 4,
+          "triple_hits": 0
+        },
+        {
+          "draw": 792,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 793,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 794,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 795,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 796,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 797,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 798,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 799,
+          "pair_hits": 0,
+          "triple_hits": 1
+        }
+      ]
+    },
+    {
+      "range": [
+        800,
+        999
+      ],
+      "pair_raw300_top50": {
+        "n": 200,
+        "mean_hits": 1.085,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.00905,
+        "total_hits": 217,
+        "expected_total": 215.0537634408602,
+        "z_vs_random_approx": 0.14186583637455955,
+        "draws_ge1": 136,
+        "draws_ge2": 56,
+        "draws_ge3": 18,
+        "max_hits": 6
+      },
+      "triple_raw100_top300": {
+        "n": 200,
+        "mean_hits": 0.68,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 1.0188666666666668,
+        "total_hits": 136,
+        "expected_total": 133.48164627363735,
+        "z_vs_random_approx": 0.22586041897524867,
+        "draws_ge1": 83,
+        "draws_ge2": 35,
+        "draws_ge3": 15,
+        "max_hits": 5
+      },
+      "rows": [
+        {
+          "draw": 800,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 801,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 802,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 803,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 804,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 805,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 806,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 807,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 808,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 809,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 810,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 811,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 812,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 813,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 814,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 815,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 816,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 817,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 818,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 819,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 820,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 821,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 822,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 823,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 824,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 825,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 826,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 827,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 828,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 829,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 830,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 831,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 832,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 833,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 834,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 835,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 836,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 837,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 838,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 839,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 840,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 841,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 842,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 843,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 844,
+          "pair_hits": 5,
+          "triple_hits": 3
+        },
+        {
+          "draw": 845,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 846,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 847,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 848,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 849,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 850,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 851,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 852,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 853,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 854,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 855,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 856,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 857,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 858,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 859,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 860,
+          "pair_hits": 4,
+          "triple_hits": 1
+        },
+        {
+          "draw": 861,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 862,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 863,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 864,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 865,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 866,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 867,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 868,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 869,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 870,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 871,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 872,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 873,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 874,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 875,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 876,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 877,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 878,
+          "pair_hits": 1,
+          "triple_hits": 5
+        },
+        {
+          "draw": 879,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 880,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 881,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 882,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 883,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 884,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 885,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 886,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 887,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 888,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 889,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 890,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 891,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 892,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 893,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 894,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 895,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 896,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 897,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 898,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 899,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 900,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 901,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 902,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 903,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 904,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 905,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 906,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 907,
+          "pair_hits": 6,
+          "triple_hits": 3
+        },
+        {
+          "draw": 908,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 909,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 910,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 911,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 912,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 913,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 914,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 915,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 916,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 917,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 918,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 919,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 920,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 921,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 922,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 923,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 924,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 925,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 926,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 927,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 928,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 929,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 930,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 931,
+          "pair_hits": 4,
+          "triple_hits": 0
+        },
+        {
+          "draw": 932,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 933,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 934,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 935,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 936,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 937,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 938,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 939,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 940,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 941,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 942,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 943,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 944,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 945,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 946,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 947,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 948,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 949,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 950,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 951,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 952,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 953,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 954,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 955,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 956,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 957,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 958,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 959,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 960,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 961,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 962,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 963,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 964,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 965,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 966,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 967,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 968,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 969,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 970,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 971,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 972,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 973,
+          "pair_hits": 0,
+          "triple_hits": 3
+        },
+        {
+          "draw": 974,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 975,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 976,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 977,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 978,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 979,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 980,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 981,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 982,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 983,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 984,
+          "pair_hits": 1,
+          "triple_hits": 4
+        },
+        {
+          "draw": 985,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 986,
+          "pair_hits": 0,
+          "triple_hits": 3
+        },
+        {
+          "draw": 987,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 988,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 989,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 990,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 991,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 992,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 993,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 994,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 995,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 996,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 997,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 998,
+          "pair_hits": 0,
+          "triple_hits": 3
+        },
+        {
+          "draw": 999,
+          "pair_hits": 1,
+          "triple_hits": 0
+        }
+      ]
+    },
+    {
+      "range": [
+        1000,
+        1199
+      ],
+      "pair_raw300_top50": {
+        "n": 200,
+        "mean_hits": 1.175,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.09275,
+        "total_hits": 235,
+        "expected_total": 215.0537634408602,
+        "z_vs_random_approx": 1.4539288755514115,
+        "draws_ge1": 126,
+        "draws_ge2": 66,
+        "draws_ge3": 27,
+        "max_hits": 6
+      },
+      "triple_raw100_top300": {
+        "n": 200,
+        "mean_hits": 0.8,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 1.1986666666666668,
+        "total_hits": 160,
+        "expected_total": 133.48164627363735,
+        "z_vs_random_approx": 2.378318192742882,
+        "draws_ge1": 95,
+        "draws_ge2": 39,
+        "draws_ge3": 16,
+        "max_hits": 6
+      },
+      "rows": [
+        {
+          "draw": 1000,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1001,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1002,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1003,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1004,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1005,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1006,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1007,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1008,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1009,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1010,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1011,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1012,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1013,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1014,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1015,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1016,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1017,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1018,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1019,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1020,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1021,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1022,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1023,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1024,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1025,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1026,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1027,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1028,
+          "pair_hits": 4,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1029,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1030,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1031,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1032,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1033,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1034,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1035,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1036,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1037,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1038,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1039,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1040,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1041,
+          "pair_hits": 3,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1042,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1043,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1044,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1045,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1046,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1047,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1048,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1049,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1050,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1051,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1052,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1053,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1054,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1055,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1056,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1057,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1058,
+          "pair_hits": 6,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1059,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1060,
+          "pair_hits": 4,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1061,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1062,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1063,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1064,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1065,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1066,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1067,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1068,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1069,
+          "pair_hits": 2,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1070,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1071,
+          "pair_hits": 3,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1072,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1073,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1074,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1075,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1076,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1077,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1078,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1079,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1080,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1081,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1082,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1083,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1084,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1085,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1086,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1087,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1088,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1089,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1090,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1091,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1092,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1093,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1094,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1095,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1096,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1097,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1098,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1099,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1100,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1101,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1102,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1103,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1104,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1105,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1106,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1107,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1108,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1109,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1110,
+          "pair_hits": 5,
+          "triple_hits": 5
+        },
+        {
+          "draw": 1111,
+          "pair_hits": 5,
+          "triple_hits": 6
+        },
+        {
+          "draw": 1112,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1113,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1114,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1115,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1116,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1117,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1118,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1119,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1120,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1121,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1122,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1123,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1124,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1125,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1126,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1127,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1128,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1129,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1130,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1131,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1132,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1133,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1134,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1135,
+          "pair_hits": 5,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1136,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1137,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1138,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1139,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1140,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1141,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1142,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1143,
+          "pair_hits": 5,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1144,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1145,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1146,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1147,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1148,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1149,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1150,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1151,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1152,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1153,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1154,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1155,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1156,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1157,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1158,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1159,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1160,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1161,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1162,
+          "pair_hits": 4,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1163,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1164,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1165,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1166,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1167,
+          "pair_hits": 2,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1168,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1169,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1170,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1171,
+          "pair_hits": 0,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1172,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1173,
+          "pair_hits": 5,
+          "triple_hits": 5
+        },
+        {
+          "draw": 1174,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1175,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1176,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1177,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1178,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1179,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1180,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1181,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1182,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1183,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1184,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1185,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1186,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1187,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1188,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1189,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1190,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1191,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1192,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1193,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1194,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1195,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1196,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1197,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1198,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1199,
+          "pair_hits": 3,
+          "triple_hits": 1
+        }
+      ]
+    },
+    {
+      "range": [
+        1200,
+        1399
+      ],
+      "pair_raw300_top50": {
+        "n": 200,
+        "mean_hits": 1.21,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.1253,
+        "total_hits": 242,
+        "expected_total": 215.0537634408602,
+        "z_vs_random_approx": 1.9641756130090762,
+        "draws_ge1": 138,
+        "draws_ge2": 65,
+        "draws_ge3": 29,
+        "max_hits": 5
+      },
+      "triple_raw100_top300": {
+        "n": 200,
+        "mean_hits": 0.775,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 1.1612083333333334,
+        "total_hits": 155,
+        "expected_total": 133.48164627363735,
+        "z_vs_random_approx": 1.929889489874625,
+        "draws_ge1": 82,
+        "draws_ge2": 41,
+        "draws_ge3": 21,
+        "max_hits": 6
+      },
+      "rows": [
+        {
+          "draw": 1200,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1201,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1202,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1203,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1204,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1205,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1206,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1207,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1208,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1209,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1210,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1211,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1212,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1213,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1214,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1215,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1216,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1217,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1218,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1219,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1220,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1221,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1222,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1223,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1224,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1225,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1226,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1227,
+          "pair_hits": 1,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1228,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1229,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1230,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1231,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1232,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1233,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1234,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1235,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1236,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1237,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1238,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1239,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1240,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1241,
+          "pair_hits": 3,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1242,
+          "pair_hits": 4,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1243,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1244,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1245,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1246,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1247,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1248,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1249,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1250,
+          "pair_hits": 4,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1251,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1252,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1253,
+          "pair_hits": 2,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1254,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1255,
+          "pair_hits": 4,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1256,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1257,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1258,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1259,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1260,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1261,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1262,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1263,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1264,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1265,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1266,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1267,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1268,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1269,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1270,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1271,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1272,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1273,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1274,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1275,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1276,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1277,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1278,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1279,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1280,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1281,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1282,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1283,
+          "pair_hits": 4,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1284,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1285,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1286,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1287,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1288,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1289,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1290,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1291,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1292,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1293,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1294,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1295,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1296,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1297,
+          "pair_hits": 0,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1298,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1299,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1300,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1301,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1302,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1303,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1304,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1305,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1306,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1307,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1308,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1309,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1310,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1311,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1312,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1313,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1314,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1315,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1316,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1317,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1318,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1319,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1320,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1321,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1322,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1323,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1324,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1325,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1326,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1327,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1328,
+          "pair_hits": 0,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1329,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1330,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1331,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1332,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1333,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1334,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1335,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1336,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1337,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1338,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1339,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1340,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1341,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1342,
+          "pair_hits": 4,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1343,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1344,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1345,
+          "pair_hits": 4,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1346,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1347,
+          "pair_hits": 3,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1348,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1349,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1350,
+          "pair_hits": 2,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1351,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1352,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1353,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1354,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1355,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1356,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1357,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1358,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1359,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1360,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1361,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1362,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1363,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1364,
+          "pair_hits": 3,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1365,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1366,
+          "pair_hits": 1,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1367,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1368,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1369,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1370,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1371,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1372,
+          "pair_hits": 4,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1373,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1374,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1375,
+          "pair_hits": 5,
+          "triple_hits": 6
+        },
+        {
+          "draw": 1376,
+          "pair_hits": 3,
+          "triple_hits": 2
+        },
+        {
+          "draw": 1377,
+          "pair_hits": 2,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1378,
+          "pair_hits": 3,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1379,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1380,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1381,
+          "pair_hits": 4,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1382,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1383,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1384,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1385,
+          "pair_hits": 3,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1386,
+          "pair_hits": 2,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1387,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1388,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1389,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1390,
+          "pair_hits": 1,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1391,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1392,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1393,
+          "pair_hits": 2,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1394,
+          "pair_hits": 1,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1395,
+          "pair_hits": 1,
+          "triple_hits": 3
+        },
+        {
+          "draw": 1396,
+          "pair_hits": 1,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1397,
+          "pair_hits": 3,
+          "triple_hits": 4
+        },
+        {
+          "draw": 1398,
+          "pair_hits": 0,
+          "triple_hits": 1
+        },
+        {
+          "draw": 1399,
+          "pair_hits": 1,
+          "triple_hits": 1
+        }
+      ]
+    },
+    {
+      "range": [
+        1400,
+        1402
+      ],
+      "pair_raw300_top50": {
+        "n": 3,
+        "mean_hits": 0.3333333333333333,
+        "random_mean": 1.075268817204301,
+        "enrichment": 0.31,
+        "total_hits": 1,
+        "expected_total": 3.225806451612903,
+        "z_vs_random_approx": -1.3247196056634103,
+        "draws_ge1": 1,
+        "draws_ge2": 0,
+        "draws_ge3": 0,
+        "max_hits": 1
+      },
+      "triple_raw100_top300": {
+        "n": 3,
+        "mean_hits": 0.0,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 0.0,
+        "total_hits": 0,
+        "expected_total": 2.0022246941045605,
+        "z_vs_random_approx": -1.466191111962662,
+        "draws_ge1": 0,
+        "draws_ge2": 0,
+        "draws_ge3": 0,
+        "max_hits": 0
+      },
+      "rows": [
+        {
+          "draw": 1400,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1401,
+          "pair_hits": 0,
+          "triple_hits": 0
+        },
+        {
+          "draw": 1402,
+          "pair_hits": 1,
+          "triple_hits": 0
+        }
+      ]
+    }
+  ],
+  "warning": "Because the signal definitions were noticed after examining 1000-1399, even 600-999 is a post-selection stress test rather than a pristine prospective validation. Approximate z scores are descriptive and do not correct for model search/multiple comparisons."
+}
