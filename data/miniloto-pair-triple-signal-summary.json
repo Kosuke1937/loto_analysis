@@ -1,0 +1,748 @@
+{
+  "selected_dev_only": {
+    "pair": {
+      "method": "pair_shortlong",
+      "k": 50,
+      "development": {
+        "mean_hits": 1.195,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.11135,
+        "draws_ge1": 148,
+        "draws_ge2": 62,
+        "draws_ge3": 22,
+        "max_hits": 4
+      },
+      "test": {
+        "mean_hits": 1.05,
+        "random_mean": 1.075268817204301,
+        "enrichment": 0.9765000000000001,
+        "draws_ge1": 134,
+        "draws_ge2": 58,
+        "draws_ge3": 14,
+        "max_hits": 4
+      }
+    },
+    "triple": {
+      "method": "tri_shortlong",
+      "k": 500,
+      "development": {
+        "mean_hits": 1.225,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 1.1012750000000002,
+        "draws_ge1": 144,
+        "draws_ge2": 65,
+        "draws_ge3": 25,
+        "max_hits": 6
+      },
+      "test": {
+        "mean_hits": 1.14,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 1.0248599999999999,
+        "draws_ge1": 140,
+        "draws_ge2": 61,
+        "draws_ge3": 19,
+        "max_hits": 5
+      }
+    }
+  },
+  "draw1402_diagnostic": {
+    "draw": 1402,
+    "winner": [
+      1,
+      4,
+      20,
+      25,
+      29
+    ],
+    "pair_selected_hits": 3,
+    "triple_selected_hits": 0
+  },
+  "test_pair_all": {
+    "pair_raw50": {
+      "25": {
+        "mean_hits": 0.58,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 1.0788,
+        "draws_ge1": 79,
+        "draws_ge2": 25,
+        "draws_ge3": 9,
+        "max_hits": 4
+      },
+      "50": {
+        "mean_hits": 1.09,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.0137,
+        "draws_ge1": 126,
+        "draws_ge2": 53,
+        "draws_ge3": 26,
+        "max_hits": 6
+      },
+      "100": {
+        "mean_hits": 2.23,
+        "random_mean": 2.150537634408602,
+        "enrichment": 1.03695,
+        "draws_ge1": 174,
+        "draws_ge2": 129,
+        "draws_ge3": 75,
+        "max_hits": 7
+      },
+      "200": {
+        "mean_hits": 4.425,
+        "random_mean": 4.301075268817204,
+        "enrichment": 1.0288125000000001,
+        "draws_ge1": 195,
+        "draws_ge2": 185,
+        "draws_ge3": 163,
+        "max_hits": 9
+      }
+    },
+    "pair_resid50": {
+      "25": {
+        "mean_hits": 0.59,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 1.0974,
+        "draws_ge1": 89,
+        "draws_ge2": 25,
+        "draws_ge3": 4,
+        "max_hits": 3
+      },
+      "50": {
+        "mean_hits": 1.13,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.0509,
+        "draws_ge1": 145,
+        "draws_ge2": 53,
+        "draws_ge3": 23,
+        "max_hits": 4
+      },
+      "100": {
+        "mean_hits": 2.205,
+        "random_mean": 2.150537634408602,
+        "enrichment": 1.025325,
+        "draws_ge1": 186,
+        "draws_ge2": 137,
+        "draws_ge3": 80,
+        "max_hits": 5
+      },
+      "200": {
+        "mean_hits": 4.255,
+        "random_mean": 4.301075268817204,
+        "enrichment": 0.9892875,
+        "draws_ge1": 200,
+        "draws_ge2": 193,
+        "draws_ge3": 172,
+        "max_hits": 8
+      }
+    },
+    "pair_raw100": {
+      "25": {
+        "mean_hits": 0.535,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 0.9951000000000001,
+        "draws_ge1": 82,
+        "draws_ge2": 21,
+        "draws_ge3": 4,
+        "max_hits": 3
+      },
+      "50": {
+        "mean_hits": 1.15,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.0695,
+        "draws_ge1": 131,
+        "draws_ge2": 68,
+        "draws_ge3": 21,
+        "max_hits": 6
+      },
+      "100": {
+        "mean_hits": 2.23,
+        "random_mean": 2.150537634408602,
+        "enrichment": 1.03695,
+        "draws_ge1": 173,
+        "draws_ge2": 124,
+        "draws_ge3": 83,
+        "max_hits": 7
+      },
+      "200": {
+        "mean_hits": 4.38,
+        "random_mean": 4.301075268817204,
+        "enrichment": 1.01835,
+        "draws_ge1": 199,
+        "draws_ge2": 190,
+        "draws_ge3": 164,
+        "max_hits": 9
+      }
+    },
+    "pair_resid100": {
+      "25": {
+        "mean_hits": 0.515,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 0.9579000000000001,
+        "draws_ge1": 82,
+        "draws_ge2": 17,
+        "draws_ge3": 4,
+        "max_hits": 3
+      },
+      "50": {
+        "mean_hits": 1.105,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.02765,
+        "draws_ge1": 140,
+        "draws_ge2": 61,
+        "draws_ge3": 15,
+        "max_hits": 4
+      },
+      "100": {
+        "mean_hits": 2.115,
+        "random_mean": 2.150537634408602,
+        "enrichment": 0.9834750000000002,
+        "draws_ge1": 184,
+        "draws_ge2": 130,
+        "draws_ge3": 73,
+        "max_hits": 6
+      },
+      "200": {
+        "mean_hits": 4.345,
+        "random_mean": 4.301075268817204,
+        "enrichment": 1.0102125,
+        "draws_ge1": 200,
+        "draws_ge2": 199,
+        "draws_ge3": 176,
+        "max_hits": 9
+      }
+    },
+    "pair_raw300": {
+      "25": {
+        "mean_hits": 0.57,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 1.0602,
+        "draws_ge1": 79,
+        "draws_ge2": 27,
+        "draws_ge3": 8,
+        "max_hits": 3
+      },
+      "50": {
+        "mean_hits": 1.21,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.1253,
+        "draws_ge1": 138,
+        "draws_ge2": 65,
+        "draws_ge3": 29,
+        "max_hits": 5
+      },
+      "100": {
+        "mean_hits": 2.315,
+        "random_mean": 2.150537634408602,
+        "enrichment": 1.076475,
+        "draws_ge1": 177,
+        "draws_ge2": 132,
+        "draws_ge3": 84,
+        "max_hits": 7
+      },
+      "200": {
+        "mean_hits": 4.265,
+        "random_mean": 4.301075268817204,
+        "enrichment": 0.9916125,
+        "draws_ge1": 197,
+        "draws_ge2": 186,
+        "draws_ge3": 170,
+        "max_hits": 10
+      }
+    },
+    "pair_resid300": {
+      "25": {
+        "mean_hits": 0.545,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 1.0137,
+        "draws_ge1": 82,
+        "draws_ge2": 21,
+        "draws_ge3": 6,
+        "max_hits": 3
+      },
+      "50": {
+        "mean_hits": 1.11,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.0323000000000002,
+        "draws_ge1": 138,
+        "draws_ge2": 61,
+        "draws_ge3": 19,
+        "max_hits": 4
+      },
+      "100": {
+        "mean_hits": 2.13,
+        "random_mean": 2.150537634408602,
+        "enrichment": 0.99045,
+        "draws_ge1": 184,
+        "draws_ge2": 135,
+        "draws_ge3": 69,
+        "max_hits": 6
+      },
+      "200": {
+        "mean_hits": 4.245,
+        "random_mean": 4.301075268817204,
+        "enrichment": 0.9869625000000001,
+        "draws_ge1": 200,
+        "draws_ge2": 194,
+        "draws_ge3": 172,
+        "max_hits": 8
+      }
+    },
+    "pair_raw500": {
+      "25": {
+        "mean_hits": 0.545,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 1.0137,
+        "draws_ge1": 79,
+        "draws_ge2": 26,
+        "draws_ge3": 4,
+        "max_hits": 3
+      },
+      "50": {
+        "mean_hits": 1.165,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.08345,
+        "draws_ge1": 129,
+        "draws_ge2": 63,
+        "draws_ge3": 26,
+        "max_hits": 5
+      },
+      "100": {
+        "mean_hits": 2.205,
+        "random_mean": 2.150537634408602,
+        "enrichment": 1.025325,
+        "draws_ge1": 169,
+        "draws_ge2": 123,
+        "draws_ge3": 78,
+        "max_hits": 7
+      },
+      "200": {
+        "mean_hits": 4.415,
+        "random_mean": 4.301075268817204,
+        "enrichment": 1.0264875,
+        "draws_ge1": 200,
+        "draws_ge2": 190,
+        "draws_ge3": 161,
+        "max_hits": 9
+      }
+    },
+    "pair_resid500": {
+      "25": {
+        "mean_hits": 0.45,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 0.8370000000000001,
+        "draws_ge1": 71,
+        "draws_ge2": 17,
+        "draws_ge3": 2,
+        "max_hits": 3
+      },
+      "50": {
+        "mean_hits": 1.08,
+        "random_mean": 1.075268817204301,
+        "enrichment": 1.0044000000000002,
+        "draws_ge1": 127,
+        "draws_ge2": 65,
+        "draws_ge3": 18,
+        "max_hits": 5
+      },
+      "100": {
+        "mean_hits": 2.13,
+        "random_mean": 2.150537634408602,
+        "enrichment": 0.99045,
+        "draws_ge1": 177,
+        "draws_ge2": 130,
+        "draws_ge3": 75,
+        "max_hits": 7
+      },
+      "200": {
+        "mean_hits": 4.395,
+        "random_mean": 4.301075268817204,
+        "enrichment": 1.0218375,
+        "draws_ge1": 198,
+        "draws_ge2": 195,
+        "draws_ge3": 176,
+        "max_hits": 9
+      }
+    },
+    "pair_shortlong": {
+      "25": {
+        "mean_hits": 0.515,
+        "random_mean": 0.5376344086021505,
+        "enrichment": 0.9579000000000001,
+        "draws_ge1": 84,
+        "draws_ge2": 16,
+        "draws_ge3": 3,
+        "max_hits": 3
+      },
+      "50": {
+        "mean_hits": 1.05,
+        "random_mean": 1.075268817204301,
+        "enrichment": 0.9765000000000001,
+        "draws_ge1": 134,
+        "draws_ge2": 58,
+        "draws_ge3": 14,
+        "max_hits": 4
+      },
+      "100": {
+        "mean_hits": 2.155,
+        "random_mean": 2.150537634408602,
+        "enrichment": 1.002075,
+        "draws_ge1": 186,
+        "draws_ge2": 129,
+        "draws_ge3": 74,
+        "max_hits": 7
+      },
+      "200": {
+        "mean_hits": 4.305,
+        "random_mean": 4.301075268817204,
+        "enrichment": 1.0009125,
+        "draws_ge1": 200,
+        "draws_ge2": 197,
+        "draws_ge3": 169,
+        "max_hits": 8
+      }
+    }
+  },
+  "test_triple_all": {
+    "tri_raw50": {
+      "100": {
+        "mean_hits": 0.325,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 1.4608750000000001,
+        "draws_ge1": 40,
+        "draws_ge2": 15,
+        "draws_ge3": 7,
+        "max_hits": 5
+      },
+      "300": {
+        "mean_hits": 0.725,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 1.0862916666666667,
+        "draws_ge1": 92,
+        "draws_ge2": 32,
+        "draws_ge3": 12,
+        "max_hits": 6
+      },
+      "500": {
+        "mean_hits": 1.145,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 1.029355,
+        "draws_ge1": 133,
+        "draws_ge2": 56,
+        "draws_ge3": 21,
+        "max_hits": 6
+      },
+      "1000": {
+        "mean_hits": 2.385,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 1.0720574999999999,
+        "draws_ge1": 146,
+        "draws_ge2": 88,
+        "draws_ge3": 65,
+        "max_hits": 10
+      }
+    },
+    "tri_resid50": {
+      "100": {
+        "mean_hits": 0.2,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 0.8990000000000001,
+        "draws_ge1": 37,
+        "draws_ge2": 3,
+        "draws_ge3": 0,
+        "max_hits": 2
+      },
+      "300": {
+        "mean_hits": 0.645,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 0.9664250000000001,
+        "draws_ge1": 95,
+        "draws_ge2": 21,
+        "draws_ge3": 6,
+        "max_hits": 5
+      },
+      "500": {
+        "mean_hits": 1.145,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 1.029355,
+        "draws_ge1": 133,
+        "draws_ge2": 56,
+        "draws_ge3": 21,
+        "max_hits": 6
+      },
+      "1000": {
+        "mean_hits": 2.385,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 1.0720574999999999,
+        "draws_ge1": 146,
+        "draws_ge2": 88,
+        "draws_ge3": 65,
+        "max_hits": 10
+      }
+    },
+    "tri_raw100": {
+      "100": {
+        "mean_hits": 0.235,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 1.056325,
+        "draws_ge1": 42,
+        "draws_ge2": 4,
+        "draws_ge3": 1,
+        "max_hits": 3
+      },
+      "300": {
+        "mean_hits": 0.775,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 1.1612083333333334,
+        "draws_ge1": 82,
+        "draws_ge2": 41,
+        "draws_ge3": 21,
+        "max_hits": 6
+      },
+      "500": {
+        "mean_hits": 1.17,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 1.05183,
+        "draws_ge1": 117,
+        "draws_ge2": 66,
+        "draws_ge3": 31,
+        "max_hits": 7
+      },
+      "1000": {
+        "mean_hits": 2.29,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 1.029355,
+        "draws_ge1": 178,
+        "draws_ge2": 126,
+        "draws_ge3": 74,
+        "max_hits": 7
+      }
+    },
+    "tri_resid100": {
+      "100": {
+        "mean_hits": 0.255,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 1.146225,
+        "draws_ge1": 45,
+        "draws_ge2": 5,
+        "draws_ge3": 1,
+        "max_hits": 3
+      },
+      "300": {
+        "mean_hits": 0.685,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 1.0263583333333335,
+        "draws_ge1": 99,
+        "draws_ge2": 28,
+        "draws_ge3": 7,
+        "max_hits": 5
+      },
+      "500": {
+        "mean_hits": 1.01,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 0.9079900000000001,
+        "draws_ge1": 132,
+        "draws_ge2": 51,
+        "draws_ge3": 15,
+        "max_hits": 5
+      },
+      "1000": {
+        "mean_hits": 2.29,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 1.029355,
+        "draws_ge1": 178,
+        "draws_ge2": 126,
+        "draws_ge3": 74,
+        "max_hits": 7
+      }
+    },
+    "tri_raw300": {
+      "100": {
+        "mean_hits": 0.17,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 0.7641500000000001,
+        "draws_ge1": 30,
+        "draws_ge2": 4,
+        "draws_ge3": 0,
+        "max_hits": 2
+      },
+      "300": {
+        "mean_hits": 0.68,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 1.0188666666666668,
+        "draws_ge1": 94,
+        "draws_ge2": 30,
+        "draws_ge3": 11,
+        "max_hits": 4
+      },
+      "500": {
+        "mean_hits": 1.18,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 1.06082,
+        "draws_ge1": 135,
+        "draws_ge2": 65,
+        "draws_ge3": 29,
+        "max_hits": 5
+      },
+      "1000": {
+        "mean_hits": 2.355,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 1.0585725000000001,
+        "draws_ge1": 170,
+        "draws_ge2": 117,
+        "draws_ge3": 83,
+        "max_hits": 10
+      }
+    },
+    "tri_resid300": {
+      "100": {
+        "mean_hits": 0.18,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 0.8091,
+        "draws_ge1": 33,
+        "draws_ge2": 3,
+        "draws_ge3": 0,
+        "max_hits": 2
+      },
+      "300": {
+        "mean_hits": 0.645,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 0.9664250000000001,
+        "draws_ge1": 95,
+        "draws_ge2": 29,
+        "draws_ge3": 4,
+        "max_hits": 4
+      },
+      "500": {
+        "mean_hits": 1.12,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 1.0068800000000002,
+        "draws_ge1": 141,
+        "draws_ge2": 56,
+        "draws_ge3": 22,
+        "max_hits": 4
+      },
+      "1000": {
+        "mean_hits": 2.115,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 0.9506925000000002,
+        "draws_ge1": 181,
+        "draws_ge2": 121,
+        "draws_ge3": 74,
+        "max_hits": 7
+      }
+    },
+    "tri_raw500": {
+      "100": {
+        "mean_hits": 0.18,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 0.8091,
+        "draws_ge1": 32,
+        "draws_ge2": 4,
+        "draws_ge3": 0,
+        "max_hits": 2
+      },
+      "300": {
+        "mean_hits": 0.585,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 0.876525,
+        "draws_ge1": 88,
+        "draws_ge2": 20,
+        "draws_ge3": 7,
+        "max_hits": 4
+      },
+      "500": {
+        "mean_hits": 1.11,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 0.9978900000000002,
+        "draws_ge1": 130,
+        "draws_ge2": 61,
+        "draws_ge3": 19,
+        "max_hits": 5
+      },
+      "1000": {
+        "mean_hits": 2.245,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 1.0091275000000002,
+        "draws_ge1": 166,
+        "draws_ge2": 126,
+        "draws_ge3": 81,
+        "max_hits": 8
+      }
+    },
+    "tri_resid500": {
+      "100": {
+        "mean_hits": 0.175,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 0.786625,
+        "draws_ge1": 32,
+        "draws_ge2": 3,
+        "draws_ge3": 0,
+        "max_hits": 2
+      },
+      "300": {
+        "mean_hits": 0.65,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 0.9739166666666668,
+        "draws_ge1": 100,
+        "draws_ge2": 25,
+        "draws_ge3": 5,
+        "max_hits": 3
+      },
+      "500": {
+        "mean_hits": 1.105,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 0.993395,
+        "draws_ge1": 132,
+        "draws_ge2": 60,
+        "draws_ge3": 21,
+        "max_hits": 5
+      },
+      "1000": {
+        "mean_hits": 2.115,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 0.9506925000000002,
+        "draws_ge1": 180,
+        "draws_ge2": 127,
+        "draws_ge3": 74,
+        "max_hits": 7
+      }
+    },
+    "tri_shortlong": {
+      "100": {
+        "mean_hits": 0.26,
+        "random_mean": 0.22246941045606228,
+        "enrichment": 1.1687,
+        "draws_ge1": 46,
+        "draws_ge2": 5,
+        "draws_ge3": 1,
+        "max_hits": 3
+      },
+      "300": {
+        "mean_hits": 0.635,
+        "random_mean": 0.6674082313681868,
+        "enrichment": 0.9514416666666667,
+        "draws_ge1": 102,
+        "draws_ge2": 21,
+        "draws_ge3": 4,
+        "max_hits": 3
+      },
+      "500": {
+        "mean_hits": 1.14,
+        "random_mean": 1.1123470522803114,
+        "enrichment": 1.0248599999999999,
+        "draws_ge1": 140,
+        "draws_ge2": 61,
+        "draws_ge3": 19,
+        "max_hits": 5
+      },
+      "1000": {
+        "mean_hits": 2.245,
+        "random_mean": 2.2246941045606228,
+        "enrichment": 1.0091275000000002,
+        "draws_ge1": 177,
+        "draws_ge2": 126,
+        "draws_ge3": 78,
+        "max_hits": 8
+      }
+    }
+  }
+}
