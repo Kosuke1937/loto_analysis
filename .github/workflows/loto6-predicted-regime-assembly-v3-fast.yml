@@ -1,0 +1,22 @@
+name: Loto6 Predicted Regime Assembly v3 Fast
+on:
+  push:
+    paths:
+      - 'research/loto6_predicted_regime_assembly_v3_fast.py'
+      - '.github/workflows/loto6-predicted-regime-assembly-v3-fast.yml'
+  workflow_dispatch:
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - run: python research/loto6_predicted_regime_assembly_v3_fast.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-predicted-regime-assembly-v3-fast-result
+          path: research/results/loto6_predicted_regime_assembly_v3_summary.json
