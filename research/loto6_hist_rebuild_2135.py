@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import importlib.util,itertools,json
-from collections import Counter,defaultdict
+from collections import Counter
 from pathlib import Path
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
@@ -9,6 +9,15 @@ spec=importlib.util.spec_from_file_location('p',ROOT/'research'/'loto6_consensus
 p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 OUT=ROOT/'research'/'results';OUT.mkdir(parents=True,exist_ok=True)
 PREV_BONUS_EXCLUDE=18
+
+def local_rows():
+ out=[]
+ for k in range(1,13):
+  s=(ROOT/'data'/f'loto6-chunk-{k}.js').read_text(encoding='utf-8')
+  payload=s.split('push(',1)[1].rsplit(');',1)[0]
+  for r in json.loads(payload):
+   out.append((int(r[0]),tuple(int(x) for x in r[2:8]),int(r[8])))
+ out.sort(key=lambda x:x[0]);return out
 
 def z(x):
  x=np.asarray(x,float);return (x-x.mean())/(x.std()+1e-9)
@@ -44,7 +53,7 @@ def sum_bin(s):
  if s<=175:return 'H156-175'
  return 'X>=176'
 
-def choose_diverse(order,combs,meta,scores,n=10):
+def choose_diverse(order,combs,meta,n=10):
  quota={'L<=115':2,'M116-135':2,'C136-155':3,'H156-175':2,'X>=176':1}
  usedbin=Counter();shape_count=Counter();num_count=Counter();pair_count=Counter();triple_count=Counter();sel=[]
  for i in order:
@@ -60,14 +69,14 @@ def choose_diverse(order,combs,meta,scores,n=10):
  if len(sel)<n:
   for i in order:
    if int(i) in sel:continue
-   row=tuple(combs[int(i)]);sh=meta[int(i)]['shape']
+   sh=meta[int(i)]['shape']
    if shape_count[sh]>=2:continue
    sel.append(int(i));shape_count[sh]+=1
    if len(sel)==n:break
  return sel
 
 def main():
- rows=p.fetch_history();rows=[r for r in rows if r[0]<=2134];assert rows[-1][0]==2134
+ rows=local_rows();rows=[r for r in rows if r[0]<=2134];assert rows[-1][0]==2134
  draws=np.asarray([r[1] for r in rows],np.int16);bonus=np.asarray([r[2] for r in rows],np.int16);t=len(draws)
  C=p.fixed_sample();st,inc,qcuts=p.build_static(C);draws2,bonus2,npref,ppref,actual=p.hist_actual(rows,qcuts);sizes,priors=p.prepare_priors(st)
  ss={}
@@ -101,7 +110,7 @@ def main():
  po=pf[X].sum(1);p2=p2f[X].sum(1);pb=(X==int(bonus[-1])).any(1).astype(np.int8);hh=hf[X].sum(1)
  stat=(W['sum'][fx['sum']]+W['odd'][fx['odd']]+W['band'][fx['band']]+W['consec'][fx['consec']]+W['gap'][fx['gap']]+W['prev'][po]+W['prev2'][p2]+W['pbonus'][pb]+W['hot'][hh]).astype(np.float32)
  dc5,dc4=direct_core(X,pairc);score=(stat-ss[500].mean())/(ss[500].std()+1e-9)+.20*(dc5-c5.mean())/(c5.std()+1e-9)+.15*(dc4-c4.mean())/(c4.std()+1e-9)
- order=np.argsort(score)[::-1];sel=choose_diverse(order,combs,meta,score,10)
+ order=np.argsort(score)[::-1];sel=choose_diverse(order,combs,meta,10)
  tickets=[]
  for i in sel:
   m=meta[i];tickets.append({'nums':list(combs[i]),'sum':sum(combs[i]),'sum_bin':sum_bin(sum(combs[i])),'shape':list(m['shape']),'shape_long_freq':shall[m['shape']]/t,'shape_21_50_count':sh21_50[m['shape']],'shape_50_count':sh50[m['shape']],'mode':m['mode'],'core_count':m['ncore'],'satellite_count':m['nsat'],'prev_overlap':len(set(combs[i])&prev),'stat_score':float(stat[i]),'core5':float(dc5[i]),'core4':float(dc4[i]),'committee_score':float(score[i]),'rebuild_rank':int(np.where(order==i)[0][0])+1})
