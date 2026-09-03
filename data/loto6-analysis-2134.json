@@ -1,0 +1,46 @@
+{
+  "draw": 2134,
+  "winner": [
+    5,
+    9,
+    10,
+    19,
+    26,
+    35
+  ],
+  "bonus": 18,
+  "sum": 104,
+  "band": "2-2-1-1-0",
+  "odd_even": "4:2",
+  "previous_main_overlap": 0,
+  "band_state": {
+    "prior20_count": 0,
+    "prior21_50_count": 0,
+    "prior50_count": 0,
+    "classification": "50回新規型"
+  },
+  "committee_exact": {
+    "formula": "Z(Stat500)+0.20Z(5core300)+0.15Z(4core300)",
+    "stat_rank": 4439322,
+    "core5_rank": 1079751,
+    "core4_rank": 689706,
+    "committee_rank": 3535934,
+    "space": 6096454,
+    "committee_score": -0.052,
+    "top_percent": 58.0
+  },
+  "purchased": {
+    "tickets": 20,
+    "best_main_match": 3,
+    "five_prize_tickets": 2,
+    "winner_number_recall_group1": "3/6",
+    "winner_number_recall_group2": "3/6"
+  },
+  "postmortem": [
+    "帯構成2-2-1-1-0は直前50回未出で、50回新規型シナリオは通過",
+    "直近20回に出た数字だけという条件は当選6数字すべて通過",
+    "09・10・19をハード除外したため、最終21数字プールでは完全一致が構造的に不可能",
+    "Committee実順位は3,535,934位で、今回はCommittee低位型",
+    "購入20口では05・26・35の3個一致が2口あり、5等2口"
+  ]
+}

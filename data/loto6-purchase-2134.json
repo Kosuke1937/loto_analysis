@@ -1,0 +1,380 @@
+{
+  "draw": 2134,
+  "date": "2026-09-03",
+  "result": {
+    "main": [
+      5,
+      9,
+      10,
+      19,
+      26,
+      35
+    ],
+    "bonus": 18,
+    "sum": 104,
+    "band": "2-2-1-1-0"
+  },
+  "purchase_count": 20,
+  "investment_yen": 4000,
+  "winning_amount_yen": 2000,
+  "groups": [
+    {
+      "name": "21数字からの再構築",
+      "tickets": [
+        {
+          "no": 1,
+          "numbers": [
+            2,
+            7,
+            16,
+            18,
+            37,
+            42
+          ],
+          "main_match": 0,
+          "matched_numbers": [],
+          "bonus_in_ticket": true,
+          "prize": "なし"
+        },
+        {
+          "no": 2,
+          "numbers": [
+            5,
+            8,
+            16,
+            18,
+            35,
+            41
+          ],
+          "main_match": 2,
+          "matched_numbers": [
+            5,
+            35
+          ],
+          "bonus_in_ticket": true,
+          "prize": "なし"
+        },
+        {
+          "no": 3,
+          "numbers": [
+            2,
+            5,
+            26,
+            34,
+            35,
+            37
+          ],
+          "main_match": 3,
+          "matched_numbers": [
+            5,
+            26,
+            35
+          ],
+          "bonus_in_ticket": false,
+          "prize": "5等"
+        },
+        {
+          "no": 4,
+          "numbers": [
+            2,
+            7,
+            28,
+            30,
+            35,
+            36
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            35
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 5,
+          "numbers": [
+            5,
+            7,
+            26,
+            32,
+            33,
+            36
+          ],
+          "main_match": 2,
+          "matched_numbers": [
+            5,
+            26
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 6,
+          "numbers": [
+            8,
+            16,
+            26,
+            28,
+            29,
+            42
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            26
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 7,
+          "numbers": [
+            7,
+            8,
+            29,
+            32,
+            35,
+            37
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            35
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 8,
+          "numbers": [
+            5,
+            8,
+            28,
+            34,
+            36,
+            38
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            5
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 9,
+          "numbers": [
+            2,
+            16,
+            26,
+            30,
+            41,
+            43
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            26
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 10,
+          "numbers": [
+            5,
+            18,
+            28,
+            30,
+            40,
+            42
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            5
+          ],
+          "bonus_in_ticket": true,
+          "prize": "なし"
+        }
+      ]
+    },
+    {
+      "name": "修正版Assembly",
+      "tickets": [
+        {
+          "no": 1,
+          "numbers": [
+            5,
+            7,
+            18,
+            29,
+            36,
+            42
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            5
+          ],
+          "bonus_in_ticket": true,
+          "prize": "なし"
+        },
+        {
+          "no": 2,
+          "numbers": [
+            5,
+            16,
+            18,
+            28,
+            35,
+            41
+          ],
+          "main_match": 2,
+          "matched_numbers": [
+            5,
+            35
+          ],
+          "bonus_in_ticket": true,
+          "prize": "なし"
+        },
+        {
+          "no": 3,
+          "numbers": [
+            5,
+            7,
+            26,
+            28,
+            35,
+            42
+          ],
+          "main_match": 3,
+          "matched_numbers": [
+            5,
+            26,
+            35
+          ],
+          "bonus_in_ticket": false,
+          "prize": "5等"
+        },
+        {
+          "no": 4,
+          "numbers": [
+            2,
+            8,
+            16,
+            28,
+            35,
+            36
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            35
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 5,
+          "numbers": [
+            5,
+            8,
+            18,
+            26,
+            33,
+            36
+          ],
+          "main_match": 2,
+          "matched_numbers": [
+            5,
+            26
+          ],
+          "bonus_in_ticket": true,
+          "prize": "なし"
+        },
+        {
+          "no": 6,
+          "numbers": [
+            5,
+            8,
+            16,
+            26,
+            29,
+            42
+          ],
+          "main_match": 2,
+          "matched_numbers": [
+            5,
+            26
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 7,
+          "numbers": [
+            7,
+            8,
+            18,
+            28,
+            32,
+            35
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            35
+          ],
+          "bonus_in_ticket": true,
+          "prize": "なし"
+        },
+        {
+          "no": 8,
+          "numbers": [
+            5,
+            8,
+            16,
+            28,
+            34,
+            36
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            5
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 9,
+          "numbers": [
+            2,
+            5,
+            16,
+            26,
+            30,
+            43
+          ],
+          "main_match": 2,
+          "matched_numbers": [
+            5,
+            26
+          ],
+          "bonus_in_ticket": false,
+          "prize": "なし"
+        },
+        {
+          "no": 10,
+          "numbers": [
+            5,
+            7,
+            18,
+            28,
+            36,
+            40
+          ],
+          "main_match": 1,
+          "matched_numbers": [
+            5
+          ],
+          "bonus_in_ticket": true,
+          "prize": "なし"
+        }
+      ]
+    }
+  ]
+}
