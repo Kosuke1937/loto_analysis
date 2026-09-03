@@ -55,3 +55,4 @@ th{font-size:9.5px!important}
           git add -A
           git commit -m 'Compact table UI across app pages'
           git push
+# trigger 2
