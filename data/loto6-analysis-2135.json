@@ -1,0 +1,114 @@
+{
+  "draw": 2135,
+  "winner": [
+    7,
+    13,
+    32,
+    34,
+    37,
+    39
+  ],
+  "bonus": 41,
+  "sum": 162,
+  "band": "1-1-0-4-0",
+  "odd_even": "4:2",
+  "previous_main": [
+    5,
+    9,
+    10,
+    19,
+    26,
+    35
+  ],
+  "previous_main_overlap": 0,
+  "previous_bonus": 18,
+  "previous_bonus_in_winner": false,
+  "band_state": {
+    "prior20_count": 0,
+    "prior21_50_count": 0,
+    "prior50_count": 0,
+    "classification": "50回新規型",
+    "long_history_count": 9,
+    "long_history_percent": 0.422,
+    "ABCD_layer": "D"
+  },
+  "committee_exact": {
+    "formula": "Z(Stat500)+0.20Z(5core300)+0.15Z(4core300)",
+    "score": -0.7582293152809143,
+    "rank": 4866995,
+    "space": 6096454,
+    "top_percent": 79.83321124050144,
+    "stat_rank": 4283260,
+    "core5_rank": 5452117,
+    "core4_rank": 5374600
+  },
+  "candidate_pool": {
+    "core22": [
+      42,
+      41,
+      43,
+      40,
+      35,
+      37,
+      36,
+      38,
+      34,
+      31,
+      33,
+      32,
+      30,
+      2,
+      26,
+      7,
+      14,
+      1,
+      29,
+      28,
+      17,
+      8
+    ],
+    "satellite6": [
+      39,
+      16,
+      4,
+      6,
+      3,
+      5
+    ],
+    "winner_numbers_in_pool": [
+      7,
+      32,
+      34,
+      37,
+      39
+    ],
+    "winner_number_recall": "5/6",
+    "missing_from_pool": [
+      13
+    ]
+  },
+  "purchased": {
+    "tickets": 10,
+    "best_main_match": 3,
+    "five_prize_tickets": 1,
+    "winning_amount_yen": 1000,
+    "winner_number_recall": "3/6",
+    "winner_pair_recall": "3/15",
+    "winner_triple_recall": "1/20",
+    "winner_numbers_in_union": [
+      7,
+      37,
+      39
+    ]
+  },
+  "postmortem": [
+    "合計162は事前に設定した156-175帯に入り、前回104より高い方向性は通過",
+    "帯構成1-1-0-4-0は直前20回0、21-50回0、50回0で50回新規型。時系列帯構成条件は通過",
+    "前回本数字05・09・10・19・26・35の再登場は0、前回BO18も不在で既存条件は通過",
+    "Core22+Satellite6は07・32・34・37・39の5/6を保持したが13を落とし、入口で完全一致は不可能",
+    "最終10口unionでは32・34も落ち、Winner Number Recallは07・37・39の3/6まで低下",
+    "購入9口目07・08・16・29・37・39が07・37・39の3個一致で5等1000円",
+    "実当選Committee score=-0.758、全6096454通り中4866995位（上位79.8%地点）。高Committee score最大化は今回も不適合",
+    "score=-0.758は事前に検証した構造+合計上昇Winnerの中央50%帯（約-0.85〜+0.56）内で、Winner-score帯を使う方針を支持する1例"
+  ]
+}
