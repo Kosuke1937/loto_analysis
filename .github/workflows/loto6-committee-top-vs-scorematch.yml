@@ -1,0 +1,21 @@
+name: Loto6 Committee Top vs Score Match
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'research/loto6_committee_top_vs_scorematch_backtest.py'
+      - '.github/workflows/loto6-committee-top-vs-scorematch.yml'
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - run: python research/loto6_committee_top_vs_scorematch_backtest.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-committee-top-vs-scorematch
+          path: research/results/loto6_committee_top_vs_scorematch_backtest.json
