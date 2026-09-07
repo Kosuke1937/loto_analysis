@@ -54,6 +54,20 @@ th{font-weight:700}
 <div class="note warn">この3回は研究上の重要な再現結果だが、Cluster/Exactルート開発に後期データを使っているため、将来性能の証明ではない。正本Committeeとは分離して研究枝として扱う。</div>
 <div class="card"><div class="head"><div class="name">実当選組スコア時系列</div><span class="status research">復元</span></div><div class="txt">第1200〜1399回の実当選5数字について、A1、4core、Committee、A-Stat/A-Dynamic/B-Statなどのスコア推移を保存済みデータから確認できる。</div><div class="txt"><a href="miniloto-score-traces.html?v=restore-20260907" style="color:#9fc0ff;font-weight:800">スコア時系列ページを開く →</a></div></div>
 <!-- EXACT_CORE_RESTORE_END -->
+<!-- DIRECT_RANK_SUMMARY_START -->
+<div class="section">実当選組の直接ランキング到達度</div>
+<div class="grid">
+  <div class="kpi"><div class="label">評価区間</div><div class="n">1200–1399</div><div class="delta">200回</div></div>
+  <div class="kpi"><div class="label">Committee Top500</div><div class="n">2 / 200</div></div>
+  <div class="kpi"><div class="label">Committee Top1000</div><div class="n">3 / 200</div><div class="delta">厳しめの「直接上位化」基準</div></div>
+  <div class="kpi"><div class="label">Committee Top3000</div><div class="n">8 / 200</div></div>
+  <div class="kpi"><div class="label">Committee Top5000</div><div class="n">12 / 200</div></div>
+  <div class="kpi"><div class="label">Committee Top10000</div><div class="n">20 / 200</div></div>
+  <div class="kpi"><div class="label">代表例</div><div class="n">第1395回</div><div class="delta">Stat 106位 → Committee 127位 → 最終10口で完全一致</div></div>
+</div>
+<div class="note"><b>解釈：</b>実当選5数字そのものをCommitteeの極上位へ直接押し上げられた回は多くない。Top1000までを「そこそこ上位」と置くと3/200回。一方、Exact-Core v1は直接ランキングだけでなくOriginal / Cluster / Strong-Diversityの複数経路を使い、1000–1399の400回で完全一致3回（1044・1378・1395）を再現した。</div>
+<div class="note warn"><b>研究方針：</b>今後は「当選組そのものを直接上位化する経路」を主評価し、Assembly/Repairは補助層として比較する。Top500/1000/3000/5000/10000の実当選組到達数を主要KPIとして継続記録する。</div>
+<!-- DIRECT_RANK_SUMMARY_END -->
 <div class="section">現在の正本</div><div class="grid"><div class="card"><div class="head"><div class="name">Committee</div><span class="status main">正本</span></div><div class="txt"><span class="formula">Z(A1 Stat) + 0.15 × Z(A2 4core)</span><br>Committee係数は変更なし。Assembly/Rescueは別レイヤーとして扱う。</div></div><div class="card"><div class="head"><div class="name">Role-based Prediction Set</div><span class="status research">前向き候補</span></div><div class="txt">Main7000 + A-Dynamic1500 + B-Stat1500。入口Recall改善レイヤーでありCommitteeスコア自体は変更しない。</div></div></div>
 <div class="section">A-layer Specialist / Rescue</div><div class="grid"><div class="kpi"><div class="label">A層winner中央値 1200–1399</div><div class="n">80,535→39,210</div><div class="delta">A-Stat層内順位</div></div><div class="kpi"><div class="label">A-Stat Top10k</div><div class="n">13 / 86</div></div><div class="kpi"><div class="label">固定テスト独立救済</div><div class="n">1204・1293</div></div><div class="kpi"><div class="label">Committee係数</div><div class="n">0.15</div><div class="delta">変更なし</div></div></div>
 <div class="section">Role-based Prediction Set：固定予算10,000</div><div class="card"><table class="compare"><thead><tr><th>区間</th><th>Main10000</th><th>Role-based</th><th>差</th></tr></thead><tbody><tr><td>800–999 配分選択</td><td>13</td><td>16</td><td class="accent">+3</td></tr><tr><td>1000–1199 確認</td><td>16</td><td>16</td><td>0</td></tr><tr><td>1200–1399 固定テスト</td><td>20</td><td>21</td><td class="accent">+1</td></tr><tr><td><b>600回合計</b></td><td><b>49</b></td><td><b>53</b></td><td class="accent"><b>+4</b></td></tr></tbody></table><div class="note warn">改善方向だが600回gain/loss=7/3、sign test p≈0.344で統計的確証なし。正本置換はしない。</div></div>
