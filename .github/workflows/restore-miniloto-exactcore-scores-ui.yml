@@ -1,0 +1,24 @@
+name: Restore Mini Loto Exact-Core and score UI
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/restore_miniloto_exactcore_scores_ui.py'
+      - '.github/workflows/restore-miniloto-exactcore-scores-ui.yml'
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/restore_miniloto_exactcore_scores_ui.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add miniloto-development.html miniloto.html
+          git diff --cached --quiet || git commit -m 'Restore Mini Loto Exact-Core and winner score views'
+          git push
