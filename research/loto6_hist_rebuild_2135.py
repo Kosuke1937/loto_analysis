@@ -24,6 +24,8 @@ def z(x):
 def band(a):
  a=np.asarray(a);return (int(np.sum(a<=9)),int(np.sum((a>=10)&(a<=19))),int(np.sum((a>=20)&(a<=29))),int(np.sum((a>=30)&(a<=39))),int(np.sum(a>=40)))
 def bcode(b):return b[0]*2401+b[1]*343+b[2]*49+b[3]*7+b[4]
+def layer_from_freq(f):
+ return 'A' if f>=.02 else ('B' if f>=.01 else ('C' if f>=.005 else 'D'))
 def support_hist(agents,C,topn=500):
  weighted=np.zeros(44,float);raw=np.zeros(44,int);coverage=np.zeros(44,int)
  for _,idx in agents.items():
@@ -47,37 +49,36 @@ def direct_core(C,pairc):
  return c5,c4
 
 def sum_bin(s):
- if 85<=s<=115:return 'L85-115'
- if s<=135:return 'M116-135'
- if s<=155:return 'C136-155'
- if s<=175:return 'H156-175'
- return 'X>=176'
+ if 105<=s<=115:return 'L105-115'
+ if 116<=s<=135:return 'M116-135'
+ if 136<=s<=155:return 'C136-155'
+ if 156<=s<=175:return 'H156-175'
+ if s>=176:return 'X>=176'
+ return 'OUT'
 
 def choose_diverse(order,combs,meta,n=10):
- quota={'L85-115':2,'M116-135':2,'C136-155':3,'H156-175':2,'X>=176':1}
- usedbin=Counter();shape_count=Counter();num_count=Counter();pair_count=Counter();triple_count=Counter();sel=[]
- for i in order:
-  row=tuple(combs[int(i)]);s=sum(row)
-  if s<85:continue
-  sh=meta[int(i)]['shape'];sb=sum_bin(s)
-  if usedbin[sb]>=quota[sb] or shape_count[sh]>=2:continue
-  pairs=list(itertools.combinations(row,2));triples=list(itertools.combinations(row,3))
-  if any(pair_count[x]>=2 for x in pairs) or any(triple_count[x]>=1 for x in triples) or any(num_count[x]>=4 for x in row):continue
-  sel.append(int(i));usedbin[sb]+=1;shape_count[sh]+=1
+ sum_quota={'L105-115':1,'M116-135':2,'C136-155':4,'H156-175':2,'X>=176':1}
+ layer_quota={'A':3,'B':3,'C':2,'D':2}
+ usedbin=Counter();usedlayer=Counter();shape_count=Counter();num_count=Counter();pair_count=Counter();triple_count=Counter();sel=[]
+ def acceptable(i,strict=True):
+  row=tuple(combs[int(i)]);sb=sum_bin(sum(row));m=meta[int(i)];sh=m['shape'];ly=m['layer']
+  if sb=='OUT' or usedbin[sb]>=sum_quota[sb] or usedlayer[ly]>=layer_quota[ly] or shape_count[sh]>=2:return False
+  if strict:
+   pairs=list(itertools.combinations(row,2));triples=list(itertools.combinations(row,3))
+   if any(pair_count[x]>=2 for x in pairs) or any(triple_count[x]>=1 for x in triples) or any(num_count[x]>=4 for x in row):return False
+  return True
+ def add(i):
+  row=tuple(combs[int(i)]);sb=sum_bin(sum(row));m=meta[int(i)];sh=m['shape'];ly=m['layer'];sel.append(int(i));usedbin[sb]+=1;usedlayer[ly]+=1;shape_count[sh]+=1
   for x in row:num_count[x]+=1
-  for x in pairs:pair_count[x]+=1
-  for x in triples:triple_count[x]+=1
-  if len(sel)==n:break
- if len(sel)<n:
+  for x in itertools.combinations(row,2):pair_count[x]+=1
+  for x in itertools.combinations(row,3):triple_count[x]+=1
+ for strict in (True,False):
   for i in order:
    if int(i) in sel:continue
-   row=tuple(combs[int(i)])
-   if sum(row)<85:continue
-   sh=meta[int(i)]['shape']
-   if shape_count[sh]>=2:continue
-   sel.append(int(i));shape_count[sh]+=1
+   if acceptable(i,strict):add(i)
    if len(sel)==n:break
- return sel
+  if len(sel)==n:break
+ return sel,sum_quota,layer_quota
 
 def main():
  rows=local_rows();rows=[r for r in rows if r[0]<=2134];assert rows[-1][0]==2134
@@ -108,16 +109,17 @@ def main():
   mode='21-50_once' if sh21_50[sh]==1 else ('new50' if sh50[sh]==0 else None)
   if mode is None:continue
   if len(set(c)&prev)>1:continue
-  combs.append(c);meta.append({'shape':sh,'mode':mode,'ncore':ncore,'nsat':nsat})
+  freq=shall[sh]/t
+  combs.append(c);meta.append({'shape':sh,'mode':mode,'ncore':ncore,'nsat':nsat,'layer':layer_from_freq(freq),'long_freq':freq})
  X,fx=direct_features(combs,qcuts)
  W=p.weights(t,500,actual,sizes,priors);pf=np.zeros(44,np.int8);pf[draws[-1]]=1;p2f=np.zeros(44,np.int8);p2f[draws[-2]]=1;c300=npref[t]-npref[max(0,t-300)];hot=(np.lexsort((np.arange(1,44),-c300[1:]))+1)[:15];hf=np.zeros(44,np.int8);hf[hot]=1
  po=pf[X].sum(1);p2=p2f[X].sum(1);pb=(X==int(bonus[-1])).any(1).astype(np.int8);hh=hf[X].sum(1)
  stat=(W['sum'][fx['sum']]+W['odd'][fx['odd']]+W['band'][fx['band']]+W['consec'][fx['consec']]+W['gap'][fx['gap']]+W['prev'][po]+W['prev2'][p2]+W['pbonus'][pb]+W['hot'][hh]).astype(np.float32)
  dc5,dc4=direct_core(X,pairc);score=(stat-ss[500].mean())/(ss[500].std()+1e-9)+.20*(dc5-c5.mean())/(c5.std()+1e-9)+.15*(dc4-c4.mean())/(c4.std()+1e-9)
- order=np.argsort(score)[::-1];sel=choose_diverse(order,combs,meta,10)
+ order=np.argsort(score)[::-1];sel,sum_quota,layer_quota=choose_diverse(order,combs,meta,10)
  tickets=[]
  for i in sel:
-  m=meta[i];tickets.append({'nums':list(combs[i]),'sum':sum(combs[i]),'sum_bin':sum_bin(sum(combs[i])),'shape':list(m['shape']),'shape_long_freq':shall[m['shape']]/t,'shape_21_50_count':sh21_50[m['shape']],'shape_50_count':sh50[m['shape']],'mode':m['mode'],'core_count':m['ncore'],'satellite_count':m['nsat'],'prev_overlap':len(set(combs[i])&prev),'stat_score':float(stat[i]),'core5':float(dc5[i]),'core4':float(dc4[i]),'committee_score':float(score[i]),'rebuild_rank':int(np.where(order==i)[0][0])+1})
- out={'target_draw':2135,'history_last':2134,'method':'Stat200/500/800 + Committee Top500 support -> recent20 Core22 + Satellite6 -> temporal band rebuild -> bounded sum/shape diversified Committee rerank','formula':'Z(Stat500)+0.20Z(5core)+0.15Z(4core), z ref=fixed 60k pre-draw sample','previous_bonus_excluded':PREV_BONUS_EXCLUDE,'core22':core22,'satellite6':satellite,'pool28':pool,'histogram':hist,'rebuild_candidate_count':len(combs),'tickets':tickets}
+  m=meta[i];tickets.append({'nums':list(combs[i]),'sum':sum(combs[i]),'sum_bin':sum_bin(sum(combs[i])),'shape':list(m['shape']),'layer':m['layer'],'shape_long_freq':m['long_freq'],'shape_21_50_count':sh21_50[m['shape']],'shape_50_count':sh50[m['shape']],'mode':m['mode'],'core_count':m['ncore'],'satellite_count':m['nsat'],'prev_overlap':len(set(combs[i])&prev),'stat_score':float(stat[i]),'core5':float(dc5[i]),'core4':float(dc4[i]),'committee_score':float(score[i]),'rebuild_rank':int(np.where(order==i)[0][0])+1})
+ out={'target_draw':2135,'history_last':2134,'method':'Stat200/500/800 + Committee Top500 support -> Core22 + Satellite6 -> temporal band rebuild -> ABCD/sum quota diversified Committee rerank','formula':'Z(Stat500)+0.20Z(5core)+0.15Z(4core), z ref=fixed 60k pre-draw sample','previous_bonus_excluded':PREV_BONUS_EXCLUDE,'core22':core22,'satellite6':satellite,'pool28':pool,'histogram':hist,'rebuild_candidate_count':len(combs),'sum_quota':sum_quota,'layer_quota':layer_quota,'actual_sum_counts':dict(Counter(x['sum_bin'] for x in tickets)),'actual_layer_counts':dict(Counter(x['layer'] for x in tickets)),'tickets':tickets}
  (OUT/'loto6_hist_rebuild_2135.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(out,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
