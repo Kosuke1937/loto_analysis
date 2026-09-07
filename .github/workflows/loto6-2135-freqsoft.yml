@@ -1,0 +1,21 @@
+name: Loto6 2135 Frequency Soft Rerank
+on:
+  push:
+    paths:
+      - 'research/loto6_hist_rebuild_2135_freqsoft.py'
+      - '.github/workflows/loto6-2135-freqsoft.yml'
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - run: python research/loto6_hist_rebuild_2135_freqsoft.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-2135-freqsoft
+          path: research/results/loto6_hist_rebuild_2135_freqsoft.json
