@@ -1,1 +1,87 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mini Loto Winner Score Traces</title><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script><style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;background:#f5f7fb;color:#172033;margin:0}.wrap{max-width:1400px;margin:auto;padding:24px}.hero,.card{background:#fff;border:1px solid #dbe3ef;border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 4px 18px #23405a0c}.hero{background:linear-gradient(135deg,#12376d,#2b67a9);color:#fff}.hero h1{margin:0 0 8px;font-size:32px}.hero p{margin:0;color:#dce8f8}.card h2{margin:0 0 6px;color:#12376d;font-size:22px}.note{font-size:13px;color:#667085;margin-bottom:10px}.chartbox{height:460px;position:relative}.warn{background:#fff6df;border-left:5px solid #c96a17;padding:12px 14px;border-radius:10px;margin:12px 0}.ok{background:#ecf9f2;border-left-color:#178353}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:900px){.grid{grid-template-columns:1fr}.chartbox{height:400px}}</style></head><body><div class="wrap"><div class="hero"><h1>ミニロト：実当選組スコアの時系列比較</h1><p>第1200〜1399回｜横軸＝抽選回、縦軸＝その回の実当選5数字に対するスコア</p></div><div class="warn"><b>読み方：</b>大半は各回の候補空間内で標準化したZスコアです。0より上なら候補平均より高く、+2なら約2標準偏差上です。Product系列だけは正値シフト後の積なので尺度が違い、別図にしています。A/B専門モデルは該当レイヤーの回だけ表示します。</div><div class="grid"><div class="card"><h2>① A1 と 4core窓の比較</h2><div class="note">4coreを100 / 200 / 300 / 500 / 全履歴で計算。ここではcore単体のZスコアとA1を比較。</div><div class="chartbox"><canvas id="c1"></canvas></div></div><div class="card"><h2>② 4core300の重み λ</h2><div class="note">Score = Z(A1) + λ Z(4core300)。0がA1単独、0.15が現行Committee。</div><div class="chartbox"><canvas id="c2"></canvas></div></div><div class="card"><h2>③ Lift / Under / Interaction</h2><div class="note">直近÷長期のpair Lift、出ていない側を評価するUnder、A1×4core交互作用を比較。</div><div class="chartbox"><canvas id="c3"></canvas></div></div><div class="card"><h2>④ A/B Specialist</h2><div class="note">A-Stat / A-DynamicはA層のみ、B-StatはB層のみ。現Committeeも同時表示。</div><div class="chartbox"><canvas id="c4"></canvas></div></div></div><div class="card"><h2>⑤ 掛け算型 Product</h2><div class="note">(Z(A1)-min+ε)×(Z(core300)-min+ε)^β。尺度がZと異なるので独立表示。</div><div class="chartbox"><canvas id="c5"></canvas></div></div></div><script>const U='data/miniloto-score-traces-1200-1399.json';const opts=(title)=>({responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{boxWidth:12,usePointStyle:true}},title:{display:false,text:title}},scales:{x:{title:{display:true,text:'抽選回'}},y:{title:{display:true,text:'当選組スコア'}}},elements:{point:{radius:0,hitRadius:5},line:{borderWidth:1.6,tension:0.08}}});const ds=(rows,key,label)=>({label,data:rows.map(r=>({x:r.draw,y:r[key]})),spanGaps:false});fetch(U).then(r=>r.json()).then(j=>{const r=j.rows;new Chart(document.getElementById('c1'),{type:'line',data:{datasets:[ds(r,'A1','A1'),ds(r,'core100','4core100'),ds(r,'core200','4core200'),ds(r,'core300','4core300'),ds(r,'core500','4core500'),ds(r,'coreAll','4core全履歴')]},options:opts('core')});new Chart(document.getElementById('c2'),{type:'line',data:{datasets:[ds(r,'lambda_0.00','λ=0 A1'),ds(r,'lambda_0.05','λ=.05'),ds(r,'lambda_0.10','λ=.10'),ds(r,'lambda_0.15','λ=.15 現行'),ds(r,'lambda_0.20','λ=.20'),ds(r,'lambda_0.30','λ=.30'),ds(r,'lambda_0.50','λ=.50'),ds(r,'lambda_1.00','λ=1.0')]},options:opts('lambda')});new Chart(document.getElementById('c3'),{type:'line',data:{datasets:[ds(r,'Committee015','現Committee'),ds(r,'Count200_015','count200 λ=.15'),ds(r,'Lift300_050','Lift300 λ=.50'),ds(r,'Under500_030','Under500 λ=.30'),ds(r,'Interact005','Interaction .05'),ds(r,'Interact010','Interaction .10'),ds(r,'Interact020','Interaction .20')]},options:opts('variants')});new Chart(document.getElementById('c4'),{type:'line',data:{datasets:[ds(r,'Committee015','現Committee'),ds(r,'A_Stat','A-Stat'),ds(r,'A_Dynamic','A-Dynamic'),ds(r,'B_Stat','B-Stat')]},options:opts('roles')});new Chart(document.getElementById('c5'),{type:'line',data:{datasets:[ds(r,'Product025','Product β=.25'),ds(r,'Product050','Product β=.50'),ds(r,'Product100','Product β=1.0')]},options:opts('product')});}).catch(e=>{document.body.insertAdjacentHTML('beforeend','<pre>'+e+'</pre>')});</script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ミニロト 実当選組スコア</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#050608;--panel:#181a1f;--panel2:#111418;--line:#2b3039;--text:#f3f6fb;--muted:#aeb7c7;--blue:#4a7fe5;--green:#32a86b;--amber:#e5a32a;--red:#d55a69;--cyan:#4bc0c8;--purple:#9b7cff}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif}body{line-height:1.45}.wrap{max-width:860px;margin:auto;padding:14px 12px 42px}.nav{display:flex;gap:7px;flex-wrap:wrap}.nav a{color:#dce4f0;text-decoration:none;border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:8px 12px;font-size:12px}.titleRow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px}.title{font-size:24px;font-weight:800}.version{font-size:10px;color:#cdd5e2;border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:5px 8px}.sub{font-size:11px;color:var(--muted);margin-top:4px}.note{font-size:11px;color:#cfd6e1;background:#101318;border:1px solid #202630;border-radius:13px;padding:10px 11px;margin-top:11px}.controls,.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 8px;scrollbar-width:none}.controls::-webkit-scrollbar,.tabs::-webkit-scrollbar{display:none}.chip,.tab{border:1px solid var(--line);background:var(--panel2);color:#c9d1df;border-radius:999px;padding:8px 12px;font-size:11px;white-space:nowrap}.chip.active,.tab.active{background:#202835;border-color:#4b5f7f;color:#fff}.section{font-size:15px;font-weight:800;margin:18px 2px 7px}.card{background:var(--panel);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:12px}.helper{font-size:11px;color:var(--muted);margin:2px 0 8px}.chartbox{height:340px;position:relative}.selected{margin-top:9px;background:#0f1216;border:2px solid #fff;border-radius:13px;padding:10px 11px}.selectedHead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.selectedDraw{font-size:14px;font-weight:800}.selectedNums{font-size:12px;color:#dce4f0;margin-top:2px}.layer{font-size:10px;padding:3px 7px;border-radius:999px;background:#202835;color:#cbd8ed}.scoregrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:9px}.scoreitem{background:#15191f;border:1px solid #262d37;border-radius:10px;padding:7px 8px}.scorelabel{font-size:9px;color:var(--muted)}.scoreval{font-size:15px;font-weight:800;margin-top:1px}.status{font-size:10px;color:var(--muted);margin:5px 2px 0}.bottomNav{display:flex;gap:8px;margin-top:18px}.bottomNav a{flex:1;text-align:center;color:#dce4f0;text-decoration:none;border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:10px 8px;font-size:12px}.footer{font-size:10px;color:#768296;text-align:center;margin-top:24px}
+@media(max-width:560px){.wrap{padding:12px 9px 34px}.title{font-size:21px}.chartbox{height:300px}.scoregrid{grid-template-columns:1fr 1fr}.card{padding:10px}.nav a{padding:7px 10px;font-size:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav"><a href="miniloto-development.html?v=score-ui-20260908">← 開発進捗</a><a href="miniloto.html?v=score-ui-20260908">ミニロト</a><a href="./?v=score-ui-20260908">トップ</a></div>
+  <div class="titleRow"><div class="title">実当選組スコア</div><div class="version">App v0.12.1</div></div>
+  <div class="sub">第1200〜1399回｜各回の実当選5数字をモデルがどの程度高く評価したかを見るページ</div>
+  <div class="note"><b>読み方：</b>基本は各回の候補空間内で標準化したZスコア。0より上なら候補平均より高い評価です。線が多すぎないよう、重要系列だけ初期表示し、凡例タップで追加表示できます。</div>
+
+  <div class="section">表示範囲</div>
+  <div class="controls" id="ranges"><button class="chip" data-n="20">直近20</button><button class="chip active" data-n="50">直近50</button><button class="chip" data-n="100">直近100</button><button class="chip" data-n="200">全200</button></div>
+
+  <div class="section">比較する指標</div>
+  <div class="tabs" id="tabs"><button class="tab active" data-tab="core">A1 / 4core</button><button class="tab" data-tab="weight">Committee重み</button><button class="tab" data-tab="variant">派生指標</button><button class="tab" data-tab="specialist">A/B Specialist</button><button class="tab" data-tab="product">Product</button></div>
+
+  <div class="card">
+    <div id="chartTitle" class="section" style="margin-top:0"></div>
+    <div id="chartHelp" class="helper"></div>
+    <div class="chartbox"><canvas id="scoreChart"></canvas></div>
+    <div class="status">グラフ上の点をタップすると、その回の詳細を下に固定表示します。凡例タップで系列をON/OFFできます。</div>
+    <div id="selected" class="selected"></div>
+  </div>
+
+  <div class="bottomNav"><a href="miniloto-development.html?v=score-ui-20260908">← 開発進捗へ戻る</a><a href="miniloto.html?v=score-ui-20260908">ミニロトTOP</a></div>
+  <div class="footer">Loto Analysis App ｜ score viewer redesign 2026-09-08</div>
+</div>
+<script src="data/miniloto-model-ranks-501-1399.js?v=score-ui-20260908"></script>
+<script>
+const SCORE_URL='data/miniloto-score-traces-1200-1399.json?v=score-ui-20260908';
+const rankRows=window.MINI_MODEL_RANKS||[];
+const rankMap=new Map(rankRows.map(r=>[r.draw,r]));
+const COLORS={blue:'#4a7fe5',green:'#32a86b',amber:'#e5a32a',red:'#d55a69',cyan:'#4bc0c8',purple:'#9b7cff',gray:'#9aa4b2'};
+const GROUPS={
+ core:{title:'A1 と 4core窓',help:'まず A1・4core300・4core500 を表示。100/200/全履歴は凡例から追加できます。',series:[
+  ['A1','A1',COLORS.blue,false],['core300','4core300',COLORS.amber,false],['core500','4core500',COLORS.cyan,false],['core100','4core100',COLORS.red,true],['core200','4core200',COLORS.purple,true],['coreAll','4core全履歴',COLORS.gray,true]
+ ]},
+ weight:{title:'4core300 の重み比較',help:'A1単独と現行 λ=0.15 を中心に比較。高いλは補助表示です。',series:[
+  ['lambda_0.00','A1単独 λ=0',COLORS.gray,false],['lambda_0.15','現行 λ=0.15',COLORS.blue,false],['lambda_0.30','λ=0.30',COLORS.amber,false],['lambda_0.50','λ=0.50',COLORS.cyan,true],['lambda_1.00','λ=1.0',COLORS.red,true]
+ ]},
+ variant:{title:'Committee派生指標',help:'現Committeeを基準に、別窓・Lift・Under・Interactionを比較します。',series:[
+  ['Committee015','現Committee',COLORS.blue,false],['Count200_015','count200 λ=.15',COLORS.green,false],['Lift300_050','Lift300 λ=.50',COLORS.amber,true],['Under500_030','Under500 λ=.30',COLORS.cyan,true],['Interact010','Interaction .10',COLORS.purple,false]
+ ]},
+ specialist:{title:'A/B Specialist',help:'A-Stat / A-Dynamic はA層、B-StatはB層の回だけ値があります。',series:[
+  ['Committee015','現Committee',COLORS.blue,false],['A_Stat','A-Stat',COLORS.green,false],['A_Dynamic','A-Dynamic',COLORS.amber,false],['B_Stat','B-Stat',COLORS.purple,false]
+ ]},
+ product:{title:'Product 系列',help:'Productは正値シフト後の積で、Zスコアとは尺度が違います。このタブ内だけで比較してください。',series:[
+  ['Product025','Product β=.25',COLORS.blue,false],['Product050','Product β=.50',COLORS.green,false],['Product100','Product β=1.0',COLORS.amber,false]
+ ]}
+};
+let allRows=[],rangeN=50,activeTab='core',selectedDraw=null,chart=null;
+const $=id=>document.getElementById(id);
+const fmt=v=>v==null||!Number.isFinite(+v)?'—':(+v).toFixed(3);
+const pad=n=>String(n).padStart(2,'0');
+
+const selectedLine={id:'selectedLine',afterDatasetsDraw(c){if(c.$selectedIndex==null)return;const x=c.scales.x.getPixelForValue(c.$selectedIndex);const ctx=c.ctx;ctx.save();ctx.strokeStyle='#ffffff';ctx.lineWidth=1.5;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(x,c.chartArea.top);ctx.lineTo(x,c.chartArea.bottom);ctx.stroke();ctx.restore();}};
+Chart.register(selectedLine);
+
+function visibleRows(){return allRows.slice(-rangeN)}
+function renderSelected(){const r=allRows.find(x=>x.draw===selectedDraw)||visibleRows().at(-1);if(!r)return;selectedDraw=r.draw;const meta=rankMap.get(r.draw);const nums=meta?.nums?.map(pad).join('・')||'当選番号データなし';const group=GROUPS[activeTab];const items=group.series.map(([key,label])=>`<div class="scoreitem"><div class="scorelabel">${label}</div><div class="scoreval">${fmt(r[key])}</div></div>`).join('');$('selected').innerHTML=`<div class="selectedHead"><div><div class="selectedDraw">第${r.draw}回</div><div class="selectedNums">${nums}</div></div><div class="layer">${r.layer||'—'}層</div></div><div class="scoregrid">${items}</div>`;}
+
+function buildChart(){const rows=visibleRows(),group=GROUPS[activeTab];$('chartTitle').textContent=group.title;$('chartHelp').textContent=group.help;if(selectedDraw==null||!rows.some(r=>r.draw===selectedDraw))selectedDraw=rows.at(-1)?.draw;
+ const labels=rows.map(r=>String(r.draw));
+ const pointR=rangeN<=20?3:rangeN<=50?2:rangeN<=100?1:0;
+ const datasets=group.series.map(([key,label,color,hidden])=>({label,data:rows.map(r=>r[key]),borderColor:color,backgroundColor:color,hidden,spanGaps:true,pointRadius:pointR,pointHoverRadius:5,pointHitRadius:10,borderWidth:2,tension:.08}));
+ if(chart)chart.destroy();
+ chart=new Chart($('scoreChart'),{type:'line',data:{labels,datasets},options:{responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:'index',intersect:false},onClick:(evt)=>{const pts=chart.getElementsAtEventForMode(evt,'nearest',{intersect:false},true);if(!pts.length)return;const idx=pts[0].index;selectedDraw=rows[idx].draw;chart.$selectedIndex=idx;chart.update('none');renderSelected();},plugins:{legend:{position:'bottom',labels:{color:'#cdd5e2',boxWidth:10,boxHeight:10,usePointStyle:true,padding:12,font:{size:10}}},tooltip:{backgroundColor:'#0f1216',titleColor:'#fff',bodyColor:'#dce4f0',borderColor:'#3a4452',borderWidth:1,padding:10,displayColors:true}},scales:{x:{grid:{display:false},ticks:{color:'#aeb7c7',maxTicksLimit:rangeN<=20?8:7,font:{size:10}},title:{display:true,text:'抽選回',color:'#aeb7c7',font:{size:10}}},y:{grid:{color:(ctx)=>ctx.tick.value===0?'#5f6b7a':'#29313c',lineWidth:(ctx)=>ctx.tick.value===0?1.5:1},ticks:{color:'#aeb7c7',font:{size:10}},title:{display:true,text:activeTab==='product'?'Product score':'Z score',color:'#aeb7c7',font:{size:10}}}}}});
+ chart.$selectedIndex=Math.max(0,rows.findIndex(r=>r.draw===selectedDraw));chart.update('none');renderSelected();}
+
+$('ranges').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{$('ranges').querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');rangeN=+b.dataset.n;selectedDraw=null;buildChart();});
+$('tabs').querySelectorAll('.tab').forEach(b=>b.onclick=()=>{$('tabs').querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');activeTab=b.dataset.tab;buildChart();});
+
+fetch(SCORE_URL,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('score data '+r.status);return r.json()}).then(j=>{allRows=j.rows||[];buildChart();}).catch(e=>{$('selected').innerHTML='<div class="selectedDraw">データ読み込みエラー</div><div class="selectedNums">'+e.message+'</div>';});
+</script>
+</body>
+</html>
