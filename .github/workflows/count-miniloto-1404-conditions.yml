@@ -1,0 +1,25 @@
+name: Count Mini Loto 1404 Conditions
+on:
+  push:
+    paths:
+      - 'scripts/count_miniloto_1404_conditions.py'
+      - '.github/workflows/count-miniloto-1404-conditions.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/count_miniloto_1404_conditions.py
+      - name: Commit result
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/miniloto-1404-condition-count.json
+          git diff --cached --quiet || git commit -m 'Count Mini Loto 1404 condition candidates'
+          git push
