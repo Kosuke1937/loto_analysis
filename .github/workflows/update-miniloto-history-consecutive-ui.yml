@@ -1,0 +1,25 @@
+name: Update Mini Loto History Consecutive UI
+on:
+  push:
+    paths:
+      - 'scripts/update_miniloto_history_consecutive_ui.py'
+      - '.github/workflows/update-miniloto-history-consecutive-ui.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/update_miniloto_history_consecutive_ui.py
+      - name: Commit update
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add miniloto-history-v4.html
+          git diff --cached --quiet || git commit -m 'Improve Mini Loto history consecutive display'
+          git push
