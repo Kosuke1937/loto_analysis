@@ -1,0 +1,167 @@
+{
+  "latest_draw": 1403,
+  "latest_numbers": [
+    8,
+    11,
+    14,
+    17,
+    19
+  ],
+  "latest_sum": 69,
+  "two_back_draw": 1402,
+  "two_back_numbers": [
+    1,
+    4,
+    20,
+    25,
+    29
+  ],
+  "conditions": [
+    "previous-main overlap 1-2",
+    "at least one consecutive pair",
+    "band layer A/B and its band shape occurred 0 or 1 times in latest 20 draws",
+    "sum > 69 and < 120",
+    "count of numbers exactly +/-1 from previous mains is 1-3",
+    "two-back same or +/-1: reported as >=1, 1-3, and 2-3 variants"
+  ],
+  "eligible_band_shapes": [
+    {
+      "shape": "0-2-3-0",
+      "freq_pct": 3.7776193870277974,
+      "layer": "B",
+      "recent20": 1
+    },
+    {
+      "shape": "0-3-2-0",
+      "freq_pct": 3.2074126870990733,
+      "layer": "B",
+      "recent20": 0
+    },
+    {
+      "shape": "1-1-2-1",
+      "freq_pct": 5.060584461867427,
+      "layer": "A",
+      "recent20": 1
+    },
+    {
+      "shape": "1-1-3-0",
+      "freq_pct": 6.771204561653599,
+      "layer": "A",
+      "recent20": 1
+    },
+    {
+      "shape": "1-2-2-0",
+      "freq_pct": 9.907341411261582,
+      "layer": "A",
+      "recent20": 1
+    },
+    {
+      "shape": "2-1-2-0",
+      "freq_pct": 8.624376336421953,
+      "layer": "A",
+      "recent20": 0
+    },
+    {
+      "shape": "2-2-0-1",
+      "freq_pct": 2.5659301496792586,
+      "layer": "B",
+      "recent20": 0
+    },
+    {
+      "shape": "2-2-1-0",
+      "freq_pct": 9.194583036350677,
+      "layer": "A",
+      "recent20": 1
+    },
+    {
+      "shape": "2-3-0-0",
+      "freq_pct": 2.352102637205987,
+      "layer": "B",
+      "recent20": 0
+    },
+    {
+      "shape": "3-1-1-0",
+      "freq_pct": 4.06272273699216,
+      "layer": "B",
+      "recent20": 0
+    },
+    {
+      "shape": "3-2-0-0",
+      "freq_pct": 2.352102637205987,
+      "layer": "B",
+      "recent20": 0
+    }
+  ],
+  "counts": {
+    "prev2_ge1": {
+      "count": 15291,
+      "by_shape": {
+        "0-2-3-0": 2166,
+        "0-3-2-0": 2879,
+        "1-1-2-1": 571,
+        "1-1-3-0": 1493,
+        "1-2-2-0": 4972,
+        "2-1-2-0": 1860,
+        "2-2-0-1": 410,
+        "2-2-1-0": 927,
+        "2-3-0-0": 2,
+        "3-1-1-0": 11
+      }
+    },
+    "prev2_1to3": {
+      "count": 13895,
+      "by_shape": {
+        "0-2-3-0": 1957,
+        "0-3-2-0": 2879,
+        "1-1-2-1": 428,
+        "1-1-3-0": 1126,
+        "1-2-2-0": 4552,
+        "2-1-2-0": 1653,
+        "2-2-0-1": 393,
+        "2-2-1-0": 894,
+        "2-3-0-0": 2,
+        "3-1-1-0": 11
+      }
+    },
+    "prev2_2to3": {
+      "count": 10226,
+      "by_shape": {
+        "0-2-3-0": 1666,
+        "0-3-2-0": 1867,
+        "1-1-2-1": 366,
+        "1-1-3-0": 962,
+        "1-2-2-0": 3519,
+        "2-1-2-0": 1136,
+        "2-2-0-1": 205,
+        "2-2-1-0": 499,
+        "3-1-1-0": 6
+      }
+    }
+  },
+  "funnel_prev2_ge1": [
+    {
+      "after": "sum",
+      "count": 117716
+    },
+    {
+      "after": "shape",
+      "count": 64028
+    },
+    {
+      "after": "consecutive",
+      "count": 29598
+    },
+    {
+      "after": "prev_overlap",
+      "count": 19431
+    },
+    {
+      "after": "prev_pm1",
+      "count": 15900
+    },
+    {
+      "after": "prev2_ge1",
+      "count": 15291
+    }
+  ]
+}
