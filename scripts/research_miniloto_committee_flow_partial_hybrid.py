@@ -4,9 +4,10 @@ import numpy as np
 
 ROOT=Path(__file__).resolve().parents[1]
 # Reuse only definitions from the established hybrid research script; do not execute its backtest.
-src=(ROOT/'scripts'/'research_miniloto_committee_flow_hybrid.py').read_text(encoding='utf-8')
+source_path=ROOT/'scripts'/'research_miniloto_committee_flow_hybrid.py'
+src=source_path.read_text(encoding='utf-8')
 prefix=src.split('def evaluate(period,lams):')[0]
-ns={}
+ns={'__file__':str(source_path)}
 exec(prefix,ns)
 
 combos=ns['combos']; draws=ns['draws']; sums=ns['sums']; inc=ns['inc']; combo_shapes=ns['combo_shapes']
@@ -89,8 +90,10 @@ def evaluate(period, settings):
         t=rr-1; cm=committee_scores(t); canon,_=canonical_final(cm); win=draws[t]
         bm,ur,us=metrics(canon,win); base['n']+=1; base['d3']+=bm>=3; base['d4']+=bm>=4; base['d5']+=bm>=5; base['union_recall_sum']+=ur; base['union5']+=ur==5; base['union_size_sum']+=us
         for name,(keep_n,lam,cw) in settings.items():
+            ids,lc,usize=partial_hybrid(t,cm,canon,keep_n,lam,cw)[:3]; d=outs[name]; d['n']+=1
+            # recover missing count separately to avoid changing older function signature assumptions
             ids,lc,orig_us,missing=partial_hybrid(t,cm,canon,keep_n,lam,cw)
-            bm,ur,us=metrics(ids,win); d=outs[name]; d['n']+=1; d['d3']+=bm>=3; d['d4']+=bm>=4; d['d5']+=bm>=5; d['union_recall_sum']+=ur; d['union5']+=ur==5; d['union_size_sum']+=us; d['missing_union_sum']+=missing
+            bm,ur,us=metrics(ids,win); d['d3']+=bm>=3; d['d4']+=bm>=4; d['d5']+=bm>=5; d['union_recall_sum']+=ur; d['union5']+=ur==5; d['union_size_sum']+=us; d['missing_union_sum']+=missing
             d['sum_in_80_110']+=sum(80<=int(sums[i])<=110 for i in ids)
             lm=rolling_layer_map(t,500)
             for i in ids: d['layer_counts'][lm[combo_shapes[i]]]+=1
