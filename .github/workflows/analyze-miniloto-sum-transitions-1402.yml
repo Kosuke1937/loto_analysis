@@ -1,0 +1,26 @@
+name: Analyze Mini Loto sum transitions 1402
+on:
+  push:
+    paths:
+      - 'scripts/analyze_miniloto_sum_transitions_1402.py'
+      - '.github/workflows/analyze-miniloto-sum-transitions-1402.yml'
+  workflow_dispatch:
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/analyze_miniloto_sum_transitions_1402.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/miniloto-sum-transition-analysis-1402.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Compute Mini Loto sum transition analysis through 1402'
+            git push
+          fi
