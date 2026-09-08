@@ -17,8 +17,8 @@
       "mean_union_recall": 4.08,
       "mean_pair_recall": 2.1,
       "mean_triple_recall": 0.335,
-      "portfolio_crowd_mean": 12.424307290236493,
-      "portfolio_crowd_median_mean": 12.049371001858065
+      "portfolio_crowd_mean": 12.4243072902365,
+      "portfolio_crowd_median_mean": 12.049371001858066
     },
     "0.02": {
       "n": 200,
@@ -28,8 +28,8 @@
       "mean_union_recall": 4.07,
       "mean_pair_recall": 2.11,
       "mean_triple_recall": 0.325,
-      "portfolio_crowd_mean": 12.361005541642472,
-      "portfolio_crowd_median_mean": 11.959018044946152
+      "portfolio_crowd_mean": 12.36100554164248,
+      "portfolio_crowd_median_mean": 11.959018044946154
     },
     "0.05": {
       "n": 200,
@@ -39,8 +39,8 @@
       "mean_union_recall": 4.01,
       "mean_pair_recall": 2.035,
       "mean_triple_recall": 0.305,
-      "portfolio_crowd_mean": 12.214993141293931,
-      "portfolio_crowd_median_mean": 11.76151731830245
+      "portfolio_crowd_mean": 12.214993141293938,
+      "portfolio_crowd_median_mean": 11.761517318302456
     },
     "0.1": {
       "n": 200,
@@ -50,8 +50,8 @@
       "mean_union_recall": 3.93,
       "mean_pair_recall": 2.03,
       "mean_triple_recall": 0.315,
-      "portfolio_crowd_mean": 12.104607500643274,
-      "portfolio_crowd_median_mean": 11.651443738696539
+      "portfolio_crowd_mean": 12.104607500643281,
+      "portfolio_crowd_median_mean": 11.651443738696544
     },
     "0.15": {
       "n": 200,
@@ -61,8 +61,8 @@
       "mean_union_recall": 3.935,
       "mean_pair_recall": 2.04,
       "mean_triple_recall": 0.315,
-      "portfolio_crowd_mean": 11.969398661604682,
-      "portfolio_crowd_median_mean": 11.546386924324052
+      "portfolio_crowd_mean": 11.96939866160469,
+      "portfolio_crowd_median_mean": 11.546386924324059
     },
     "0.2": {
       "n": 200,
@@ -72,8 +72,8 @@
       "mean_union_recall": 3.925,
       "mean_pair_recall": 2.065,
       "mean_triple_recall": 0.32,
-      "portfolio_crowd_mean": 11.832719956524107,
-      "portfolio_crowd_median_mean": 11.41060456522094
+      "portfolio_crowd_mean": 11.832719956524116,
+      "portfolio_crowd_median_mean": 11.410604565220947
     },
     "0.3": {
       "n": 200,
@@ -83,8 +83,8 @@
       "mean_union_recall": 3.875,
       "mean_pair_recall": 2.015,
       "mean_triple_recall": 0.295,
-      "portfolio_crowd_mean": 11.573235277984866,
-      "portfolio_crowd_median_mean": 11.069852820799548
+      "portfolio_crowd_mean": 11.573235277984871,
+      "portfolio_crowd_median_mean": 11.069852820799555
     }
   },
   "chosen_lambda": 0.0,
@@ -97,8 +97,8 @@
       "mean_union_recall": 4.15,
       "mean_pair_recall": 2.06,
       "mean_triple_recall": 0.295,
-      "portfolio_crowd_mean": 12.21141428935262,
-      "portfolio_crowd_median_mean": 11.616557412832567
+      "portfolio_crowd_mean": 12.211414289352629,
+      "portfolio_crowd_median_mean": 11.616557412832574
     },
     "crowd_aware": {
       "n": 200,
@@ -108,8 +108,8 @@
       "mean_union_recall": 4.15,
       "mean_pair_recall": 2.06,
       "mean_triple_recall": 0.295,
-      "portfolio_crowd_mean": 12.21141428935262,
-      "portfolio_crowd_median_mean": 11.616557412832567
+      "portfolio_crowd_mean": 12.211414289352629,
+      "portfolio_crowd_median_mean": 11.616557412832574
     },
     "crowd_mean_reduction_pct": 0.0,
     "gain3_draws": [],
@@ -126,8 +126,8 @@
       "mean_union_recall": 4.15,
       "mean_pair_recall": 2.06,
       "mean_triple_recall": 0.295,
-      "portfolio_crowd_mean": 12.21141428935262,
-      "portfolio_crowd_median_mean": 11.616557412832567
+      "portfolio_crowd_mean": 12.211414289352629,
+      "portfolio_crowd_median_mean": 11.616557412832574
     },
     "0.02": {
       "n": 200,
@@ -137,8 +137,8 @@
       "mean_union_recall": 4.13,
       "mean_pair_recall": 2.04,
       "mean_triple_recall": 0.29,
-      "portfolio_crowd_mean": 12.143568077625947,
-      "portfolio_crowd_median_mean": 11.577423184503937
+      "portfolio_crowd_mean": 12.14356807762595,
+      "portfolio_crowd_median_mean": 11.577423184503944
     },
     "0.05": {
       "n": 200,
@@ -148,8 +148,8 @@
       "mean_union_recall": 4.07,
       "mean_pair_recall": 2.005,
       "mean_triple_recall": 0.28,
-      "portfolio_crowd_mean": 12.010712204830154,
-      "portfolio_crowd_median_mean": 11.478251683576048
+      "portfolio_crowd_mean": 12.010712204830162,
+      "portfolio_crowd_median_mean": 11.478251683576055
     },
     "0.1": {
       "n": 200,
@@ -159,8 +159,8 @@
       "mean_union_recall": 4.07,
       "mean_pair_recall": 2.005,
       "mean_triple_recall": 0.28,
-      "portfolio_crowd_mean": 11.860955606110483,
-      "portfolio_crowd_median_mean": 11.362296121186148
+      "portfolio_crowd_mean": 11.86095560611049,
+      "portfolio_crowd_median_mean": 11.362296121186155
     },
     "0.15": {
       "n": 200,
@@ -170,8 +170,8 @@
       "mean_union_recall": 4.08,
       "mean_pair_recall": 2.0,
       "mean_triple_recall": 0.28,
-      "portfolio_crowd_mean": 11.747596826342706,
-      "portfolio_crowd_median_mean": 11.25438236638547
+      "portfolio_crowd_mean": 11.74759682634271,
+      "portfolio_crowd_median_mean": 11.254382366385476
     },
     "0.2": {
       "n": 200,
@@ -181,8 +181,8 @@
       "mean_union_recall": 3.985,
       "mean_pair_recall": 1.995,
       "mean_triple_recall": 0.29,
-      "portfolio_crowd_mean": 11.60335504535075,
-      "portfolio_crowd_median_mean": 11.145984410266154
+      "portfolio_crowd_mean": 11.603355045350755,
+      "portfolio_crowd_median_mean": 11.14598441026616
     },
     "0.3": {
       "n": 200,
@@ -192,8 +192,8 @@
       "mean_union_recall": 3.895,
       "mean_pair_recall": 1.965,
       "mean_triple_recall": 0.235,
-      "portfolio_crowd_mean": 11.279928137677166,
-      "portfolio_crowd_median_mean": 10.91462286360004
+      "portfolio_crowd_mean": 11.279928137677171,
+      "portfolio_crowd_median_mean": 10.914622863600048
     }
   },
   "draw1395": {
@@ -202,8 +202,8 @@
       "union_recall": 5,
       "pair_recall": 10,
       "triple_recall": 10,
-      "crowd_mean": 11.915643911208598,
-      "crowd_median": 11.586987777824609,
+      "crowd_mean": 11.9156439112086,
+      "crowd_median": 11.586987777824607,
       "draw": 1395,
       "cap": 4,
       "actual_first_prize_count": 14,
@@ -214,8 +214,8 @@
       "union_recall": 5,
       "pair_recall": 10,
       "triple_recall": 10,
-      "crowd_mean": 11.915643911208598,
-      "crowd_median": 11.586987777824609,
+      "crowd_mean": 11.9156439112086,
+      "crowd_median": 11.586987777824607,
       "draw": 1395,
       "cap": 4,
       "actual_first_prize_count": 14,
@@ -226,8 +226,8 @@
       "union_recall": 5,
       "pair_recall": 10,
       "triple_recall": 10,
-      "crowd_mean": 11.915643911208598,
-      "crowd_median": 11.586987777824609,
+      "crowd_mean": 11.9156439112086,
+      "crowd_median": 11.586987777824607,
       "draw": 1395,
       "cap": 4,
       "actual_first_prize_count": 14,
@@ -238,8 +238,8 @@
       "union_recall": 5,
       "pair_recall": 10,
       "triple_recall": 10,
-      "crowd_mean": 11.915643911208598,
-      "crowd_median": 11.586987777824609,
+      "crowd_mean": 11.9156439112086,
+      "crowd_median": 11.586987777824607,
       "draw": 1395,
       "cap": 4,
       "actual_first_prize_count": 14,
@@ -250,8 +250,8 @@
       "union_recall": 5,
       "pair_recall": 10,
       "triple_recall": 10,
-      "crowd_mean": 11.915643911208598,
-      "crowd_median": 11.586987777824609,
+      "crowd_mean": 11.9156439112086,
+      "crowd_median": 11.586987777824607,
       "draw": 1395,
       "cap": 4,
       "actual_first_prize_count": 14,
@@ -262,8 +262,8 @@
       "union_recall": 5,
       "pair_recall": 10,
       "triple_recall": 10,
-      "crowd_mean": 11.915643911208598,
-      "crowd_median": 11.586987777824609,
+      "crowd_mean": 11.9156439112086,
+      "crowd_median": 11.586987777824607,
       "draw": 1395,
       "cap": 4,
       "actual_first_prize_count": 14,
@@ -275,7 +275,7 @@
       "pair_recall": 6,
       "triple_recall": 1,
       "crowd_mean": 11.703657162081004,
-      "crowd_median": 11.357126282464591,
+      "crowd_median": 11.357126282464595,
       "draw": 1395,
       "cap": 4,
       "actual_first_prize_count": 14,
