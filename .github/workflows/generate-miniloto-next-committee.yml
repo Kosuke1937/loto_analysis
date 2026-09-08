@@ -1,0 +1,44 @@
+name: Generate Mini Loto next Committee
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/generate_miniloto_next_committee.py'
+      - '.github/workflows/generate-miniloto-next-committee.yml'
+      - 'data/miniloto-chunk-*.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: miniloto-next-committee
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check numpy
+      - run: python scripts/generate_miniloto_next_committee.py
+      - name: Commit generated candidates
+        run: |
+          set -e
+          FILE=data/miniloto-next-committee.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189824+github-actions[bot]@users.noreply.github.com'
+          git add "$FILE"
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 0
+          fi
+          git commit -m 'Generate Mini Loto next Committee candidates'
+          git pull --rebase origin main
+          git push origin HEAD:main
