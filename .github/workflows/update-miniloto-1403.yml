@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'scripts/update_miniloto_1403.py'
+      - 'scripts/backfill_miniloto_first_prize_counts.py'
       - '.github/workflows/update-miniloto-1403.yml'
   workflow_dispatch:
 permissions:
@@ -16,11 +17,12 @@ jobs:
         with:
           python-version: '3.11'
       - run: python scripts/update_miniloto_1403.py
+      - run: python scripts/backfill_miniloto_first_prize_counts.py
       - run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add VERSION data/miniloto-chunk-8.js data/miniloto-review-1403.json index.html miniloto.html miniloto-history-v4.html miniloto-trends.html miniloto-records.html miniloto-development.html miniloto-river.html miniloto-score-traces.html
+          git add VERSION data/miniloto-chunk-*.js data/miniloto-review-1403.json index.html miniloto.html miniloto-history-v4.html miniloto-trends.html miniloto-records.html miniloto-development.html miniloto-river.html miniloto-score-traces.html
           if ! git diff --cached --quiet; then
-            git commit -m 'Update Mini Loto through draw 1403 and review purchased tickets'
+            git commit -m 'Update Mini Loto through draw 1403 and backfill first-prize counts'
             git push
           fi
