@@ -1,4 +1,4 @@
-import ast, json, re, itertools, collections
+import json, re, itertools, collections
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 # Load all chunk arrays exactly as app data
@@ -7,7 +7,7 @@ for p in sorted((ROOT/'data').glob('miniloto-chunk-*.js')):
     txt=p.read_text(encoding='utf-8')
     m=re.search(r'push\((\[.*\])\);?$',txt,re.S)
     if not m: raise SystemExit(f'cannot parse {p}')
-    DATA.extend(ast.literal_eval(m.group(1)))
+    DATA.extend(json.loads(m.group(1)))
 DATA.sort(key=lambda r:r[0])
 
 def band(a):
