@@ -1,0 +1,27 @@
+name: Backtest Mini Loto Crowd Portfolio v2
+on:
+  push:
+    paths:
+      - 'scripts/backtest_miniloto_crowd_portfolio_v2_conservative.py'
+      - '.github/workflows/backtest-miniloto-crowd-portfolio-v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy scipy scikit-learn
+      - run: python scripts/backtest_miniloto_crowd_portfolio_v2_conservative.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/miniloto-crowd-portfolio-v1.json data/miniloto-crowd-portfolio-v2-conservative.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add conservative Mini Loto Crowd portfolio backtest results'
+            git push
+          fi
