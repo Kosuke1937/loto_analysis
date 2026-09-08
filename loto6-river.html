@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ロト6 数字の川</title>
+<style>
+:root{--bg:#050608;--panel:#181a1f;--panel2:#111418;--line:#2b3039;--text:#f3f6fb;--muted:#aeb7c7;--blue:#4a7fe5;--red:#e05a66;--amber:#e5a32a;--green:#32a86b;--grid:#242a33;--soft:#202835;--rel-same:#42d392;--rel-near:#4da3ff;--rel-prev2:#bd7cff;--rel-prev35:#f2c14e;--rel-outside:#9aa5b5;--A:#32a86b;--B:#e5a32a;--C:#4a7fe5;--D:#d55a69}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.45}.wrap{max-width:1080px;margin:auto;padding:14px 12px 40px}.nav{display:flex;gap:7px;flex-wrap:wrap}.nav a{color:#dce4f0;text-decoration:none;border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:8px 12px;font-size:12px}.titleRow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px}.title{font-size:25px;font-weight:800}.version{font-size:10px;color:#d5deea;border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:5px 8px}.sub{font-size:12px;color:var(--muted);margin:4px 0 12px}.controls{display:flex;gap:7px;overflow:auto;padding:3px 0 9px;align-items:center}.chip{border:1px solid var(--line);background:var(--panel2);color:#c9d1df;border-radius:999px;padding:9px 13px;font-size:12px;white-space:nowrap}.chip.active{background:var(--soft);border-color:#4b5f7f;color:#fff}.relationControls{display:flex;gap:7px;overflow:auto;padding:0 0 10px;align-items:center}.relationChip{display:inline-flex;align-items:center;gap:7px}.relationChip .swatch{width:10px;height:10px;border-radius:50%;display:inline-block}.relationChip[data-rel="prevSame"] .swatch{background:var(--rel-same)}.relationChip[data-rel="prevNear"] .swatch{background:var(--rel-near)}.relationChip[data-rel="prev2Near"] .swatch{background:var(--rel-prev2)}.relationChip[data-rel="prev35Same"] .swatch{background:var(--rel-prev35)}.relationChip[data-rel="outside"] .swatch{background:var(--rel-outside)}.relationChip.active[data-rel="prevSame"]{border-color:var(--rel-same);box-shadow:0 0 0 1px rgba(66,211,146,.25) inset}.relationChip.active[data-rel="prevNear"]{border-color:var(--rel-near);box-shadow:0 0 0 1px rgba(77,163,255,.25) inset}.relationChip.active[data-rel="prev2Near"]{border-color:var(--rel-prev2);box-shadow:0 0 0 1px rgba(189,124,255,.25) inset}.relationChip.active[data-rel="prev35Same"]{border-color:var(--rel-prev35);box-shadow:0 0 0 1px rgba(242,193,78,.25) inset}.relationChip.active[data-rel="outside"]{border-color:var(--rel-outside);box-shadow:0 0 0 1px rgba(154,165,181,.25) inset}.toggle{display:flex;gap:7px;align-items:center;border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:8px 11px;font-size:12px;white-space:nowrap}.section{font-size:16px;font-weight:800;margin:18px 2px 8px}.helper{font-size:11px;color:var(--muted);margin:0 2px 8px}.card{background:var(--panel);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:13px}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.label{font-size:10px;color:var(--muted)}.n{font-size:18px;font-weight:800;margin-top:3px}.riverWrap{overflow:auto;border:1px solid #222831;border-radius:14px;background:#0b0d10;-webkit-overflow-scrolling:touch}.river{min-width:1260px}.river svg{display:block;width:100%;height:auto}.axis{fill:#c7cfda;font-size:11px;font-weight:650}.drawLabel{fill:#aeb7c7;font-size:11px}.drawLabel.latest{fill:#ff7c87;font-weight:800}.gridline{stroke:var(--grid);stroke-width:1}.gridline.major{stroke:#3b4654;stroke-width:1.2}.rowline{stroke:#171b21;stroke-width:1}.relationHalo{fill:none;pointer-events:none}.relationHalo.prevSame{stroke:var(--rel-same);stroke-width:4}.relationHalo.prevNear{stroke:var(--rel-near);stroke-width:3}.relationHalo.prev2Near{stroke:var(--rel-prev2);stroke-width:2.5}.relationHalo.prev35Same{stroke:var(--rel-prev35);stroke-width:2.3}.relationHalo.outside{stroke:var(--rel-outside);stroke-width:2.2;stroke-dasharray:3 2}.mainDot{fill:#0f1216;stroke:#d8dee8;stroke-width:1.4}.mainDot.latest{stroke:#ff747f;stroke-width:2.2}.mainTxt{fill:#edf1f6;font-size:9px;font-weight:750;pointer-events:none}.mainTxt.latest{fill:#ff8790}.bonusDot{fill:none;stroke:var(--amber);stroke-width:1.6;stroke-dasharray:3 2}.selectedCol{fill:rgba(74,127,229,.12)}.latestRow{fill:rgba(224,90,102,.07)}.nextDot{fill:none;stroke:#566171;stroke-width:1}.nextTxt{fill:#758093;font-size:8px}.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.list{display:grid;gap:7px}.item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #242a33;padding-bottom:6px;font-size:12px}.item:last-child{border-bottom:0;padding-bottom:0}.numBadge{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;border:1px solid #5f6b7b;font-weight:800;margin-right:6px}.delta.up{color:#6bd79b}.delta.down{color:#ff8991}.delta.flat{color:#c7cfda}.selectedBox{border:2px solid #fff;border-radius:13px;background:#0f1216;padding:10px 12px;margin:10px 0 2px;font-size:12px;line-height:1.65}.note{font-size:10px;color:#7f8a9a;margin-top:10px}.footer{font-size:10px;color:#768296;text-align:center;margin-top:26px}.metaGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.badge{display:inline-grid;place-items:center;min-width:25px;height:25px;padding:0 7px;border-radius:999px;font-size:11px;font-weight:800;color:#fff}.badge.A{background:var(--A)}.badge.B{background:var(--B)}.badge.C{background:var(--C)}.badge.D{background:var(--D)}.tag{display:inline-block;border:1px solid #3a4351;border-radius:999px;padding:3px 7px;font-size:10px;color:#d8e0eb;margin-right:4px}.tableWrap{overflow:auto;border:1px solid #222831;border-radius:13px;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;width:100%;min-width:920px;background:#0d0f13}th,td{padding:6px 8px;border-bottom:1px solid #1d222a;font-size:10px;text-align:right;white-space:nowrap}th{position:sticky;top:0;background:#15181d;color:#b8c0cd;z-index:1}th:first-child,td:first-child{text-align:left}.latestTr{background:rgba(224,90,102,.08)}
+@media(max-width:680px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.summary,.metaGrid{grid-template-columns:1fr}.title{font-size:23px}.river{min-width:1240px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav"><a href="./?v=20260908-flow">トップ</a><a href="loto6.html?v=20260908-flow">ロト6</a><a href="loto6-trends.html?v=20260908-flow">傾向分析</a></div>
+  <div class="titleRow"><div class="title">数字の川</div><div class="version">App v0.14.1</div></div>
+  <div class="sub">本数字6個を「回 × 数字1〜43」で可視化。前回・近接・数回前との関係に加え、帯構成・ABCD層・合計帯の流れも同じ画面で確認します。</div>
+
+  <div class="controls" id="periods">
+    <button class="chip" data-n="20">直近20</button>
+    <button class="chip active" data-n="30">直近30</button>
+    <button class="chip" data-n="50">直近50</button>
+    <button class="chip" data-n="100">直近100</button>
+    <label class="toggle"><input id="bonusToggle" type="checkbox"> ボーナス表示</label>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="section">流れの関係色</div>
+  <div class="helper">ボタンは複数同時にONできます。条件が重なる数字は複数色リングで表示。「4条件外」は前回同じ・前回±1・2回前同じ/±1・3〜5回前同じのどれにも該当しない当選数字です。</div>
+  <div class="relationControls" id="relationControls">
+    <button class="chip relationChip" data-rel="prevSame"><span class="swatch"></span>前回と同じ</button>
+    <button class="chip relationChip" data-rel="prevNear"><span class="swatch"></span>前回 ±1</button>
+    <button class="chip relationChip" data-rel="prev2Near"><span class="swatch"></span>2回前 同じ・±1</button>
+    <button class="chip relationChip" data-rel="prev35Same"><span class="swatch"></span>3〜5回前 同じ</button>
+    <button class="chip relationChip" data-rel="outside"><span class="swatch"></span>4条件外</button>
+  </div>
+
+  <div class="section">当選番号の流れ</div>
+  <div class="helper">横＝数字1〜43、縦＝抽せん回。最新回は赤。「次回」行にもON中の条件リングを表示します。数字見出しまたは丸をタップすると、その数字の列を強調します。</div>
+  <div class="riverWrap"><div id="river" class="river"></div></div>
+  <div id="selectedBox" class="selectedBox"></div>
+  <div id="nextConditionBox" class="selectedBox"></div>
+
+  <div class="section">流れの読み取り補助</div>
+  <div class="helper">直近窓と直前窓の出現回数差、現在の未出現間隔を比較します。増減は記述統計であり、次回確率の上昇・低下を意味しません。</div>
+  <div class="summary">
+    <div class="card"><div class="label">直近窓で出現が増えた数字</div><div id="upList" class="list"></div></div>
+    <div class="card"><div class="label">現在の未出現間隔が長い数字</div><div id="gapList" class="list"></div></div>
+  </div>
+
+  <div class="section">帯構成・ABCD・合計の流れ</div>
+  <div class="helper">帯は1–9 / 10–19 / 20–29 / 30–39 / 40–43。ABCDは傾向分析ページと同じ長期帯構成頻度（A≥2%、B=1–2%、C=0.5–1%、D&lt;0.5%）。合計帯はS1≤109、S2=110–129、S3=130–149、S4≥150です。</div>
+  <div class="metaGrid" id="metaGrid"></div>
+  <div class="tableWrap"><table><thead><tr><th>回</th><th>本数字</th><th>帯構成</th><th>層</th><th>合計</th><th>合計帯</th><th>30+</th><th>40–43</th><th>前回再登場</th><th>連番</th></tr></thead><tbody id="metaBody"></tbody></table></div>
+
+  <div class="note">※ ロト6の各6数字組み合わせは原理上同じ抽せん確率です。この画面は、流れを可視化して条件の偏りや再結合仮説を検証するための分析補助です。</div>
+  <div class="footer">Loto Analysis App v0.14.1</div>
+</div>
+
+<script src="data/loto6-chunk-1.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-2.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-3.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-4.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-5.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-6.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-7.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-8.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-9.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-10.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-11.js?v=20260908-flow"></script>
+<script src="data/loto6-chunk-12.js?v=20260908-flow"></script>
+<script>
+const DATA=(window.LOTO6_CHUNKS||[]).flat();
+const INDEX=new Map(DATA.map((r,i)=>[r[0],i]));
+const $=id=>document.getElementById(id), pad=n=>String(n).padStart(2,'0');
+let period=30, selectedNumber=null, showBonus=false;
+const relationOn={prevSame:false,prevNear:false,prev2Near:false,prev35Same:false,outside:false};
+function mains(r){return r.slice(2,8)}
+function bonus(r){return r[8]}
+function rows(){return DATA.slice(-period)}
+function sum(a){return a.reduce((x,y)=>x+y,0)}
+function overlap(a,b){const s=new Set(a);return b.filter(x=>s.has(x)).length}
+function consec(a){let c=0;for(let i=1;i<a.length;i++)if(a[i]===a[i-1]+1)c++;return c}
+function currentGap(n){for(let i=DATA.length-1,g=0;i>=0;i--,g++)if(mains(DATA[i]).includes(n))return g;return DATA.length}
+function counts(rs){const c=Array(44).fill(0);rs.forEach(r=>mains(r).forEach(n=>c[n]++));return c}
+function shape(a){return [a.filter(x=>x<=9).length,a.filter(x=>x>=10&&x<=19).length,a.filter(x=>x>=20&&x<=29).length,a.filter(x=>x>=30&&x<=39).length,a.filter(x=>x>=40&&x<=43).length].join('-')}
+const ALL_SHAPE_COUNT={};DATA.forEach(r=>{const s=shape(mains(r));ALL_SHAPE_COUNT[s]=(ALL_SHAPE_COUNT[s]||0)+1});
+function shapeFreq(s){return 100*(ALL_SHAPE_COUNT[s]||0)/Math.max(1,DATA.length)}
+function layer(f){return f>=2?'A':f>=1?'B':f>=.5?'C':'D'}
+function sumBand(v){return v<=109?'S1':v<=129?'S2':v<=149?'S3':'S4'}
+function relationMatches(r,n){
+  const idx=INDEX.get(r[0]);
+  const prev=idx>0?mains(DATA[idx-1]):[];
+  const prev2=idx>1?mains(DATA[idx-2]):[];
+  const prev35=[];for(let k=3;k<=5;k++)if(idx>=k)prev35.push(...mains(DATA[idx-k]));
+  const prevSame=prev.includes(n);
+  const prevNear=prev.some(x=>Math.abs(n-x)===1);
+  const prev2Near=prev2.some(x=>Math.abs(n-x)<=1);
+  const prev35Same=prev35.includes(n);
+  return {prevSame,prevNear,prev2Near,prev35Same,outside:!(prevSame||prevNear||prev2Near||prev35Same)};
+}
+function nextRelationMatches(n){
+  const prev=DATA.length?mains(DATA.at(-1)):[];
+  const prev2=DATA.length>1?mains(DATA.at(-2)):[];
+  const prev35=[];for(let k=3;k<=5;k++)if(DATA.length>=k)prev35.push(...mains(DATA.at(-k)));
+  const prevSame=prev.includes(n);
+  const prevNear=prev.some(x=>Math.abs(n-x)===1);
+  const prev2Near=prev2.some(x=>Math.abs(n-x)<=1);
+  const prev35Same=prev35.includes(n);
+  return {prevSame,prevNear,prev2Near,prev35Same,outside:!(prevSame||prevNear||prev2Near||prev35Same)};
+}
+function setNumber(n){selectedNumber=selectedNumber===n?null:n;render()}
+function renderKpis(rs){
+  const latest=rs.at(-1),prev=DATA[INDEX.get(latest[0])-1];
+  const re=prev?overlap(mains(prev),mains(latest)):0;
+  const cr=Math.round(100*rs.filter(r=>consec(mains(r))>0).length/rs.length);
+  let totalWins=0,outsideWins=0;rs.forEach(r=>mains(r).forEach(n=>{totalWins++;if(relationMatches(r,n).outside)outsideWins++}));
+  $('kpis').innerHTML=`<div class="card"><div class="label">表示期間</div><div class="n">${rs.length}回</div></div><div class="card"><div class="label">最新回の前回再登場</div><div class="n">${re}個</div></div><div class="card"><div class="label">期間内 連番あり</div><div class="n">${cr}%</div></div><div class="card"><div class="label">4条件外</div><div class="n">${outsideWins}個</div><div class="label">${(100*outsideWins/Math.max(1,totalWins)).toFixed(1)}%</div></div>`;
+  const lm=mains(latest),sv=sum(lm),sh=shape(lm),f=shapeFreq(sh),ab=layer(f);
+  $('selectedBox').innerHTML=selectedNumber?selectedSummary(selectedNumber,rs):`<b>第${latest[0]}回</b>　${lm.map(pad).join('・')}<br>合計 ${sv}（${sumBand(sv)}）｜帯構成 ${sh}｜<span class="badge ${ab}">${ab}</span> 長期頻度 ${f.toFixed(2)}%${showBonus?`｜ボーナス ${pad(bonus(latest))}`:''}`;
+}
+function selectedSummary(n,rs){
+  const hit=rs.filter(r=>mains(r).includes(n)),gap=currentGap(n),recent=hit.slice(-5).map(r=>r[0]);
+  return `<b>数字 ${pad(n)}</b>　表示期間 ${hit.length}/${rs.length}回出現｜現在の未出現間隔 ${gap}回<br>直近の出現回：${recent.length?recent.join('・'):'なし'}`
+}
+function renderRiver(rs){
+  const W=1280,L=62,R=14,T=44,rowH=27,nextH=32,H=T+rowH*rs.length+nextH+16,plotW=W-L-R,x=n=>L+(n-1)*plotW/42;
+  let a=[];
+  if(selectedNumber){const xx=x(selectedNumber),cw=plotW/42;a.push(`<rect class="selectedCol" x="${xx-cw*.48}" y="0" width="${cw*.96}" height="${H}"/>`)}
+  for(let n=1;n<=43;n++){const xx=x(n),major=n===1||n%5===0||n===43;a.push(`<line class="gridline ${major?'major':''}" x1="${xx}" y1="${T-8}" x2="${xx}" y2="${H-12}"/>`);a.push(`<text data-n="${n}" class="axis" x="${xx}" y="20" text-anchor="middle" style="cursor:pointer">${n}</text>`)}
+  rs.forEach((r,i)=>{const y=T+i*rowH+rowH/2,latest=i===rs.length-1;if(latest)a.push(`<rect class="latestRow" x="0" y="${T+i*rowH}" width="${W}" height="${rowH}"/>`);a.push(`<line class="rowline" x1="${L-6}" y1="${T+(i+1)*rowH}" x2="${W-R}" y2="${T+(i+1)*rowH}"/>`);a.push(`<text class="drawLabel ${latest?'latest':''}" x="${L-9}" y="${y+4}" text-anchor="end">${r[0]}</text>`);mains(r).forEach(n=>{const xx=x(n),rel=relationMatches(r,n);
+    if(relationOn.outside&&rel.outside)a.push(`<circle cx="${xx}" cy="${y}" r="17" class="relationHalo outside"/>`);
+    if(relationOn.prev35Same&&rel.prev35Same)a.push(`<circle cx="${xx}" cy="${y}" r="15.5" class="relationHalo prev35Same"/>`);
+    if(relationOn.prev2Near&&rel.prev2Near)a.push(`<circle cx="${xx}" cy="${y}" r="14" class="relationHalo prev2Near"/>`);
+    if(relationOn.prevNear&&rel.prevNear)a.push(`<circle cx="${xx}" cy="${y}" r="11.5" class="relationHalo prevNear"/>`);
+    if(relationOn.prevSame&&rel.prevSame)a.push(`<circle cx="${xx}" cy="${y}" r="9.8" class="relationHalo prevSame"/>`);
+    a.push(`<circle data-n="${n}" cx="${xx}" cy="${y}" r="8" class="mainDot ${latest?'latest':''}" style="cursor:pointer"/>`);a.push(`<text class="mainTxt ${latest?'latest':''}" x="${xx}" y="${y+3}" text-anchor="middle">${n}</text>`)});if(showBonus){const b=bonus(r),xx=x(b);a.push(`<circle data-n="${b}" cx="${xx}" cy="${y}" r="12" class="bonusDot" style="cursor:pointer"/>`)} });
+  const ny=T+rs.length*rowH+nextH/2;a.push(`<text class="drawLabel" x="${L-9}" y="${ny+4}" text-anchor="end">次回</text>`);for(let n=1;n<=43;n++){const xx=x(n),rel=nextRelationMatches(n);
+    if(relationOn.outside&&rel.outside)a.push(`<circle cx="${xx}" cy="${ny}" r="16" class="relationHalo outside"/>`);
+    if(relationOn.prev35Same&&rel.prev35Same)a.push(`<circle cx="${xx}" cy="${ny}" r="14.5" class="relationHalo prev35Same"/>`);
+    if(relationOn.prev2Near&&rel.prev2Near)a.push(`<circle cx="${xx}" cy="${ny}" r="13" class="relationHalo prev2Near"/>`);
+    if(relationOn.prevNear&&rel.prevNear)a.push(`<circle cx="${xx}" cy="${ny}" r="10.5" class="relationHalo prevNear"/>`);
+    if(relationOn.prevSame&&rel.prevSame)a.push(`<circle cx="${xx}" cy="${ny}" r="9" class="relationHalo prevSame"/>`);
+    a.push(`<circle data-n="${n}" cx="${xx}" cy="${ny}" r="7" class="nextDot" style="cursor:pointer"/>`);if(n%5===0||n===1||n===43)a.push(`<text class="nextTxt" x="${xx}" y="${ny+3}" text-anchor="middle">${n}</text>`)}
+  $('river').innerHTML=`<svg viewBox="0 0 ${W} ${H}" aria-label="ロト6数字の川">${a.join('')}</svg>`;
+  $('river').querySelectorAll('[data-n]').forEach(e=>e.onpointerup=()=>setNumber(+e.dataset.n));
+}
+function renderLists(rs){
+  const w=Math.min(10,Math.floor(rs.length/2)),now=rs.slice(-w),before=rs.slice(-2*w,-w),cn=counts(now),cb=counts(before);let d=[...Array(43)].map((_,i)=>({n:i+1,d:cn[i+1]-cb[i+1],now:cn[i+1],before:cb[i+1]})).sort((a,b)=>b.d-a.d||b.now-a.now||a.n-b.n).slice(0,8);
+  $('upList').innerHTML=d.map(x=>`<div class="item"><span><span class="numBadge">${pad(x.n)}</span>${x.before}→${x.now}回</span><b class="delta ${x.d>0?'up':x.d<0?'down':'flat'}">${x.d>0?'+':''}${x.d}</b></div>`).join('');
+  const g=[...Array(43)].map((_,i)=>({n:i+1,g:currentGap(i+1)})).sort((a,b)=>b.g-a.g||a.n-b.n).slice(0,8);
+  $('gapList').innerHTML=g.map(x=>`<div class="item"><span><span class="numBadge">${pad(x.n)}</span>最終出現から</span><b>${x.g}回</b></div>`).join('');
+}
+function renderNextConditionBox(){
+  const inside=[],outside=[];for(let n=1;n<=43;n++){const m=nextRelationMatches(n);(m.outside?outside:inside).push(n)}
+  $('nextConditionBox').innerHTML=`<b>次回の4条件Union ${inside.length}数字</b><br>${inside.map(pad).join('・')}<br><b>4条件外 ${outside.length}数字</b><br>${outside.map(pad).join('・')}<br><span class="label">※ 条件外は除外候補ではなく、現在の4つの流れ条件では説明できない数字として別管理します。</span>`;
+}
+function topTransitions(vals){const c={};for(let i=1;i<vals.length;i++){const k=`${vals[i-1]}→${vals[i]}`;c[k]=(c[k]||0)+1}return Object.entries(c).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,5)}
+function renderMeta(rs){
+  const layers={A:0,B:0,C:0,D:0},sums={S1:0,S2:0,S3:0,S4:0},ls=[],ss=[];
+  rs.forEach(r=>{const a=mains(r),sh=shape(a),ab=layer(shapeFreq(sh)),sb=sumBand(sum(a));layers[ab]++;sums[sb]++;ls.push(ab);ss.push(sb)});
+  const latest=rs.at(-1),la=mains(latest),lsh=shape(la),lf=shapeFreq(lsh),lab=layer(lf),lsb=sumBand(sum(la));
+  const layerTxt=Object.entries(layers).map(([k,v])=>`<span class="badge ${k}">${k}</span> ${v}`).join('　');
+  const sumTxt=Object.entries(sums).map(([k,v])=>`<span class="tag">${k} ${v}</span>`).join('');
+  const lt=topTransitions(ls).map(([k,v])=>`${k} ${v}回`).join('<br>')||'—';
+  const st=topTransitions(ss).map(([k,v])=>`${k} ${v}回`).join('<br>')||'—';
+  $('metaGrid').innerHTML=`<div class="card"><div class="label">最新回</div><div class="n">${lsh} / ${lab} / ${sum(la)}</div><div class="label">${lsb}｜30以上 ${la.filter(n=>n>=30).length}個｜40–43 ${la.filter(n=>n>=40).length}個</div></div><div class="card"><div class="label">表示期間 ABCD</div><div style="margin-top:8px;line-height:2">${layerTxt}</div><div class="label">表示期間 合計帯</div><div style="margin-top:5px">${sumTxt}</div></div><div class="card"><div class="label">ABCD 遷移 上位</div><div style="margin-top:7px;font-size:12px;line-height:1.8">${lt}</div></div><div class="card"><div class="label">合計帯 遷移 上位</div><div style="margin-top:7px;font-size:12px;line-height:1.8">${st}</div></div>`;
+  $('metaBody').innerHTML=rs.slice().reverse().map((r,i)=>{const a=mains(r),idx=INDEX.get(r[0]),prev=idx>0?mains(DATA[idx-1]):[],sh=shape(a),ab=layer(shapeFreq(sh)),sv=sum(a),cs=consec(a);return `<tr class="${i===0?'latestTr':''}"><td>第${r[0]}回</td><td>${a.map(pad).join('・')}</td><td>${sh}</td><td><span class="badge ${ab}">${ab}</span></td><td>${sv}</td><td>${sumBand(sv)}</td><td>${a.filter(n=>n>=30).length}</td><td>${a.filter(n=>n>=40).length}</td><td>${prev.length?overlap(prev,a):'-'}</td><td>${cs?`${cs}組`:'なし'}</td></tr>`}).join('');
+}
+function render(){const rs=rows();renderKpis(rs);renderRiver(rs);renderLists(rs);renderNextConditionBox();renderMeta(rs)}
+$('periods').querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>{period=+b.dataset.n;$('periods').querySelectorAll('[data-n]').forEach(x=>x.classList.toggle('active',x===b));render()});
+$('bonusToggle').onchange=e=>{showBonus=e.target.checked;render()};
+$('relationControls').querySelectorAll('[data-rel]').forEach(b=>b.onclick=()=>{const key=b.dataset.rel;relationOn[key]=!relationOn[key];b.classList.toggle('active',relationOn[key]);render()});
+if(DATA.length)render();else document.body.innerHTML='<div style="padding:24px;color:#fff">ロト6データを読み込めませんでした。</div>';
+</script>
+</body>
+</html>
