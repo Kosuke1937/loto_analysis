@@ -1,0 +1,28 @@
+name: Analyze Mini Loto Crowd v1
+on:
+  push:
+    paths:
+      - 'scripts/analyze_miniloto_crowd_v1.py'
+      - '.github/workflows/analyze-miniloto-crowd-v1.yml'
+      - 'data/miniloto-chunk-*.js'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy scipy scikit-learn
+      - run: python scripts/analyze_miniloto_crowd_v1.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/miniloto-crowd-v1.json data/miniloto-crowd-v1-test.csv
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add Mini Loto Crowd-v1 validation results'
+            git push
+          fi
