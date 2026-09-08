@@ -1,0 +1,26 @@
+name: Fix Mini Loto 1403 payout display
+on:
+  push:
+    paths:
+      - 'scripts/fix_miniloto_1403_payout_display.py'
+      - '.github/workflows/fix-miniloto-1403-payout-display.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/fix_miniloto_1403_payout_display.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html miniloto-records.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Fix Mini Loto 1403 payout and top dashboard'
+            git push
+          fi
