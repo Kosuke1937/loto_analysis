@@ -1,0 +1,790 @@
+{
+  "draw": 1403,
+  "date": "2026/09/08",
+  "winner": [
+    8,
+    11,
+    14,
+    17,
+    19
+  ],
+  "bonus": 24,
+  "sum": 69,
+  "odd_even": "3:2",
+  "high_low": "3:2",
+  "band": "1-4-0-0",
+  "layer": "C",
+  "long_term_shape_pct": 1.1404133998574484,
+  "consecutive": false,
+  "prev_draw": 1402,
+  "prev_numbers": [
+    1,
+    4,
+    20,
+    25,
+    29
+  ],
+  "prev_sum": 79,
+  "prev_overlap": 0,
+  "prev_bonus": 22,
+  "prev_bonus_excluded": true,
+  "sum_sequence": [
+    112,
+    79,
+    69
+  ],
+  "sum_changes": [
+    -33,
+    -10
+  ],
+  "prior_sum_transition_test": {
+    "condition": "107<=prev2<=117, 74<=prev1<=84, drop -40..-25",
+    "historical_n_before_1403": 23,
+    "rise_count": 18,
+    "rise_pct": 78.26086956521739,
+    "fall_count": 5,
+    "fall_pct": 21.73913043478261,
+    "within_pm10_count": 6,
+    "actual_next_sum": 69,
+    "actual_change": -10,
+    "forecast_direction_hit": false,
+    "actual_within_pm10": true
+  },
+  "blocks": {
+    "revised10": {
+      "name": "合計遷移反映10口",
+      "tickets": [
+        {
+          "id": "1",
+          "numbers": [
+            4,
+            17,
+            18,
+            23,
+            28
+          ],
+          "sum": 90,
+          "main_match": 1,
+          "matched": [
+            17
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "2",
+          "numbers": [
+            4,
+            14,
+            19,
+            23,
+            31
+          ],
+          "sum": 91,
+          "main_match": 2,
+          "matched": [
+            14,
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "3",
+          "numbers": [
+            11,
+            14,
+            17,
+            21,
+            27
+          ],
+          "sum": 90,
+          "main_match": 3,
+          "matched": [
+            11,
+            14,
+            17
+          ],
+          "bonus_in_ticket": false,
+          "grade": "4等"
+        },
+        {
+          "id": "4",
+          "numbers": [
+            13,
+            15,
+            16,
+            26,
+            29
+          ],
+          "sum": 99,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "5",
+          "numbers": [
+            14,
+            16,
+            19,
+            22,
+            29
+          ],
+          "sum": 100,
+          "main_match": 2,
+          "matched": [
+            14,
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "6",
+          "numbers": [
+            5,
+            15,
+            22,
+            29,
+            31
+          ],
+          "sum": 102,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "7",
+          "numbers": [
+            2,
+            9,
+            18,
+            27,
+            31
+          ],
+          "sum": 87,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "8",
+          "numbers": [
+            4,
+            16,
+            18,
+            19,
+            27
+          ],
+          "sum": 84,
+          "main_match": 1,
+          "matched": [
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "9",
+          "numbers": [
+            4,
+            5,
+            17,
+            27,
+            31
+          ],
+          "sum": 84,
+          "main_match": 1,
+          "matched": [
+            17
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "10",
+          "numbers": [
+            2,
+            14,
+            17,
+            18,
+            29
+          ],
+          "sum": 80,
+          "main_match": 2,
+          "matched": [
+            14,
+            17
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        }
+      ],
+      "ticket_count": 10,
+      "investment_yen": 2000,
+      "best_match": 3,
+      "winning_ticket_count": 1,
+      "winner_number_recall": 4,
+      "winner_numbers_found": [
+        11,
+        14,
+        17,
+        19
+      ],
+      "winner_numbers_missing": [
+        8
+      ],
+      "winner_pair_recall": 4,
+      "winner_triple_recall": 1,
+      "union_size": 20
+    },
+    "committee10": {
+      "name": "Committee再結成10口",
+      "tickets": [
+        {
+          "id": "C1",
+          "numbers": [
+            9,
+            12,
+            21,
+            23,
+            29
+          ],
+          "sum": 94,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C2",
+          "numbers": [
+            10,
+            19,
+            25,
+            26,
+            27
+          ],
+          "sum": 107,
+          "main_match": 1,
+          "matched": [
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C3",
+          "numbers": [
+            1,
+            11,
+            21,
+            24,
+            30
+          ],
+          "sum": 87,
+          "main_match": 1,
+          "matched": [
+            11
+          ],
+          "bonus_in_ticket": true,
+          "grade": "—"
+        },
+        {
+          "id": "C4",
+          "numbers": [
+            9,
+            20,
+            21,
+            25,
+            31
+          ],
+          "sum": 106,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C5",
+          "numbers": [
+            1,
+            4,
+            19,
+            27,
+            31
+          ],
+          "sum": 82,
+          "main_match": 1,
+          "matched": [
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C6",
+          "numbers": [
+            2,
+            10,
+            24,
+            29,
+            30
+          ],
+          "sum": 95,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": true,
+          "grade": "—"
+        },
+        {
+          "id": "C7",
+          "numbers": [
+            3,
+            11,
+            23,
+            29,
+            31
+          ],
+          "sum": 97,
+          "main_match": 1,
+          "matched": [
+            11
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C8",
+          "numbers": [
+            12,
+            19,
+            20,
+            24,
+            26
+          ],
+          "sum": 101,
+          "main_match": 1,
+          "matched": [
+            19
+          ],
+          "bonus_in_ticket": true,
+          "grade": "—"
+        },
+        {
+          "id": "C9",
+          "numbers": [
+            9,
+            20,
+            23,
+            27,
+            30
+          ],
+          "sum": 109,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C10",
+          "numbers": [
+            4,
+            11,
+            25,
+            26,
+            28
+          ],
+          "sum": 94,
+          "main_match": 1,
+          "matched": [
+            11
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        }
+      ],
+      "ticket_count": 10,
+      "investment_yen": 2000,
+      "best_match": 1,
+      "winning_ticket_count": 0,
+      "winner_number_recall": 2,
+      "winner_numbers_found": [
+        11,
+        19
+      ],
+      "winner_numbers_missing": [
+        8,
+        14,
+        17
+      ],
+      "winner_pair_recall": 0,
+      "winner_triple_recall": 0,
+      "union_size": 20
+    },
+    "all20": {
+      "name": "購入20口",
+      "tickets": [
+        {
+          "id": "1",
+          "numbers": [
+            4,
+            17,
+            18,
+            23,
+            28
+          ],
+          "sum": 90,
+          "main_match": 1,
+          "matched": [
+            17
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "2",
+          "numbers": [
+            4,
+            14,
+            19,
+            23,
+            31
+          ],
+          "sum": 91,
+          "main_match": 2,
+          "matched": [
+            14,
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "3",
+          "numbers": [
+            11,
+            14,
+            17,
+            21,
+            27
+          ],
+          "sum": 90,
+          "main_match": 3,
+          "matched": [
+            11,
+            14,
+            17
+          ],
+          "bonus_in_ticket": false,
+          "grade": "4等"
+        },
+        {
+          "id": "4",
+          "numbers": [
+            13,
+            15,
+            16,
+            26,
+            29
+          ],
+          "sum": 99,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "5",
+          "numbers": [
+            14,
+            16,
+            19,
+            22,
+            29
+          ],
+          "sum": 100,
+          "main_match": 2,
+          "matched": [
+            14,
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "6",
+          "numbers": [
+            5,
+            15,
+            22,
+            29,
+            31
+          ],
+          "sum": 102,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "7",
+          "numbers": [
+            2,
+            9,
+            18,
+            27,
+            31
+          ],
+          "sum": 87,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "8",
+          "numbers": [
+            4,
+            16,
+            18,
+            19,
+            27
+          ],
+          "sum": 84,
+          "main_match": 1,
+          "matched": [
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "9",
+          "numbers": [
+            4,
+            5,
+            17,
+            27,
+            31
+          ],
+          "sum": 84,
+          "main_match": 1,
+          "matched": [
+            17
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "10",
+          "numbers": [
+            2,
+            14,
+            17,
+            18,
+            29
+          ],
+          "sum": 80,
+          "main_match": 2,
+          "matched": [
+            14,
+            17
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C1",
+          "numbers": [
+            9,
+            12,
+            21,
+            23,
+            29
+          ],
+          "sum": 94,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C2",
+          "numbers": [
+            10,
+            19,
+            25,
+            26,
+            27
+          ],
+          "sum": 107,
+          "main_match": 1,
+          "matched": [
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C3",
+          "numbers": [
+            1,
+            11,
+            21,
+            24,
+            30
+          ],
+          "sum": 87,
+          "main_match": 1,
+          "matched": [
+            11
+          ],
+          "bonus_in_ticket": true,
+          "grade": "—"
+        },
+        {
+          "id": "C4",
+          "numbers": [
+            9,
+            20,
+            21,
+            25,
+            31
+          ],
+          "sum": 106,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C5",
+          "numbers": [
+            1,
+            4,
+            19,
+            27,
+            31
+          ],
+          "sum": 82,
+          "main_match": 1,
+          "matched": [
+            19
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C6",
+          "numbers": [
+            2,
+            10,
+            24,
+            29,
+            30
+          ],
+          "sum": 95,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": true,
+          "grade": "—"
+        },
+        {
+          "id": "C7",
+          "numbers": [
+            3,
+            11,
+            23,
+            29,
+            31
+          ],
+          "sum": 97,
+          "main_match": 1,
+          "matched": [
+            11
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C8",
+          "numbers": [
+            12,
+            19,
+            20,
+            24,
+            26
+          ],
+          "sum": 101,
+          "main_match": 1,
+          "matched": [
+            19
+          ],
+          "bonus_in_ticket": true,
+          "grade": "—"
+        },
+        {
+          "id": "C9",
+          "numbers": [
+            9,
+            20,
+            23,
+            27,
+            30
+          ],
+          "sum": 109,
+          "main_match": 0,
+          "matched": [],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        },
+        {
+          "id": "C10",
+          "numbers": [
+            4,
+            11,
+            25,
+            26,
+            28
+          ],
+          "sum": 94,
+          "main_match": 1,
+          "matched": [
+            11
+          ],
+          "bonus_in_ticket": false,
+          "grade": "—"
+        }
+      ],
+      "ticket_count": 20,
+      "investment_yen": 4000,
+      "best_match": 3,
+      "winning_ticket_count": 1,
+      "winner_number_recall": 4,
+      "winner_numbers_found": [
+        11,
+        14,
+        17,
+        19
+      ],
+      "winner_numbers_missing": [
+        8
+      ],
+      "winner_pair_recall": 4,
+      "winner_triple_recall": 1,
+      "union_size": 28
+    }
+  },
+  "key_findings": [
+    "合計遷移反映10口の#3（11 14 17 21 27）が本数字11・14・17の3個一致で4等。",
+    "購入20口のWinner Number Recallは4/5で、8は全20口に一度も入らなかった。",
+    "Committee再結成10口はWinner Number Recall 2/5、best 1/5で、この回ではRescueとして機能しなかった。",
+    "112→79後の上昇優勢仮説に対し、実際は79→69（-10）で下落継続。合計値はハード誘導ではなくsoft priorに留める。",
+    "合計遷移反映10口は当選合計69をレンジ外にした一方、3数字core 11-14-17を1口へ集約できた。合計予測とAssembly品質は別評価が必要。"
+  ]
+}
