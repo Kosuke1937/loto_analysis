@@ -1,0 +1,21 @@
+name: Loto6 River Macro Pull v1
+on:
+  push:
+    paths:
+      - 'research/loto6_river_macro_pull_v1.py'
+      - '.github/workflows/loto6-river-macro-pull-v1.yml'
+  workflow_dispatch:
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python research/loto6_river_macro_pull_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-river-macro-pull-v1-result
+          path: research/results/loto6_river_macro_pull_v1_summary.json
