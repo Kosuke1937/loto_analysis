@@ -1,0 +1,22 @@
+name: Loto6 2136 Flow Exact
+on:
+  push:
+    paths:
+      - 'research/loto6_2136_flow_exact.py'
+      - '.github/workflows/loto6-2136-flow-exact.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python research/loto6_2136_flow_exact.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-2136-flow-exact
+          path: research/results/loto6_2136_flow_exact.json
