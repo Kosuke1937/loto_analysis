@@ -1,0 +1,110 @@
+{
+  "draws": 1403,
+  "unique_combinations": 1398,
+  "repeat_combination_count": 5,
+  "repeated_draw_occurrences": 10,
+  "extra_occurrences_beyond_first": 5,
+  "max_repeat_count": 2,
+  "repeats": [
+    {
+      "numbers": [
+        7,
+        14,
+        16,
+        17,
+        29
+      ],
+      "count": 2,
+      "occurrences": [
+        {
+          "draw": 75,
+          "date": "2000/12/05"
+        },
+        {
+          "draw": 345,
+          "date": "2006/03/07"
+        }
+      ]
+    },
+    {
+      "numbers": [
+        13,
+        14,
+        19,
+        24,
+        28
+      ],
+      "count": 2,
+      "occurrences": [
+        {
+          "draw": 145,
+          "date": "2002/04/23"
+        },
+        {
+          "draw": 1310,
+          "date": "2024/11/19"
+        }
+      ]
+    },
+    {
+      "numbers": [
+        5,
+        10,
+        21,
+        27,
+        28
+      ],
+      "count": 2,
+      "occurrences": [
+        {
+          "draw": 147,
+          "date": "2002/05/07"
+        },
+        {
+          "draw": 532,
+          "date": "2009/10/20"
+        }
+      ]
+    },
+    {
+      "numbers": [
+        6,
+        14,
+        15,
+        25,
+        26
+      ],
+      "count": 2,
+      "occurrences": [
+        {
+          "draw": 632,
+          "date": "2011/09/20"
+        },
+        {
+          "draw": 858,
+          "date": "2016/02/09"
+        }
+      ]
+    },
+    {
+      "numbers": [
+        3,
+        5,
+        7,
+        10,
+        18
+      ],
+      "count": 2,
+      "occurrences": [
+        {
+          "draw": 686,
+          "date": "2012/10/09"
+        },
+        {
+          "draw": 1045,
+          "date": "2019/10/01"
+        }
+      ]
+    }
+  ]
+}
