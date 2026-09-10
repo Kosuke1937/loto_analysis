@@ -35,7 +35,6 @@ def adj(nums):
     return out-set(nums)
 
 def profile_bounds(hist):
-    # Broad structural guard only; not a predictive score.
     sums=sorted(sum(r) for r in hist)
     ranges=sorted(max(r)-min(r) for r in hist)
     n=len(hist)
@@ -49,10 +48,6 @@ def profile_bounds(hist):
 def prof_ok(row,p):
     su=sum(row); rg=row[-1]-row[0]; odd=sum(x%2 for x in row); con=sum(1 for a,b in zip(row,row[1:]) if b-a==1)
     return p['sum_lo']<=su<=p['sum_hi'] and p['range_lo']<=rg<=p['range_hi'] and odd in p['odd_common'] and con<=p['consec_hi']
-
-def sig(row,S1,S2,S3,S4,OUTSIDE):
-    R=set(row)
-    return (len(R&S1),len(R&S2),len(R&S3),len(R&S4),len(R&OUTSIDE))
 
 def main():
     rows=load_rows(); assert rows[-1][0]==2135, rows[-1][0]
@@ -89,6 +84,9 @@ def main():
         if not (c1<=1 and c2==1 and 1<=c3<=4 and 1<=c4<=2 and co==1): continue
         sh=band(row); meta=shape_meta[sh]
         if not meta['temporal_ok']: continue
+        # Added zone constraints: 1-31 at least two, 32-43 at least one.
+        low31=sum(x<=31 for x in row); high3243=6-low31
+        if low31<2 or high3243<1: continue
         ly=meta['layer']; counts_no_bo[ly]+=1
         if prevbo in R: continue
         counts[ly]+=1; shape_counts[(ly,sh)]+=1
@@ -96,21 +94,19 @@ def main():
         if prof_ok(row,prof): counts_profile[ly]+=1
         if ly!='D':
             candidates.append({'row':row,'layer':ly,'shape':sh,'c1':c1,'c2':c2,'c3':c3,'c4':c4,
-                               'outside':next(iter(R&OUTSIDE)),'cold':int(23 in R or 24 in R),'profile':prof_ok(row,prof)})
+                               'outside':next(iter(R&OUTSIDE)),'cold':int(23 in R or 24 in R),'profile':prof_ok(row,prof),
+                               'low31':low31,'high3243':high3243})
 
-    # Prefer broad historical profile, but fall back to all A/B/C flow-valid combinations.
     maincand=[x for x in candidates if x['profile']]
     bylayer=defaultdict(list)
     for x in maincand: bylayer[x['layer']].append(x)
     quota={'A':4,'B':4,'C':2}
-    # If a layer unexpectedly lacks enough profile candidates, allow non-profile from same layer.
     allby=defaultdict(list)
     for x in candidates: allby[x['layer']].append(x)
     for ly in quota:
         if len(bylayer[ly])<quota[ly]: bylayer[ly]=allby[ly]
 
-    # Deterministic rule-based portfolio assembly. No Stat/Committee score.
-    # Targets diversify previous overlap / 2-back flow / 3-5-back flow and minimize pair/triple reuse.
+    # Score-free deterministic portfolio assembly.
     target_c1=[0,0,0,0,0,0,1,1,1,1]
     target_c3=[1,1,2,2,2,2,3,3,4,1]
     target_c4=[1,2,1,2,1,2,1,2,1,2]
@@ -123,16 +119,13 @@ def main():
             row=x['row']
             if any(row==y['row'] for y in selected): continue
             if x['c1']!=target_c1[pos]: continue
-            # Keep 23/24 very limited across the final portfolio.
             if x['cold'] and cold_used>=1: continue
             pairs=list(itertools.combinations(row,2)); tris=list(itertools.combinations(row,3))
-            # hard-ish diversity first; relax automatically through key rather than rejecting all.
             rep_tri=sum(triuse[t] for t in tris); rep_pair=sum(pairuse[p] for p in pairs); load=sum(numuse[n] for n in row)
             maxnum=max((numuse[n] for n in row),default=0)
             key=(abs(x['c3']-target_c3[pos]),abs(x['c4']-target_c4[pos]),rep_tri,rep_pair,maxnum,load,x['cold'],abs(sum(row)-132),row)
             if bestkey is None or key<bestkey: bestkey=key; best=x
         if best is None:
-            # fallback within layer, relaxing c1 target only; still minimize diversity reuse.
             for x in pool:
                 row=x['row']
                 if any(row==y['row'] for y in selected): continue
@@ -147,7 +140,6 @@ def main():
         for p in itertools.combinations(best['row'],2): pairuse[p]+=1
         for t in itertools.combinations(best['row'],3): triuse[t]+=1
 
-    # audit
     union=sorted(set().union(*(set(x['row']) for x in selected)))
     layers=Counter(x['layer'] for x in selected)
     cold_lines=sum(x['cold'] for x in selected)
@@ -155,13 +147,13 @@ def main():
     out={
       'draw':2136,
       'history_last_draw':rows[-1][0],
-      'recent_draws':{
-        'prev_2135':list(prev),'prev2_2134':list(prev2),'prev3to5':[list(r) for r in prev3to5],'prev_bonus':prevbo,
-        'prev_shape':list(prev_shape),'prev_layer':prev_layer},
+      'recent_draws':{'prev_2135':list(prev),'prev2_2134':list(prev2),'prev3to5':[list(r) for r in prev3to5],'prev_bonus':prevbo,
+                      'prev_shape':list(prev_shape),'prev_layer':prev_layer},
       'sets':{'S1_prev_same':sorted(S1),'S2_prev_pm1':sorted(S2),'S3_prev2_same_pm1':sorted(S3),'S4_draws3to5_same':sorted(S4),
               'outside_four_sets':sorted(OUTSIDE)},
       'rules':{'prev_same':'0-1','prev_pm1':'exactly 1','prev2_same_pm1':'1-4','draws3to5_same':'1-2','outside_four_sets':'exactly 1',
-               'band':'c20=0 and c50<=1','previous_bonus_excluded':prevbo,'D_layer_excluded_from_final':True,'23_24':'soft; max one final line'},
+               'band':'c20=0 and c50<=1','zone_1_31':'at least 2','zone_32_43':'at least 1',
+               'previous_bonus_excluded':prevbo,'D_layer_excluded_from_final':True,'23_24':'soft; max one final line'},
       'profile_tiebreak':{'sum':[prof['sum_lo'],prof['sum_hi']],'range':[prof['range_lo'],prof['range_hi']],'consec_max':prof['consec_hi'],'odd_common':sorted(prof['odd_common'])},
       'layer_counts_after_flow_before_D_exclusion':dict(counts),
       'layer_counts_without_previous_bonus_exclusion':dict(counts_no_bo),
@@ -182,7 +174,8 @@ def main():
     for i,x in enumerate(selected,1):
         out['portfolio'].append({'no':i,'numbers':list(x['row']),'sum':sum(x['row']),'layer':x['layer'],'shape':list(x['shape']),
                                  'prev_same':x['c1'],'prev_pm1':x['c2'],'prev2_same_pm1':x['c3'],'draws3to5_same':x['c4'],
-                                 'outside_number':x['outside'],'contains_23_24':bool(x['cold']),'profile':bool(x['profile'])})
+                                 'outside_number':x['outside'],'contains_23_24':bool(x['cold']),'profile':bool(x['profile']),
+                                 'count_1_31':x['low31'],'count_32_43':x['high3243']})
     path=OUT/'loto6_2136_flow_exact.json'; path.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(out,ensure_ascii=False,indent=2))
 
