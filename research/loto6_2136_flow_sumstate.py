@@ -8,11 +8,11 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'research'/'results'; OUT.mkdir(parents=True,exist_ok=True)
 BANDS=((1,9),(10,19),(20,29),(30,39),(40,43))
 
-# Sum-state definition used for #2136.
+# Official app sum-state definition shown in the trend view.
 def sum_state(s):
-    if s<=105: return 'S1'
-    if s<=120: return 'S2'
-    if s<=145: return 'S3'
+    if s<=109: return 'S1'
+    if s<=129: return 'S2'
+    if s<=149: return 'S3'
     return 'S4'
 
 def has_three_consecutive(row):
@@ -70,8 +70,11 @@ def main():
     prev=nums[-1]; prev2=nums[-2]; prev3to5=nums[-5:-2]; prevbo=bonus[-1]
     assert sum_state(sum(prev))=='S4'
 
-    S1=set(prev); S2=adj(S1); S3=set(prev2)|adj(set(prev2)); S4=set().union(*(set(r) for r in prev3to5))
-    OUTSIDE=set(range(1,44))-(S1|S2|S3|S4)
+    FLOW1=set(prev)
+    FLOW2=adj(FLOW1)
+    FLOW3=set(prev2)|adj(set(prev2))
+    FLOW4=set().union(*(set(r) for r in prev3to5))
+    OUTSIDE=set(range(1,44))-(FLOW1|FLOW2|FLOW3|FLOW4)
 
     hall=Counter(band(r) for r in nums); c20=Counter(band(r) for r in nums[-20:]); c50=Counter(band(r) for r in nums[-50:])
     shape_meta={}
@@ -87,7 +90,10 @@ def main():
     counts=Counter(); candidates=[]
     for row in itertools.combinations(range(1,44),6):
         if has_three_consecutive(row): continue
-        R=set(row); c1=len(R&S1); c2=len(R&S2); c3=len(R&S3); c4=len(R&S4); co=len(R&OUTSIDE)
+        R=set(row)
+        # Long-gap handling requested by user: hard-exclude only 23 and 24.
+        if 23 in R or 24 in R: continue
+        c1=len(R&FLOW1); c2=len(R&FLOW2); c3=len(R&FLOW3); c4=len(R&FLOW4); co=len(R&OUTSIDE)
         if not (c1<=1 and c2==1 and 1<=c3<=4 and 1<=c4<=2 and co==1): continue
         sh=band(row); meta=shape_meta[sh]
         if not meta['temporal_ok']: continue
@@ -99,9 +105,10 @@ def main():
         st=sum_state(sum(row))
         counts[(st,ly)]+=1
         candidates.append({'row':row,'state':st,'layer':ly,'shape':sh,'c1':c1,'c2':c2,'c3':c3,'c4':c4,
-                           'outside':next(iter(R&OUTSIDE)),'cold':int(23 in R or 24 in R),'profile':prof_ok(row,prof),
+                           'outside':next(iter(R&OUTSIDE)),'profile':prof_ok(row,prof),
                            'low31':low31,'high3243':high3243})
 
+    # User flow priority from previous S4: S4 > S2 > S1. S3 not purchased in this portfolio.
     state_plan=['S4']*5+['S2']*3+['S1']*2
     layer_plan=['A','B','C','A','B','A','B','C','A','B']
     c1_plan=[0,0,0,1,1,0,0,1,0,1]
@@ -110,57 +117,56 @@ def main():
 
     pools=defaultdict(list)
     for x in candidates: pools[(x['state'],x['layer'])].append(x)
-    selected=[]; numuse=Counter(); pairuse=Counter(); triuse=Counter(); cold_used=0; prev_num_use=Counter()
+    selected=[]; numuse=Counter(); pairuse=Counter(); triuse=Counter(); prev_num_use=Counter()
 
-    def key_for(x,pos,relax_layer=False,relax_c1=False):
+    state_center={'S4':158,'S2':120,'S1':102}
+    def key_for(x,pos,relax_c1=False):
         row=x['row']; pairs=list(itertools.combinations(row,2)); tris=list(itertools.combinations(row,3))
-        prevn=[n for n in row if n in S1]
+        prevn=[n for n in row if n in FLOW1]
         prev_over=max((prev_num_use[n] for n in prevn),default=0)
         return (0 if x['profile'] else 1,
                 0 if (relax_c1 or x['c1']==c1_plan[pos]) else 1,
                 abs(x['c3']-c3_plan[pos]),abs(x['c4']-c4_plan[pos]),
                 sum(triuse[t] for t in tris),sum(pairuse[p] for p in pairs),
                 prev_over,max((numuse[n] for n in row),default=0),sum(numuse[n] for n in row),
-                x['cold'],abs(sum(row)-({'S4':157,'S2':113,'S1':100}[x['state']])),row)
+                abs(sum(row)-state_center[x['state']]),row)
 
     for pos,(st,ly) in enumerate(zip(state_plan,layer_plan)):
-        options=pools[(st,ly)]
         best=None; bestkey=None
-        for x in options:
+        # Pass 1: exact state/layer and requested previous-overlap count.
+        for x in pools[(st,ly)]:
             row=x['row']
             if any(row==y['row'] for y in selected): continue
             if x['c1']!=c1_plan[pos]: continue
-            if x['cold'] and cold_used>=1: continue
-            prevn=[n for n in row if n in S1]
+            prevn=[n for n in row if n in FLOW1]
             if any(prev_num_use[n]>=2 for n in prevn): continue
             k=key_for(x,pos)
             if bestkey is None or k<bestkey: bestkey=k; best=x
+        # Pass 2: preserve sum state and c1; allow ABC layer fallback only if necessary.
         if best is None:
             for x in candidates:
-                if x['state']!=st: continue
+                if x['state']!=st or x['c1']!=c1_plan[pos]: continue
                 row=x['row']
                 if any(row==y['row'] for y in selected): continue
-                if x['c1']!=c1_plan[pos]: continue
-                if x['cold'] and cold_used>=1: continue
-                prevn=[n for n in row if n in S1]
+                prevn=[n for n in row if n in FLOW1]
                 if any(prev_num_use[n]>=2 for n in prevn): continue
-                k=(0 if x['layer']==ly else 1,)+key_for(x,pos,relax_layer=True)
+                k=(0 if x['layer']==ly else 1,)+key_for(x,pos)
                 if bestkey is None or k<bestkey: bestkey=k; best=x
+        # Pass 3: preserve all hard flow filters and sum state; relax c1 portfolio target only if needed.
         if best is None:
             for x in candidates:
                 if x['state']!=st: continue
                 row=x['row']
                 if any(row==y['row'] for y in selected): continue
-                if x['cold'] and cold_used>=1: continue
-                prevn=[n for n in row if n in S1]
+                prevn=[n for n in row if n in FLOW1]
                 if any(prev_num_use[n]>=2 for n in prevn): continue
-                k=(0 if x['layer']==ly else 1,)+key_for(x,pos,relax_layer=True,relax_c1=True)
+                k=(0 if x['layer']==ly else 1,)+key_for(x,pos,relax_c1=True)
                 if bestkey is None or k<bestkey: bestkey=k; best=x
         assert best is not None,(pos,st,ly)
-        selected.append(best); cold_used+=best['cold']
+        selected.append(best)
         for n in best['row']:
             numuse[n]+=1
-            if n in S1: prev_num_use[n]+=1
+            if n in FLOW1: prev_num_use[n]+=1
         for p in itertools.combinations(best['row'],2): pairuse[p]+=1
         for t in itertools.combinations(best['row'],3): triuse[t]+=1
 
@@ -168,27 +174,33 @@ def main():
     union=sorted(set().union(*(set(x['row']) for x in selected)))
     out={
       'draw':2136,
-      'sum_state_definition':{'S1':'<=105','S2':'106-120','S3':'121-145','S4':'>=146'},
+      'sum_state_definition':{'S1':'<=109','S2':'110-129','S3':'130-149','S4':'>=150'},
       'previous':{'draw':2135,'numbers':list(prev),'bonus':prevbo,'sum':sum(prev),'sum_state':'S4'},
+      'flow_sets':{'prev_same':sorted(FLOW1),'prev_pm1':sorted(FLOW2),'prev2_same_pm1':sorted(FLOW3),'draws3to5_same':sorted(FLOW4),'outside_four':sorted(OUTSIDE)},
       's4_transition_counts_all_history':dict(transition_counts(nums)),
       's4_transition_counts_recent500':dict(transition_counts(nums,max(1,len(nums)-500))),
       'user_priority':['S4','S2','S1'],
       'portfolio_state_plan':{'S4':5,'S2':3,'S1':2,'S3':0},
-      'rules':{'three_consecutive':'excluded','ordinary_consecutive_pair':'allowed'},
+      'rules':{'prev_same':'0-1','prev_pm1':'exactly 1','prev2_same_pm1':'1-4','draws3to5_same':'1-2',
+               'outside_four':'exactly 1','band':'c20=0 and c50<=1','D_layer':'excluded','zone_1_31':'at least 2',
+               'zone_32_43':'at least 1','previous_bonus_excluded':prevbo,'hard_excluded_long_gap':[23,24],
+               'other_long_gap_numbers':'allowed normally','three_consecutive':'excluded','ordinary_consecutive_pair':'allowed'},
       'eligible_counts_by_state_layer':{st:{ly:counts[(st,ly)] for ly in ('A','B','C')} for st in ('S1','S2','S3','S4')},
       'eligible_counts_by_state':{st:sum(counts[(st,ly)] for ly in ('A','B','C')) for st in ('S1','S2','S3','S4')},
       'portfolio':[],
       'portfolio_audit':{'states':dict(state_counts),'layers':dict(layer_counts),'prev_overlap':dict(c1_counts),
-                         'prev_number_use':{str(k):v for k,v in sorted(prev_num_use.items())},'cold23_24_lines':cold_used,
+                         'prev_number_use':{str(k):v for k,v in sorted(prev_num_use.items())},
+                         'hard_excluded_23_24_present':sum((23 in x['row'] or 24 in x['row']) for x in selected),
+                         'outside_four_count_failures':sum(len(set(x['row'])&OUTSIDE)!=1 for x in selected),
                          'union_size':len(union),'union':union,'repeated_pairs':sum(v>1 for v in pairuse.values()),
                          'repeated_triples':sum(v>1 for v in triuse.values()),
                          'three_consecutive_lines':sum(has_three_consecutive(x['row']) for x in selected)},
-      'caution':'5/3/2 is a portfolio allocation reflecting the user-provided order S4>S2>S1; it is not interpreted as calibrated lottery probability.'
+      'caution':'The 5/3/2 S4/S2/S1 allocation follows the user-provided flow priority and is not a calibrated lottery probability.'
     }
     for i,x in enumerate(selected,1):
         out['portfolio'].append({'no':i,'numbers':list(x['row']),'sum':sum(x['row']),'sum_state':x['state'],'layer':x['layer'],
                                  'shape':list(x['shape']),'prev_same':x['c1'],'prev_pm1':x['c2'],'prev2_same_pm1':x['c3'],
-                                 'draws3to5_same':x['c4'],'outside_number':x['outside'],'contains_23_24':bool(x['cold']),
+                                 'draws3to5_same':x['c4'],'outside_number':x['outside'],
                                  'count_1_31':x['low31'],'count_32_43':x['high3243']})
     path=OUT/'loto6_2136_flow_sumstate.json'; path.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(out,ensure_ascii=False,indent=2))
