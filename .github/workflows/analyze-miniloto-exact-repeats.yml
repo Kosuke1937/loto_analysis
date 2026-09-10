@@ -1,0 +1,25 @@
+name: Analyze Mini Loto Exact Repeats
+on:
+  push:
+    paths:
+      - 'scripts/analyze_miniloto_exact_repeats.py'
+      - '.github/workflows/analyze-miniloto-exact-repeats.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/analyze_miniloto_exact_repeats.py
+      - name: Commit result
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/miniloto-exact-repeat-analysis.json
+          git diff --cached --quiet || git commit -m 'Analyze Mini Loto exact repeats'
+          git push
