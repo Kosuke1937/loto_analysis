@@ -9,12 +9,15 @@ OUT=ROOT/'research'/'results'; OUT.mkdir(parents=True,exist_ok=True)
 BANDS=((1,9),(10,19),(20,29),(30,39),(40,43))
 
 # Sum-state definition used for #2136.
-# Previous #2135 sum=162 -> S4.
 def sum_state(s):
     if s<=105: return 'S1'
     if s<=120: return 'S2'
     if s<=145: return 'S3'
     return 'S4'
+
+def has_three_consecutive(row):
+    """Allow ordinary consecutive pairs, but reject any run of 3+ consecutive numbers."""
+    return any(row[i+1]==row[i]+1 and row[i+2]==row[i]+2 for i in range(len(row)-2))
 
 def load_rows():
     rows=[]
@@ -83,6 +86,7 @@ def main():
 
     counts=Counter(); candidates=[]
     for row in itertools.combinations(range(1,44),6):
+        if has_three_consecutive(row): continue
         R=set(row); c1=len(R&S1); c2=len(R&S2); c3=len(R&S3); c4=len(R&S4); co=len(R&OUTSIDE)
         if not (c1<=1 and c2==1 and 1<=c3<=4 and 1<=c4<=2 and co==1): continue
         sh=band(row); meta=shape_meta[sh]
@@ -98,12 +102,8 @@ def main():
                            'outside':next(iter(R&OUTSIDE)),'cold':int(23 in R or 24 in R),'profile':prof_ok(row,prof),
                            'low31':low31,'high3243':high3243})
 
-    # User priority from an S4 previous draw: S4 > S2 > S1; S3 omitted.
-    # 10-ticket allocation is a portfolio choice, not a probability estimate.
     state_plan=['S4']*5+['S2']*3+['S1']*2
-    # Maintain A/B/C diversification: A4 / B4 / C2.
     layer_plan=['A','B','C','A','B','A','B','C','A','B']
-    # Preserve prior-overlap design: six 0-overlap, four 1-overlap.
     c1_plan=[0,0,0,1,1,0,0,1,0,1]
     c3_plan=[2,2,3,1,4,2,3,2,1,3]
     c4_plan=[2,1,2,1,2,1,2,1,2,1]
@@ -126,7 +126,6 @@ def main():
     for pos,(st,ly) in enumerate(zip(state_plan,layer_plan)):
         options=pools[(st,ly)]
         best=None; bestkey=None
-        # Pass 1: exact requested state+layer+c1, 23/24 cap, previous-number max2.
         for x in options:
             row=x['row']
             if any(row==y['row'] for y in selected): continue
@@ -136,7 +135,6 @@ def main():
             if any(prev_num_use[n]>=2 for n in prevn): continue
             k=key_for(x,pos)
             if bestkey is None or k<bestkey: bestkey=k; best=x
-        # Pass 2: keep state, relax layer but not c1.
         if best is None:
             for x in candidates:
                 if x['state']!=st: continue
@@ -148,7 +146,6 @@ def main():
                 if any(prev_num_use[n]>=2 for n in prevn): continue
                 k=(0 if x['layer']==ly else 1,)+key_for(x,pos,relax_layer=True)
                 if bestkey is None or k<bestkey: bestkey=k; best=x
-        # Pass 3: keep state, relax c1 if needed; never relax core flow or BO/band/zone/D rules.
         if best is None:
             for x in candidates:
                 if x['state']!=st: continue
@@ -177,13 +174,15 @@ def main():
       's4_transition_counts_recent500':dict(transition_counts(nums,max(1,len(nums)-500))),
       'user_priority':['S4','S2','S1'],
       'portfolio_state_plan':{'S4':5,'S2':3,'S1':2,'S3':0},
+      'rules':{'three_consecutive':'excluded','ordinary_consecutive_pair':'allowed'},
       'eligible_counts_by_state_layer':{st:{ly:counts[(st,ly)] for ly in ('A','B','C')} for st in ('S1','S2','S3','S4')},
       'eligible_counts_by_state':{st:sum(counts[(st,ly)] for ly in ('A','B','C')) for st in ('S1','S2','S3','S4')},
       'portfolio':[],
       'portfolio_audit':{'states':dict(state_counts),'layers':dict(layer_counts),'prev_overlap':dict(c1_counts),
                          'prev_number_use':{str(k):v for k,v in sorted(prev_num_use.items())},'cold23_24_lines':cold_used,
                          'union_size':len(union),'union':union,'repeated_pairs':sum(v>1 for v in pairuse.values()),
-                         'repeated_triples':sum(v>1 for v in triuse.values())},
+                         'repeated_triples':sum(v>1 for v in triuse.values()),
+                         'three_consecutive_lines':sum(has_three_consecutive(x['row']) for x in selected)},
       'caution':'5/3/2 is a portfolio allocation reflecting the user-provided order S4>S2>S1; it is not interpreted as calibrated lottery probability.'
     }
     for i,x in enumerate(selected,1):
