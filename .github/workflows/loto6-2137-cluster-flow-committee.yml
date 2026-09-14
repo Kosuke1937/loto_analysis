@@ -1,0 +1,23 @@
+name: Loto6 2137 Cluster Flow Committee
+on:
+  push:
+    paths:
+      - 'research/loto6_2137_cluster_flow_committee.py'
+      - '.github/workflows/loto6-2137-cluster-flow-committee.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - run: python research/loto6_2137_cluster_flow_committee.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-2137-cluster-flow-committee
+          path: research/results/loto6_2137_cluster_flow_committee.json
