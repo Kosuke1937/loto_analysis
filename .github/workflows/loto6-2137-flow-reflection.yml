@@ -1,0 +1,22 @@
+name: Loto6 2137 Flow Reflection
+on:
+  push:
+    paths:
+      - 'research/loto6_2137_flow_reflection.py'
+      - '.github/workflows/loto6-2137-flow-reflection.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python research/loto6_2137_flow_reflection.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: loto6-2137-flow-reflection
+          path: research/results/loto6_2137_flow_reflection.json
