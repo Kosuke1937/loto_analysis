@@ -1,0 +1,35 @@
+name: Update Loto6 App 2137
+
+on:
+  push:
+    paths:
+      - 'research/update_loto6_app_2137.py'
+      - '.github/workflows/update-loto6-app-2137.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Update app
+        run: python research/update_loto6_app_2137.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add VERSION index.html loto6.html loto6-river.html data/loto6-chunk-12.js '*.html'
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update Loto6 app for draw 2137"
+            git push
+          fi
