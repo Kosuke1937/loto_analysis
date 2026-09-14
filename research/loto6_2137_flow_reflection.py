@@ -8,7 +8,6 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'research'/'results'; OUT.mkdir(parents=True,exist_ok=True)
 BANDS=((1,9),(10,19),(20,29),(30,39),(40,43))
 
-# Official app bands from the user's screenshot.
 def sum_state(s):
     if s<=109: return 'S1'
     if s<=129: return 'S2'
@@ -91,7 +90,6 @@ def main():
     rows=load_rows(); assert rows[-1][0]==2136, rows[-1][0]
     nums=[r[1] for r in rows]; bonuses=[r[2] for r in rows]
 
-    # Postmortem of #2136 using only data through #2135.
     audit2136=audit_target(nums[:-1],nums[-1],bonuses[-2])
 
     prev=nums[-1]; prevbo=bonuses[-1]
@@ -105,52 +103,44 @@ def main():
         if has_three_consecutive(row): continue
         R=set(row)
         c1=len(R&f1); c2=len(R&f2); c3=len(R&f3); c4=len(R&f4); co=len(R&outside)
-        # Reflection adjustment: keep 0-1 / exactly1 as the main scenario, but allow rescue at 2.
         if not (0<=c1<=2 and 1<=c2<=2 and 1<=c3<=4 and 1<=c4<=2 and co==1): continue
         low31=sum(x<=31 for x in row); high=6-low31
         if low31<2 or high<1: continue
         sh=band(row); m=sm[sh]
         if not m['temporal_ok']: continue
         ly=m['layer']
-        # Previous draw was D -> retain user's no-D-after-D rule only when applicable.
         if prev_layer=='D' and ly=='D': continue
         st=sum_state(sum(row))
-        if st=='S3': continue  # user priority S4 > S2 > S1, S3 omitted for this portfolio
+        if st=='S3': continue
         has_bo=int(prevbo in R)
         counts[(st,ly,c1,c2,has_bo)]+=1
         candidates.append({'row':row,'state':st,'layer':ly,'shape':sh,'c1':c1,'c2':c2,'c3':c3,'c4':c4,
                            'outside':next(iter(R&outside)),'has_bo':has_bo,'low31':low31,'high':high})
 
-    # Keep what worked: S4 5 / S2 3 / S1 2, A/B/C diversification, no D after D.
     state_plan=['S4']*5+['S2']*3+['S1']*2
     layer_plan=['A','B','C','A','B','A','B','C','A','B']
-    # Reflection: 8/10 remain in prev-overlap 0-1; 2 rescue tickets allow overlap=2.
     c1_plan=[0,0,1,1,2,0,1,2,0,1]
-    # Reflection: 8/10 keep exactly one +/-1; 2 rescue tickets allow two.
     c2_plan=[1,1,1,1,2,1,1,2,1,1]
-    # Previous BO hard exclusion failed in #2136; keep 9 no-BO lines + 1 BO-rescue line.
     bo_plan=[0,0,0,0,0,0,0,0,0,1]
     c3_target=[2,2,3,1,3,2,3,2,1,3]
     c4_target=[2,1,2,1,2,1,2,1,2,1]
 
     selected=[]; numuse=Counter(); pairuse=Counter(); triuse=Counter(); prevuse=Counter()
 
-    def candidate_key(x,pos,layer_exact=True,c1_exact=True,c2_exact=True,bo_exact=True):
+    def candidate_key(x,pos,layer_exact=True,c1_exact=True,c2_exact=True):
         row=x['row']; pairs=list(itertools.combinations(row,2)); tris=list(itertools.combinations(row,3))
         return (
           0 if (layer_exact and x['layer']==layer_plan[pos]) else (0 if not layer_exact else 1),
           0 if (c1_exact and x['c1']==c1_plan[pos]) else (0 if not c1_exact else 1),
           0 if (c2_exact and x['c2']==c2_plan[pos]) else (0 if not c2_exact else 1),
-          0 if (bo_exact and x['has_bo']==bo_plan[pos]) else (0 if not bo_exact else 1),
           abs(x['c3']-c3_target[pos]),abs(x['c4']-c4_target[pos]),
           sum(triuse[t] for t in tris),sum(pairuse[p] for p in pairs),
           max((numuse[n] for n in row),default=0),sum(numuse[n] for n in row),
-          abs(sum(row)-({'S4':158,'S2':119,'S1':101}[x['state']])),row)
+          abs(sum(row)-({'S4':158,'S2':119,'S1':101}[x['state']])),row
         )
 
     for pos,st in enumerate(state_plan):
         best=None; bestkey=None
-        # Passes: exact all -> relax layer only -> relax c1/c2 but keep BO plan.
         for relax in range(3):
             for x in candidates:
                 if x['state']!=st: continue
@@ -160,10 +150,9 @@ def main():
                 if relax<2 and x['c2']!=c2_plan[pos]: continue
                 if x['has_bo']!=bo_plan[pos]: continue
                 if relax==0 and x['layer']!=layer_plan[pos]: continue
-                # Avoid repeatedly using the same previous-draw number.
                 prevnums=[n for n in row if n in f1]
                 if any(prevuse[n]>=2 for n in prevnums): continue
-                k=candidate_key(x,pos,layer_exact=(relax==0),c1_exact=(relax<2),c2_exact=(relax<2),bo_exact=True)
+                k=candidate_key(x,pos,layer_exact=(relax==0),c1_exact=(relax<2),c2_exact=(relax<2))
                 if bestkey is None or k<bestkey: bestkey=k; best=x
             if best is not None: break
         assert best is not None,(pos,st,layer_plan[pos],c1_plan[pos],c2_plan[pos],bo_plan[pos])
