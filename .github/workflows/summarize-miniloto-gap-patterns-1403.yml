@@ -1,0 +1,25 @@
+name: Summarize Mini Loto Gap Patterns 1403
+on:
+  push:
+    paths:
+      - 'scripts/summarize_miniloto_gap_patterns_1403.py'
+      - '.github/workflows/summarize-miniloto-gap-patterns-1403.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/summarize_miniloto_gap_patterns_1403.py
+      - name: Commit result
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/miniloto-gap-summary-1403.json
+          git diff --cached --quiet || git commit -m 'Summarize Mini Loto gap patterns'
+          git push
