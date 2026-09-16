@@ -1,0 +1,1256 @@
+{
+  "draw": 2138,
+  "previous": {
+    "draw": 2137,
+    "numbers": [
+      4,
+      8,
+      10,
+      25,
+      28,
+      33
+    ],
+    "bonus": 9,
+    "sum": 108,
+    "state": "S1"
+  },
+  "requested_layer_allocation": {
+    "C": 4,
+    "B": 3,
+    "A": 2,
+    "D": 1
+  },
+  "band_shape_rule": {
+    "last20_max": 0,
+    "last50_max": 1
+  },
+  "flow_sets": {
+    "prev_same": [
+      4,
+      8,
+      10,
+      25,
+      28,
+      33
+    ],
+    "prev_pm1": [
+      3,
+      5,
+      7,
+      9,
+      11,
+      24,
+      26,
+      27,
+      29,
+      32,
+      34
+    ],
+    "prev2_same_pm1": [
+      5,
+      6,
+      7,
+      8,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      40,
+      41,
+      42,
+      43
+    ],
+    "draws3to5_same": [
+      1,
+      5,
+      7,
+      9,
+      10,
+      11,
+      13,
+      14,
+      19,
+      20,
+      26,
+      29,
+      32,
+      34,
+      35,
+      37,
+      38,
+      39
+    ],
+    "outside_four": [
+      2,
+      12,
+      15,
+      16,
+      17,
+      18,
+      21,
+      22,
+      23,
+      30,
+      31
+    ]
+  },
+  "number_overlap_count": {
+    "1": 1,
+    "2": 0,
+    "3": 1,
+    "4": 1,
+    "5": 3,
+    "6": 1,
+    "7": 3,
+    "8": 2,
+    "9": 2,
+    "10": 2,
+    "11": 2,
+    "12": 0,
+    "13": 1,
+    "14": 1,
+    "15": 0,
+    "16": 0,
+    "17": 0,
+    "18": 0,
+    "19": 1,
+    "20": 1,
+    "21": 0,
+    "22": 0,
+    "23": 0,
+    "24": 1,
+    "25": 1,
+    "26": 2,
+    "27": 1,
+    "28": 1,
+    "29": 2,
+    "30": 0,
+    "31": 0,
+    "32": 3,
+    "33": 2,
+    "34": 3,
+    "35": 1,
+    "36": 1,
+    "37": 2,
+    "38": 2,
+    "39": 1,
+    "40": 1,
+    "41": 1,
+    "42": 1,
+    "43": 1
+  },
+  "calibration": {
+    "window": 500,
+    "rate_by_overlap_count": {
+      "0": {
+        "exposure": 5508,
+        "hits": 770,
+        "hit_rate_per_number": 0.13979665940450253,
+        "relative_to_base": 1.0018760590656015
+      },
+      "1": {
+        "exposure": 9479,
+        "hits": 1318,
+        "hit_rate_per_number": 0.13904420297499737,
+        "relative_to_base": 0.9964834546541478
+      },
+      "2": {
+        "exposure": 5432,
+        "hits": 759,
+        "hit_rate_per_number": 0.13972754050073638,
+        "relative_to_base": 1.001380706921944
+      },
+      "3": {
+        "exposure": 1081,
+        "hits": 153,
+        "hit_rate_per_number": 0.14153561517113783,
+        "relative_to_base": 1.0143385753931544
+      },
+      "4": {
+        "exposure": 0,
+        "hits": 0,
+        "hit_rate_per_number": 0,
+        "relative_to_base": 0.0
+      }
+    },
+    "winner_overlap_composition_top": [
+      {
+        "composition_0_1_2_3plus": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "draws": 49
+      },
+      {
+        "composition_0_1_2_3plus": [
+          2,
+          2,
+          2,
+          0
+        ],
+        "draws": 43
+      },
+      {
+        "composition_0_1_2_3plus": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "draws": 42
+      },
+      {
+        "composition_0_1_2_3plus": [
+          1,
+          4,
+          1,
+          0
+        ],
+        "draws": 38
+      },
+      {
+        "composition_0_1_2_3plus": [
+          0,
+          4,
+          2,
+          0
+        ],
+        "draws": 29
+      },
+      {
+        "composition_0_1_2_3plus": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "draws": 23
+      },
+      {
+        "composition_0_1_2_3plus": [
+          1,
+          3,
+          1,
+          1
+        ],
+        "draws": 20
+      },
+      {
+        "composition_0_1_2_3plus": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "draws": 20
+      },
+      {
+        "composition_0_1_2_3plus": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "draws": 19
+      },
+      {
+        "composition_0_1_2_3plus": [
+          2,
+          4,
+          0,
+          0
+        ],
+        "draws": 19
+      },
+      {
+        "composition_0_1_2_3plus": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "draws": 16
+      },
+      {
+        "composition_0_1_2_3plus": [
+          0,
+          3,
+          3,
+          0
+        ],
+        "draws": 11
+      }
+    ],
+    "winner_zero_condition_count": {
+      "0": 86,
+      "1": 165,
+      "2": 166,
+      "3": 61,
+      "4": 20,
+      "5": 2
+    }
+  },
+  "sum_transition": {
+    "previous_state": "S1",
+    "n": 104,
+    "counts": {
+      "S4": 34,
+      "S2": 21,
+      "S3": 32,
+      "S1": 17
+    },
+    "rates": {
+      "S1": 0.16346153846153846,
+      "S2": 0.20192307692307693,
+      "S3": 0.3076923076923077,
+      "S4": 0.3269230769230769
+    }
+  },
+  "sum_state_allocation": {
+    "S1": 2,
+    "S2": 2,
+    "S3": 3,
+    "S4": 3
+  },
+  "portfolio": [
+    {
+      "row": [
+        2,
+        11,
+        22,
+        36,
+        42,
+        43
+      ],
+      "state": "S4",
+      "layer": "C",
+      "shape": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "sum": 156,
+      "c20": 0,
+      "c50": 1,
+      "c1": 0,
+      "c2": 1,
+      "c3": 3,
+      "c4": 1,
+      "outside_count": 2,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [],
+          "clusters": [],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            11
+          ],
+          "clusters": [
+            3
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            36,
+            42,
+            43
+          ],
+          "clusters": [
+            8,
+            9
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            11
+          ],
+          "clusters": [
+            3
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "overlap_values": [
+        0,
+        2,
+        0,
+        1,
+        1,
+        1
+      ],
+      "high_overlap_numbers": [],
+      "committee": 0.8108252286911011,
+      "committee_rank": 1254901,
+      "committee_percentile_from_top": 20.58410029569653,
+      "stat": 0.49364185333251953,
+      "core5": 51.0,
+      "core4": 35.0,
+      "slot": 1
+    },
+    {
+      "row": [
+        6,
+        18,
+        29,
+        31,
+        33,
+        39
+      ],
+      "state": "S4",
+      "layer": "B",
+      "shape": [
+        1,
+        1,
+        1,
+        3,
+        0
+      ],
+      "sum": 156,
+      "c20": 0,
+      "c50": 0,
+      "c1": 1,
+      "c2": 1,
+      "c3": 2,
+      "c4": 2,
+      "outside_count": 2,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [
+            33
+          ],
+          "clusters": [
+            7
+          ],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            29
+          ],
+          "clusters": [
+            6
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            6,
+            33
+          ],
+          "clusters": [
+            2,
+            7
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            29,
+            39
+          ],
+          "clusters": [
+            6,
+            8
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        2,
+        2,
+        2,
+        0
+      ],
+      "overlap_values": [
+        1,
+        0,
+        2,
+        0,
+        2,
+        1
+      ],
+      "high_overlap_numbers": [],
+      "committee": 0.2556101679801941,
+      "committee_rank": 2712313,
+      "committee_percentile_from_top": 44.49000098909973,
+      "stat": -0.2217065989971161,
+      "core5": 61.0,
+      "core4": 43.0,
+      "slot": 2
+    },
+    {
+      "row": [
+        2,
+        17,
+        21,
+        29,
+        39,
+        43
+      ],
+      "state": "S4",
+      "layer": "A",
+      "shape": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "sum": 151,
+      "c20": 0,
+      "c50": 0,
+      "c1": 0,
+      "c2": 1,
+      "c3": 1,
+      "c4": 2,
+      "outside_count": 3,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [],
+          "clusters": [],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            29
+          ],
+          "clusters": [
+            6
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            43
+          ],
+          "clusters": [
+            9
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            29,
+            39
+          ],
+          "clusters": [
+            6,
+            8
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "overlap_values": [
+        0,
+        0,
+        0,
+        2,
+        1,
+        1
+      ],
+      "high_overlap_numbers": [],
+      "committee": 0.90888911485672,
+      "committee_rank": 1050769,
+      "committee_percentile_from_top": 17.235727069494345,
+      "stat": 0.41204318404197693,
+      "core5": 57.0,
+      "core4": 37.0,
+      "slot": 3
+    },
+    {
+      "row": [
+        8,
+        16,
+        20,
+        26,
+        28,
+        41
+      ],
+      "state": "S3",
+      "layer": "C",
+      "shape": [
+        1,
+        1,
+        3,
+        0,
+        1
+      ],
+      "sum": 139,
+      "c20": 0,
+      "c50": 1,
+      "c1": 2,
+      "c2": 1,
+      "c3": 2,
+      "c4": 2,
+      "outside_count": 1,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [
+            8,
+            28
+          ],
+          "clusters": [
+            2,
+            6
+          ],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            26
+          ],
+          "clusters": [
+            6
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            8,
+            41
+          ],
+          "clusters": [
+            2,
+            9
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            20,
+            26
+          ],
+          "clusters": [
+            5,
+            6
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "overlap_values": [
+        2,
+        0,
+        1,
+        2,
+        1,
+        1
+      ],
+      "high_overlap_numbers": [],
+      "committee": -0.577455997467041,
+      "committee_rank": 4612107,
+      "committee_percentile_from_top": 75.6522850254074,
+      "stat": -0.6510631442070007,
+      "core5": 59.0,
+      "core4": 38.0,
+      "slot": 4
+    },
+    {
+      "row": [
+        10,
+        12,
+        15,
+        27,
+        35,
+        40
+      ],
+      "state": "S3",
+      "layer": "B",
+      "shape": [
+        0,
+        3,
+        1,
+        1,
+        1
+      ],
+      "sum": 139,
+      "c20": 0,
+      "c50": 0,
+      "c1": 1,
+      "c2": 1,
+      "c3": 1,
+      "c4": 2,
+      "outside_count": 2,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [
+            10
+          ],
+          "clusters": [
+            3
+          ],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            27
+          ],
+          "clusters": [
+            6
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            40
+          ],
+          "clusters": [
+            9
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            10,
+            35
+          ],
+          "clusters": [
+            3,
+            8
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "overlap_values": [
+        2,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "high_overlap_numbers": [],
+      "committee": 1.2033220529556274,
+      "committee_rank": 577358,
+      "committee_percentile_from_top": 9.470375643017341,
+      "stat": 0.5754017233848572,
+      "core5": 59.0,
+      "core4": 37.0,
+      "slot": 5
+    },
+    {
+      "row": [
+        3,
+        16,
+        19,
+        30,
+        33,
+        38
+      ],
+      "state": "S3",
+      "layer": "C",
+      "shape": [
+        1,
+        2,
+        0,
+        3,
+        0
+      ],
+      "sum": 139,
+      "c20": 0,
+      "c50": 0,
+      "c1": 1,
+      "c2": 1,
+      "c3": 2,
+      "c4": 2,
+      "outside_count": 2,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [
+            33
+          ],
+          "clusters": [
+            7
+          ],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            3
+          ],
+          "clusters": [
+            1
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            33,
+            38
+          ],
+          "clusters": [
+            7,
+            8
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            19,
+            38
+          ],
+          "clusters": [
+            4,
+            8
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        2,
+        2,
+        2,
+        0
+      ],
+      "overlap_values": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        2
+      ],
+      "high_overlap_numbers": [],
+      "committee": -0.722208559513092,
+      "committee_rank": 4821011,
+      "committee_percentile_from_top": 79.0789332748075,
+      "stat": -0.16987113654613495,
+      "core5": 39.0,
+      "core4": 27.0,
+      "slot": 6
+    },
+    {
+      "row": [
+        4,
+        5,
+        21,
+        25,
+        30,
+        37
+      ],
+      "state": "S2",
+      "layer": "B",
+      "shape": [
+        2,
+        0,
+        2,
+        2,
+        0
+      ],
+      "sum": 122,
+      "c20": 0,
+      "c50": 0,
+      "c1": 2,
+      "c2": 1,
+      "c3": 2,
+      "c4": 2,
+      "outside_count": 2,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [
+            4,
+            25
+          ],
+          "clusters": [
+            1,
+            6
+          ],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            5
+          ],
+          "clusters": [
+            1
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            5,
+            37
+          ],
+          "clusters": [
+            1,
+            8
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            5,
+            37
+          ],
+          "clusters": [
+            1,
+            8
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "overlap_values": [
+        1,
+        3,
+        0,
+        1,
+        0,
+        2
+      ],
+      "high_overlap_numbers": [
+        5
+      ],
+      "committee": -0.5335831046104431,
+      "committee_rank": 4541568,
+      "committee_percentile_from_top": 74.49523518019413,
+      "stat": -0.376024454832077,
+      "core5": 52.0,
+      "core4": 32.0,
+      "slot": 7
+    },
+    {
+      "row": [
+        3,
+        8,
+        14,
+        18,
+        34,
+        42
+      ],
+      "state": "S2",
+      "layer": "C",
+      "shape": [
+        2,
+        2,
+        0,
+        1,
+        1
+      ],
+      "sum": 119,
+      "c20": 0,
+      "c50": 0,
+      "c1": 1,
+      "c2": 2,
+      "c3": 3,
+      "c4": 2,
+      "outside_count": 1,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [
+            8
+          ],
+          "clusters": [
+            2
+          ],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            3,
+            34
+          ],
+          "clusters": [
+            1,
+            7
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            8,
+            34,
+            42
+          ],
+          "clusters": [
+            2,
+            7,
+            9
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            14,
+            34
+          ],
+          "clusters": [
+            3,
+            7
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        1,
+        3,
+        1,
+        1
+      ],
+      "overlap_values": [
+        1,
+        2,
+        1,
+        0,
+        3,
+        1
+      ],
+      "high_overlap_numbers": [
+        34
+      ],
+      "committee": 1.236762285232544,
+      "committee_rank": 536569,
+      "committee_percentile_from_top": 8.80131446924958,
+      "stat": 0.5352286100387573,
+      "core5": 57.0,
+      "core4": 42.0,
+      "slot": 8
+    },
+    {
+      "row": [
+        1,
+        11,
+        15,
+        17,
+        18,
+        41
+      ],
+      "state": "S1",
+      "layer": "D",
+      "shape": [
+        1,
+        4,
+        0,
+        0,
+        1
+      ],
+      "sum": 103,
+      "c20": 0,
+      "c50": 0,
+      "c1": 0,
+      "c2": 1,
+      "c3": 1,
+      "c4": 2,
+      "outside_count": 3,
+      "bo": 0,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [],
+          "clusters": [],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            11
+          ],
+          "clusters": [
+            3
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            41
+          ],
+          "clusters": [
+            9
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            1,
+            11
+          ],
+          "clusters": [
+            1,
+            3
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "overlap_values": [
+        1,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      "high_overlap_numbers": [],
+      "committee": 1.4983665943145752,
+      "committee_rank": 298175,
+      "committee_percentile_from_top": 4.890942323347691,
+      "stat": 1.0929388999938965,
+      "core5": 48.0,
+      "core4": 31.0,
+      "slot": 9
+    },
+    {
+      "row": [
+        9,
+        12,
+        13,
+        17,
+        25,
+        33
+      ],
+      "state": "S1",
+      "layer": "A",
+      "shape": [
+        1,
+        3,
+        1,
+        1,
+        0
+      ],
+      "sum": 109,
+      "c20": 0,
+      "c50": 0,
+      "c1": 2,
+      "c2": 1,
+      "c3": 1,
+      "c4": 2,
+      "outside_count": 2,
+      "bo": 1,
+      "cluster_viol": 0,
+      "cluster_detail": {
+        "prev_same": {
+          "numbers": [
+            25,
+            33
+          ],
+          "clusters": [
+            6,
+            7
+          ],
+          "spread_ok": true
+        },
+        "prev_pm1": {
+          "numbers": [
+            9
+          ],
+          "clusters": [
+            2
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            33
+          ],
+          "clusters": [
+            7
+          ],
+          "spread_ok": true
+        },
+        "draws3to5_same": {
+          "numbers": [
+            9,
+            13
+          ],
+          "clusters": [
+            2,
+            3
+          ],
+          "spread_ok": true
+        }
+      },
+      "overlap_comp": [
+        2,
+        2,
+        2,
+        0
+      ],
+      "overlap_values": [
+        2,
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "high_overlap_numbers": [],
+      "committee": -0.9762783050537109,
+      "committee_rank": 5110102,
+      "committee_percentile_from_top": 83.82088732579419,
+      "stat": -0.3403095304965973,
+      "core5": 40.0,
+      "core4": 26.0,
+      "slot": 10
+    }
+  ],
+  "actual_layer_allocation": {
+    "C": 4,
+    "B": 3,
+    "A": 2,
+    "D": 1
+  },
+  "actual_state_allocation": {
+    "S4": 3,
+    "S3": 3,
+    "S2": 2,
+    "S1": 2
+  }
+}
