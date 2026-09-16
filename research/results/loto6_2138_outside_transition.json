@@ -232,11 +232,11 @@
     0,
     3,
     1,
-    2,
+    1,
     0,
     1,
     2,
-    1
+    2
   ],
   "requested_layer_allocation": {
     "C": 4,
@@ -723,20 +723,20 @@
     },
     {
       "row": [
-        11,
+        8,
+        13,
         15,
-        17,
-        28,
         33,
-        35
+        34,
+        36
       ],
       "state": "S3",
       "layer": "C",
       "shape": [
-        0,
-        3,
         1,
         2,
+        0,
+        3,
         0
       ],
       "sum": 139,
@@ -744,76 +744,83 @@
       "c50": 0,
       "c1": 2,
       "c2": 1,
-      "c3": 1,
+      "c3": 4,
       "c4": 2,
-      "outside_count": 2,
+      "outside_count": 1,
       "bo": 0,
       "cluster_viol": 0,
       "cluster_detail": {
         "prev_same": {
           "numbers": [
-            28,
+            8,
             33
           ],
           "clusters": [
-            6,
+            2,
             7
           ],
           "spread_ok": true
         },
         "prev_pm1": {
           "numbers": [
-            11
-          ],
-          "clusters": [
-            3
-          ],
-          "spread_ok": true
-        },
-        "prev2_same_pm1": {
-          "numbers": [
-            33
+            34
           ],
           "clusters": [
             7
           ],
           "spread_ok": true
         },
+        "prev2_same_pm1": {
+          "numbers": [
+            8,
+            33,
+            34,
+            36
+          ],
+          "clusters": [
+            2,
+            7,
+            8
+          ],
+          "spread_ok": true
+        },
         "draws3to5_same": {
           "numbers": [
-            11,
-            35
+            13,
+            34
           ],
           "clusters": [
             3,
-            8
+            7
           ],
           "spread_ok": true
         }
       },
       "overlap_comp": [
-        2,
-        2,
-        2,
-        0
-      ],
-      "overlap_values": [
-        2,
-        0,
-        0,
         1,
+        2,
         2,
         1
       ],
-      "high_overlap_numbers": [],
-      "committee": 0.2343384325504303,
-      "committee_rank": 2772460,
-      "committee_percentile_from_top": 45.4765910604084,
-      "stat": -0.38588905334472656,
-      "core5": 66.0,
-      "core4": 46.0,
+      "overlap_values": [
+        2,
+        1,
+        0,
+        2,
+        3,
+        1
+      ],
+      "high_overlap_numbers": [
+        34
+      ],
+      "committee": -0.8484053611755371,
+      "committee_rank": 4975503,
+      "committee_percentile_from_top": 81.61306254636918,
+      "stat": -0.6883341073989868,
+      "core5": 52.0,
+      "core4": 37.0,
       "slot": 6,
-      "outside_target": 2
+      "outside_target": 1
     },
     {
       "row": [
@@ -918,12 +925,12 @@
     },
     {
       "row": [
+        3,
         4,
-        8,
-        13,
+        14,
         18,
-        34,
-        42
+        38,
+        40
       ],
       "state": "S2",
       "layer": "C",
@@ -934,12 +941,12 @@
         1,
         1
       ],
-      "sum": 119,
+      "sum": 117,
       "c20": 0,
       "c50": 0,
-      "c1": 2,
+      "c1": 1,
       "c2": 1,
-      "c3": 3,
+      "c3": 2,
       "c4": 2,
       "outside_count": 1,
       "bo": 0,
@@ -947,83 +954,77 @@
       "cluster_detail": {
         "prev_same": {
           "numbers": [
-            4,
-            8
+            4
           ],
           "clusters": [
-            1,
-            2
+            1
           ],
           "spread_ok": true
         },
         "prev_pm1": {
           "numbers": [
-            34
+            3
           ],
           "clusters": [
-            7
+            1
           ],
           "spread_ok": true
         },
         "prev2_same_pm1": {
           "numbers": [
-            8,
-            34,
-            42
+            38,
+            40
           ],
           "clusters": [
-            2,
-            7,
+            8,
             9
           ],
           "spread_ok": true
         },
         "draws3to5_same": {
           "numbers": [
-            13,
-            34
+            14,
+            38
           ],
           "clusters": [
             3,
-            7
+            8
           ],
           "spread_ok": true
         }
       },
       "overlap_comp": [
         1,
-        3,
+        4,
         1,
-        1
+        0
       ],
       "overlap_values": [
         1,
-        2,
+        1,
         1,
         0,
-        3,
+        2,
         1
       ],
-      "high_overlap_numbers": [
-        34
-      ],
-      "committee": 0.7343041300773621,
-      "committee_rank": 1428983,
-      "committee_percentile_from_top": 23.43956395628737,
-      "stat": 0.23435284197330475,
-      "core5": 57.0,
-      "core4": 40.0,
+      "high_overlap_numbers": [],
+      "committee": 0.5005099773406982,
+      "committee_rank": 2026392,
+      "committee_percentile_from_top": 33.238852165349265,
+      "stat": 0.33759692311286926,
+      "core5": 48.0,
+      "core4": 35.0,
       "slot": 8,
       "outside_target": 1
     },
     {
       "row": [
         1,
-        3,
-        8,
-        16,
+        2,
+        4,
+        11,
         17,
-        40
+        42
       ],
       "state": "S1",
       "layer": "D",
@@ -1034,52 +1035,52 @@
         0,
         1
       ],
-      "sum": 85,
+      "sum": 77,
       "c20": 0,
       "c50": 0,
       "c1": 1,
       "c2": 1,
-      "c3": 2,
-      "c4": 1,
+      "c3": 1,
+      "c4": 2,
       "outside_count": 2,
       "bo": 0,
       "cluster_viol": 0,
       "cluster_detail": {
         "prev_same": {
           "numbers": [
-            8
-          ],
-          "clusters": [
-            2
-          ],
-          "spread_ok": true
-        },
-        "prev_pm1": {
-          "numbers": [
-            3
+            4
           ],
           "clusters": [
             1
           ],
           "spread_ok": true
         },
-        "prev2_same_pm1": {
+        "prev_pm1": {
           "numbers": [
-            8,
-            40
+            11
           ],
           "clusters": [
-            2,
+            3
+          ],
+          "spread_ok": true
+        },
+        "prev2_same_pm1": {
+          "numbers": [
+            42
+          ],
+          "clusters": [
             9
           ],
           "spread_ok": true
         },
         "draws3to5_same": {
           "numbers": [
-            1
+            1,
+            11
           ],
           "clusters": [
-            1
+            1,
+            3
           ],
           "spread_ok": true
         }
@@ -1092,45 +1093,45 @@
       ],
       "overlap_values": [
         1,
+        0,
         1,
         2,
-        0,
         0,
         1
       ],
       "high_overlap_numbers": [],
-      "committee": 0.8222529888153076,
-      "committee_rank": 1230055,
-      "committee_percentile_from_top": 20.176551840881903,
-      "stat": 0.2431628555059433,
-      "core5": 62.0,
-      "core4": 38.0,
+      "committee": -0.4366413652896881,
+      "committee_rank": 4374514,
+      "committee_percentile_from_top": 71.7550516669283,
+      "stat": -0.3697262704372406,
+      "core5": 52.0,
+      "core4": 35.0,
       "slot": 9,
       "outside_target": 2
     },
     {
       "row": [
+        3,
         9,
-        10,
         12,
-        15,
-        25,
-        36
+        20,
+        30,
+        33
       ],
       "state": "S1",
       "layer": "A",
       "shape": [
+        2,
         1,
-        3,
         1,
-        1,
+        2,
         0
       ],
       "sum": 107,
       "c20": 0,
       "c50": 0,
-      "c1": 2,
-      "c2": 1,
+      "c1": 1,
+      "c2": 2,
       "c3": 1,
       "c4": 2,
       "outside_count": 2,
@@ -1139,41 +1140,41 @@
       "cluster_detail": {
         "prev_same": {
           "numbers": [
-            10,
-            25
+            33
           ],
           "clusters": [
-            3,
-            6
+            7
           ],
           "spread_ok": true
         },
         "prev_pm1": {
           "numbers": [
+            3,
             9
           ],
           "clusters": [
+            1,
             2
           ],
           "spread_ok": true
         },
         "prev2_same_pm1": {
           "numbers": [
-            36
+            33
           ],
           "clusters": [
-            8
+            7
           ],
           "spread_ok": true
         },
         "draws3to5_same": {
           "numbers": [
             9,
-            10
+            20
           ],
           "clusters": [
             2,
-            3
+            5
           ],
           "spread_ok": true
         }
@@ -1185,27 +1186,27 @@
         0
       ],
       "overlap_values": [
+        1,
         2,
-        2,
-        0,
         0,
         1,
-        1
+        0,
+        2
       ],
       "high_overlap_numbers": [],
-      "committee": -0.19868533313274384,
-      "committee_rank": 3891114,
-      "committee_percentile_from_top": 63.82585086770947,
-      "stat": 0.035103511065244675,
-      "core5": 44.0,
-      "core4": 30.0,
+      "committee": 0.02351061999797821,
+      "committee_rank": 3348724,
+      "committee_percentile_from_top": 54.92903824568155,
+      "stat": 0.053972192108631134,
+      "core5": 48.0,
+      "core4": 33.0,
       "slot": 10,
-      "outside_target": 1
+      "outside_target": 2
     }
   ],
   "actual_outside_allocation": {
-    "1": 3,
-    "2": 4,
+    "1": 4,
+    "2": 3,
     "0": 2,
     "3": 1
   },
