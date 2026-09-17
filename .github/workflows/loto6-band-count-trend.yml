@@ -1,0 +1,34 @@
+name: Loto6 Band Count Trend
+on:
+  push:
+    paths:
+      - 'research/loto6_2137_band_count_trend.py'
+      - '.github/workflows/loto6-band-count-trend.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numpy
+        run: pip install numpy
+      - name: Run band-count trend analysis
+        run: python research/loto6_2137_band_count_trend.py
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/results/loto6_2137_band_count_trend.json
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "Add Loto6 band-count trend result"
+            git push
+          fi
