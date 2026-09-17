@@ -1,0 +1,27 @@
+name: Loto6 2138 band3 predictor
+on:
+  push:
+    paths:
+      - 'research/loto6_2138_band3_predict.py'
+      - '.github/workflows/loto6-2138-band3-predict.yml'
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - name: Run predictor
+        run: python research/loto6_2138_band3_predict.py
+      - name: Commit result
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add research/results/loto6_2138_band3_predict.json
+          git diff --cached --quiet || git commit -m 'Update Loto6 2138 band3 prediction'
+          git push
