@@ -1,0 +1,31 @@
+name: Loto6 2138 band flow review
+
+on:
+  push:
+    paths:
+      - 'research/loto6_2138_band_flow_review.py'
+      - '.github/workflows/loto6-2138-band-flow-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run band flow review
+        run: python research/loto6_2138_band_flow_review.py
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/results/loto6_2138_band_flow_review.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Add Loto6 2138 band flow review result"
+            git push
+          fi
