@@ -18,6 +18,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install dependencies
+        run: pip install numpy
       - name: Run band flow review
         run: python research/loto6_2138_band_flow_review.py
       - name: Commit result
