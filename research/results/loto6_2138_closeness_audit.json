@@ -1,0 +1,260 @@
+{
+  "winner": [
+    9,
+    16,
+    21,
+    26,
+    38,
+    40
+  ],
+  "all_combinations": 6096454,
+  "original_mother": {
+    "n": 767533,
+    "winner_in": false,
+    "overlap_hist": {
+      "0": 272572,
+      "1": 327540,
+      "2": 139605,
+      "3": 25794,
+      "4": 1972,
+      "5": 50,
+      "6": 0
+    },
+    "max_overlap": 5
+  },
+  "relax_flow4_to3_mother": {
+    "n": 1347668,
+    "winner_in": true,
+    "overlap_hist": {
+      "0": 476415,
+      "1": 573432,
+      "2": 247271,
+      "3": 46694,
+      "4": 3744,
+      "5": 111,
+      "6": 1
+    },
+    "max_overlap": 6
+  },
+  "actual_macro_cell_A_S4_out2": {
+    "n": 3924,
+    "winner_in": true,
+    "overlap_hist": {
+      "0": 840,
+      "1": 1473,
+      "2": 1098,
+      "3": 411,
+      "4": 91,
+      "5": 10,
+      "6": 1
+    },
+    "max_overlap": 6
+  },
+  "exact_realized_cell": {
+    "conditions": {
+      "shape": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "state": "S4",
+      "layer": "A",
+      "flow1": 0,
+      "flow2": 2,
+      "flow3": 2,
+      "flow4": 3,
+      "outside": 2,
+      "cluster_viol": 0,
+      "high_overlap_max": 1
+    },
+    "n": 1384,
+    "winner_in": true,
+    "overlap_hist": {
+      "0": 219,
+      "1": 514,
+      "2": 426,
+      "3": 168,
+      "4": 46,
+      "5": 10,
+      "6": 1
+    },
+    "max_overlap": 6,
+    "five_or_six": [
+      [
+        9,
+        12,
+        21,
+        26,
+        38,
+        40
+      ],
+      [
+        9,
+        15,
+        21,
+        26,
+        38,
+        40
+      ],
+      [
+        9,
+        16,
+        21,
+        26,
+        37,
+        40
+      ],
+      [
+        9,
+        16,
+        21,
+        26,
+        38,
+        40
+      ],
+      [
+        9,
+        16,
+        21,
+        26,
+        38,
+        41
+      ],
+      [
+        9,
+        16,
+        21,
+        26,
+        38,
+        42
+      ],
+      [
+        9,
+        16,
+        21,
+        26,
+        38,
+        43
+      ],
+      [
+        9,
+        16,
+        21,
+        29,
+        38,
+        40
+      ],
+      [
+        9,
+        16,
+        22,
+        26,
+        38,
+        40
+      ],
+      [
+        9,
+        17,
+        21,
+        26,
+        38,
+        40
+      ],
+      [
+        9,
+        18,
+        21,
+        26,
+        38,
+        40
+      ]
+    ]
+  },
+  "purchased": {
+    "n": 10,
+    "best_overlap": 2,
+    "hits": [
+      1,
+      2,
+      0,
+      2,
+      0,
+      0,
+      0,
+      2,
+      0,
+      1
+    ],
+    "union_recall": 6
+  },
+  "portfolio_slots": [
+    {
+      "slot": 1,
+      "state": "S4",
+      "layer": "C",
+      "outside": 1
+    },
+    {
+      "slot": 2,
+      "state": "S4",
+      "layer": "B",
+      "outside": 2
+    },
+    {
+      "slot": 3,
+      "state": "S4",
+      "layer": "A",
+      "outside": 0
+    },
+    {
+      "slot": 4,
+      "state": "S3",
+      "layer": "C",
+      "outside": 3
+    },
+    {
+      "slot": 5,
+      "state": "S3",
+      "layer": "B",
+      "outside": 1
+    },
+    {
+      "slot": 6,
+      "state": "S3",
+      "layer": "C",
+      "outside": 1
+    },
+    {
+      "slot": 7,
+      "state": "S2",
+      "layer": "B",
+      "outside": 0
+    },
+    {
+      "slot": 8,
+      "state": "S2",
+      "layer": "C",
+      "outside": 1
+    },
+    {
+      "slot": 9,
+      "state": "S1",
+      "layer": "D",
+      "outside": 2
+    },
+    {
+      "slot": 10,
+      "state": "S1",
+      "layer": "A",
+      "outside": 2
+    }
+  ],
+  "actual_macro_tuple": {
+    "state": "S4",
+    "layer": "A",
+    "outside": 2,
+    "covered_by_slot": false
+  }
+}
