@@ -1,0 +1,32 @@
+name: Loto6 2138 closeness audit
+
+on:
+  push:
+    paths:
+      - 'research/loto6_2138_closeness_audit.py'
+      - '.github/workflows/loto6-2138-closeness-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - name: Run closeness audit
+        run: python research/loto6_2138_closeness_audit.py
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/results/loto6_2138_closeness_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Add Loto6 2138 closeness audit result"
+            git push
+          fi
