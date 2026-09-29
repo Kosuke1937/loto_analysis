@@ -12,8 +12,8 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="nav"><a href="./?v=0.14.6-1405">トップ</a><a href="miniloto.html?v=0.14.6-1405">ミニロト</a><a href="miniloto-trends.html?v=0.14.6-1405">傾向分析</a></div>
-  <div class="titleRow"><div class="title">数字の川</div><div class="version">App v0.14.6</div></div>
+  <div class="nav"><a href="./?v=0.14.7-1406">トップ</a><a href="miniloto.html?v=0.14.7-1406">ミニロト</a><a href="miniloto-trends.html?v=0.14.7-1406">傾向分析</a></div>
+  <div class="titleRow"><div class="title">数字の川</div><div class="version">App v0.14.7</div></div>
   <div class="sub">本数字5個を「回 × 数字1〜31」のマトリクスで可視化。流れは記述統計として確認し、予測則とは分けて扱います。</div>
   <div id="latestFlow" class="selectedBox"></div>
 
@@ -50,17 +50,17 @@
     <div class="card"><div class="label">現在の未出現間隔が長い数字</div><div id="gapList" class="list"></div></div>
   </div>
   <div class="note">※ ミニロトは各組み合わせの抽せん確率が原理上同じです。この画面は、視覚的パターンを検証可能な数値に落とすための分析補助です。</div>
-  <div class="footer">Loto Analysis App v0.14.6</div>
+  <div class="footer">Loto Analysis App v0.14.7</div>
 </div>
 
-<script src="data/miniloto-chunk-1.js?v=0.14.6-1405"></script>
-<script src="data/miniloto-chunk-2.js?v=0.14.6-1405"></script>
-<script src="data/miniloto-chunk-3.js?v=0.14.6-1405"></script>
-<script src="data/miniloto-chunk-4.js?v=0.14.6-1405"></script>
-<script src="data/miniloto-chunk-5.js?v=0.14.6-1405"></script>
-<script src="data/miniloto-chunk-6.js?v=0.14.6-1405"></script>
-<script src="data/miniloto-chunk-7.js?v=0.14.6-1405"></script>
-<script src="data/miniloto-chunk-8.js?v=0.14.6-1405"></script>
+<script src="data/miniloto-chunk-1.js?v=0.14.7-1406"></script>
+<script src="data/miniloto-chunk-2.js?v=0.14.7-1406"></script>
+<script src="data/miniloto-chunk-3.js?v=0.14.7-1406"></script>
+<script src="data/miniloto-chunk-4.js?v=0.14.7-1406"></script>
+<script src="data/miniloto-chunk-5.js?v=0.14.7-1406"></script>
+<script src="data/miniloto-chunk-6.js?v=0.14.7-1406"></script>
+<script src="data/miniloto-chunk-7.js?v=0.14.7-1406"></script>
+<script src="data/miniloto-chunk-8.js?v=0.14.7-1406"></script>
 <script>
 const DATA=(window.MINI_CHUNKS||[]).flat();
 const $=id=>document.getElementById(id), pad=n=>String(n).padStart(2,'0');
@@ -137,12 +137,15 @@ function renderLists(rs){
   $('gapList').innerHTML=g.map(x=>`<div class="item"><span><span class="numBadge">${pad(x.n)}</span>最終出現から</span><b>${x.g}回</b></div>`).join('');
 }
 function renderLatestFlow(){
-  if(DATA.length<3)return;
+  if(DATA.length<6)return;
   const cur=DATA.at(-1), prev=DATA.at(-2), prev2=DATA.at(-3), w=mains(cur), p=mains(prev), p2=mains(prev2);
+  const p35=DATA.slice(-6,-3).flatMap(mains);
   const same=w.filter(n=>p.includes(n));
   const near=w.filter(n=>p.some(x=>Math.abs(n-x)===1));
   const near2=w.filter(n=>p2.some(x=>Math.abs(n-x)<=1));
-  $('latestFlow').innerHTML=`<b>最新確定 第${cur[0]}回 Flow = ${same.length}-${near.length}-${near2.length}</b><br>前回同じ ${same.length}個：${same.length?same.map(pad).join('・'):'なし'}<br>前回±1 ${near.length}個：${near.length?near.map(pad).join('・'):'なし'}<br>2回前 同じ/±1 ${near2.length}個：${near2.length?near2.map(pad).join('・'):'なし'}<br><span class="label">A-B-C = 前回同数 / 前回±1 / 2回前同・±1。±1は同じ数字そのものを含めません。</span>`;
+  const pri={A:[],B:[],C:[],D:[],O:[]};
+  w.forEach(n=>{if(p.includes(n))pri.A.push(n);else if(p.some(x=>Math.abs(n-x)===1))pri.B.push(n);else if(p2.some(x=>Math.abs(n-x)<=1))pri.C.push(n);else if(p35.includes(n))pri.D.push(n);else pri.O.push(n)});
+  $('latestFlow').innerHTML=`<b>最新確定 第${cur[0]}回</b><br><b>優先分類 A${pri.A.length}-B${pri.B.length}-C${pri.C.length}-D${pri.D.length}-O${pri.O.length}</b>：A ${pri.A.map(pad).join('・')||'なし'} / B ${pri.B.map(pad).join('・')||'なし'} / C ${pri.C.map(pad).join('・')||'なし'} / D ${pri.D.map(pad).join('・')||'なし'} / O ${pri.O.map(pad).join('・')||'なし'}<br>重複可A-B-C = ${same.length}-${near.length}-${near2.length}<br><span class="label">優先分類は A=前回同数 → B=前回±1 → C=2回前同/±1 → D=3〜5回前同数 → O の順で1カテゴリに固定。重複可A-B-Cは従来の川表示用。</span>`;
 }
 function renderNextConditionBox(){
   const inside=[],outside=[];for(let n=1;n<=31;n++){const m=nextRelationMatches(n);(m.outside?outside:inside).push(n)}
