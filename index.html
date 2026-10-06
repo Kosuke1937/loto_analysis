@@ -8,7 +8,7 @@ function pad2(n){return String(n).padStart(2,'0')}
   const note=document.getElementById('miniLatestNote');
   if(label)label.textContent=`最新確定 第${d[0]}回｜${String(d[1]).replaceAll('/','-')}`;
   if(balls)balls.innerHTML=d.slice(2,7).map(n=>`<span class="ball">${pad2(n)}</span>`).join('')+`<span style="font-size:10px;color:var(--muted)">B</span><span class="ball bonus">${pad2(d[7])}</span>`;
-  if(note)note.textContent=`第${d[0]}回：${d.slice(2,7).map(pad2).join('・')}、B${pad2(d[7])}。候補比較・Flow検証はミニロト内の記録/開発ページに反映。`;
+  if(note)note.textContent=d[0]===1407?`第1407回：07・13・15・26・28、B04。購入#4が4個一致で3等。当選金額は確認後に反映。`:`第${d[0]}回：${d.slice(2,7).map(pad2).join('・')}、B${pad2(d[7])}。候補比較・Flow検証はミニロト内の記録/開発ページに反映。`;
 })();
 (function(){const d=(window.LOTO6_CHUNKS||[]).flat().at(-1);if(!d)return;const label=document.getElementById("loto6LatestLabel"),balls=document.getElementById("loto6LatestBalls"),note=document.getElementById("loto6LatestNote");if(label)label.textContent=`最新確定 第${d[0]}回｜${String(d[1]).replaceAll("/","-")}`;if(balls)balls.innerHTML=d.slice(2,8).map(n=>`<span class="ball">${pad2(n)}</span>`).join("")+`<span style="font-size:10px;color:var(--muted)">B</span><span class="ball bonus">${pad2(d[8])}</span>`;if(note)note.textContent=`第${d[0]}回：${d.slice(2,8).map(pad2).join("・")}、B${pad2(d[8])}。`;})();function showGame(g){document.querySelectorAll('.game').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.switch button').forEach(x=>x.classList.remove('active'));document.getElementById(g).classList.add('active');document.getElementById(g==='mini'?'miniBtn':'loto6Btn').classList.add('active')}
 </script></body></html>
