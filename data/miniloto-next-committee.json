@@ -1,155 +1,113 @@
 {
-  "target_draw": 1407,
-  "history_through": 1406,
+  "target_draw": 1408,
+  "history_through": 1407,
   "method": "canonical A1 + 0.15*4core -> state 2/3/4 diversification -> anti-support 0.10",
-  "cap_used": 4,
+  "cap_used": 3,
   "anti_support": {
-    "added": 169572,
-    "removed": 169362
+    "added": 169475,
+    "removed": 169520
   },
   "previous_draw": [
+    7,
+    13,
+    15,
+    26,
+    28
+  ],
+  "previous2_draw": [
     11,
     14,
     27,
     30,
     31
   ],
-  "previous2_draw": [
-    5,
-    17,
-    24,
-    27,
-    30
-  ],
   "tickets": [
     {
       "position": 1,
       "numbers": [
         21,
-        22,
-        25,
-        27,
-        31
-      ],
-      "sum": 126,
-      "shape": "0-0-4-1",
-      "odd_even": "4:1",
-      "consecutive_pairs": 1,
-      "committee_rank": 1,
-      "committee_score": 6.036368,
-      "a1_score": 2.417727,
-      "core4_score": 61.0,
-      "prev_same": 2,
-      "prev_pm1": 1,
-      "prev2_same_pm1": 3
-    },
-    {
-      "position": 2,
-      "numbers": [
-        21,
         23,
         25,
-        29,
-        30
+        28,
+        31
       ],
       "sum": 128,
       "shape": "0-0-4-1",
       "odd_even": "4:1",
-      "consecutive_pairs": 1,
-      "committee_rank": 3,
-      "committee_score": 6.00934,
-      "a1_score": 2.451277,
-      "core4_score": 56.0,
+      "consecutive_pairs": 0,
+      "committee_rank": 1,
+      "committee_score": 6.061947,
+      "a1_score": 2.482437,
+      "core4_score": 53.0,
       "prev_same": 1,
-      "prev_pm1": 2,
-      "prev2_same_pm1": 4
+      "prev_pm1": 1,
+      "prev2_same_pm1": 2
+    },
+    {
+      "position": 2,
+      "numbers": [
+        20,
+        23,
+        26,
+        29,
+        31
+      ],
+      "sum": 129,
+      "shape": "0-0-4-1",
+      "odd_even": "3:2",
+      "consecutive_pairs": 0,
+      "committee_rank": 26,
+      "committee_score": 5.475093,
+      "a1_score": 2.28931,
+      "core4_score": 46.0,
+      "prev_same": 1,
+      "prev_pm1": 1,
+      "prev2_same_pm1": 3
     },
     {
       "position": 3,
       "numbers": [
         9,
-        26,
+        27,
         29,
         30,
         31
       ],
-      "sum": 125,
+      "sum": 126,
       "shape": "1-0-2-2",
-      "odd_even": "3:2",
+      "odd_even": "4:1",
       "consecutive_pairs": 2,
-      "committee_rank": 4,
-      "committee_score": 5.992889,
-      "a1_score": 2.444036,
-      "core4_score": 56.0,
-      "prev_same": 2,
-      "prev_pm1": 4,
+      "committee_rank": 36,
+      "committee_score": 5.393944,
+      "a1_score": 2.027752,
+      "core4_score": 71.0,
+      "prev_same": 0,
+      "prev_pm1": 2,
       "prev2_same_pm1": 4
     },
     {
       "position": 4,
       "numbers": [
         20,
-        24,
         25,
-        28,
-        31
+        26,
+        27,
+        30
       ],
       "sum": 128,
       "shape": "0-0-4-1",
       "odd_even": "2:3",
-      "consecutive_pairs": 1,
-      "committee_rank": 27,
-      "committee_score": 5.475481,
-      "a1_score": 2.270828,
-      "core4_score": 50.0,
-      "prev_same": 1,
-      "prev_pm1": 2,
-      "prev2_same_pm1": 4
-    },
-    {
-      "position": 5,
-      "numbers": [
-        19,
-        25,
-        27,
-        28,
-        29
-      ],
-      "sum": 128,
-      "shape": "0-1-4-0",
-      "odd_even": "4:1",
       "consecutive_pairs": 2,
-      "committee_rank": 65,
-      "committee_score": 5.153193,
-      "a1_score": 2.092612,
-      "core4_score": 54.0,
+      "committee_rank": 48,
+      "committee_score": 5.263852,
+      "a1_score": 2.115609,
+      "core4_score": 55.0,
       "prev_same": 1,
       "prev_pm1": 2,
-      "prev2_same_pm1": 4
-    },
-    {
-      "position": 6,
-      "numbers": [
-        20,
-        22,
-        26,
-        28,
-        30
-      ],
-      "sum": 126,
-      "shape": "0-0-4-1",
-      "odd_even": "0:5",
-      "consecutive_pairs": 0,
-      "committee_rank": 78,
-      "committee_score": 5.049208,
-      "a1_score": 2.20136,
-      "core4_score": 37.0,
-      "prev_same": 1,
-      "prev_pm1": 3,
       "prev2_same_pm1": 3
     },
     {
-      "position": 7,
+      "position": 5,
       "numbers": [
         1,
         2,
@@ -161,10 +119,52 @@
       "shape": "4-1-0-0",
       "odd_even": "4:1",
       "consecutive_pairs": 2,
-      "committee_rank": 111,
-      "committee_score": 4.84569,
-      "a1_score": 1.929993,
+      "committee_rank": 136,
+      "committee_score": 4.567941,
+      "a1_score": 1.793433,
       "core4_score": 57.0,
+      "prev_same": 0,
+      "prev_pm1": 0,
+      "prev2_same_pm1": 1
+    },
+    {
+      "position": 6,
+      "numbers": [
+        22,
+        24,
+        25,
+        27,
+        28
+      ],
+      "sum": 126,
+      "shape": "0-0-5-0",
+      "odd_even": "2:3",
+      "consecutive_pairs": 2,
+      "committee_rank": 612,
+      "committee_score": 3.380181,
+      "a1_score": 1.410083,
+      "core4_score": 42.0,
+      "prev_same": 1,
+      "prev_pm1": 2,
+      "prev2_same_pm1": 2
+    },
+    {
+      "position": 7,
+      "numbers": [
+        1,
+        2,
+        4,
+        7,
+        10
+      ],
+      "sum": 24,
+      "shape": "4-1-0-0",
+      "odd_even": "2:3",
+      "consecutive_pairs": 1,
+      "committee_rank": 714,
+      "committee_score": 3.269094,
+      "a1_score": 1.397717,
+      "core4_score": 38.0,
       "prev_same": 1,
       "prev_pm1": 0,
       "prev2_same_pm1": 1
@@ -172,74 +172,79 @@
     {
       "position": 8,
       "numbers": [
-        22,
-        23,
-        24,
-        27,
-        30
+        9,
+        11,
+        13,
+        16,
+        19
       ],
-      "sum": 126,
-      "shape": "0-0-4-1",
-      "odd_even": "2:3",
-      "consecutive_pairs": 2,
-      "committee_rank": 327,
-      "committee_score": 4.055508,
-      "a1_score": 1.700346,
-      "core4_score": 44.0,
-      "prev_same": 2,
+      "sum": 68,
+      "shape": "1-4-0-0",
+      "odd_even": "4:1",
+      "consecutive_pairs": 0,
+      "committee_rank": 1448,
+      "committee_score": 2.803798,
+      "a1_score": 1.067784,
+      "core4_score": 52.0,
+      "prev_same": 1,
       "prev_pm1": 1,
-      "prev2_same_pm1": 4
+      "prev2_same_pm1": 2
     },
     {
       "position": 9,
       "numbers": [
+        5,
+        20,
         21,
-        24,
-        26,
-        28,
-        29
+        22,
+        28
       ],
-      "sum": 128,
-      "shape": "0-0-5-0",
+      "sum": 96,
+      "shape": "1-0-4-0",
       "odd_even": "2:3",
-      "consecutive_pairs": 1,
-      "committee_rank": 408,
-      "committee_score": 3.937719,
-      "a1_score": 1.584875,
-      "core4_score": 51.0,
-      "prev_same": 0,
-      "prev_pm1": 3,
-      "prev2_same_pm1": 4
+      "consecutive_pairs": 2,
+      "committee_rank": 1466,
+      "committee_score": 2.798901,
+      "a1_score": 1.119908,
+      "core4_score": 46.0,
+      "prev_same": 1,
+      "prev_pm1": 0,
+      "prev2_same_pm1": 1
     },
     {
       "position": 10,
       "numbers": [
         21,
+        22,
         23,
-        26,
-        27,
+        29,
         31
       ],
-      "sum": 128,
+      "sum": 126,
       "shape": "0-0-4-1",
       "odd_even": "4:1",
-      "consecutive_pairs": 1,
+      "consecutive_pairs": 2,
       "committee_rank": 2,
-      "committee_score": 6.015718,
-      "a1_score": 2.417727,
-      "core4_score": 60.0,
-      "prev_same": 2,
-      "prev_pm1": 2,
-      "prev2_same_pm1": 4
+      "committee_score": 5.856434,
+      "a1_score": 2.428811,
+      "core4_score": 49.0,
+      "prev_same": 0,
+      "prev_pm1": 1,
+      "prev2_same_pm1": 2
     }
   ],
   "union_numbers": [
     1,
     2,
     3,
+    4,
     5,
+    7,
     9,
+    10,
     11,
+    13,
+    16,
     19,
     20,
     21,
@@ -254,5 +259,5 @@
     30,
     31
   ],
-  "union_size": 19
+  "union_size": 24
 }
