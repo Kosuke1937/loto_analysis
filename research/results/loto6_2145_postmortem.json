@@ -1,0 +1,138 @@
+{
+  "draw": 2145,
+  "date": "2026-10-12",
+  "winner": [
+    4,
+    6,
+    8,
+    11,
+    24,
+    27
+  ],
+  "bonus": 36,
+  "first_prize_winners": 10,
+  "evaluated_final10": [
+    [
+      5,
+      18,
+      19,
+      26,
+      35,
+      40
+    ],
+    [
+      7,
+      10,
+      13,
+      21,
+      35,
+      42
+    ],
+    [
+      8,
+      17,
+      19,
+      26,
+      38,
+      42
+    ],
+    [
+      6,
+      18,
+      28,
+      33,
+      35,
+      43
+    ],
+    [
+      5,
+      18,
+      29,
+      36,
+      37,
+      41
+    ],
+    [
+      6,
+      7,
+      13,
+      20,
+      36,
+      41
+    ],
+    [
+      4,
+      8,
+      13,
+      27,
+      37,
+      41
+    ],
+    [
+      1,
+      5,
+      10,
+      16,
+      36,
+      37
+    ],
+    [
+      1,
+      2,
+      10,
+      14,
+      33,
+      35
+    ],
+    [
+      12,
+      19,
+      21,
+      24,
+      36,
+      40
+    ]
+  ],
+  "best_match": {
+    "position": 7,
+    "count": 3,
+    "matched": [
+      4,
+      8,
+      27
+    ],
+    "ticket": [
+      4,
+      8,
+      13,
+      27,
+      37,
+      41
+    ]
+  },
+  "winner_state": {
+    "band": "3-1-2-0-0",
+    "band_prev500_count": 1,
+    "band_agent_v2_rank": 68,
+    "flow": "2-2-1-0-1",
+    "flow_prev500_count": 7,
+    "flow_rank": 19,
+    "sum": 80,
+    "sum_state": "S1",
+    "gap": "2-1-0",
+    "previous_main_overlap": {
+      "count": 2,
+      "numbers": [
+        6,
+        11
+      ]
+    }
+  },
+  "decisions_for_next_draw": [
+    "前回本数字再登場0〜1個はHard除外にせずSoft評価とする。2個再登場を許容するレーンを必ず保持する。",
+    "Band Mainとは独立にBand Tailレーンを保持する。Novelを少数の特定形だけで代表させない。",
+    "FlowはMain/Subだけでなく15〜25位帯のTailレーンを1〜2口保持する。",
+    "Crowd RiskはPredictionを上書きしない。候補評価が近い場合のタイブレーク専用とする。",
+    "State selection coverageをAssembly/Core/Satelliteより上流の主要KPIとして監査する。"
+  ]
+}
