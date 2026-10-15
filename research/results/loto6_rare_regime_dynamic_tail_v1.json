@@ -1,0 +1,93 @@
+{
+  "method": "Rare-Regime Agent + dynamic Tail allocation diagnostic v1",
+  "data_cutoff": 2145,
+  "note": "No draw 2146 result used. Candidate-space evaluation uses a fixed deterministic 11,998-combination sample, so results are comparative diagnostics, not exact full-space performance.",
+  "rare_prediction_test_1646_2145": {
+    "rareBand": {
+      "base_rate_pct": 16,
+      "auc": 0.542,
+      "top25_rate_pct": 19.2,
+      "enrichment": 1.2
+    },
+    "rareFlow": {
+      "base_rate_pct": 15.6,
+      "auc": 0.501,
+      "top25_rate_pct": 18.4,
+      "enrichment": 1.18
+    },
+    "rareGap": {
+      "base_rate_pct": 2.2,
+      "auc": 0.51,
+      "top25_rate_pct": 3.2,
+      "enrichment": 1.45
+    },
+    "deepTail": {
+      "base_rate_pct": 3.6,
+      "auc": 0.573,
+      "top25_rate_pct": 4,
+      "enrichment": 1.11
+    },
+    "anyTail": {
+      "base_rate_pct": 30,
+      "auc": 0.529,
+      "top10_rate_pct": 38,
+      "enrichment": 1.27
+    }
+  },
+  "dynamic_allocation_test_1": {
+    "train": "1001-1645",
+    "test": "1646-2145",
+    "fixed_plan": "6 Main + 1 BandTail + 1 FlowTail + 1 GapTail + 1 DeepTail",
+    "symmetric_dynamic": "Low: 8 Main+1 BandTail+1 FlowTail; Mid: fixed; High: 4 Main+2 BandTail+2 FlowTail+1 GapTail+1 DeepTail",
+    "fixed": {
+      "d3plus": 107,
+      "d4plus": 8,
+      "mean_best": 2.032,
+      "winner_recall6": 36,
+      "winner_recall5plus": 158
+    },
+    "dynamic": {
+      "d3plus": 104,
+      "d4plus": 5,
+      "mean_best": 2.01,
+      "winner_recall6": 30,
+      "winner_recall5plus": 149
+    },
+    "conclusion": "Rejected. Reducing Tail coverage in low-risk draws hurt more than high-risk expansion helped."
+  },
+  "dynamic_allocation_test_2": {
+    "train": "1001-1395",
+    "dev": "1396-1645",
+    "test": "1646-2145",
+    "high_risk_threshold": "top quartile of train Rare Risk, cutoff=1.363",
+    "principle": "One-sided intervention only; low/mid retain the fixed portfolio.",
+    "fixed": {
+      "d3plus": 107,
+      "d4plus": 8,
+      "mean_best": 2.032,
+      "winner_recall6": 36,
+      "winner_recall5plus": 158
+    },
+    "dev_selected": "H3 = on high-risk draws, 5 Main + 1 BandTail + 1 FlowTail + 1 GapTail + 2 DeepTail",
+    "chosen_test": {
+      "d3plus": 109,
+      "d4plus": 7,
+      "mean_best": 2.034,
+      "winner_recall6": 37,
+      "winner_recall5plus": 161,
+      "paired_d3_gain": 3,
+      "paired_d3_loss": 1,
+      "paired_d4_gain": 0,
+      "paired_d4_loss": 1
+    },
+    "exploratory_best_on_test_not_selected": "H4 = 4 Main + 2 BandTail + 2 FlowTail + 1 GapTail + 1 DeepTail gave d3plus 111 and recall6 39, but lost one d4 and was not selected on dev, so it is not adopted.",
+    "conclusion": "One-sided DeepTail boost is mildly promising but not robust enough to replace the fixed portfolio. Keep as research branch / forward test."
+  },
+  "next_steps": [
+    "Do not reduce Tail lanes just because Rare Risk is low.",
+    "Use Rare-Regime only as a one-sided boost when confidence is high.",
+    "Predict coarse anomaly types (Band concentration, F1+F2 depletion/F5-heavy Flow, bimodal Gap) rather than exact rare states.",
+    "Optimize for preserving d4+ while improving d3+ and Winner Number Recall; avoid a Tail boost that trades away d4.",
+    "Forward-test the dev-selected H3 rule before adopting it."
+  ]
+}
