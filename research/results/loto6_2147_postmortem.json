@@ -1,0 +1,90 @@
+{
+  "draw": 2147,
+  "date": "2026-10-19",
+  "source_note": "User supplied Fukui Shimbun result screenshot.",
+  "winner": [
+    9,
+    16,
+    22,
+    23,
+    27,
+    29
+  ],
+  "bonus": 39,
+  "first_prize_winners": 3,
+  "state": {
+    "band": "1-1-4-0-0",
+    "band_prev500_count": 2,
+    "band_prev500_rank": 75,
+    "band_agent_v2_rank": 77,
+    "band_theoretical_probability_pct": 0.31,
+    "flow": "0-1-3-1-1",
+    "flow_prev500_count": 6,
+    "flow_prev500_rank": 24,
+    "flow_theoretical_rank_given_2147_categories": 4,
+    "flow_theoretical_probability_pct": 2.8935,
+    "sum": 126,
+    "sum_state": "S2",
+    "gap_values": [
+      7,
+      6,
+      1,
+      4,
+      2
+    ],
+    "gap_state": "2-0-1",
+    "gap_prev500_count": 16,
+    "gap_prev500_rank": 12,
+    "previous_main_overlap": 0,
+    "previous_bonus_reappeared": false,
+    "prev2_overlap": [
+      27
+    ]
+  },
+  "rare_regime_audit": {
+    "predraw_risk": 0.768,
+    "high_threshold": 1.363,
+    "predraw_level": "NORMAL",
+    "conclusion": "The existing Rare-Regime warning did not flag draw 2147 as high risk.",
+    "interpretation": "The unusual feature was structural concentration rather than an unseen exact state."
+  },
+  "structural_concentration": {
+    "max_band_count_ge4": {
+      "winner": true,
+      "theory_pct": 7.12,
+      "last500_pct": 6.2
+    },
+    "band20_count_ge4": {
+      "winner": true,
+      "theory_pct": 1.96,
+      "last500_pct": 1.6
+    },
+    "no_30plus": {
+      "winner": true,
+      "theory_pct": 7.79,
+      "last500_pct": 6.6
+    },
+    "band20_count_ge4_and_no_30plus": {
+      "winner": true,
+      "theory_pct": 0.67,
+      "last500_pct": 0.4
+    },
+    "occupied3_and_maxband4plus": {
+      "winner": true,
+      "theory_pct": 4.97,
+      "last500_pct": 4
+    }
+  },
+  "crowd": {
+    "score": 1.227,
+    "recent500_percentile": 69.1,
+    "note": "Moderately crowd-prone by the exploratory Crowd Agent; actual first-prize winners were 3."
+  },
+  "lessons": [
+    "Do not equate rare with exact-state frequency <=1 only.",
+    "Add structural rarity types: max band count >=4, specific-band concentration, upper-band absence, occupied-band count.",
+    "Keep empirical and theoretical state probability separate. The flow was empirical rank 24 but theoretical rank 4 for the available Flow category sizes.",
+    "Rare-Regime should route to Rare-Type Agents instead of only changing the number of Tail tickets.",
+    "No hard exclusion should be added from this single draw."
+  ]
+}
