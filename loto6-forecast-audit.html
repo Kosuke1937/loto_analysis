@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta http-equiv="Cache-Control" content="no-store">
+<title>ロト6 第2149回 予測検証</title>
+<style>
+:root{--bg:#050608;--card:#181a1f;--line:#303641;--text:#f3f6fb;--muted:#aeb7c7;--blue:#8fb7fa;--green:#6ee7a6;--amber:#ffd17b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Sans",sans-serif;line-height:1.55}
+.wrap{max-width:920px;margin:auto;padding:16px 13px 50px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{color:#dce4f0;text-decoration:none;border:1px solid var(--line);padding:8px 12px;border-radius:25px;font-size:12px}
+h1{font-size:24px;margin:18px 0 2px}.sub,.note{color:var(--muted);font-size:12px}.section{font-size:17px;font-weight:800;margin:22px 0 9px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.stat{background:#10151d;border-radius:12px;padding:12px}.stat label{display:block;color:var(--muted);font-size:11px}.stat strong{font-size:23px}
+.balls{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.ball{display:inline-flex;justify-content:center;align-items:center;width:39px;height:39px;border-radius:50%;background:#273449;border:1px solid #496586;font-weight:800}.bonus{background:#4a3619;border-color:#987230;color:#ffdb98}
+.tableWrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:560px}th,td{font-size:12px;padding:8px 6px;border-bottom:1px solid #30353d;text-align:center;white-space:nowrap}th{color:var(--muted);font-size:11px}td.nums{text-align:left;font-variant-numeric:tabular-nums}b.match{color:var(--green)}.hit{background:#113222}.warn{border-left:4px solid var(--amber);background:#2c2418;padding:11px 12px;border-radius:8px;font-size:12px;margin-top:12px}li{margin-bottom:7px;font-size:13px}
+@media(max-width:540px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat strong{font-size:19px}}
+</style></head><body><main class="wrap">
+<div class="nav"><a href="./?v=20261026-2149">トップ</a><a href="loto6.html?v=20261026-2149">ロト6</a><a href="loto6-records.html?v=20261026-2149">購入記録</a></div>
+<h1>第2149回｜予測検証</h1><p class="sub">抽せん日：2026年10月26日（月）　検証元：抽せん前にチャットで確定した10口。購入実績とは区別。</p>
+<div class="card"><div class="note">確定本数字</div><div class="balls" id="winning"></div><div class="note" style="margin-top:8px" id="drawingDetail"></div></div>
+<div class="grid" style="margin-top:12px"><div class="stat"><label>最高一致</label><strong id="best">—</strong></div><div class="stat"><label>5等以上相当</label><strong id="hits">—</strong></div><div class="stat"><label>合計値の予測誤差</label><strong id="sumError">—</strong></div><div class="stat"><label>予測中心値</label><strong>135</strong></div><div class="stat"><label>実際の合計値</label><strong id="actualSum">—</strong></div><div class="stat"><label>仮想回収率（10口購入の場合）</label><strong id="returnRate">—</strong></div></div>
+<h2 class="section">予測10口の全照合</h2><div class="card tableWrap"><table><thead><tr><th>口</th><th style="text-align:left">提案数字（緑＝一致）</th><th>合計</th><th>本数字一致</th><th>BO</th><th>想定等級</th></tr></thead><tbody id="predictionRows"></tbody></table></div>
+<div class="warn"><b>購入実績は未確認：</b>予測した全10口を買っていたと仮定すると、購入2,000円・5等1口1,000円・仮想収支−1,000円です。実際の累積投資額／当選額／回収率には反映しません。</div>
+<h2 class="section">今回の分析・改善課題</h2><div class="card"><ul>
+<li>合計値は <b>107（S1：109以下）</b>。予測中心135との差は−28。前回129から−22で、直近2回の横ばい傾向は継続しなかった。</li>
+<li>提案10口の合計値は113〜159で、107を下回る候補がなく、低合計のカバーが不足していた。</li>
+<li>帯構成は <b>1-3-1-1-0</b>。奇数3・偶数3、連番なし。前回本数字から11が1個再登場、前回ボーナスの15が本数字に入った。</li>
+<li>全43数字を10口でカバーしたため当選数字6種類は網羅した一方、同じ口への集約は最高3個一致にとどまった。</li>
+<li>次回改善では「予測中心」と「候補の合計値下限」を別々に監査し、極端な合計値も完全には排除しない。</li>
+</ul><p class="note">今回の傾向は事後の説明であり、次回の抽せんに同じパターンが続くことの証拠ではありません。</p></div>
+<p class="note">データ：第2149回の本数字・ボーナス・等級金額を公開結果に照合。予測口は2026年10月26日抽せん前に固定した最終提案。</p>
+</main><script src="data/loto6-chunk-12.js?v=20261026-2149"></script><script>
+const PICKS=[[1,7,19,24,30,32],[2,13,18,21,28,37],[1,14,20,25,29,36],[4,5,12,33,37,39],[8,12,16,26,27,43],[3,11,15,32,36,39],[4,7,27,28,35,40],[10,15,23,29,30,38],[6,17,22,31,34,41],[9,18,23,24,42,43]];
+const PAD=n=>String(n).padStart(2,"0");
+const d=(window.LOTO6_CHUNKS||[]).flat().find(r=>r[0]===2149);
+if(d){
+const win=d.slice(2,8),bo=d[8],sum=win.reduce((a,b)=>a+b,0);
+document.getElementById("winning").innerHTML=win.map(n=>'<span class="ball">'+PAD(n)+'</span>').join('')+'<span class="ball bonus">B '+PAD(bo)+'</span>';
+document.getElementById("drawingDetail").textContent='合計 '+sum+' ／ 1等 '+(d[9]??'—')+'口 ／ 奇数3：偶数3 ／ 連番なし';
+const outputs=PICKS.map((p,i)=>{let matched=p.filter(n=>win.includes(n)),hits=matched.length,hasBonus=p.includes(bo),grade=hits===6?'1等':hits===5&&hasBonus?'2等':hits===5?'3等':hits===4?'4等':hits===3?'5等':'なし';return '<tr'+(hits>=3?' class="hit"':'')+'><td>'+PAD(i+1)+'</td><td class="nums">'+p.map(n=>win.includes(n)?'<b class="match">'+PAD(n)+'</b>':PAD(n)).join(' ')+'</td><td>'+p.reduce((a,b)=>a+b,0)+'</td><td>'+hits+'個</td><td>'+(hasBonus?'○':'—')+'</td><td>'+grade+'</td></tr>'});
+document.getElementById("predictionRows").innerHTML=outputs.join('');
+const counts=PICKS.map(p=>p.filter(n=>win.includes(n)).length);
+document.getElementById("best").textContent=Math.max(...counts)+'個';
+document.getElementById("hits").textContent=counts.filter(n=>n>=3).length+'口';
+document.getElementById("sumError").textContent=(sum-135>0?'+':'')+(sum-135);
+document.getElementById("actualSum").textContent=sum;
+document.getElementById("returnRate").textContent='50%';
+}
+</script></body></html>
