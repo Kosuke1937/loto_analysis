@@ -1,18 +1,18 @@
 {
-  "count": 2147,
+  "count": 2151,
   "first": 1,
-  "last": 2147,
+  "last": 2151,
   "latest": [
-    2147,
-    "2026/10/19",
+    2151,
+    "2026/11/02",
+    4,
     9,
-    16,
-    22,
+    11,
     23,
-    27,
-    29,
-    39,
-    3
+    24,
+    37,
+    38,
+    4
   ],
-  "source": "https://loto6.thekyo.jp/data/loto6.csv"
+  "source": "2026-11-02 第2151回は loto6.thekyo.jp/result と loto6.money-plan.net/round/2151/ にて照合（公式未照合）。以前の履歴は当初データを引継ぎ"
 }
