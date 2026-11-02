@@ -1,0 +1,190 @@
+{
+  "title": "Loto6 LocalCore5+ exploratory study",
+  "created_jst": "2026-11-02",
+  "history_source": "loto_analysis/data/loto6-chunk-1..12.js (draws 1-2151)",
+  "data_integrity": "2151 verified across two public sources; forward features only, rolling window corrected to exact previous 300",
+  "scope": "Hypothesis-generating retrospective analysis. Prior successes may have been known when model was designed; not independently held out.",
+  "data_windows": {
+    "development": "1428-1627 (200)",
+    "evaluation": "1628-2127 (500)",
+    "recent": "2128-2151 (24)"
+  },
+  "method": {
+    "core_space": 123410,
+    "core_size": 4,
+    "routes": {
+      "raw": "sum of six historical pair counts over previous 300 draws",
+      "lift": "raw minus expected pair count based on marginal number frequencies",
+      "cold": "negative raw pair count",
+      "number": "sum of individual number frequencies over previous 300 draws"
+    },
+    "ranking": "Top two unique 4-number cores per route; ties lexicographic",
+    "completion": "For each core choose 10 distinct remaining numbers with highest sum of pair co-occurrences to that core plus 0.2 times number frequency, then pair adjacent numbers into 5 tickets. Two cores x 5 tickets =10. No winning-draw features used.",
+    "metrics": "for each draw maximum correct-number match across final 10 tickets; separate count when at least one selected core contains 4 of the 6 winners"
+  },
+  "outcomes": {
+    "raw": {
+      "development": {
+        "d3plus": 29,
+        "d4plus": 2,
+        "d5plus": 1,
+        "d5draws": [
+          1451
+        ],
+        "correct4coreTop1": 1,
+        "correct4coreTop100": 3
+      },
+      "evaluation": {
+        "d3plus": 80,
+        "d4plus": 8,
+        "d5plus": 0,
+        "correct4coreTop1": 0,
+        "correct4coreTop100": 4
+      },
+      "recent": {
+        "d3plus": 5,
+        "d4plus": 0,
+        "d5plus": 0
+      }
+    },
+    "lift": {
+      "development": {
+        "d3plus": 25,
+        "d4plus": 3,
+        "d5plus": 0
+      },
+      "evaluation": {
+        "d3plus": 81,
+        "d4plus": 6,
+        "d5plus": 0
+      },
+      "recent": {
+        "d3plus": 2,
+        "d4plus": 0,
+        "d5plus": 0
+      }
+    },
+    "cold": {
+      "development": {
+        "d3plus": 34,
+        "d4plus": 1,
+        "d5plus": 0
+      },
+      "evaluation": {
+        "d3plus": 90,
+        "d4plus": 8,
+        "d5plus": 0
+      },
+      "recent": {
+        "d3plus": 5,
+        "d4plus": 0,
+        "d5plus": 0
+      }
+    },
+    "number": {
+      "development": {
+        "d3plus": 32,
+        "d4plus": 4,
+        "d5plus": 1,
+        "d5draws": [
+          1451
+        ],
+        "correct4coreTop1": 1,
+        "correct4coreTop100": 4
+      },
+      "evaluation": {
+        "d3plus": 71,
+        "d4plus": 6,
+        "d5plus": 1,
+        "d5draws": [
+          1710
+        ],
+        "correct4coreTop1": 1,
+        "correct4coreTop100": 6
+      },
+      "recent": {
+        "d3plus": 2,
+        "d4plus": 0,
+        "d5plus": 0
+      }
+    }
+  },
+  "example_hits": [
+    {
+      "draw": 1451,
+      "method": "number",
+      "winner": [
+        2,
+        6,
+        10,
+        20,
+        24,
+        43
+      ],
+      "selected_ticket": [
+        2,
+        10,
+        20,
+        24,
+        33,
+        43
+      ],
+      "matches": 5
+    },
+    {
+      "draw": 1451,
+      "method": "raw",
+      "winner": [
+        2,
+        6,
+        10,
+        20,
+        24,
+        43
+      ],
+      "selected_ticket": [
+        6,
+        10,
+        11,
+        20,
+        24,
+        43
+      ],
+      "matches": 5
+    },
+    {
+      "draw": 1710,
+      "method": "number",
+      "winner": [
+        1,
+        2,
+        21,
+        27,
+        32,
+        37
+      ],
+      "selected_ticket": [
+        2,
+        21,
+        27,
+        32,
+        37,
+        40
+      ],
+      "matches": 5
+    }
+  ],
+  "probability_context": {
+    "all_combinations": 6096454,
+    "unconditional_5plus_upperbound_10_tickets": 0.0003657864063273503,
+    "uniform_500_draw_5plus_probability_at_least_once_upperbound": 0.16717076784496868,
+    "if_correct_4_core_p_of_5plus_for_5_tickets_with_10_unique_extras": 0.45209176788124156,
+    "correct_fixed_4_core_probability": 0.00012154606595899845
+  },
+  "decision": "Research-only: number route retains two exploratory 5+ historical events across 724 draws, one in the 500-draw evaluation period. No reliable uplift demonstrated, cannot claim prespecified validation. Avoid promoting this to main purchase model. Freeze 2152 shadow set and require predeclared trigger.",
+  "risk_notes": [
+    "Multiple routes were compared; selective reporting biases any p-value.",
+    "All portfolio constructions here intentionally cluster tickets around 4-number cores, not maximize lower prize cover.",
+    "The 2152 top2 cores are tied on ranking strength, so no strong-confidence activation; shadow-only."
+  ]
+}
