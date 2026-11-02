@@ -1,0 +1,132 @@
+{
+  "game": "loto6",
+  "draw": 2152,
+  "draw_date": "2026-11-05",
+  "created_jst": "2026-11-02",
+  "model": "LocalCore5plus-v0 research-only",
+  "history_end_draw": 2151,
+  "history_window": "draws 1852-2151 inclusive (300)",
+  "status": "shadow forecast; not a purchase recommendation",
+  "trigger": "OFF",
+  "trigger_reason": "4th and 5th most frequent numbers are tied at 49 appearances; no separation in local core estimate",
+  "core_1": [
+    28,
+    35,
+    36,
+    37
+  ],
+  "core_2": [
+    29,
+    35,
+    36,
+    37
+  ],
+  "core_score_both": 204,
+  "frequency_top5": [
+    [
+      35,
+      52
+    ],
+    [
+      36,
+      52
+    ],
+    [
+      37,
+      51
+    ],
+    [
+      28,
+      49
+    ],
+    [
+      29,
+      49
+    ]
+  ],
+  "tickets": [
+    [
+      18,
+      26,
+      28,
+      35,
+      36,
+      37
+    ],
+    [
+      1,
+      28,
+      35,
+      36,
+      37,
+      43
+    ],
+    [
+      5,
+      6,
+      28,
+      35,
+      36,
+      37
+    ],
+    [
+      8,
+      28,
+      33,
+      35,
+      36,
+      37
+    ],
+    [
+      27,
+      28,
+      35,
+      36,
+      37,
+      40
+    ],
+    [
+      18,
+      29,
+      33,
+      35,
+      36,
+      37
+    ],
+    [
+      1,
+      2,
+      29,
+      35,
+      36,
+      37
+    ],
+    [
+      24,
+      29,
+      35,
+      36,
+      37,
+      42
+    ],
+    [
+      6,
+      26,
+      29,
+      35,
+      36,
+      37
+    ],
+    [
+      20,
+      29,
+      35,
+      36,
+      37,
+      41
+    ]
+  ],
+  "purchase_status": "not recorded",
+  "result_status": "pending; do not fill until draw result official or cross-checked",
+  "evaluation": "final10 best-match d3/d4/d5/d6, pair/triple coverage, selected-core correctness; no retroactive modifications"
+}
