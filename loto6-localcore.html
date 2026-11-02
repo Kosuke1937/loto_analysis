@@ -6,5 +6,16 @@
 <div class="boxrow"><div class="card"><b>第1451回</b><div class="muted">単数字頻度型／5個一致</div><div class="balls">02 10 20 24 33 43</div></div><div class="card"><b>第1710回</b><div class="muted">単数字頻度型／5個一致</div><div class="balls">02 21 27 32 37 40</div></div><div class="card"><b>第2151回</b><div class="muted">対象モデルでは5個一致なし</div><div>局所的な予測の再現性は未証明</div></div></div>
 <h2>条件付き効果と限界</h2><div class="card">もし予め選んだ4数字核が実際の本数字にすべて含まれていれば、その核を使った5口が異なる10補完数字を網羅する場合、少なくとも1口で5個以上一致する条件付き確率は約45.2%です。しかし、<b>固定した4数字核が当選6数字に含まれる確率は約0.0122%</b>。正しい核を予測する能力が確認できなければ、この条件付き確率を実際の当せん予測力として扱えません。10口で5個以上一致する無条件確率の理論上限は約0.03658%です。</div>
 <h2>次回・第2152回の研究用固定候補</h2><div class="card"><p class="no">発動判定：OFF（研究用シャドー予測のみ）</p><p>予測時点：第2151回までの過去データ。第2152回の結果は不使用。4番目と5番目の単数字頻度がともに49回で差がないため、核の絞り込みに確信がありません。</p><p><b>上位4数字核：</b>28・35・36・37 ／ 29・35・36・37</p><div class="scroll"><table><thead><tr><th>口</th><th>シャドー候補</th></tr></thead><tbody id="tickets"></tbody></table></div><p class="muted">発動OFF時は購入推奨口として使用しません。後日、第2152回結果を追記して事前固定候補の一致数を検証します。<a href="data/loto6-localcore-2152-shadow.json" style="color:var(--blue)">予測の固定JSON</a></p></div>
+<h2>追加検証：3数字核スター方式（2026/11/02）</h2>
+<div class="alert"><b>従来の4数字核×2組を主モデルにしない。</b> 5個以上一致の理論カバーが2,133/6,096,454に縮むため、予測力が確認されるまでは見送る。</div>
+<div class="card"><b>新方式：</b>12341通りの3数字核を直前300回から選び、30個の異なる補完数字を10口へ重複なく配分。異なる2口の共通数字を3個に限定し、5個以上一致の理論カバー最大2,230通りを維持する。ただし次回の当選確率自体を高める効果は未証明。</div>
+<div class="scroll card"><table><thead><tr><th>核スコア</th><th>比較500回 3+ </th><th>4+</th><th>5+</th><th>直近24回 5+</th></tr></thead><tbody>
+<tr><td>単数字頻度</td><td>84</td><td>11</td><td>1（第1715回）</td><td>0</td></tr>
+<tr><td>ペア共起</td><td>87</td><td>7</td><td>0</td><td>0</td></tr>
+<tr><td>低ペア共起</td><td>85</td><td>7</td><td>1（第1783回）</td><td>0</td></tr>
+<tr><td>混合</td><td>90</td><td>5</td><td>0</td><td>0</td></tr>
+</tbody></table></div>
+<div class="card"><b>核の高確信判定：</b> 200回・500回とも上位数字が安定したときだけ発動すると、比較500回中43回発動・正しい4数字核は0回。<b>数字単体の事前確率：</b>13方式のBrierスコアを比べた結果、公平な全数字同確率0.12006490を上回る予測方式はなかった。<b>物理条件の前後：</b>第1367回の球セット更新p≈0.585、第1768回の大阪セット色変更p≈0.663（各境界の前後300回）。いずれも確かな予測可能性は確認されていない。</div>
+<div class="card"><b>次の独立研究案：</b>「加重5近傍被覆」。単純な上位6数字券ではなく、抽せん前に校正された当選候補分布の下で5個以上一致となる周辺集合の総確率を10口で最大化する。現段階では未実装・未検証。<a href="https://github.com/Kosuke1937/loto_analysis/blob/main/research/results/loto6_localcore3_20261102.json" style="color:var(--blue)">3数字核・発動判定・物理検証の数値監査</a></div>
 <h2>次の検証基準</h2><div class="card">Top1～100の正しい4数字核残存回数、発動率、発動回の5個一致以上、未発動回の取りこぼし、10口購入に対する無作為基準を分離して記録。結果を見て核や補完数字を入れ替えず、主力Committeeとも同一回・同一口数で比較します。</div><p class="muted">検証記録：<a style="color:var(--blue)" href="https://github.com/Kosuke1937/loto_analysis/blob/main/research/results/loto6_localcore5plus_20261102.json">研究JSON</a>。略語：LocalCore＝4数字の局所的な核、シャドー予測＝実際の購入とは区別して事前保存する検証候補。</p></main>
 <script>const picks=[[18,26,28,35,36,37],[1,28,35,36,37,43],[5,6,28,35,36,37],[8,28,33,35,36,37],[27,28,35,36,37,40],[18,29,33,35,36,37],[1,2,29,35,36,37],[24,29,35,36,37,42],[6,26,29,35,36,37],[20,29,35,36,37,41]];document.getElementById('tickets').innerHTML=picks.map((x,i)=>'<tr><td>'+String(i+1).padStart(2,'0')+'</td><td class="balls">'+x.map(n=>'<span class="ball">'+String(n).padStart(2,'0')+'</span>').join('')+'</td></tr>').join('')</script></body></html>
