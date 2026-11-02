@@ -1,0 +1,166 @@
+{
+  "version": "exploratory-2026-11-02",
+  "data": "data/loto6-chunk-1.js..12.js; 2151 rows",
+  "history_cutoff": 2151,
+  "periods": {
+    "dev": [
+      1001,
+      1627
+    ],
+    "comparison": [
+      1628,
+      2127
+    ],
+    "recent": [
+      2128,
+      2151
+    ]
+  },
+  "3core_design": "one 3-number nucleus chosen among 12341 possibilities from last 300 draws. 30 different complement numbers partitioned into ten triples; each ticket contains exactly the same 3-core; each 2 tickets have intersection size 3.",
+  "five_plus_neighborhood": {
+    "localcore4_previous": 2133,
+    "3core_star": 2230,
+    "max_possible_10_tickets": 2230,
+    "universe": 6096454
+  },
+  "five_plus_per_draw_results": {
+    "number": {
+      "dev": {
+        "n": 627,
+        "d3": 115,
+        "d4": 10,
+        "d5": 1,
+        "hit5": [
+          1451
+        ],
+        "correct3core": 1
+      },
+      "test": {
+        "n": 500,
+        "d3": 84,
+        "d4": 11,
+        "d5": 1,
+        "hit5": [
+          1715
+        ],
+        "correct3core": 2
+      },
+      "recent": {
+        "n": 24,
+        "d3": 4,
+        "d4": 0,
+        "d5": 0
+      }
+    },
+    "pair": {
+      "dev": {
+        "n": 627,
+        "d3": 107,
+        "d4": 8,
+        "d5": 0,
+        "correct3core": 1
+      },
+      "test": {
+        "n": 500,
+        "d3": 87,
+        "d4": 7,
+        "d5": 0,
+        "correct3core": 0
+      },
+      "recent": {
+        "n": 24,
+        "d3": 4,
+        "d4": 0,
+        "d5": 0
+      }
+    },
+    "coldpair": {
+      "dev": {
+        "n": 627,
+        "d3": 107,
+        "d4": 5,
+        "d5": 0,
+        "correct3core": 0
+      },
+      "test": {
+        "n": 500,
+        "d3": 85,
+        "d4": 7,
+        "d5": 1,
+        "hit5": [
+          1783
+        ],
+        "correct3core": 1
+      },
+      "recent": {
+        "n": 24,
+        "d3": 7,
+        "d4": 0,
+        "d5": 0
+      }
+    },
+    "mix": {
+      "dev": {
+        "n": 627,
+        "d3": 117,
+        "d4": 12,
+        "d5": 0,
+        "correct3core": 3
+      },
+      "test": {
+        "n": 500,
+        "d3": 90,
+        "d4": 5,
+        "d5": 0,
+        "correct3core": 0
+      },
+      "recent": {
+        "n": 24,
+        "d3": 6,
+        "d4": 0,
+        "d5": 0
+      }
+    }
+  },
+  "brier_on_test_1628_2127": {
+    "uniform": 0.1200649,
+    "longterm": 0.12007296,
+    "prevNear": 0.12007521,
+    "cold50": 0.12008498,
+    "hot800": 0.12009123,
+    "hot200": 0.12017768,
+    "multiHorizon": 0.1202788,
+    "comment": "none of twelve non-uniform models improved against uniform fair baseline"
+  },
+  "4core_gate_test_1628_2127": {
+    "always": {
+      "n": 500,
+      "truecore": 1
+    },
+    "margin_ge2": {
+      "n": 130,
+      "truecore": 1
+    },
+    "stable_200_500": {
+      "n": 43,
+      "truecore": 0
+    },
+    "margin_and_stable": {
+      "n": 25,
+      "truecore": 0
+    }
+  },
+  "physical_changes_exploratory": {
+    "1367_ball_renewal_300before_after": {
+      "stat": 2918,
+      "pMonteCarlo": 0.58547
+    },
+    "1768_osaka_set_update_300before_after": {
+      "stat": 2772,
+      "pMonteCarlo": 0.66345
+    },
+    "uniform_simulations": 3000
+  },
+  "qualification": "exploratory, previous successes were known; no independently untested effect; do not change purchase main or pre-draw frozen shadow based on this report",
+  "next": "Weighted 5-neighborhood coverage over pre-draw candidate probability q(W), with proper scoring validation first; experimental design, not implemented in this audit."
+}
