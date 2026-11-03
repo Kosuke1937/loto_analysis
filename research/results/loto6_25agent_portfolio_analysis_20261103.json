@@ -1,0 +1,252 @@
+{
+  "dateJST": "2026-11-03",
+  "historyEnd": 2151,
+  "source": "data/loto6-chunk-1.js..12.js",
+  "drawsDev": [
+    1001,
+    1627
+  ],
+  "drawsComparison": [
+    1628,
+    2127
+  ],
+  "drawsRecent": [
+    2128,
+    2151
+  ],
+  "numberOfRoutes": 25,
+  "description": "Same exact 10-ticket incidence geometry per draw. 24 historical/numerical assignment rules and one fixed control. Repeated 17 numbers mapped into twice-used positions, remaining26 mapped to once-used positions. Strict pre-draw historical 100/300 rolling pair windows corrected.",
+  "fairBaseline": {
+    "nCombinations": 6096454,
+    "p3plus": 0.26015204904359157,
+    "p4plus": 0.016752361290678155,
+    "p5plus": 0.0003657864063273503,
+    "p6": 0.0000016402977862213018,
+    "expected500": {
+      "d3": 130.076,
+      "d4": 8.376,
+      "d5": 0.182893,
+      "d6": 0.000820149
+    }
+  },
+  "recent500": [
+    {
+      "name": "prevNear",
+      "d3": 144,
+      "d4": 12,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "consensus",
+      "d3": 136,
+      "d4": 9,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "pairPrev100",
+      "d3": 135,
+      "d4": 11,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "low",
+      "d3": 134,
+      "d4": 10,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "hot20",
+      "d3": 131,
+      "d4": 6,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "overdue",
+      "d3": 130,
+      "d4": 3,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "cold200",
+      "d3": 128,
+      "d4": 8,
+      "d5": 1,
+      "d6": 0
+    },
+    {
+      "name": "pairHot300",
+      "d3": 128,
+      "d4": 8,
+      "d5": 1,
+      "d6": 0
+    },
+    {
+      "name": "recency",
+      "d3": 127,
+      "d4": 10,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "pairPrev300",
+      "d3": 126,
+      "d4": 5,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "hot200",
+      "d3": 125,
+      "d4": 3,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "trend",
+      "d3": 125,
+      "d4": 4,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "hot50",
+      "d3": 124,
+      "d4": 3,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "cold20",
+      "d3": 123,
+      "d4": 6,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "cold50",
+      "d3": 123,
+      "d4": 10,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "longfreq",
+      "d3": 123,
+      "d4": 8,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "antiBonus",
+      "d3": 123,
+      "d4": 4,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "high",
+      "d3": 121,
+      "d4": 7,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "random",
+      "d3": 120,
+      "d4": 6,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "hot500",
+      "d3": 120,
+      "d4": 11,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "prev",
+      "d3": 118,
+      "d4": 8,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "prev2Near",
+      "d3": 118,
+      "d4": 4,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "reverseTrend",
+      "d3": 117,
+      "d4": 6,
+      "d5": 0,
+      "d6": 0
+    },
+    {
+      "name": "cyclic",
+      "d3": 114,
+      "d4": 8,
+      "d5": 1,
+      "d6": 0
+    },
+    {
+      "name": "fixed",
+      "d3": 100,
+      "d4": 7,
+      "d5": 0,
+      "d6": 0
+    }
+  ],
+  "decision": "Do not promote any one heuristic. Maximum d3=144/500 among 25 alternatives; nominal one-sided binomial p≈0.0866, NOT multiplicity adjusted. Development winner reverseTrend=183/627 had 117/500 comparison; not stable. No 6/6 anywhere.",
+  "adaptiveSwitching": {
+    "rolling200d3": {
+      "d3": 118,
+      "d4": 10,
+      "d5": 1
+    },
+    "rolling200d4": {
+      "d3": 115,
+      "d4": 9,
+      "d5": 1
+    },
+    "rolling100d3": {
+      "d3": 110,
+      "d4": 7,
+      "d5": 1
+    }
+  },
+  "search": {
+    "graphVariants": 7136,
+    "mutationProposals": 104000,
+    "maxD3Found": 1586005,
+    "priorV3D3": 1586005
+  },
+  "random100PortfoliosMean": {
+    "d3": 1471017.03,
+    "d4": 101437.23,
+    "d5": 2229.84,
+    "d6": 10
+  },
+  "v3Exact": {
+    "d3": 1586005,
+    "d4": 102130,
+    "d5": 2230,
+    "d6": 10
+  },
+  "limitations": [
+    "Retrospective comparisons used research-exposed periods; not a previously untouched holdout.",
+    "No actual autonomous AI subagent workers; each named route is an algorithmic agent with identical evaluation contract.",
+    "Historical d5 examples among multiple routes are not proof of future predictive success.",
+    "Under uniform draws 1st prize probability unchanged by allocation.",
+    "The fair p3 benchmark depends on this particular incidence geometry; 3+ global mathematical optimality not proven."
+  ]
+}
