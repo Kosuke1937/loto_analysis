@@ -1,0 +1,94 @@
+{
+  "createdJST": "2026-11-03",
+  "dataset": "draw1..2151",
+  "phase": "exploratory research, previously researched evaluation period",
+  "featureSpec": 544,
+  "coefficientConfig": 16320,
+  "modelSplit": {
+    "dev": "1001-1427",
+    "validation": "1428-1627",
+    "later": "1628-2127",
+    "recent": "2128-2151"
+  },
+  "brier": {
+    "uniform": 0.1200649,
+    "bestDevelopment": {
+      "family": "last-digit100",
+      "dev": -0.000050676375,
+      "val": 0.000133465639,
+      "later": 0.000039368901
+    },
+    "selectedViaDevValidation": {
+      "family": "previous draw ±5 negative adjustment",
+      "lambda": -0.005824919276,
+      "dev": -0.000033539343,
+      "val": -0.000025918923,
+      "later": -0.000011482471,
+      "CI95": [
+        -0.000067973744,
+        0.000045008802
+      ],
+      "last500_3plus": 143,
+      "last500_5plus": 0,
+      "fullCombinationLogRatio": 1.018981
+    }
+  },
+  "tenTicketGeometry": {
+    "variantsExamined": 4200,
+    "sampleTrain": 28000,
+    "sampleIndependentEval": 300000,
+    "universe": 6096454,
+    "exactCountsD3": {
+      "pool16": 1215682,
+      "pool20": 1360143,
+      "pool24": 1414502,
+      "pool28": 1501364,
+      "pool30": 1516780,
+      "pool32": 1540505,
+      "pool35": 1560886,
+      "pool38": 1570122,
+      "pool40": 1576258,
+      "pool43": 1585430,
+      "previousV3": 1586005
+    },
+    "previousV3": {
+      "d4": 102130,
+      "d5": 2230,
+      "d6": 10
+    }
+  },
+  "globalScan": {
+    "all43numbers": true,
+    "windowSizes": [
+      20,
+      50,
+      100,
+      200,
+      500,
+      1000
+    ],
+    "maxAbsZ": 5.29764949,
+    "atDraw": 526,
+    "number": 14,
+    "window": 20,
+    "count": 11,
+    "pNullMC": 0.486,
+    "reps": 250,
+    "globalFrequencyNullMCp": 0.777
+  },
+  "weekday": {
+    "fromDraw": 543,
+    "toDraw": 2151,
+    "Monday": 805,
+    "Thursday": 804,
+    "withinYearPermutationp": 0.3253,
+    "reps": 2000
+  },
+  "limitations": [
+    "No autonomous parallel AI workers, only algorithmically independent hypothesis families",
+    "Lookback windows strict predraw; analysis windows exposed to research multiple times",
+    "No measured improvement in jackpot probability; distinguish 3+ geometric cover from digit forecasting",
+    "Statistical testing with many comparisons cannot promote a post hoc winner"
+  ],
+  "decision": "Keep original broad-coverage portfolio for lower-tier wins. No prediction algorithm promoted. Prioritize additional predraw-available external physical covariates and pre-registered forward testing."
+}
