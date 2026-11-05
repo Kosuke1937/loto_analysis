@@ -1,0 +1,391 @@
+{
+  "draw": 2152,
+  "date": "2026-11-05",
+  "recordedJST": "2026-11-05",
+  "predictionFrozenPath": "data/loto6-forecast-2152-predraw.json",
+  "predictionFrozenAtHistoryDraw": 2151,
+  "verifiedSources": [
+    "https://loto6.jp/databases/resultsearch/2152",
+    "https://loto6.money-plan.net/round/2152/",
+    "https://loto.akons.net/"
+  ],
+  "sourceStatus": "3つの外部公開結果で照合。みずほ銀行の公式結果を直接照合したものではない",
+  "win": {
+    "main": [
+      7,
+      8,
+      12,
+      20,
+      28,
+      41
+    ],
+    "bonus": 23,
+    "firstPrizeWinners": 2,
+    "firstPrizeYen": 92228200,
+    "secondPrizeWinners": 7,
+    "thirdPrizeWinners": 319,
+    "fourthPrizeWinners": 12628,
+    "fifthPrizeWinners": 182931,
+    "fifthPrizeYen": 1000,
+    "ballSet": "F (third-party archive; not a predraw feature)",
+    "sum": 116,
+    "oddEven": [
+      2,
+      4
+    ],
+    "bands_1to9_10to19_20to29_30to39_40to43": [
+      2,
+      1,
+      2,
+      0,
+      1
+    ],
+    "consecutivePairs": [
+      [
+        7,
+        8
+      ]
+    ]
+  },
+  "prev": {
+    "draw": 2151,
+    "main": [
+      4,
+      9,
+      11,
+      23,
+      24,
+      37
+    ],
+    "bonus": 38,
+    "exactMainRepeated": [],
+    "adjacentNumbers": [
+      8,
+      12
+    ],
+    "bonusRepeated": false
+  },
+  "main10": {
+    "tickets": [
+      {
+        "index": 1,
+        "numbers": [
+          8,
+          12,
+          20,
+          30,
+          33,
+          38
+        ],
+        "mainMatches": [
+          8,
+          12,
+          20
+        ],
+        "count": 3,
+        "bonusMatch": false,
+        "prize": "5等",
+        "illustrativePayoutYen": 1000
+      },
+      {
+        "index": 2,
+        "numbers": [
+          1,
+          3,
+          4,
+          15,
+          35,
+          41
+        ],
+        "mainMatches": [
+          41
+        ],
+        "count": 1,
+        "bonusMatch": false,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      },
+      {
+        "index": 3,
+        "numbers": [
+          5,
+          17,
+          24,
+          27,
+          36,
+          39
+        ],
+        "mainMatches": [],
+        "count": 0,
+        "bonusMatch": false,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      },
+      {
+        "index": 4,
+        "numbers": [
+          14,
+          21,
+          22,
+          28,
+          40,
+          43
+        ],
+        "mainMatches": [
+          28
+        ],
+        "count": 1,
+        "bonusMatch": false,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      },
+      {
+        "index": 5,
+        "numbers": [
+          7,
+          10,
+          13,
+          16,
+          25,
+          34
+        ],
+        "mainMatches": [
+          7
+        ],
+        "count": 1,
+        "bonusMatch": false,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      },
+      {
+        "index": 6,
+        "numbers": [
+          2,
+          11,
+          29,
+          31,
+          32,
+          35
+        ],
+        "mainMatches": [],
+        "count": 0,
+        "bonusMatch": false,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      },
+      {
+        "index": 7,
+        "numbers": [
+          5,
+          9,
+          12,
+          19,
+          26,
+          42
+        ],
+        "mainMatches": [
+          12
+        ],
+        "count": 1,
+        "bonusMatch": false,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      },
+      {
+        "index": 8,
+        "numbers": [
+          18,
+          21,
+          23,
+          25,
+          36,
+          37
+        ],
+        "mainMatches": [],
+        "count": 0,
+        "bonusMatch": true,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      },
+      {
+        "index": 9,
+        "numbers": [
+          6,
+          8,
+          10,
+          24,
+          37,
+          42
+        ],
+        "mainMatches": [
+          8
+        ],
+        "count": 1,
+        "bonusMatch": false,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      },
+      {
+        "index": 10,
+        "numbers": [
+          3,
+          6,
+          22,
+          23,
+          26,
+          38
+        ],
+        "mainMatches": [],
+        "count": 0,
+        "bonusMatch": true,
+        "prize": "該当なし",
+        "illustrativePayoutYen": 0
+      }
+    ],
+    "maxMatches": 3,
+    "recalls": {
+      "1": {
+        "hits": 6,
+        "of": 6,
+        "hitSubsets": [
+          "7",
+          "8",
+          "12",
+          "20",
+          "28",
+          "41"
+        ]
+      },
+      "2": {
+        "hits": 3,
+        "of": 15,
+        "hitSubsets": [
+          "8-12",
+          "8-20",
+          "12-20"
+        ]
+      },
+      "3": {
+        "hits": 1,
+        "of": 20,
+        "hitSubsets": [
+          "8-12-20"
+        ]
+      },
+      "4": {
+        "hits": 0,
+        "of": 15
+      },
+      "5": {
+        "hits": 0,
+        "of": 6
+      },
+      "6": {
+        "hits": 0,
+        "of": 1
+      }
+    },
+    "payoutHypothetical": 1000,
+    "matchingByTicket": [
+      3,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "predictionResult": "5等相当1口、その他不当せん。5個以上一致0口",
+    "purchaseStatus": "user has not confirmed purchase",
+    "hypotheticalSpendYen": 2000,
+    "hypotheticalNetYen": -1000,
+    "hypotheticalROI": 0.5
+  },
+  "comparisonShadow": {
+    "source": "data/loto6-localcore-2152-shadow.json",
+    "trigger": "OFF",
+    "status": "研究用・購入推奨ではない",
+    "maxMatches": 2,
+    "matchingByTicket": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "recalls": {
+      "1": {
+        "hits": 4,
+        "of": 6,
+        "hitSubsets": [
+          "8",
+          "20",
+          "28",
+          "41"
+        ]
+      },
+      "2": {
+        "hits": 2,
+        "of": 15,
+        "hitSubsets": [
+          "8-28",
+          "20-41"
+        ]
+      },
+      "3": {
+        "hits": 0,
+        "of": 20,
+        "hitSubsets": []
+      },
+      "4": {
+        "hits": 0,
+        "of": 15
+      },
+      "5": {
+        "hits": 0,
+        "of": 6
+      },
+      "6": {
+        "hits": 0,
+        "of": 1
+      }
+    }
+  },
+  "fairExact": {
+    "universe": 6096454,
+    "numberOfTickets": 10,
+    "threeOrMore": 1586005,
+    "threeOrMoreP": 0.26015204904359157,
+    "fourOrMore": 102130,
+    "fourOrMoreP": 0.016752361290678155,
+    "fiveOrMore": 2230,
+    "fiveOrMoreP": 0.0003657864063273503,
+    "zeroFiveOrMoreP": 0.9996342135936727,
+    "exactSixP": 0.0000016402977862213018
+  },
+  "analysis": {
+    "rootCause": [
+      "All 43 numbers were used, hence 6-of-6 global inclusion was guaranteed and does not measure forecasting skill",
+      "Ticket 1 contained the correct triple 8,12,20; the other winners 7,28,41 were on separate tickets 5,4,2 respectively",
+      "Only 3 of 15 winner pairs and 1 of 20 winner triples appeared within any ticket; no correct quadruple",
+      "2 of 6 winners were adjacent to prior draw numbers, so adjacent-number emphasis did not reveal a strongly predictive signal",
+      "The 10-ticket design maximized unweighted 5-plus coverage, not evidence of non-uniform winning-number probability"
+    ],
+    "noHindsightRuleChange": true,
+    "predictedFirstPrize": false,
+    "noEvidenceImprovingFutureChance": true,
+    "notes": [
+      "Sum 116 falls inside the forecast ticket sum range 99-168; there was no hard sum exclusion.",
+      "Last draw main overlap was zero. Bonus 23 appeared on tickets 8 and 10 but cannot make an unqualified ticket a winner.",
+      "An isolated 3-match ticket is within the predicted fair p3+ = 26.0152% and does not validate the model."
+    ]
+  }
+}
