@@ -1,18 +1,18 @@
 {
-  "count": 2151,
+  "count": 2152,
   "first": 1,
-  "last": 2151,
+  "last": 2152,
   "latest": [
-    2151,
-    "2026/11/02",
-    4,
-    9,
-    11,
+    2152,
+    "2026/11/05",
+    7,
+    8,
+    12,
+    20,
+    28,
+    41,
     23,
-    24,
-    37,
-    38,
-    4
+    2
   ],
-  "source": "2026-11-02 第2151回は loto6.thekyo.jp/result と loto6.money-plan.net/round/2151/ にて照合（公式未照合）。以前の履歴は当初データを引継ぎ"
+  "source": "2026-11-05 第2152回は loto6.jp/databases/resultsearch/2152・loto.akons.net・loto6-lab.com の3公開サイトで結果照合（みずほ銀行公式未照合）。過去の回は既存データを引継ぎ"
 }
