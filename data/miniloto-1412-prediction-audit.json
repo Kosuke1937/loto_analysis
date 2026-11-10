@@ -1,0 +1,331 @@
+{
+  "draw": 1412,
+  "date": "2026-11-10",
+  "winner_numbers": [
+    3,
+    6,
+    12,
+    19,
+    25
+  ],
+  "bonus": 15,
+  "prizes": {
+    "first": {
+      "winning_tickets": 36,
+      "prize_yen": 3937600
+    },
+    "second": {
+      "winning_tickets": 75,
+      "prize_yen": 135700
+    },
+    "third": {
+      "winning_tickets": 2315,
+      "prize_yen": 7600
+    },
+    "fourth": {
+      "winning_tickets": 50254,
+      "prize_yen": 900
+    }
+  },
+  "source": "User-provided Fukui Shimbun results screenshot",
+  "ticket_provenance": "10 ChatGPT suggestions given pre-draw on 2026-11-10; actual purchase is unconfirmed",
+  "pre_draw_flow_groups": {
+    "A": [
+      3,
+      5,
+      12,
+      17,
+      31
+    ],
+    "B": [
+      2,
+      4,
+      6,
+      11,
+      13,
+      16,
+      18,
+      30
+    ],
+    "C": [
+      19,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "D": [
+      7,
+      14,
+      15,
+      21,
+      22,
+      24
+    ],
+    "O": [
+      1,
+      8,
+      9,
+      10,
+      20,
+      23
+    ]
+  },
+  "winning_structure": {
+    "flow_coarse": "2-3-0",
+    "flow_fine": "2-1-2-0-0",
+    "band": "2-2-1-0",
+    "sum": 65
+  },
+  "tickets": [
+    {
+      "ticket": 1,
+      "numbers": [
+        14,
+        20,
+        27,
+        30,
+        31
+      ],
+      "matching": [],
+      "match_count": 0,
+      "flow_coarse": "1-2-1",
+      "flow_fine": "1-1-1-1-1",
+      "band": "0-1-2-2",
+      "sum": 122,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 3
+    },
+    {
+      "ticket": 2,
+      "numbers": [
+        9,
+        10,
+        21,
+        30,
+        31
+      ],
+      "matching": [],
+      "match_count": 0,
+      "flow_coarse": "1-1-1",
+      "flow_fine": "1-1-0-1-2",
+      "band": "1-1-1-2",
+      "sum": 101,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 2
+    },
+    {
+      "ticket": 3,
+      "numbers": [
+        3,
+        11,
+        16,
+        20,
+        28
+      ],
+      "matching": [
+        3
+      ],
+      "match_count": 1,
+      "flow_coarse": "1-3-0",
+      "flow_fine": "1-2-1-0-1",
+      "band": "1-2-2-0",
+      "sum": 78,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 1
+    },
+    {
+      "ticket": 4,
+      "numbers": [
+        5,
+        17,
+        27,
+        29,
+        30
+      ],
+      "matching": [],
+      "match_count": 0,
+      "flow_coarse": "2-3-0",
+      "flow_fine": "2-1-2-0-0",
+      "band": "1-1-2-1",
+      "sum": 108,
+      "flow_exact": true,
+      "band_exact": false,
+      "band_min_digit_replacements": 2
+    },
+    {
+      "ticket": 5,
+      "numbers": [
+        2,
+        4,
+        8,
+        10,
+        31
+      ],
+      "matching": [],
+      "match_count": 0,
+      "flow_coarse": "1-2-0",
+      "flow_fine": "1-2-0-0-2",
+      "band": "3-1-0-1",
+      "sum": 55,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 2
+    },
+    {
+      "ticket": 6,
+      "numbers": [
+        4,
+        7,
+        13,
+        16,
+        31
+      ],
+      "matching": [],
+      "match_count": 0,
+      "flow_coarse": "1-3-1",
+      "flow_fine": "1-3-0-1-0",
+      "band": "2-2-0-1",
+      "sum": 71,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 1
+    },
+    {
+      "ticket": 7,
+      "numbers": [
+        2,
+        10,
+        14,
+        25,
+        27
+      ],
+      "matching": [
+        25
+      ],
+      "match_count": 1,
+      "flow_coarse": "0-3-1",
+      "flow_fine": "0-1-2-1-1",
+      "band": "1-2-2-0",
+      "sum": 78,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 1
+    },
+    {
+      "ticket": 8,
+      "numbers": [
+        6,
+        16,
+        20,
+        25,
+        29
+      ],
+      "matching": [
+        6,
+        25
+      ],
+      "match_count": 2,
+      "flow_coarse": "0-4-0",
+      "flow_fine": "0-2-2-0-1",
+      "band": "1-1-3-0",
+      "sum": 96,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 2
+    },
+    {
+      "ticket": 9,
+      "numbers": [
+        7,
+        9,
+        12,
+        14,
+        30
+      ],
+      "matching": [
+        12
+      ],
+      "match_count": 1,
+      "flow_coarse": "1-1-2",
+      "flow_fine": "1-1-0-2-1",
+      "band": "2-2-0-1",
+      "sum": 72,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 1
+    },
+    {
+      "ticket": 10,
+      "numbers": [
+        10,
+        13,
+        21,
+        23,
+        29
+      ],
+      "matching": [],
+      "match_count": 0,
+      "flow_coarse": "0-2-1",
+      "flow_fine": "0-1-1-1-2",
+      "band": "0-2-3-0",
+      "sum": 96,
+      "flow_exact": false,
+      "band_exact": false,
+      "band_min_digit_replacements": 2
+    }
+  ],
+  "summary": {
+    "best_match": 2,
+    "winner_number_recall_count": 4,
+    "winner_number_recall_missing": [
+      19
+    ],
+    "winner_pair_recall_count": 1,
+    "winner_pair_recall_pairs": [
+      [
+        6,
+        25
+      ]
+    ],
+    "winner_triple_recall_count": 0,
+    "coarse_flow_exact_tickets": [
+      4
+    ],
+    "fine_flow_exact_tickets": [
+      4
+    ],
+    "band_exact_tickets": [],
+    "joint_flow_band_exact_tickets": [],
+    "union_unique_count": 24,
+    "prize_wins_if_all_suggested_tickets_purchased": 0
+  },
+  "pre_draw_band_baseline": {
+    "band": "2-2-1-0",
+    "last_20_count": 1,
+    "last_50_count": 2,
+    "last_100_count": 7,
+    "last_500_count": 45,
+    "last_500_percent": 9,
+    "rank_in_500": "tie for third",
+    "uniform_draw_percent": 9.534403305259813
+  },
+  "diagnostic": {
+    "ticket_4": "Fine Flow was exactly correct but 0 actual winning numbers matched.",
+    "ticket_4_band_min_replacements_to_winning_band": 2,
+    "maximum_matches_for_ticket_4_given_winning_band": 3,
+    "same_fine_flow_cell_size": 1200,
+    "same_fine_flow_zero_common_cases": 126,
+    "same_fine_flow_zero_common_probability": 0.105
+  },
+  "caveats": [
+    "Correct Flow does not imply correct individual numbers.",
+    "The winning Band was one of the three most frequent in the preceding 500 draws but was absent from the chosen 10 tickets.",
+    "No reported winnings or purchase costs were added to the ledger because actual purchase was not confirmed.",
+    "Any post-result parameter tuning is research, not forward validation."
+  ]
+}
