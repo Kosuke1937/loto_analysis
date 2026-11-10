@@ -1,197 +1,176 @@
 {
-  "target_draw": 1411,
-  "history_through": 1410,
+  "target_draw": 1413,
+  "history_through": 1412,
   "method": "canonical A1 + 0.15*4core -> state 2/3/4 diversification -> anti-support 0.10",
   "cap_used": 4,
   "anti_support": {
-    "added": 169416,
-    "removed": 169417
+    "added": 169597,
+    "removed": 169506
   },
   "previous_draw": [
-    17,
-    18,
-    26,
-    28,
-    30
+    3,
+    6,
+    12,
+    19,
+    25
   ],
   "previous2_draw": [
-    14,
-    21,
-    22,
-    30,
+    3,
+    5,
+    12,
+    17,
     31
   ],
   "tickets": [
     {
       "position": 1,
       "numbers": [
-        9,
-        27,
-        29,
-        30,
-        31
-      ],
-      "sum": 126,
-      "shape": "1-0-2-2",
-      "odd_even": "4:1",
-      "consecutive_pairs": 2,
-      "committee_rank": 2,
-      "committee_score": 5.889002,
-      "a1_score": 2.181914,
-      "core4_score": 72.0,
-      "prev_same": 1,
-      "prev_pm1": 3,
-      "prev2_same_pm1": 3
-    },
-    {
-      "position": 2,
-      "numbers": [
-        20,
-        24,
+        11,
         25,
         29,
-        30
-      ],
-      "sum": 128,
-      "shape": "0-0-4-1",
-      "odd_even": "2:3",
-      "consecutive_pairs": 2,
-      "committee_rank": 4,
-      "committee_score": 5.813975,
-      "a1_score": 2.356099,
-      "core4_score": 48.0,
-      "prev_same": 1,
-      "prev_pm1": 2,
-      "prev2_same_pm1": 3
-    },
-    {
-      "position": 3,
-      "numbers": [
-        19,
-        21,
-        25,
         30,
         31
       ],
       "sum": 126,
       "shape": "0-1-2-2",
       "odd_even": "4:1",
+      "consecutive_pairs": 2,
+      "committee_rank": 6,
+      "committee_score": 6.022665,
+      "a1_score": 2.321171,
+      "core4_score": 70.0,
+      "prev_same": 1,
+      "prev_pm1": 1,
+      "prev2_same_pm1": 3
+    },
+    {
+      "position": 2,
+      "numbers": [
+        18,
+        19,
+        27,
+        30,
+        31
+      ],
+      "sum": 125,
+      "shape": "0-2-1-2",
+      "odd_even": "3:2",
+      "consecutive_pairs": 2,
+      "committee_rank": 22,
+      "committee_score": 5.700937,
+      "a1_score": 2.286442,
+      "core4_score": 58.0,
+      "prev_same": 1,
+      "prev_pm1": 1,
+      "prev2_same_pm1": 3
+    },
+    {
+      "position": 3,
+      "numbers": [
+        21,
+        23,
+        24,
+        29,
+        31
+      ],
+      "sum": 128,
+      "shape": "0-0-4-1",
+      "odd_even": "4:1",
       "consecutive_pairs": 1,
-      "committee_rank": 11,
-      "committee_score": 5.590297,
-      "a1_score": 2.132092,
-      "core4_score": 63.0,
+      "committee_rank": 33,
+      "committee_score": 5.588813,
+      "a1_score": 2.290423,
+      "core4_score": 52.0,
+      "prev_same": 0,
+      "prev_pm1": 1,
+      "prev2_same_pm1": 1
+    },
+    {
+      "position": 4,
+      "numbers": [
+        20,
+        25,
+        26,
+        27,
+        30
+      ],
+      "sum": 128,
+      "shape": "0-0-4-1",
+      "odd_even": "2:3",
+      "consecutive_pairs": 2,
+      "committee_rank": 36,
+      "committee_score": 5.563489,
+      "a1_score": 2.261638,
+      "core4_score": 54.0,
+      "prev_same": 1,
+      "prev_pm1": 2,
+      "prev2_same_pm1": 1
+    },
+    {
+      "position": 5,
+      "numbers": [
+        21,
+        22,
+        26,
+        29,
+        30
+      ],
+      "sum": 128,
+      "shape": "0-0-4-1",
+      "odd_even": "2:3",
+      "consecutive_pairs": 2,
+      "committee_rank": 71,
+      "committee_score": 5.256181,
+      "a1_score": 2.109363,
+      "core4_score": 56.0,
+      "prev_same": 0,
+      "prev_pm1": 1,
+      "prev2_same_pm1": 1
+    },
+    {
+      "position": 6,
+      "numbers": [
+        1,
+        2,
+        3,
+        7,
+        11
+      ],
+      "sum": 24,
+      "shape": "4-1-0-0",
+      "odd_even": "4:1",
+      "consecutive_pairs": 2,
+      "committee_rank": 177,
+      "committee_score": 4.792204,
+      "a1_score": 1.906172,
+      "core4_score": 56.0,
       "prev_same": 1,
       "prev_pm1": 3,
       "prev2_same_pm1": 3
     },
     {
-      "position": 4,
-      "numbers": [
-        21,
-        22,
-        26,
-        27,
-        30
-      ],
-      "sum": 126,
-      "shape": "0-0-4-1",
-      "odd_even": "2:3",
-      "consecutive_pairs": 2,
-      "committee_rank": 39,
-      "committee_score": 5.299244,
-      "a1_score": 2.085526,
-      "core4_score": 54.0,
-      "prev_same": 2,
-      "prev_pm1": 1,
-      "prev2_same_pm1": 3
-    },
-    {
-      "position": 5,
-      "numbers": [
-        20,
-        23,
-        24,
-        28,
-        31
-      ],
-      "sum": 126,
-      "shape": "0-0-4-1",
-      "odd_even": "2:3",
-      "consecutive_pairs": 1,
-      "committee_rank": 50,
-      "committee_score": 5.230493,
-      "a1_score": 2.116385,
-      "core4_score": 47.0,
-      "prev_same": 1,
-      "prev_pm1": 1,
-      "prev2_same_pm1": 3
-    },
-    {
-      "position": 6,
+      "position": 7,
       "numbers": [
         19,
-        25,
+        23,
         27,
         28,
         29
       ],
-      "sum": 128,
+      "sum": 126,
       "shape": "0-1-4-0",
       "odd_even": "4:1",
       "consecutive_pairs": 2,
-      "committee_rank": 83,
-      "committee_score": 5.079897,
-      "a1_score": 1.992182,
-      "core4_score": 54.0,
+      "committee_rank": 180,
+      "committee_score": 4.779138,
+      "a1_score": 1.980075,
+      "core4_score": 47.0,
       "prev_same": 1,
-      "prev_pm1": 4,
-      "prev2_same_pm1": 1
-    },
-    {
-      "position": 7,
-      "numbers": [
-        1,
-        2,
-        3,
-        5,
-        11
-      ],
-      "sum": 22,
-      "shape": "4-1-0-0",
-      "odd_even": "4:1",
-      "consecutive_pairs": 2,
-      "committee_rank": 255,
-      "committee_score": 4.432115,
-      "a1_score": 1.690753,
-      "core4_score": 57.0,
-      "prev_same": 0,
       "prev_pm1": 0,
       "prev2_same_pm1": 0
     },
     {
       "position": 8,
-      "numbers": [
-        21,
-        24,
-        26,
-        28,
-        29
-      ],
-      "sum": 128,
-      "shape": "0-0-5-0",
-      "odd_even": "2:3",
-      "consecutive_pairs": 1,
-      "committee_rank": 308,
-      "committee_score": 4.256738,
-      "a1_score": 1.659061,
-      "core4_score": 52.0,
-      "prev_same": 2,
-      "prev_pm1": 1,
-      "prev2_same_pm1": 2
-    },
-    {
-      "position": 9,
       "numbers": [
         1,
         3,
@@ -203,34 +182,55 @@
       "shape": "4-1-0-0",
       "odd_even": "2:3",
       "consecutive_pairs": 1,
-      "committee_rank": 870,
-      "committee_score": 3.46699,
-      "a1_score": 1.383098,
+      "committee_rank": 613,
+      "committee_score": 3.822591,
+      "a1_score": 1.578865,
       "core4_score": 45.0,
-      "prev_same": 0,
-      "prev_pm1": 0,
-      "prev2_same_pm1": 0
+      "prev_same": 2,
+      "prev_pm1": 1,
+      "prev2_same_pm1": 3
+    },
+    {
+      "position": 9,
+      "numbers": [
+        1,
+        2,
+        4,
+        5,
+        12
+      ],
+      "sum": 24,
+      "shape": "4-1-0-0",
+      "odd_even": "2:3",
+      "consecutive_pairs": 2,
+      "committee_rank": 780,
+      "committee_score": 3.613827,
+      "a1_score": 1.478593,
+      "core4_score": 46.0,
+      "prev_same": 1,
+      "prev_pm1": 3,
+      "prev2_same_pm1": 4
     },
     {
       "position": 10,
       "numbers": [
-        20,
+        21,
+        24,
         25,
-        26,
         27,
-        30
+        31
       ],
       "sum": 128,
       "shape": "0-0-4-1",
-      "odd_even": "2:3",
-      "consecutive_pairs": 2,
-      "committee_rank": 3,
-      "committee_score": 5.830105,
-      "a1_score": 2.311435,
-      "core4_score": 54.0,
-      "prev_same": 2,
-      "prev_pm1": 2,
-      "prev2_same_pm1": 2
+      "odd_even": "4:1",
+      "consecutive_pairs": 1,
+      "committee_rank": 2,
+      "committee_score": 6.138549,
+      "a1_score": 2.442698,
+      "core4_score": 62.0,
+      "prev_same": 1,
+      "prev_pm1": 1,
+      "prev2_same_pm1": 1
     }
   ],
   "union_numbers": [
@@ -240,9 +240,11 @@
     4,
     5,
     6,
-    9,
+    7,
     10,
     11,
+    12,
+    18,
     19,
     20,
     21,
@@ -257,5 +259,5 @@
     30,
     31
   ],
-  "union_size": 22
+  "union_size": 24
 }
