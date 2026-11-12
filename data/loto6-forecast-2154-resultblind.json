@@ -1,0 +1,166 @@
+{
+  "draw": 2154,
+  "drawDate": "2026-11-12",
+  "createdDateJST": "2026-11-12",
+  "createdLocalTimeNote": "21:25 JST以降・抽せん後",
+  "generationStatus": "抽せん後作成・当日結果未参照（結果ブラインド）。抽せん前予測とは扱わない",
+  "latestKnownDraw": 2153,
+  "latestKnownDate": "2026-11-09",
+  "resultViewed": false,
+  "resultStatus": "not checked",
+  "purchaseStatus": "no purchase record, purchase deadline already passed",
+  "historicSource": "GitHub data/loto6-chunk-1.js..12.js ending 2153",
+  "latestHistoricResult": {
+    "draw": 2153,
+    "numbers": [
+      10,
+      11,
+      14,
+      21,
+      25,
+      37
+    ],
+    "bonus": 27
+  },
+  "method": {
+    "id": "v3-geometry neighborLast/tie-consensus200-500-800",
+    "description": "前回の本数字6個からの±1隣接数字数を第一順位。隣接数が等しければ直近200回、500回、800回の単数字出現率の平均を第二順位、さらに数字昇順で比較。43数字を順位付けし、前回のv3固定10口テンプレートに1対1置換。二重使用17数字、1回使用26数字、10口間の共通数字は最大1個。",
+    "hardFiltersApplied": false,
+    "rankedDoubleNumbers": [
+      26,
+      36,
+      24,
+      15,
+      20,
+      11,
+      10,
+      38,
+      22,
+      13,
+      12,
+      9,
+      35,
+      42,
+      21,
+      37,
+      6
+    ]
+  },
+  "tickets": [
+    [
+      8,
+      11,
+      12,
+      17,
+      27,
+      38
+    ],
+    [
+      1,
+      4,
+      9,
+      22,
+      33,
+      40
+    ],
+    [
+      3,
+      15,
+      24,
+      25,
+      36,
+      39
+    ],
+    [
+      10,
+      19,
+      28,
+      30,
+      42,
+      43
+    ],
+    [
+      7,
+      16,
+      20,
+      26,
+      32,
+      34
+    ],
+    [
+      2,
+      5,
+      9,
+      14,
+      31,
+      41
+    ],
+    [
+      12,
+      15,
+      21,
+      23,
+      29,
+      35
+    ],
+    [
+      6,
+      13,
+      18,
+      20,
+      36,
+      42
+    ],
+    [
+      6,
+      24,
+      26,
+      35,
+      37,
+      38
+    ],
+    [
+      10,
+      11,
+      13,
+      21,
+      22,
+      37
+    ]
+  ],
+  "ticketProperties": {
+    "sum": [
+      113,
+      109,
+      142,
+      172,
+      135,
+      102,
+      135,
+      135,
+      166,
+      114
+    ],
+    "nDistinct": 43,
+    "maxPairwiseOverlap": 1,
+    "nTwice": 17,
+    "nOnce": 26
+  },
+  "mathematicalCoverage": {
+    "fullUniverse": 6096454,
+    "atLeast3WinnerSets": 1586005,
+    "pAtLeast3": 0.26015204904359157,
+    "atLeast4WinnerSets": 102130,
+    "pAtLeast4": 0.016752361290678155,
+    "atLeast5WinnerSets": 2230,
+    "pAtLeast5": 0.0003657864063273503,
+    "exact6WinnerSets": 10,
+    "pExact6": 0.0000016402977862213018
+  },
+  "limitations": [
+    "2026-11-12夜に作成しており、抽せん前に実購入できたものではない",
+    "抽せん第2154回の結果は参照せず、照合もしていない",
+    "隣接数字の将来予測能力は未検証で、1%の5個以上一致を主張するものではない",
+    "数式による公平抽せん下の確率。モデルによる予測性能の改善を示すものではない"
+  ]
+}
