@@ -1,0 +1,273 @@
+{
+  "draw": 2157,
+  "targetDate": "2026-11-23",
+  "generatedDateJST": "2026-11-20",
+  "generatedWhen": "2026-11-20 01:20 Asia/Tokyo",
+  "status": "PRE-DRAW: future draw; outcome not available or read",
+  "predictionCutoffDraw": 2156,
+  "predictionCutoffDate": "2026-11-19",
+  "previous": {
+    "main": [
+      1,
+      5,
+      23,
+      26,
+      35,
+      42
+    ],
+    "bonus": 8
+  },
+  "methodId": "v3-geometry neighborLast/tie-consensus200-500-800",
+  "method": "Previous winning number ±1 adjacency count descending; tie-break using average previous-200/500/800 number occurrence rates descending; tie-break ascending number. Assign 43 ranked labels to v3 fixed incidence geometry with 17 numbers twice and 26 once. No hard sum/band/bonus exclusions. MiniLoto Flow/Band/Core ideas not used as unvalidated hard filters.",
+  "tickets": [
+    [
+      4,
+      11,
+      14,
+      22,
+      31,
+      41
+    ],
+    [
+      7,
+      13,
+      16,
+      28,
+      34,
+      35
+    ],
+    [
+      2,
+      10,
+      12,
+      24,
+      36,
+      39
+    ],
+    [
+      3,
+      15,
+      19,
+      26,
+      27,
+      29
+    ],
+    [
+      6,
+      8,
+      17,
+      30,
+      33,
+      43
+    ],
+    [
+      1,
+      23,
+      32,
+      35,
+      38,
+      40
+    ],
+    [
+      9,
+      20,
+      21,
+      22,
+      24,
+      42
+    ],
+    [
+      5,
+      18,
+      25,
+      26,
+      36,
+      43
+    ],
+    [
+      2,
+      6,
+      18,
+      37,
+      41,
+      42
+    ],
+    [
+      4,
+      21,
+      25,
+      27,
+      34,
+      37
+    ]
+  ],
+  "ticketDetails": [
+    {
+      "position": 1,
+      "numbers": [
+        4,
+        11,
+        14,
+        22,
+        31,
+        41
+      ],
+      "sum": 123,
+      "odd": 3,
+      "prevOverlap": 0
+    },
+    {
+      "position": 2,
+      "numbers": [
+        7,
+        13,
+        16,
+        28,
+        34,
+        35
+      ],
+      "sum": 133,
+      "odd": 3,
+      "prevOverlap": 1
+    },
+    {
+      "position": 3,
+      "numbers": [
+        2,
+        10,
+        12,
+        24,
+        36,
+        39
+      ],
+      "sum": 123,
+      "odd": 1,
+      "prevOverlap": 0
+    },
+    {
+      "position": 4,
+      "numbers": [
+        3,
+        15,
+        19,
+        26,
+        27,
+        29
+      ],
+      "sum": 119,
+      "odd": 5,
+      "prevOverlap": 1
+    },
+    {
+      "position": 5,
+      "numbers": [
+        6,
+        8,
+        17,
+        30,
+        33,
+        43
+      ],
+      "sum": 137,
+      "odd": 3,
+      "prevOverlap": 0
+    },
+    {
+      "position": 6,
+      "numbers": [
+        1,
+        23,
+        32,
+        35,
+        38,
+        40
+      ],
+      "sum": 169,
+      "odd": 3,
+      "prevOverlap": 3
+    },
+    {
+      "position": 7,
+      "numbers": [
+        9,
+        20,
+        21,
+        22,
+        24,
+        42
+      ],
+      "sum": 138,
+      "odd": 2,
+      "prevOverlap": 1
+    },
+    {
+      "position": 8,
+      "numbers": [
+        5,
+        18,
+        25,
+        26,
+        36,
+        43
+      ],
+      "sum": 153,
+      "odd": 3,
+      "prevOverlap": 2
+    },
+    {
+      "position": 9,
+      "numbers": [
+        2,
+        6,
+        18,
+        37,
+        41,
+        42
+      ],
+      "sum": 146,
+      "odd": 2,
+      "prevOverlap": 1
+    },
+    {
+      "position": 10,
+      "numbers": [
+        4,
+        21,
+        25,
+        27,
+        34,
+        37
+      ],
+      "sum": 148,
+      "odd": 4,
+      "prevOverlap": 0
+    }
+  ],
+  "portfolio": {
+    "uniqueNumbers": 43,
+    "numbersUsedTwice": 17,
+    "numbersUsedOnce": 26,
+    "maxOverlap": 1,
+    "numberOfTickets": 10,
+    "hypotheticalCostYen": 2000,
+    "actualPurchase": "not confirmed"
+  },
+  "fairTheory": {
+    "universe": 6096454,
+    "atLeastThree": 1586005,
+    "atLeastFour": 102130,
+    "atLeastFive": 2230,
+    "exactSix": 10,
+    "pAtLeastThree": 0.26015204904359157,
+    "pAtLeastFour": 0.016752361290678155,
+    "pAtLeastFive": 0.0003657864063273503,
+    "pExactSix": 0.0000016402977862213018
+  },
+  "sources": [
+    "https://takarakuji.rakuten.co.jp/backnumber/loto6/202611/",
+    "https://loto6-lab.com/draws/2156/",
+    "https://loto6.jp/databases/resultsearch/2155",
+    "https://loto6.jp/databases/resultsearch/2154"
+  ],
+  "caveat": "All fair-theory rates are exact combinatorial coverage probabilities, not demonstrated predictive lift. 10 tickets cannot achieve 1% 5+ with uniform draws. Tickets not purchase confirmed."
+}
