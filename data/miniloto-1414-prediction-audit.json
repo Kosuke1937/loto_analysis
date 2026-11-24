@@ -405,5 +405,87 @@
     "Predraw generated create1414.py and 1414 candidate CSV preserved in conversation"
   ],
   "purchase_confirmed": false,
-  "settlement_recorded": false
+  "settlement_recorded": false,
+  "counterfactual_remove_prior_bonus_exclusion": {
+    "status": "post-draw controlled what-if; NOT a predictive backtest",
+    "only_change": "Set PREV_BONUS=0 in frozen create1414.py and regenerate all ten tickets before matching against draw 1414",
+    "ticket_numbers": [
+      [
+        3,
+        4,
+        16,
+        27,
+        31
+      ],
+      [
+        3,
+        11,
+        14,
+        20,
+        31
+      ],
+      [
+        1,
+        9,
+        11,
+        22,
+        29
+      ],
+      [
+        10,
+        16,
+        21,
+        29,
+        30
+      ],
+      [
+        1,
+        2,
+        3,
+        11,
+        28
+      ],
+      [
+        5,
+        12,
+        16,
+        24,
+        28
+      ],
+      [
+        1,
+        10,
+        12,
+        21,
+        31
+      ],
+      [
+        6,
+        8,
+        21,
+        27,
+        29
+      ],
+      [
+        7,
+        9,
+        14,
+        21,
+        30
+      ],
+      [
+        1,
+        14,
+        27,
+        30,
+        31
+      ]
+    ],
+    "best_match": 2,
+    "number_recall": 5,
+    "pair_recall": 3,
+    "triple_recall": 0,
+    "contains_24": true,
+    "interpretation": "Removing hard exclusion would restore number 24 to candidate union but would still yield no >=3 match. Exclusion is not the only cause; candidate assembly remains limiting."
+  }
 }
