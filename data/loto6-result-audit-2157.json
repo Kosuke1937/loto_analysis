@@ -1,0 +1,336 @@
+{
+  "draw": 2157,
+  "drawDate": "2026-11-23",
+  "auditDate": "2026-11-24",
+  "predictionSource": "data/loto6-forecast-2157-predraw.json",
+  "predictionCreated": "2026-11-20 01:20 Asia/Tokyo",
+  "predictionStatus": "Preserved: never edited after draw; used unchanged for audit",
+  "resultSourceVerification": {
+    "sources": [
+      "https://takarakuji.rakuten.co.jp/backnumber/loto6/",
+      "https://www.takarakuji-loto6.jp/LotoNumber/History?pageNumber=1",
+      "https://loto6.jp/databases/resultsearch/2157"
+    ],
+    "officialMizuhoDirectCheck": false
+  },
+  "winning": {
+    "main": [
+      13,
+      20,
+      22,
+      34,
+      38,
+      39
+    ],
+    "bonus": 33,
+    "firstPrizeWinnerCount": 0,
+    "prizes": {
+      "second": {
+        "winners": 4,
+        "yen": 17288100
+      },
+      "third": {
+        "winners": 138,
+        "yen": 541100
+      },
+      "fourth": {
+        "winners": 7931,
+        "yen": 9900
+      },
+      "fifth": {
+        "winners": 132811,
+        "yen": 1000
+      }
+    },
+    "carryoverYen": 233461295,
+    "summary": {
+      "sum": 166,
+      "oddCount": 2,
+      "evenCount": 4,
+      "bands_1to9_10to19_20to29_30to39_40to43": [
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "consecutives": [
+        [
+          38,
+          39
+        ]
+      ],
+      "previousMainOverlap": [],
+      "nearPreviousNumbers": [
+        22,
+        34
+      ],
+      "previousBonusInMain": false
+    }
+  },
+  "portfolio": {
+    "tickets": [
+      {
+        "position": 1,
+        "numbers": [
+          4,
+          11,
+          14,
+          22,
+          31,
+          41
+        ],
+        "matches": [
+          22
+        ],
+        "matchCount": 1,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 2,
+        "numbers": [
+          7,
+          13,
+          16,
+          28,
+          34,
+          35
+        ],
+        "matches": [
+          13,
+          34
+        ],
+        "matchCount": 2,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 3,
+        "numbers": [
+          2,
+          10,
+          12,
+          24,
+          36,
+          39
+        ],
+        "matches": [
+          39
+        ],
+        "matchCount": 1,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 4,
+        "numbers": [
+          3,
+          15,
+          19,
+          26,
+          27,
+          29
+        ],
+        "matches": [],
+        "matchCount": 0,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 5,
+        "numbers": [
+          6,
+          8,
+          17,
+          30,
+          33,
+          43
+        ],
+        "matches": [],
+        "matchCount": 0,
+        "includesBonus": true,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 6,
+        "numbers": [
+          1,
+          23,
+          32,
+          35,
+          38,
+          40
+        ],
+        "matches": [
+          38
+        ],
+        "matchCount": 1,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 7,
+        "numbers": [
+          9,
+          20,
+          21,
+          22,
+          24,
+          42
+        ],
+        "matches": [
+          20,
+          22
+        ],
+        "matchCount": 2,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 8,
+        "numbers": [
+          5,
+          18,
+          25,
+          26,
+          36,
+          43
+        ],
+        "matches": [],
+        "matchCount": 0,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 9,
+        "numbers": [
+          2,
+          6,
+          18,
+          37,
+          41,
+          42
+        ],
+        "matches": [],
+        "matchCount": 0,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      },
+      {
+        "position": 10,
+        "numbers": [
+          4,
+          21,
+          25,
+          27,
+          34,
+          37
+        ],
+        "matches": [
+          34
+        ],
+        "matchCount": 1,
+        "includesBonus": false,
+        "prize": "はずれ",
+        "payoutYen": 0
+      }
+    ],
+    "byMatchCount": [
+      4,
+      4,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "maxMatch": 2,
+    "threePlus": 0,
+    "fourPlus": 0,
+    "fivePlus": 0,
+    "prizeYenIfPurchased": 0,
+    "costYenIfPurchased": 2000,
+    "netYenIfPurchased": -2000,
+    "purchaseStatus": "UNCONFIRMED; not included in actual expense/revenue"
+  },
+  "capture": {
+    "number": {
+      "hits": 6,
+      "of": 6,
+      "isTrivial": true
+    },
+    "pairs": {
+      "nCorrect": 2,
+      "nTotal": 15,
+      "correctSubsets": [
+        "13-34",
+        "20-22"
+      ]
+    },
+    "triples": {
+      "nCorrect": 0,
+      "nTotal": 20,
+      "correctSubsets": []
+    },
+    "fourCores": {
+      "nCorrect": 0,
+      "nTotal": 15
+    },
+    "fiveCores": {
+      "nCorrect": 0,
+      "nTotal": 6
+    },
+    "exactCombination": {
+      "nCorrect": 0,
+      "nTotal": 1
+    },
+    "doubledNumberWinners": [
+      22,
+      34
+    ],
+    "doubledNumberWinnerObserved": 2,
+    "doubledNumberWinnerFairExpected": 2.372093023255814,
+    "expectedWinnerPairsCovered": 2.4916943521594686,
+    "expectedWinnerTriplesCovered": 0.3241228425573292
+  },
+  "fairProbability": {
+    "universe": 6096454,
+    "portfolioThreePlus": 0.26015204904359157,
+    "portfolioFourPlus": 0.016752361290678155,
+    "portfolioFivePlus": 0.0003657864063273503,
+    "portfolioExactSix": 0.0000016402977862213018,
+    "noThreePlus": 0.7398479509564084,
+    "noFivePlus": 0.9996342135936727,
+    "previousDrawZeroOverlap": 0.38133380486427026
+  },
+  "diagnosis": [
+    "All 43 digits used means union winner number recall 6/6 is guaranteed for any winner; it is not forecasting evidence.",
+    "Only winner pairs 13-34 and 20-22 co-occurred in one ticket; 0 of 20 winner triples present. For same 10-ticket geometry under a fair draw, expected winner pair coverage about 2.49, triple about 0.324, so the observed result is ordinary.",
+    "The 10-ticket method scores each digit using ±1 adjacency to previous draw and recent 200/500/800 frequencies, not an evidence-backed joint six-digit probability. Winner next-to-previous matches were 22 and 34 only.",
+    "Winner sum 166 is within ticket sums 119–169. There was no hard sum rule discarding the winner.",
+    "Prior winning digits had 0/6 repeats (1,5,23,26,35,42), while two tickets contained 2 or 3 prior digits, making 5+ impossible for them conditional on the observed outcome; this is hindsight, not a reason to ban prior repeats next time.",
+    "5+ coverage max is 2230/6096454 for ten non-overlapping five-neighborhoods; model's nominal probability 0.03658%, 3+ chance 26.0152%. Zero 3+ matches on this draw is quite normal (73.9848% probability).",
+    "Do not fit next-prediction coefficients to this winner; compare frozen alternatives across a statistically powered forward evaluation."
+  ],
+  "decision": {
+    "modelChange": "NONE",
+    "keepOriginalPrediction": true,
+    "recommendation": "Freeze method and compare to randomized same-geometry 10 tickets and any MiniLoto-inspired Assembly agent on later independently untested draws",
+    "requiredNextMetrics": [
+      "3+/4+/5+ portfolio rate",
+      "winner pair/triple/core captures",
+      "predraw-only model inputs",
+      "multiple-testing control"
+    ]
+  }
+}
