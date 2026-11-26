@@ -1,0 +1,582 @@
+{
+  "draw": 2158,
+  "date": "2026-11-26",
+  "recordedAtJST": "2026-11-26 20:20+",
+  "outcomeSource": "User screenshot of Niigata Nippo 2026-11-26 Loto6 result and independent online records",
+  "externalSources": [
+    "https://kujitecho.com/results/loto6/2158/",
+    "https://loto6-db.com/result/2158/"
+  ],
+  "officialMizuhoDirectCheck": false,
+  "preDrawForecastSource": "data/loto6-forecast-2158-predraw.json",
+  "preDrawForecastCreatedAt": "2026-11-26T12:23:42+09:00",
+  "forecastWasNotEdited": true,
+  "latestUsedTrainingDraw": 2157,
+  "win": {
+    "main": [
+      5,
+      13,
+      15,
+      23,
+      27,
+      42
+    ],
+    "bonus": 16,
+    "first": {
+      "yen": 471702200,
+      "winners": 1
+    },
+    "second": {
+      "yen": 11912400,
+      "winners": 6
+    },
+    "third": {
+      "yen": 322900,
+      "winners": 239
+    },
+    "fourth": {
+      "yen": 6700,
+      "winners": 12129
+    },
+    "fifth": {
+      "yen": 1000,
+      "winners": 196521
+    },
+    "sum": 125,
+    "odd": 5,
+    "even": 1,
+    "band_1to9_10to19_20to29_30to39_40to43": [
+      1,
+      2,
+      2,
+      0,
+      1
+    ],
+    "previousDrawMainOverlap": [
+      13
+    ],
+    "consecutivePairs": [],
+    "flowGroups": {
+      "A": [
+        13
+      ],
+      "B": [
+        23
+      ],
+      "C": [
+        5,
+        27,
+        42
+      ],
+      "D": [
+        15
+      ],
+      "O": []
+    },
+    "flowCount": [
+      1,
+      1,
+      3,
+      1,
+      0
+    ]
+  },
+  "transfer": {
+    "tickets": [
+      {
+        "position": 1,
+        "numbers": [
+          23,
+          27,
+          30,
+          33,
+          34,
+          38
+        ],
+        "matched": [
+          23,
+          27
+        ],
+        "nMainMatched": 2,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 2,
+        "numbers": [
+          16,
+          22,
+          25,
+          28,
+          39,
+          42
+        ],
+        "matched": [
+          42
+        ],
+        "nMainMatched": 1,
+        "bonusIncluded": true,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 3,
+        "numbers": [
+          4,
+          17,
+          31,
+          35,
+          37,
+          40
+        ],
+        "matched": [],
+        "nMainMatched": 0,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 4,
+        "numbers": [
+          6,
+          13,
+          14,
+          20,
+          24,
+          43
+        ],
+        "matched": [
+          13
+        ],
+        "nMainMatched": 1,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 5,
+        "numbers": [
+          7,
+          8,
+          11,
+          19,
+          21,
+          32
+        ],
+        "matched": [],
+        "nMainMatched": 0,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 6,
+        "numbers": [
+          2,
+          3,
+          10,
+          15,
+          41,
+          42
+        ],
+        "matched": [
+          15,
+          42
+        ],
+        "nMainMatched": 2,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 7,
+        "numbers": [
+          5,
+          9,
+          19,
+          26,
+          36,
+          40
+        ],
+        "matched": [
+          5
+        ],
+        "nMainMatched": 1,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 8,
+        "numbers": [
+          1,
+          6,
+          12,
+          23,
+          29,
+          37
+        ],
+        "matched": [
+          23
+        ],
+        "nMainMatched": 1,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 9,
+        "numbers": [
+          1,
+          18,
+          21,
+          26,
+          35,
+          38
+        ],
+        "matched": [],
+        "nMainMatched": 0,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 10,
+        "numbers": [
+          12,
+          14,
+          18,
+          33,
+          36,
+          39
+        ],
+        "matched": [],
+        "nMainMatched": 0,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      }
+    ],
+    "distribution": [
+      4,
+      4,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "maximum": 2,
+    "subsetRecall": {
+      "1": {
+        "covered": 6,
+        "total": 6,
+        "sets": [
+          "5",
+          "13",
+          "15",
+          "23",
+          "27",
+          "42"
+        ]
+      },
+      "2": {
+        "covered": 2,
+        "total": 15,
+        "sets": [
+          "15-42",
+          "23-27"
+        ]
+      },
+      "3": {
+        "covered": 0,
+        "total": 20,
+        "sets": []
+      },
+      "4": {
+        "covered": 0,
+        "total": 15
+      },
+      "5": {
+        "covered": 0,
+        "total": 6
+      },
+      "6": {
+        "covered": 0,
+        "total": 1
+      }
+    },
+    "numberUnion": 43,
+    "prizeTickets": 0,
+    "hypotheticalSpendYen": 2000,
+    "hypotheticalPayoutYen": 0,
+    "hypotheticalNetYen": -2000,
+    "purchaseStatus": "UNCONFIRMED, DO NOT ADD TO REAL FINANCIAL LEDGER"
+  },
+  "counterfactualPreviousV3": {
+    "tickets": [
+      {
+        "position": 1,
+        "numbers": [
+          23,
+          27,
+          30,
+          33,
+          34,
+          38
+        ],
+        "matched": [
+          23,
+          27
+        ],
+        "nMainMatched": 2,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 2,
+        "numbers": [
+          16,
+          22,
+          25,
+          28,
+          39,
+          42
+        ],
+        "matched": [
+          42
+        ],
+        "nMainMatched": 1,
+        "bonusIncluded": true,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 3,
+        "numbers": [
+          4,
+          17,
+          31,
+          35,
+          37,
+          40
+        ],
+        "matched": [],
+        "nMainMatched": 0,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 4,
+        "numbers": [
+          6,
+          13,
+          14,
+          20,
+          24,
+          43
+        ],
+        "matched": [
+          13
+        ],
+        "nMainMatched": 1,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 5,
+        "numbers": [
+          7,
+          8,
+          11,
+          19,
+          21,
+          32
+        ],
+        "matched": [],
+        "nMainMatched": 0,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 6,
+        "numbers": [
+          2,
+          3,
+          10,
+          15,
+          41,
+          42
+        ],
+        "matched": [
+          15,
+          42
+        ],
+        "nMainMatched": 2,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 7,
+        "numbers": [
+          9,
+          23,
+          26,
+          29,
+          36,
+          40
+        ],
+        "matched": [
+          23
+        ],
+        "nMainMatched": 1,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 8,
+        "numbers": [
+          1,
+          5,
+          6,
+          12,
+          19,
+          35
+        ],
+        "matched": [
+          5
+        ],
+        "nMainMatched": 1,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 9,
+        "numbers": [
+          1,
+          18,
+          21,
+          26,
+          33,
+          37
+        ],
+        "matched": [],
+        "nMainMatched": 0,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      },
+      {
+        "position": 10,
+        "numbers": [
+          12,
+          14,
+          18,
+          36,
+          38,
+          39
+        ],
+        "matched": [],
+        "nMainMatched": 0,
+        "bonusIncluded": false,
+        "prize": "none",
+        "payoutYen": 0
+      }
+    ],
+    "distribution": [
+      4,
+      4,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "maximum": 2,
+    "subsetRecall": {
+      "1": {
+        "covered": 6,
+        "total": 6,
+        "sets": [
+          "5",
+          "13",
+          "15",
+          "23",
+          "27",
+          "42"
+        ]
+      },
+      "2": {
+        "covered": 2,
+        "total": 15,
+        "sets": [
+          "15-42",
+          "23-27"
+        ]
+      },
+      "3": {
+        "covered": 0,
+        "total": 20,
+        "sets": []
+      },
+      "4": {
+        "covered": 0,
+        "total": 15
+      },
+      "5": {
+        "covered": 0,
+        "total": 6
+      },
+      "6": {
+        "covered": 0,
+        "total": 1
+      }
+    },
+    "numberUnion": 43,
+    "prizeTickets": 0
+  },
+  "comparison": {
+    "sameMaxMatch": true,
+    "samePairCapture": true,
+    "sameTripleCapture": true,
+    "changedTickets": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "correctWinnerPairsEntirelyWithinUnchangedMainSix": [
+      "15-42",
+      "23-27"
+    ],
+    "correctWinnerPairsWithinChangedFour": 0
+  },
+  "diagnosis": {
+    "structural": "43-number union guarantees 6/6 number recall and does not quantify forecasting ability; 2 of 15 correct pairs and 0 of 20 triples were on the same ticket.",
+    "band": "Ticket 4 has correct band shape 1-2-2-0-1 but exactly one correct number (13).",
+    "odd": "Winner has five odd numbers; all tickets have 2-4 odd numbers, preventing exact 6/6 but not logically excluding 5/6.",
+    "flow": "Winner exclusive Flow categories are A1-B1-C3-D1-O0 and none of the tickets has this full state.",
+    "transfer": "None of the altered last 4 tickets adds a correct winner pair beyond first six tickets; no improvement compared with published unchanged 10-ticket baseline.",
+    "statisticalContext": "For this v3 geometry, probability of no ≥3 match is 73.984795%, no ≥5 match is 99.963421%. Not a statistically anomalous failure.",
+    "predictionQuality": "No validation of number-to-number joint probability; historical Core co-occurrence and state classification had no proven forward signal.",
+    "doNotOverfit": true
+  },
+  "fairCombinatorics": {
+    "total": 6096454,
+    "atLeast3": 1586005,
+    "atLeast4": 102130,
+    "atLeast5": 2230,
+    "exact6": 10,
+    "pNoneAtLeast3": 0.7398479509564084,
+    "pNoneAtLeast5": 0.9996342135936727
+  },
+  "futureProtocol": "Preserve base v3 and 1409-inspired method frozen, compare fixed portfolios in forward draws, register paired gains and losses; do not select rule changes from observed winning numbers."
+}
