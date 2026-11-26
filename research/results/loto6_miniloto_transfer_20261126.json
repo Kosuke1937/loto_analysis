@@ -1,0 +1,265 @@
+{
+  "createdJST": "2026-11-26 12:22",
+  "targetDraw": 2158,
+  "targetDate": "2026-11-26",
+  "historyThrough": 2157,
+  "basis": [
+    "MINILOTO_PRIMARY_MODEL.md",
+    "MINILOTO_PREDICTION_TEMPLATE.md",
+    "data/miniloto-assembly-v3-gate-audit.json",
+    "data/miniloto-committee-flow-hybrid-backtest.json",
+    "research/results/loto6_25agent_portfolio_analysis_20261103.json"
+  ],
+  "note": "MiniLoto 1409 original selection of 10 ordered Flow×Band cells is not fully recoverable. This is a novel Loto6 adaptation, not a faithful reproduction of the actual 1409 buying model. Do not infer a verified lottery prediction lift.",
+  "fullModelComparison": {
+    "periods": {
+      "development": "Loto6 #1428–1627,200 draws",
+      "comparison": "Loto6 #1628–2127,500 draws",
+      "recent": "Loto6 #2128–2157,30 draws"
+    },
+    "routes": {
+      "baseline": {
+        "dev": [
+          50,
+          5,
+          0,
+          0
+        ],
+        "compare": [
+          134,
+          9,
+          1,
+          0
+        ],
+        "recent": [
+          7,
+          0,
+          0,
+          0
+        ]
+      },
+      "coreStrong": {
+        "dev": [
+          58,
+          6,
+          0,
+          0
+        ],
+        "compare": [
+          131,
+          7,
+          0,
+          0
+        ],
+        "recent": [
+          5,
+          0,
+          0,
+          0
+        ]
+      },
+      "flowBand": {
+        "dev": [
+          52,
+          5,
+          0,
+          0
+        ],
+        "compare": [
+          128,
+          9,
+          0,
+          0
+        ],
+        "recent": [
+          11,
+          0,
+          0,
+          0
+        ]
+      },
+      "coreFlow": {
+        "dev": [
+          51,
+          4,
+          0,
+          0
+        ],
+        "compare": [
+          137,
+          9,
+          0,
+          0
+        ],
+        "recent": [
+          7,
+          0,
+          0,
+          0
+        ]
+      },
+      "tailAntiCore": {
+        "dev": [
+          55,
+          5,
+          0,
+          0
+        ],
+        "compare": [
+          147,
+          10,
+          1,
+          0
+        ],
+        "recent": [
+          4,
+          0,
+          0,
+          0
+        ]
+      },
+      "unrestrictedMain6Rescue4": {
+        "dev": [
+          54,
+          2,
+          0,
+          0
+        ],
+        "compare": [
+          135,
+          11,
+          1,
+          0
+        ],
+        "recent": [
+          6,
+          0,
+          0,
+          0
+        ],
+        "caution": "Current union 42, max overlap2; slightly sacrifices some 3+/4+ baseline cover; not selected."
+      }
+    },
+    "metrics": [
+      "draws with >=3 main number matches in any ticket",
+      "draws with >=4",
+      "draws with >=5",
+      "draws with 6"
+    ]
+  },
+  "selectedTransfer": {
+    "method": "Mini1409-inspired Main6 + Core/Flow/Core/Tail4 with conservation of original 10-ticket incidence geometry",
+    "algorithm": {
+      "baseline": "Build base v3 via prev-draw ±1 neighbor count descending, tie by sum of previous200,500,800 single-digit rates descending; map top17 digits to doubled positions and remaining26 to singleton positions.",
+      "core": "On each of the last four tickets, score pairCount(previous300) +5×tripleCount(previous300); positive coefficient for Core, negative for Tail.",
+      "flow": "Exclusive A=previous identical; B=previous ±1 (excluding A); C=second-previous ±1 or same (excluding A/B); D=previous3..5 identical (excluding earlier categories); O=others. Score theoretical Band hypergeometric shape and mild preference of Flow A/B/C counts around one; no hard elimination.",
+      "roles": [
+        "Main",
+        "Main",
+        "Main",
+        "Main",
+        "Main",
+        "Main",
+        "Core",
+        "FlowBand",
+        "Core",
+        "TailRare"
+      ],
+      "optimisation": "Only swap two numerical positions between last four tickets. Deterministic xorshift32 seeded by forecast index. 160 swap proposals per draw, accept only score improvements when all tickets remain individually distinct and every pair of tickets has at most one shared number; maintain all43-digit union. Ticket position role weights: Core=0.06*CoreScore+0.25*FlowBandScore; Flow=FlowBandScore+0.016*CoreScore; Tail=-0.07*CoreScore+0.3*FlowBandScore.",
+      "limitations": [
+        "This modified portfolio retains all 43 numbers and 17 double use, so number recall 6/6 is tautological.",
+        "An apparently significant outcome chosen from exploratory routes is data-mined; comparison period is not untouched.",
+        "Distance/direction-based position tweaks from the MiniLoto study are not adopted because independent test did not confirm robustness."
+      ]
+    },
+    "backtest": {
+      "development": {
+        "n": 200,
+        "baseline": {
+          "d3": 50,
+          "d4": 5,
+          "d5": 0,
+          "d6": 0
+        },
+        "new": {
+          "d3": 56,
+          "d4": 4,
+          "d5": 0,
+          "d6": 0
+        },
+        "paired": {
+          "gain3": 15,
+          "loss3": 9,
+          "gain4": 1,
+          "loss4": 2,
+          "gain5": 0,
+          "loss5": 0
+        }
+      },
+      "comparison": {
+        "n": 500,
+        "baseline": {
+          "d3": 134,
+          "d4": 9,
+          "d5": 1,
+          "d6": 0
+        },
+        "new": {
+          "d3": 133,
+          "d4": 13,
+          "d5": 2,
+          "d6": 0
+        },
+        "paired": {
+          "gain3": 22,
+          "loss3": 23,
+          "gain4": 5,
+          "loss4": 1,
+          "gain5": 1,
+          "loss5": 0
+        },
+        "twoSidedSignTest4": 0.21875
+      },
+      "recent": {
+        "n": 30,
+        "baseline": {
+          "d3": 7,
+          "d4": 0,
+          "d5": 0,
+          "d6": 0
+        },
+        "new": {
+          "d3": 5,
+          "d4": 0,
+          "d5": 0,
+          "d6": 0
+        },
+        "paired": {
+          "gain3": 0,
+          "loss3": 2,
+          "gain4": 0,
+          "loss4": 0,
+          "gain5": 0,
+          "loss5": 0
+        }
+      }
+    }
+  },
+  "exactAllWinningCombinationCoverage": {
+    "universe": 6096454,
+    "baseline": {
+      "atLeast3": 1586005,
+      "atLeast4": 102130,
+      "atLeast5": 2230,
+      "exact6": 10
+    },
+    "proposed": {
+      "atLeast3": 1586005,
+      "atLeast4": 102130,
+      "atLeast5": 2230,
+      "exact6": 10
+    },
+    "method": "Enumerated all C(43,6)=6,096,454 winner bitmasks with loto6_v3_exact6_research.py and numba. 10 proposed tickets all valid, 43/43 union, each pair shares ≤1."
+  },
+  "action": "Use new 6+4 variant for 2158 as research portfolio only; baseline remains benchmark, no claim of higher true probability."
+}
