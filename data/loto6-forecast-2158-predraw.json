@@ -1,0 +1,501 @@
+{
+  "draw": 2158,
+  "drawDate": "2026-11-26",
+  "createdAt": "2026-11-26T12:23:42+09:00",
+  "status": "FROZEN BEFORE DRAW: 2026-11-26 at lunchtime JST, result not yet published or examined",
+  "predictionCutoffDraw": 2157,
+  "historyCutoffDate": "2026-11-23",
+  "historyLastMain": [
+    13,
+    20,
+    22,
+    34,
+    38,
+    39
+  ],
+  "historyLastBonus": 33,
+  "method": "MiniLoto-1409-inspired reconstructed Main6+Core2+FlowBand1+TailRare1; first6 are established Loto6 v3, complement4 use only pre-draw rolling300 pair/triple support, exclusive Flow and theoretical Band shape, under v3 conservation",
+  "sourceResearch": "research/results/loto6_miniloto_transfer_20261126.json",
+  "reproducesOriginalMiniLoto1409": false,
+  "flowGroups": {
+    "A": [
+      13,
+      20,
+      22,
+      34,
+      38,
+      39
+    ],
+    "B": [
+      12,
+      14,
+      19,
+      21,
+      23,
+      33,
+      35,
+      37,
+      40
+    ],
+    "C": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      24,
+      25,
+      26,
+      27,
+      36,
+      41,
+      42,
+      43
+    ],
+    "D": [
+      8,
+      9,
+      10,
+      11,
+      15,
+      29
+    ],
+    "O": [
+      3,
+      7,
+      16,
+      17,
+      18,
+      28,
+      30,
+      31,
+      32
+    ]
+  },
+  "tickets": [
+    [
+      23,
+      27,
+      30,
+      33,
+      34,
+      38
+    ],
+    [
+      16,
+      22,
+      25,
+      28,
+      39,
+      42
+    ],
+    [
+      4,
+      17,
+      31,
+      35,
+      37,
+      40
+    ],
+    [
+      6,
+      13,
+      14,
+      20,
+      24,
+      43
+    ],
+    [
+      7,
+      8,
+      11,
+      19,
+      21,
+      32
+    ],
+    [
+      2,
+      3,
+      10,
+      15,
+      41,
+      42
+    ],
+    [
+      5,
+      9,
+      19,
+      26,
+      36,
+      40
+    ],
+    [
+      1,
+      6,
+      12,
+      23,
+      29,
+      37
+    ],
+    [
+      1,
+      18,
+      21,
+      26,
+      35,
+      38
+    ],
+    [
+      12,
+      14,
+      18,
+      33,
+      36,
+      39
+    ]
+  ],
+  "details": [
+    {
+      "position": 1,
+      "numbers": [
+        23,
+        27,
+        30,
+        33,
+        34,
+        38
+      ],
+      "role": "Main",
+      "sum": 185,
+      "odd": 3,
+      "flow": {
+        "A": 2,
+        "B": 2,
+        "C": 1,
+        "D": 0,
+        "O": 1
+      },
+      "band": [
+        0,
+        0,
+        2,
+        4,
+        0
+      ]
+    },
+    {
+      "position": 2,
+      "numbers": [
+        16,
+        22,
+        25,
+        28,
+        39,
+        42
+      ],
+      "role": "Main",
+      "sum": 172,
+      "odd": 2,
+      "flow": {
+        "A": 2,
+        "B": 0,
+        "C": 2,
+        "D": 0,
+        "O": 2
+      },
+      "band": [
+        0,
+        1,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "position": 3,
+      "numbers": [
+        4,
+        17,
+        31,
+        35,
+        37,
+        40
+      ],
+      "role": "Main",
+      "sum": 164,
+      "odd": 4,
+      "flow": {
+        "A": 0,
+        "B": 3,
+        "C": 1,
+        "D": 0,
+        "O": 2
+      },
+      "band": [
+        1,
+        1,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "position": 4,
+      "numbers": [
+        6,
+        13,
+        14,
+        20,
+        24,
+        43
+      ],
+      "role": "Main",
+      "sum": 120,
+      "odd": 2,
+      "flow": {
+        "A": 2,
+        "B": 1,
+        "C": 3,
+        "D": 0,
+        "O": 0
+      },
+      "band": [
+        1,
+        2,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "position": 5,
+      "numbers": [
+        7,
+        8,
+        11,
+        19,
+        21,
+        32
+      ],
+      "role": "Main",
+      "sum": 98,
+      "odd": 4,
+      "flow": {
+        "A": 0,
+        "B": 2,
+        "C": 0,
+        "D": 2,
+        "O": 2
+      },
+      "band": [
+        2,
+        2,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "position": 6,
+      "numbers": [
+        2,
+        3,
+        10,
+        15,
+        41,
+        42
+      ],
+      "role": "Main",
+      "sum": 113,
+      "odd": 3,
+      "flow": {
+        "A": 0,
+        "B": 0,
+        "C": 3,
+        "D": 2,
+        "O": 1
+      },
+      "band": [
+        2,
+        2,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "position": 7,
+      "numbers": [
+        5,
+        9,
+        19,
+        26,
+        36,
+        40
+      ],
+      "role": "Core",
+      "sum": 135,
+      "odd": 3,
+      "flow": {
+        "A": 0,
+        "B": 2,
+        "C": 3,
+        "D": 1,
+        "O": 0
+      },
+      "band": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "position": 8,
+      "numbers": [
+        1,
+        6,
+        12,
+        23,
+        29,
+        37
+      ],
+      "role": "Flow×Band",
+      "sum": 108,
+      "odd": 4,
+      "flow": {
+        "A": 0,
+        "B": 3,
+        "C": 2,
+        "D": 1,
+        "O": 0
+      },
+      "band": [
+        2,
+        1,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "position": 9,
+      "numbers": [
+        1,
+        18,
+        21,
+        26,
+        35,
+        38
+      ],
+      "role": "Core",
+      "sum": 139,
+      "odd": 3,
+      "flow": {
+        "A": 1,
+        "B": 2,
+        "C": 2,
+        "D": 0,
+        "O": 1
+      },
+      "band": [
+        1,
+        1,
+        2,
+        2,
+        0
+      ]
+    },
+    {
+      "position": 10,
+      "numbers": [
+        12,
+        14,
+        18,
+        33,
+        36,
+        39
+      ],
+      "role": "Tail/Rare",
+      "sum": 152,
+      "odd": 2,
+      "flow": {
+        "A": 1,
+        "B": 3,
+        "C": 1,
+        "D": 0,
+        "O": 1
+      },
+      "band": [
+        0,
+        3,
+        0,
+        3,
+        0
+      ]
+    }
+  ],
+  "portfolio": {
+    "ticketCount": 10,
+    "numberUnionSize": 43,
+    "numberUsedTwice": 17,
+    "numberUsedOnce": 26,
+    "maxPairwiseOverlap": 1,
+    "possiblePurchaseCostYen": 2000,
+    "actualPurchaseStatus": "UNCONFIRMED",
+    "pairUsageMax": 1,
+    "tripleUsageMax": 1
+  },
+  "exactCoverage": {
+    "universe": 6096454,
+    "p3plus": 0.26015204904359157,
+    "p4plus": 0.016752361290678155,
+    "p5plus": 0.0003657864063273503,
+    "p6": 0.0000016402977862213018,
+    "sets": {
+      "atLeast3": 1586005,
+      "atLeast4": 102130,
+      "atLeast5": 2230,
+      "exact6": 10
+    }
+  },
+  "researchEvaluationSummary": {
+    "historical500": {
+      "base": {
+        "d3": 134,
+        "d4": 9,
+        "d5": 1
+      },
+      "miniTransfer": {
+        "d3": 133,
+        "d4": 13,
+        "d5": 2
+      },
+      "pairedD4": {
+        "gain": 5,
+        "loss": 1,
+        "pTwoSided": 0.21875
+      }
+    },
+    "recent30": {
+      "base": {
+        "d3": 7,
+        "d4": 0,
+        "d5": 0
+      },
+      "miniTransfer": {
+        "d3": 5,
+        "d4": 0,
+        "d5": 0
+      }
+    },
+    "note": "Exploratory comparisons in previously researched periods; not proof of future lottery prediction lift."
+  },
+  "notes": [
+    "Do not edit forecast after outcome. Create a separate result-audit file after the draw.",
+    "No hard exclusion based on sum, bonus, band, or selected Flow category.",
+    "Math coverage verified by exhaustive all 6,096,454 winning combinations; same counts as base v3.",
+    "Not equivalent to historic MiniLoto 1409 end-to-end system; original cell selection is unrecovered."
+  ]
+}
